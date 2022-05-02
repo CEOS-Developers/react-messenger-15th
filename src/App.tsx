@@ -1,10 +1,12 @@
 import InputMessageForm from "components/messageInput/InputMessageForm";
+import MessageProfile from "components/messageProfile/MessageProfile";
 import styled from "styled-components";
 
 const App = () => {
   return (
     <Wrapper>
       <Container>
+        <MessageProfile />
         <InputMessageForm />
       </Container>
     </Wrapper>
