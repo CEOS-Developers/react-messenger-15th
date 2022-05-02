@@ -23,6 +23,7 @@ export type IMessageAction = { type: "ADD_MESSAGE"; message: IMessageType };
 export interface IUserType {
   id: number;
   name: string;
+  profileImg: string;
 }
 
 export interface IUserState {

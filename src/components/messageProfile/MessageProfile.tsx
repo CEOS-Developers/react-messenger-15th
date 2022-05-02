@@ -14,7 +14,7 @@ const MessageProfile = () => {
         <BackButtonImg alt="backbutton" src="backbutton.png" height={12} />
       </BackButton>
       <Profile onClick={_handleToggleUser}>
-        <ProfileImg alt="profile" src="profile.png" height={50} />
+        <ProfileImg alt="profile" src={currentUser.profileImg} height={50} />
         <ProfileContent>
           <ProfileName>{currentUser.name}</ProfileName>
           <ProfileTyping>Typing...</ProfileTyping>
@@ -28,7 +28,7 @@ const Wrapper = styled.section`
   height: 120px;
   border-bottom: 1px solid lightgrey;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 150px 1fr;
 `;
 const BackButton = styled.div`
   display: flex;

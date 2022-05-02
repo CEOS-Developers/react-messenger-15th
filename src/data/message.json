@@ -4,7 +4,8 @@
     "text": "new Message",
     "user": {
       "id": 1,
-      "name": "krkorklo"
+      "name": "krkorklo",
+      "profileImg": "krkorklo.jpg"
     },
     "time": "11:20"
   },
@@ -13,7 +14,8 @@
     "text": "message",
     "user": {
       "id": 2,
-      "name": "hyojeong"
+      "name": "ducky",
+      "profileImg": "ducky.jpg"
     },
     "time": "11:40"
   },
@@ -22,7 +24,8 @@
     "text": "message",
     "user": {
       "id": 1,
-      "name": "krkorklo"
+      "name": "krkorklo",
+      "profileImg": "krkorklo.jpg"
     },
     "time": "11:41"
   },
@@ -31,7 +34,8 @@
     "text": "message",
     "user": {
       "id": 2,
-      "name": "hyojeong"
+      "name": "ducky",
+      "profileImg": "ducky.jpg"
     },
     "time": "11:50"
   },
@@ -40,35 +44,9 @@
     "text": "message",
     "user": {
       "id": 2,
-      "name": "hyojeong"
+      "name": "ducky",
+      "profileImg": "ducky.jpg"
     },
     "time": "11:53"
-  },
-  {
-    "id": 6,
-    "text": "message",
-    "user": {
-      "id": 1,
-      "name": "krkorklo"
-    },
-    "time": "12:30"
-  },
-  {
-    "id": 7,
-    "text": "message",
-    "user": {
-      "id": 2,
-      "name": "hyojeong"
-    },
-    "time": "12:32"
-  },
-  {
-    "id": 8,
-    "text": "message",
-    "user": {
-      "id": 2,
-      "name": "hyojeong"
-    },
-    "time": "12:32"
   }
 ]

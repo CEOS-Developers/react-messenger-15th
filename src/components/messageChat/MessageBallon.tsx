@@ -9,7 +9,7 @@ const MessageBallon = ({ message }: IMessageBallon) => {
   return (
     <MessageBox>
       {!isUser ? (
-        <ProfileImg alt="profile" src="profile.png" height={30} />
+        <ProfileImg alt="profile" src={message.user.profileImg} height={30} />
       ) : (
         <ProfileDate isUser={isUser}>{message.time}</ProfileDate>
       )}
@@ -18,7 +18,7 @@ const MessageBallon = ({ message }: IMessageBallon) => {
         <MessageText isUser={isUser}>{message.text}</MessageText>
       </section>
       {isUser ? (
-        <ProfileImg alt="profile" src="profile.png" height={30} />
+        <ProfileImg alt="profile" src={message.user.profileImg} height={30} />
       ) : (
         <ProfileDate isUser={isUser}>{message.time}</ProfileDate>
       )}

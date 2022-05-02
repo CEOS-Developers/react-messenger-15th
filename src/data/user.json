@@ -1,10 +1,12 @@
 [
   {
     "id": 1,
-    "name": "krkorklo"
+    "name": "krkorklo",
+    "profileImg": "krkorklo.jpg"
   },
   {
     "id": 2,
-    "name": "hyojeong"
+    "name": "ducky",
+    "profileImg": "ducky.jpg"
   }
 ]
