@@ -1,7 +1,5 @@
-import { useState} from 'react';
-import InputForm from './components/InputForm';
-import ChatRoomBody from './components/ChatRoomBody';
-
+import { useState } from 'react';
+import ChatRoomScreen from './components/ChatRoomScreen';
 
 function App() {
   const [chatList, setChatList] = useState([]);
@@ -10,8 +8,7 @@ function App() {
 
   return (
     <>
-    <ChatRoomBody chatList={chatList} setChatList={setChatList}/>
-    <InputForm currentUserId={currentUserId} chatList={chatList} setChatList={setChatList} />
+      <ChatRoomScreen />
     </>
   );
 }

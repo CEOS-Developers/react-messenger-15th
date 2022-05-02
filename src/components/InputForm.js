@@ -47,12 +47,15 @@ const InputForm = ({ currentUserId, chatList, setChatList }) => {
 };
 
 const Form = styled.form`
+  position: fixed;
+
+  bottom: 0;
+  height: 15%;
   width: 100%;
-  height: 100%;
 
   display: flex;
-  align-items: center;
-  justify-content: space-evenly;
+  flex-direction: row;
+  justify-content: space-around;
 `;
 
 const Input = styled.input`
