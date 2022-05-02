@@ -1,9 +1,12 @@
+import InputMessageForm from "components/messageInput/InputMessageForm";
 import styled from "styled-components";
 
 const App = () => {
   return (
     <Wrapper>
-      <Container></Container>
+      <Container>
+        <InputMessageForm />
+      </Container>
     </Wrapper>
   );
 };
