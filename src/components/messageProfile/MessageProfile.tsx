@@ -1,15 +1,22 @@
 import styled from "styled-components";
+import useToggleUser from "hooks/useUser";
 
 const MessageProfile = () => {
+  const { currentUser, toggleUser } = useToggleUser();
+
+  const _handleToggleUser = (): void => {
+    toggleUser(currentUser.name);
+  };
+
   return (
     <Wrapper>
       <BackButton>
         <BackButtonImg alt="backbutton" src="backbutton.png" height={12} />
       </BackButton>
-      <Profile>
+      <Profile onClick={_handleToggleUser}>
         <ProfileImg alt="profile" src="profile.png" height={50} />
         <ProfileContent>
-          <ProfileName>이름</ProfileName>
+          <ProfileName>{currentUser.name}</ProfileName>
           <ProfileTyping>Typing...</ProfileTyping>
         </ProfileContent>
       </Profile>
@@ -36,6 +43,7 @@ const Profile = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 `;
 const ProfileImg = styled.img`
   border-radius: 70%;

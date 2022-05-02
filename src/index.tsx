@@ -1,4 +1,5 @@
 import { MessageProvider } from "contexts/MessageContext";
+import { UserProvider } from "contexts/UserContext";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import GlobalStyle from "style/GlobalStyle";
@@ -11,8 +12,10 @@ const root = ReactDOM.createRoot(rootElement);
 root.render(
   <React.StrictMode>
     <GlobalStyle />
-    <MessageProvider>
-      <App />
-    </MessageProvider>
+    <UserProvider>
+      <MessageProvider>
+        <App />
+      </MessageProvider>
+    </UserProvider>
   </React.StrictMode>,
 );

@@ -3,10 +3,12 @@ import React from "react";
 import styled from "styled-components";
 import useMessage from "hooks/useMessage";
 import InputEmoticon from "./InputEmoticon";
+import useUser from "hooks/useUser";
 
 const InputMessageForm = () => {
   const { text, handleTextChange, resetText } = useInput("");
   const { addMessage } = useMessage();
+  const { currentUser } = useUser();
 
   const _addInputMessage = (e: React.FormEvent): void => {
     e.preventDefault();
@@ -15,7 +17,7 @@ const InputMessageForm = () => {
     else {
       const messageObj = {
         id: new Date().valueOf(),
-        user: "krkorklo",
+        user: currentUser,
         time: new Date().getHours() + ":" + new Date().getMinutes(),
         text,
       };
@@ -28,7 +30,7 @@ const InputMessageForm = () => {
   const addEmoticonMessage = (emo: string): void => {
     const messageObj = {
       id: new Date().valueOf(),
-      user: "krkorklo",
+      user: currentUser,
       time: new Date().getHours() + ":" + new Date().getMinutes(),
       text: emo,
     };

@@ -2,49 +2,73 @@
   {
     "id": 1,
     "text": "new Message",
-    "user": "krkorklo",
+    "user": {
+      "id": 1,
+      "name": "krkorklo"
+    },
     "time": "11:20"
   },
   {
     "id": 2,
     "text": "message",
-    "user": "jhj",
+    "user": {
+      "id": 2,
+      "name": "jhj"
+    },
     "time": "11:40"
   },
   {
     "id": 3,
     "text": "message",
-    "user": "krkorklo",
+    "user": {
+      "id": 1,
+      "name": "krkorklo"
+    },
     "time": "11:41"
   },
   {
     "id": 4,
     "text": "message",
-    "user": "jhj",
+    "user": {
+      "id": 2,
+      "name": "jhj"
+    },
     "time": "11:50"
   },
   {
     "id": 5,
     "text": "message",
-    "user": "jhj",
+    "user": {
+      "id": 2,
+      "name": "jhj"
+    },
     "time": "11:53"
   },
   {
     "id": 6,
     "text": "message",
-    "user": "krkorklo",
+    "user": {
+      "id": 1,
+      "name": "krkorklo"
+    },
     "time": "12:30"
   },
   {
     "id": 7,
     "text": "message",
-    "user": "jhj",
+    "user": {
+      "id": 2,
+      "name": "jhj"
+    },
     "time": "12:32"
   },
   {
     "id": 8,
     "text": "message",
-    "user": "jhj",
+    "user": {
+      "id": 2,
+      "name": "jhj"
+    },
     "time": "12:32"
   }
 ]

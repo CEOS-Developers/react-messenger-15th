@@ -2,10 +2,12 @@ import styled from "styled-components";
 import MessageBallon from "./MessageBallon";
 import useMessage from "hooks/useMessage";
 import { useEffect, useRef } from "react";
+import useUser from "hooks/useUser";
 
 const MessageChat = () => {
   const messageWrapperRef = useRef<HTMLDivElement>(null);
   const { messages } = useMessage();
+  const { currentUser } = useUser();
 
   const ScrollToBottom = (): void => {
     if (messageWrapperRef.current) {
@@ -21,7 +23,10 @@ const MessageChat = () => {
   return (
     <Wrapper ref={messageWrapperRef}>
       {messages.map((msg) => (
-        <MessageBallonContainer key={msg.id} isMine={msg.user === "krkorklo"}>
+        <MessageBallonContainer
+          key={msg.id}
+          isUser={msg.user.name === currentUser.name}
+        >
           <MessageBallon key={msg.id} message={msg} />
         </MessageBallonContainer>
       ))}
@@ -45,9 +50,9 @@ const Wrapper = styled.section`
     border: 5px solid transparent;
   }
 `;
-const MessageBallonContainer = styled.section<{ isMine: boolean }>`
+const MessageBallonContainer = styled.section<{ isUser: boolean }>`
   display: flex;
-  justify-content: ${({ isMine }) => isMine && "flex-end"};
+  justify-content: ${({ isUser }) => isUser && "flex-end"};
 `;
 
 export default MessageChat;
