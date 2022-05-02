@@ -1,3 +1,4 @@
+import { MessageProvider } from "contexts/MessageContext";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import GlobalStyle from "style/GlobalStyle";
@@ -10,6 +11,8 @@ const root = ReactDOM.createRoot(rootElement);
 root.render(
   <React.StrictMode>
     <GlobalStyle />
-    <App />
+    <MessageProvider>
+      <App />
+    </MessageProvider>
   </React.StrictMode>,
 );

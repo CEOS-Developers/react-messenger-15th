@@ -8,7 +8,7 @@ const MessageBallon = ({ message }: IMessageBallon) => {
         <ProfileImg alt="profile" src="profile.png" height={30} />
       ) : (
         <ProfileDate isMine={message.user === "krkorklo"}>
-          {message.date}
+          {message.time}
         </ProfileDate>
       )}
       <section>
@@ -23,7 +23,7 @@ const MessageBallon = ({ message }: IMessageBallon) => {
         <ProfileImg alt="profile" src="profile.png" height={30} />
       ) : (
         <ProfileDate isMine={message.user === "krkorklo"}>
-          {message.date}
+          {message.time}
         </ProfileDate>
       )}
     </MessageBox>

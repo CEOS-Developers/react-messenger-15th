@@ -1,28 +1,14 @@
 import styled from "styled-components";
 import MessageBallon from "./MessageBallon";
-import { useState } from "react";
+import useMessage from "hooks/useMessage";
 
 const MessageChat = () => {
-  const [messageList, setMessageList] = useState([
-    {
-      id: 1,
-      text: "new Message!",
-      user: "krkorklo",
-      date: "11:30",
-    },
-    { id: 2, text: "message", user: "jhj", date: "11:40" },
-    { id: 3, text: "message", user: "krkorklo", date: "11:41" },
-    { id: 4, text: "message", user: "jhj", date: "11:50" },
-    { id: 5, text: "message", user: "jhj", date: "11:53" },
-    { id: 6, text: "message", user: "krkorklo", date: "12:30" },
-    { id: 7, text: "message", user: "jhj", date: "12:32" },
-    { id: 8, text: "message", user: "jhj", date: "12:32" },
-  ]);
+  const { messages } = useMessage();
 
   return (
     <Wrapper>
-      {messageList.map((msg) => (
-        <MessageBallonContainer isMine={msg.user === "krkorklo"}>
+      {messages.map((msg) => (
+        <MessageBallonContainer key={msg.id} isMine={msg.user === "krkorklo"}>
           <MessageBallon key={msg.id} message={msg} />
         </MessageBallonContainer>
       ))}
