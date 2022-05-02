@@ -1,0 +1,7 @@
+{
+    "me": [{ "userId": 10, "userName": "한규진", "profileImage": "", "statusMessage": "" }],
+    "friends": [
+        { "userId": 10, "userName": "두규진", "profileImage": "", "statusMessage": "" },
+        { "userId": 10, "userName": "세규진", "profileImage": "", "statusMessage": "" }
+    ]
+}

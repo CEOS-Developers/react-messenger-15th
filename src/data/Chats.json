@@ -1,0 +1,16 @@
+{
+    "rooms": [
+        {
+            "roomId": 1,
+            "user": [{ "userId:": "0" }, { "userId:": "10" }],
+            "chat": [
+                {
+                    "userId": "10",
+                    "content": "hi 에이치아이",
+                    "date": "",
+                    "like": false
+                }
+            ]
+        }
+    ]
+}
