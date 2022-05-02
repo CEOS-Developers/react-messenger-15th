@@ -7,7 +7,7 @@ const MessageProfile = () => {
         <img alt="backbutton" src="backbutton.png" height={12} />
       </BackButton>
       <Profile>
-        <ProfileImg alt="profile" src="" height={50} />
+        <ProfileImg alt="profile" src="profile.png" height={50} />
         <ProfileContent>
           <ProfileName>이름</ProfileName>
           <ProfileTyping>Typing...</ProfileTyping>
@@ -40,7 +40,7 @@ const ProfileImg = styled.img`
 const ProfileContent = styled.section`
   display: flex;
   flex-direction: column;
-  margin-left: 5px;
+  margin-left: 10px;
 `;
 const ProfileName = styled.p`
   margin: 0;

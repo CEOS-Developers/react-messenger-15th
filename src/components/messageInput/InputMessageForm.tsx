@@ -38,7 +38,7 @@ const InputForm = styled.form`
   border-top: 1px solid lightgrey;
   display: flex;
   align-items: center;
-  padding-top: 15px;
+  padding-top: 10px;
 `;
 const Input = styled.input`
   border: 1px solid lightgrey;
@@ -46,6 +46,7 @@ const Input = styled.input`
   padding: 12px;
   width: 230px;
   height: 15px;
+  font-size: 12px;
   :focus {
     outline: none;
   }

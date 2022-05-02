@@ -1,3 +1,4 @@
+import MessageChat from "components/messageChat/MessageChat";
 import InputMessageForm from "components/messageInput/InputMessageForm";
 import MessageProfile from "components/messageProfile/MessageProfile";
 import styled from "styled-components";
@@ -7,6 +8,7 @@ const App = () => {
     <Wrapper>
       <Container>
         <MessageProfile />
+        <MessageChat />
         <InputMessageForm />
       </Container>
     </Wrapper>
