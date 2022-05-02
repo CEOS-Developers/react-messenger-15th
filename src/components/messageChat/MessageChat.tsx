@@ -1,12 +1,25 @@
 import styled from "styled-components";
 import MessageBallon from "./MessageBallon";
 import useMessage from "hooks/useMessage";
+import { useEffect, useRef } from "react";
 
 const MessageChat = () => {
+  const messageWrapperRef = useRef<HTMLDivElement>(null);
   const { messages } = useMessage();
 
+  const ScrollToBottom = (): void => {
+    if (messageWrapperRef.current) {
+      messageWrapperRef.current.scrollTop =
+        messageWrapperRef.current.scrollHeight;
+    }
+  };
+
+  useEffect(() => {
+    ScrollToBottom();
+  }, [messages]);
+
   return (
-    <Wrapper>
+    <Wrapper ref={messageWrapperRef}>
       {messages.map((msg) => (
         <MessageBallonContainer key={msg.id} isMine={msg.user === "krkorklo"}>
           <MessageBallon key={msg.id} message={msg} />
