@@ -9,35 +9,16 @@ const MessageProfile = () => {
   };
 
   return (
-    <Wrapper>
-      <BackButton>
-        <BackButtonImg alt="backbutton" src="backbutton.png" height={12} />
-      </BackButton>
-      <Profile onClick={_handleToggleUser}>
-        <ProfileImg alt="profile" src={currentUser.profileImg} height={50} />
-        <ProfileContent>
-          <ProfileName>{currentUser.name}</ProfileName>
-          <ProfileTyping>Typing...</ProfileTyping>
-        </ProfileContent>
-      </Profile>
-    </Wrapper>
+    <Profile onClick={_handleToggleUser}>
+      <ProfileImg alt="profile" src={currentUser.profileImg} height={50} />
+      <ProfileContent>
+        <ProfileName>{currentUser.name}</ProfileName>
+        <ProfileTyping>Typing...</ProfileTyping>
+      </ProfileContent>
+    </Profile>
   );
 };
 
-const Wrapper = styled.section`
-  height: 120px;
-  border-bottom: 1px solid lightgrey;
-  display: grid;
-  grid-template-columns: 1fr 150px 1fr;
-`;
-const BackButton = styled.div`
-  display: flex;
-  align-items: center;
-  margin-left: 40px;
-`;
-const BackButtonImg = styled.img`
-  cursor: pointer;
-`;
 const Profile = styled.section`
   height: 100%;
   display: flex;

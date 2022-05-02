@@ -4,6 +4,7 @@ import { IInputEmoticon } from "interface";
 const emoticonList = ["❤️", "😄", "👍", "✨", "🖐"];
 
 const EmoticonPopover = ({ addEmoticonMessage }: IInputEmoticon) => {
+  // 이모티콘 전송
   const _handleClick = (e: any): void => {
     addEmoticonMessage(e.target.innerText);
   };

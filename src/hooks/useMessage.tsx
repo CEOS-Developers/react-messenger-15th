@@ -1,14 +1,22 @@
 import { MessageContext } from "contexts/MessageContext";
-import { IMessageType } from "interface";
 import { useContext } from "react";
+import useUser from "./useUser";
 
 const useMessage = () => {
   const { messages, dispatch } = useContext(MessageContext);
+  const { currentUser } = useUser();
 
-  const addMessage = (message: IMessageType): void => {
+  // 메시지 추가
+  const addMessage = (text: string): void => {
+    const messageObj = {
+      id: new Date().valueOf(),
+      user: currentUser,
+      time: new Date().getHours() + ":" + new Date().getMinutes(),
+      text,
+    };
     dispatch({
       type: "ADD_MESSAGE",
-      message,
+      message: messageObj,
     });
   };
 

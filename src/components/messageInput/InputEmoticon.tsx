@@ -11,16 +11,16 @@ const InputEmoticon = ({ addEmoticonMessage }: IInputEmoticon) => {
   };
 
   return (
-    <div>
+    <section>
       {visiblePopover && (
         <EmoticonPopover addEmoticonMessage={addEmoticonMessage} />
       )}
-      <Box onMouseOver={popoverEmoticon}>❤️</Box>
-    </div>
+      <Emoticon onMouseOver={popoverEmoticon}>❤️</Emoticon>
+    </section>
   );
 };
 
-const Box = styled.div`
+const Emoticon = styled.div`
   width: 35px;
   margin-left: 15px;
   cursor: pointer;

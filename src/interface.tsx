@@ -2,7 +2,7 @@ export interface IInputEmoticon {
   addEmoticonMessage: (emo: string) => void;
 }
 
-export interface IMessageType {
+interface IMessageType {
   id: number;
   text: string;
   user: IUserType;

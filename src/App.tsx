@@ -1,13 +1,13 @@
 import MessageChat from "components/messageChat/MessageChat";
 import InputMessageForm from "components/messageInput/InputMessageForm";
-import MessageProfile from "components/messageProfile/MessageProfile";
+import MessageProfileContainer from "components/messageProfile/MessageProfileContainer";
 import styled from "styled-components";
 
 const App = () => {
   return (
     <Wrapper>
       <Container>
-        <MessageProfile />
+        <MessageProfileContainer />
         <MessageChat />
         <InputMessageForm />
       </Container>

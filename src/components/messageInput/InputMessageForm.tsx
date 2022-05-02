@@ -3,38 +3,23 @@ import React from "react";
 import styled from "styled-components";
 import useMessage from "hooks/useMessage";
 import InputEmoticon from "./InputEmoticon";
-import useUser from "hooks/useUser";
 
 const InputMessageForm = () => {
   const { text, handleTextChange, resetText } = useInput("");
   const { addMessage } = useMessage();
-  const { currentUser } = useUser();
 
   const _addInputMessage = (e: React.FormEvent): void => {
     e.preventDefault();
 
     if (!text.trim()) alert("메시지를 입력해주세요");
     else {
-      const messageObj = {
-        id: new Date().valueOf(),
-        user: currentUser,
-        time: new Date().getHours() + ":" + new Date().getMinutes(),
-        text,
-      };
-      addMessage(messageObj);
+      addMessage(text);
     }
-
     resetText();
   };
 
   const addEmoticonMessage = (emo: string): void => {
-    const messageObj = {
-      id: new Date().valueOf(),
-      user: currentUser,
-      time: new Date().getHours() + ":" + new Date().getMinutes(),
-      text: emo,
-    };
-    addMessage(messageObj);
+    addMessage(emo);
     resetText();
   };
 
