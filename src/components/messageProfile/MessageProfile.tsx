@@ -42,7 +42,6 @@ const Profile = styled.section`
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
   cursor: pointer;
 `;
 const ProfileImg = styled.img`

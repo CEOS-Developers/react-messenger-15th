@@ -1,20 +1,29 @@
 import { IInputEmoticon } from "interface";
+import EmoticonPopover from "./EmoticonPopover";
 import styled from "styled-components";
+import { useState } from "react";
 
 const InputEmoticon = ({ addEmoticonMessage }: IInputEmoticon) => {
-  const _addEmoticon = (): void => {
-    addEmoticonMessage("❤️");
+  const [visiblePopover, setVisiblePopover] = useState(false);
+
+  const popoverEmoticon = (): void => {
+    setVisiblePopover(!visiblePopover);
   };
 
-  return <Box onClick={_addEmoticon}>❤️</Box>;
+  return (
+    <div>
+      {visiblePopover && (
+        <EmoticonPopover addEmoticonMessage={addEmoticonMessage} />
+      )}
+      <Box onMouseOver={popoverEmoticon}>❤️</Box>
+    </div>
+  );
 };
 
 const Box = styled.div`
   width: 35px;
   margin-left: 15px;
-  :hover {
-    cursor: pointer;
-  }
+  cursor: pointer;
 `;
 
 export default InputEmoticon;
