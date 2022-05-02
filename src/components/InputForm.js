@@ -2,53 +2,51 @@ import useInput from '../hooks/useInput';
 import styled from 'styled-components';
 
 const InputForm = ({ currentUserId, chatList, setChatList }) => {
-    const [inputText, handleInputChange, reset] = useInput('');
-  
-    const handleNewMsg = (e) => {
-      e.preventDefault();
-  
-      if (inputText) {
-        const msg = {
-          userId: currentUserId,
-          message: inputText,
-          msgId: Date.now(),
-        };
-  
-        setChatList([...chatList, msg]);
-        reset();
-      } else {
-        alert('Type something');
-      }
-    };
-  
-    const handleHeartClick = (e) => {
-      e.preventDefault();
+  const [inputText, handleInputChange, reset] = useInput('');
 
-      const heartMsg = {
+  const handleNewMsg = (e) => {
+    e.preventDefault();
+
+    if (inputText) {
+      const msg = {
         userId: currentUserId,
-        message: '❤️',
+        message: inputText,
         msgId: Date.now(),
       };
-  
-      setChatList([...chatList, heartMsg]);
-    };
-  
-    return (
-        <Form>
-          <Button onClick={handleHeartClick}>
-            ❤️
-          </Button>
-          <Input
-            value={inputText}
-            onChange={handleInputChange}
-            placeholder="Type something here"
-          />
-          <Button onClick={handleNewMsg}>+</Button>
-      </Form>
-    );
+
+      setChatList([...chatList, msg]);
+      reset();
+    } else {
+      alert('Type something');
+    }
   };
 
-  const Form = styled.form`
+  const handleHeartClick = (e) => {
+    e.preventDefault();
+
+    const heartMsg = {
+      userId: currentUserId,
+      message: '❤️',
+      msgId: Date.now(),
+    };
+
+    setChatList([...chatList, heartMsg]);
+  };
+
+  return (
+    <Form>
+      <Button onClick={handleHeartClick}>❤️</Button>
+      <Input
+        value={inputText}
+        onChange={handleInputChange}
+        placeholder="Type something here"
+      />
+      <Button onClick={handleNewMsg}>+</Button>
+    </Form>
+  );
+};
+
+const Form = styled.form`
   width: 100%;
   height: 100%;
 
