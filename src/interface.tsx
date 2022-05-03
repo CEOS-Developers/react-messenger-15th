@@ -2,6 +2,10 @@ export interface IInputEmoticon {
   addEmoticonMessage: (emo: string) => void;
 }
 
+export interface IEmoticonPopover extends IInputEmoticon {
+  handlePopover: () => void;
+}
+
 interface IMessageType {
   id: number;
   text: string;
@@ -18,9 +22,12 @@ export interface IMessageState {
   dispatch: React.Dispatch<IMessageAction>;
 }
 
-export type IMessageAction = { type: "ADD_MESSAGE"; message: IMessageType };
+export type IMessageAction = {
+  type: "ADD_MESSAGE";
+  message: IMessageType;
+};
 
-export interface IUserType {
+interface IUserType {
   id: number;
   name: string;
   profileImg: string;

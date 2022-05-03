@@ -1,16 +1,21 @@
 import styled from "styled-components";
-import { IInputEmoticon } from "interface";
+import React from "react";
+import { IEmoticonPopover } from "interface";
 
 const emoticonList = ["❤️", "😄", "👍", "✨", "🖐"];
 
-const EmoticonPopover = ({ addEmoticonMessage }: IInputEmoticon) => {
+const EmoticonPopover = ({
+  addEmoticonMessage,
+  handlePopover,
+}: IEmoticonPopover) => {
   // 이모티콘 전송
-  const _handleClick = (e: any): void => {
-    addEmoticonMessage(e.target.innerText);
+  const _handleClick = (e: React.MouseEvent): void => {
+    const target = e.target as HTMLElement;
+    addEmoticonMessage(target.innerText);
   };
 
   return (
-    <PopoverContainer>
+    <PopoverContainer onMouseLeave={handlePopover}>
       {emoticonList.map((emo, idx) => (
         <EmoticonBox key={idx} onClick={_handleClick}>
           {emo}
