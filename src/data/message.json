@@ -1,28 +1,18 @@
 [
   {
     "userId": "me",
-    "message": [
-      {
-        "userId": "me",
-        "text": "With great power"
-      },
-      {
-        "userId": "me",
-        "text": "comes great responsibility"
-      }
-    ]
+    "text": "With great power"
   },
   {
-    "userId": "friend",
-    "message": [
-      {
-        "userId": "freind",
-        "text": "Come on,"
-      },
-      {
-        "userId": "freind",
-        "text": "Peter Tingle!"
-      }
-    ]
+    "userId": "me",
+    "text": "comes great responsibility"
+  },
+  {
+    "userId": "freind",
+    "text": "Come on,"
+  },
+  {
+    "userId": "freind",
+    "text": "Peter Tingle!"
   }
 ]
