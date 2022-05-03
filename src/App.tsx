@@ -1,13 +1,14 @@
-import { RecoilRoot } from 'recoil';
-
 import GlobalStyle from './styles/GlobalStyle';
 import { Main } from './styles/Container';
+import ChatRoom from './pages/ChatRoom';
 function App() {
     return (
-        <RecoilRoot>
+        <>
             <GlobalStyle />
-            <Main></Main>
-        </RecoilRoot>
+            <Main>
+                <ChatRoom roomId={'0'} />
+            </Main>
+        </>
     );
 }
 
