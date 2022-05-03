@@ -1,0 +1,10 @@
+{
+  "user": [
+    { "id": "user0", "userId": "user0" },
+    { "id": "user1", "userId": "user1" }
+  ],
+  "data": [
+    { "userId": "user0", "message": "111", "msgId": "Date.Now()" },
+    { "userId": "user1", "message": "2222", "msgId": "Date.Now()" }
+  ]
+}
