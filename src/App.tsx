@@ -1,17 +1,9 @@
-function App() {
-  const test = 'hello world';
+import React from 'react';
+import logo from './logo.svg';
+import './App.css';
 
-  return (
-    <>
-      <div>Clean</div>
-      <div>Clean</div>
-      <div>Clean</div>
-      <div>Clean</div>
-      <div>Clean</div>
-    </>
-  );
+function App() {
+  return <div className="App">test</div>;
 }
 
 export default App;
-
-// https://github.com/corinthionia/react-messenger-14th
