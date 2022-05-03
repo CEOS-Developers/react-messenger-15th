@@ -1,5 +1,5 @@
 function App() {
-  const test: any = 'hello';
+  const test = 'hello world';
 
   return (
     <>
@@ -13,3 +13,5 @@ function App() {
 }
 
 export default App;
+
+// https://github.com/corinthionia/react-messenger-14th
