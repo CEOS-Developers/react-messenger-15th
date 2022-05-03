@@ -1,45 +1,169 @@
-# 4주차 미션: React-Messenger 💌
+### Technical Features
 
-## 서론
+https://kimdabin.tistory.com/entry/Reactjs-ESLint%EC%99%80-Prettier%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-React-%ED%99%98%EA%B2%BD-%EC%84%A4%EC%A0%95-VSCode
 
-안녕하세요 🙌🏻 15기 프론트 파트장 **김주현**입니다.
 
-이번주부터는 드디어 투두리스트에서 벗어나 새로운 프로젝트인 **messenger** 만들기를 진행합니다. 이번 미션은 저번 미션의 연장선으로, TypeScript와 다양한 React Hook에 익숙해지는 것을 목표로 합니다. 이번 주차에 중점적으로 사용하는 Hook은 React를 사용하면서 굉장히 자주 쓰이기 때문에 해당 부분을 중점적으로 공부해 보세요.
 
-그럼 이번 미션도 파이팅입니다 ❤️‍🔥
+### Library
 
-# 미션
+* CRA
 
-## 미션 목표
+```shell
+npx create-react-app . --template typescript
+```
 
-- TypeScript에 익숙해집니다.
-- useState로 컴포넌트의 상태를 관리합니다.
-- useEffect와 useRef의 사용법을 이해합니다.
-- styled-components를 통한 CSS-in-JS 및 CSS Preprocessor의 사용법에 익숙해집니다.
+* TS 환경 구성
 
-## 기한
+```shell
+npm i -D typescript @babel/core @babel/preset-env @babel/preset-typescript @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint prettier eslint-plugin-prettier
+```
 
-- 2022년 5월 6일 금요일 **(기한 엄수!)**
 
-## 필수 요건
 
-- 함수형 컴포넌트를 사용합니다.
-- styled-components를 사용합니다.
-- 컴포넌트 네이밍에 신경써 봅니다.
-- UI는 자유롭게 구성하되, 반응형까진 고려하지 않으셔도 됩니다.
 
-## 필수 구현 기능
 
-- [결과 화면](https://corinth-messenger.vercel.app/)과같이 구현합니다.
-- 채팅방 상단의 프로필을 클릭하면 사용자를 변경할 수 있습니다.
-- 공백 입력 시 alert 메세지를 띄우고, 전송되지 않도록 합니다.
-- 메세지를 보내면 채팅방 하단으로 스크롤을 이동시킵니다. (Hint: useEffect + scrollTo)
-- 메세지에 유저 정보(프로필 사진, 이름)를 함께 표시합니다.
-- user와 message 데이터를 json 형식의 파일에 저장합니다.
+```html
+// index.html
 
-# 링크 및 참고자료
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <!-- <link rel="icon" href="%PUBLIC_URL%/favicon.ico" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <!-- <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" /> -->
+    <title>React App</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
+```
 
-- [React docs - Hook](https://ko.reactjs.org/docs/hooks-intro.html)
-- [React의 Hooks 완벽 정복하기](https://velog.io/@velopert/react-hooks#1-usestate)
-- [useEffect 완벽 가이드](https://overreacted.io/ko/a-complete-guide-to-useeffect/)
-- [리액트 프로젝트에서 타입스크립트 사용하기 (시리즈)](https://velog.io/@velopert/series/react-with-typescript)
+```.eslintignore
+// .eslintignore
+
+node_modules
+dist
+```
+
+```js
+// .eslintrc.js
+
+module.exports = {
+  root: true,
+  env: {
+    browser: true,
+    node: true,
+  },
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:@typescript-eslint/recommended',
+  ],
+  plugins: ['prettier', '@typescript-eslint'],
+  rules: {
+    'prettier/prettier': [
+      'error',
+      {
+        trailingComma: 'es5',
+        tabWidth: 2,
+        semi: true,
+        singleQuote: true,
+        useTabs: false,
+        printWidth: 80,
+        bracketSpacing: true,
+        arrowParens: 'avoid',
+      },
+    ],
+  },
+  parserOptions: {
+    parser: '@typescript-eslint/parser',
+  },
+};
+```
+
+```json
+// pakage.json
+
+{
+  "name": "react-messenger-15th",
+  "version": "1.0.0",
+  "main": "index.js",
+  "description": "CEOS 15th FE Study",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.1.1",
+    "@testing-library/user-event": "^13.5.0",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
+  },
+  "keywords": [],
+  "author": "Sungwoo Shin",
+  "license": "MIT",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "tsc",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.10",
+    "@babel/preset-env": "^7.17.10",
+    "@babel/preset-typescript": "^7.16.7",
+    "@typescript-eslint/eslint-plugin": "^5.21.0",
+    "@typescript-eslint/parser": "^5.21.0",
+    "eslint": "^8.14.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.6.2",
+    "typescript": "^4.6.4"
+  }
+}
+```
+
+```json
+// tsconfig.json
+
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "module": "CommonJS",
+    "strict": true,
+    "esModuleInterop": true,
+    "outDir": "./dist",
+    "allowJs": true,
+    "moduleResolution": "Node",
+    "lib": ["ES2015", "DOM", "DOM.Iterable"],
+    "noImplicitAny": true
+  },
+  "include": ["./src/**/*"]
+}
+```
+
