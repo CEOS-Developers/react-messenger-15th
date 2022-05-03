@@ -4,7 +4,15 @@
     { "id": "user1", "userId": "user1" }
   ],
   "data": [
-    { "userId": "user0", "message": "111", "msgId": "Date.Now()" },
-    { "userId": "user1", "message": "2222", "msgId": "Date.Now()" }
+    {
+      "userId": "user0",
+      "message": "Olaf, you are melting!",
+      "msgId": "Date.Now()"
+    },
+    {
+      "userId": "user1",
+      "message": "Some people are worth melting for.",
+      "msgId": "Date.Now()"
+    }
   ]
 }
