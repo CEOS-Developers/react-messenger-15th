@@ -8,6 +8,7 @@ const InputMessageForm = () => {
   const { text, handleTextChange, resetText } = useInput("");
   const { addMessage } = useMessage();
 
+  // 메시지 전송
   const _addInputMessage = (e: React.FormEvent): void => {
     e.preventDefault();
 
@@ -18,6 +19,7 @@ const InputMessageForm = () => {
     resetText();
   };
 
+  // 이모티콘 전송
   const addEmoticonMessage = (emo: string): void => {
     addMessage(emo);
     resetText();

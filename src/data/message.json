@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "text": "new Message",
+    "text": "15기",
     "user": {
       "id": 1,
       "name": "krkorklo",
@@ -11,42 +11,22 @@
   },
   {
     "id": 2,
-    "text": "message",
-    "user": {
-      "id": 2,
-      "name": "ducky",
-      "profileImg": "ducky.jpg"
-    },
-    "time": "11:40"
-  },
-  {
-    "id": 3,
-    "text": "message",
+    "text": "프론트",
     "user": {
       "id": 1,
       "name": "krkorklo",
       "profileImg": "krkorklo.jpg"
     },
+    "time": "11:21"
+  },
+  {
+    "id": 3,
+    "text": "짱이지♡",
+    "user": {
+      "id": 2,
+      "name": "ducky",
+      "profileImg": "ducky.jpg"
+    },
     "time": "11:41"
-  },
-  {
-    "id": 4,
-    "text": "message",
-    "user": {
-      "id": 2,
-      "name": "ducky",
-      "profileImg": "ducky.jpg"
-    },
-    "time": "11:50"
-  },
-  {
-    "id": 5,
-    "text": "message",
-    "user": {
-      "id": 2,
-      "name": "ducky",
-      "profileImg": "ducky.jpg"
-    },
-    "time": "11:53"
   }
 ]

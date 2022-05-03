@@ -9,18 +9,18 @@ const MessageBallon = ({ message }: IMessageBallon) => {
   return (
     <MessageBox>
       {!isUser ? (
-        <ProfileImg alt="profile" src={message.user.profileImg} height={30} />
+        <MessageImg alt="profile" src={message.user.profileImg} height={30} />
       ) : (
-        <ProfileDate isUser={isUser}>{message.time}</ProfileDate>
+        <MessageTime isUser={isUser}>{message.time}</MessageTime>
       )}
       <section>
         <MessageUser isUser={isUser}>{message.user.name}</MessageUser>
         <MessageText isUser={isUser}>{message.text}</MessageText>
       </section>
       {isUser ? (
-        <ProfileImg alt="profile" src={message.user.profileImg} height={30} />
+        <MessageImg alt="profile" src={message.user.profileImg} height={30} />
       ) : (
-        <ProfileDate isUser={isUser}>{message.time}</ProfileDate>
+        <MessageTime isUser={isUser}>{message.time}</MessageTime>
       )}
     </MessageBox>
   );
@@ -61,10 +61,10 @@ const MessageUser = styled.p<{ isUser: boolean }>`
           margin-left: 5px;
         `}
 `;
-const ProfileImg = styled.img`
+const MessageImg = styled.img`
   border-radius: 70%;
 `;
-const ProfileDate = styled.p<{ isUser: boolean }>`
+const MessageTime = styled.p<{ isUser: boolean }>`
   font-size: 10px;
   color: lightgrey;
   display: flex;

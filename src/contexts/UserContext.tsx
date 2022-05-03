@@ -4,6 +4,7 @@ import { IUserState, IUserAction } from "interface";
 
 // 전역 데이터의 초기값
 const initialState: IUserState = {
+  users: user,
   currentUser: user[0],
   dispatch: () => {},
 };
@@ -15,7 +16,7 @@ const reducer = (state: IUserState, action: IUserAction): IUserState => {
     case "TOGGLE_USER":
       return {
         ...state,
-        currentUser: user.filter(({ name }) => name !== action.name)[0],
+        currentUser: state.users[(action.currentIdx + 1) % state.users.length],
       };
     default:
       throw new Error();
@@ -32,6 +33,7 @@ const UserProvider = ({ children }: IContextProps) => {
   return (
     <UserContext.Provider
       value={{
+        users: state.users,
         currentUser: state.currentUser,
         dispatch,
       }}

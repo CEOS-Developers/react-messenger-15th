@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import useToggleUser from "hooks/useUser";
+import useUser from "hooks/useUser";
 
 const MessageProfile = () => {
-  const { currentUser, toggleUser } = useToggleUser();
+  const { currentUser, toggleUser } = useUser();
 
   const _handleToggleUser = (): void => {
-    toggleUser(currentUser.name);
+    toggleUser();
   };
 
   return (

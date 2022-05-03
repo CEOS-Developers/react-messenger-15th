@@ -8,10 +8,14 @@ const useMessage = () => {
 
   // 메시지 추가
   const addMessage = (text: string): void => {
+    const curTime =
+      String(new Date().getHours()).padStart(2, "0") +
+      ":" +
+      String(new Date().getMinutes()).padStart(2, "0");
     const messageObj = {
       id: new Date().valueOf(),
       user: currentUser,
-      time: new Date().getHours() + ":" + new Date().getMinutes(),
+      time: curTime,
       text,
     };
     dispatch({

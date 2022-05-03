@@ -1,15 +1,15 @@
 import styled from "styled-components";
 import MessageBallon from "./MessageBallon";
 import useMessage from "hooks/useMessage";
-import { useEffect, useRef } from "react";
 import useUser from "hooks/useUser";
+import { useEffect, useRef } from "react";
 
 const MessageChat = () => {
   const messageWrapperRef = useRef<HTMLDivElement>(null);
   const { messages } = useMessage();
   const { currentUser } = useUser();
 
-  const ScrollToBottom = (): void => {
+  const _scrollToBottom = (): void => {
     if (messageWrapperRef.current) {
       messageWrapperRef.current.scrollTop =
         messageWrapperRef.current.scrollHeight;
@@ -17,7 +17,7 @@ const MessageChat = () => {
   };
 
   useEffect(() => {
-    ScrollToBottom();
+    _scrollToBottom();
   }, [messages]);
 
   return (

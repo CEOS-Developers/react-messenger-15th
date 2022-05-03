@@ -6,7 +6,7 @@ import { useState } from "react";
 const InputEmoticon = ({ addEmoticonMessage }: IInputEmoticon) => {
   const [visiblePopover, setVisiblePopover] = useState(false);
 
-  const popoverEmoticon = (): void => {
+  const _handlePopover = (): void => {
     setVisiblePopover(!visiblePopover);
   };
 
@@ -15,7 +15,7 @@ const InputEmoticon = ({ addEmoticonMessage }: IInputEmoticon) => {
       {visiblePopover && (
         <EmoticonPopover addEmoticonMessage={addEmoticonMessage} />
       )}
-      <Emoticon onMouseOver={popoverEmoticon}>❤️</Emoticon>
+      <Emoticon onMouseOver={_handlePopover}>❤️</Emoticon>
     </section>
   );
 };
