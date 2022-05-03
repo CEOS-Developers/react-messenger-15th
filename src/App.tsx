@@ -1,4 +1,4 @@
-import MessageChat from "components/messageChat/MessageChat";
+import MessageChat from "components/messageChatRoom/MessageChat";
 import InputMessageForm from "components/messageInput/InputMessageForm";
 import MessageProfileContainer from "components/messageProfile/MessageProfileContainer";
 import styled from "styled-components";

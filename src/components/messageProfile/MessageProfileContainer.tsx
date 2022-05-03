@@ -3,16 +3,16 @@ import MessageProfile from "./MessageProfile";
 
 const MessageProfileContainer = () => {
   return (
-    <Wrapper>
+    <Container>
       <BackButton>
         <BackButtonImg alt="backbutton" src="backbutton.png" height={12} />
       </BackButton>
       <MessageProfile />
-    </Wrapper>
+    </Container>
   );
 };
 
-const Wrapper = styled.section`
+const Container = styled.section`
   height: 120px;
   border-bottom: 1px solid lightgrey;
   display: grid;

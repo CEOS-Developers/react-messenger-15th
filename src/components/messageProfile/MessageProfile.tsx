@@ -4,12 +4,8 @@ import useUser from "hooks/useUser";
 const MessageProfile = () => {
   const { currentUser, toggleUser } = useUser();
 
-  const _handleToggleUser = (): void => {
-    toggleUser();
-  };
-
   return (
-    <Profile onClick={_handleToggleUser}>
+    <Profile onClick={toggleUser}>
       <ProfileImg alt="profile" src={currentUser.profileImg} height={50} />
       <ProfileContent>
         <ProfileName>{currentUser.name}</ProfileName>

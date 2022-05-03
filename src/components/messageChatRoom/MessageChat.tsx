@@ -5,7 +5,7 @@ import useUser from "hooks/useUser";
 import { useEffect, useRef } from "react";
 
 const MessageChat = () => {
-  const messageWrapperRef = useRef<HTMLDivElement>(null);
+  const messageWrapperRef = useRef<HTMLElement>(null);
   const { messages } = useMessage();
   const { currentUser } = useUser();
 

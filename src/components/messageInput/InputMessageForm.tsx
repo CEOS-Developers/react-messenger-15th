@@ -36,7 +36,7 @@ const InputMessageForm = () => {
         />
       )}
       <InputEmoticon addEmoticonMessage={addEmoticonMessage} />
-      <Input
+      <InputText
         placeholder="메시지를 입력하세요"
         value={text}
         onChange={handleTextChange}
@@ -55,7 +55,7 @@ const InputForm = styled.form`
   align-items: center;
   padding-top: 10px;
 `;
-const Input = styled.input`
+const InputText = styled.input`
   border: 1px solid lightgrey;
   border-radius: 10px;
   padding: 12px;
