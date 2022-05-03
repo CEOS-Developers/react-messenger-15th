@@ -5,6 +5,13 @@ export interface ChatType {
     like: boolean;
     chatId: string;
 }
+export interface ChatDataType {
+    roomId: string;
+    user: {
+        'userId:': string;
+    }[];
+    chat: ChatType[];
+}
 
 export interface UserType {
     userId: string;

@@ -1,10 +1,6 @@
 import { ChatType } from '../../Interface';
 
-interface ChatItemProps {
-    chat: ChatType;
-}
-
-const ChatItem = ({ chat }: ChatItemProps) => {
+const ChatItem = ({ chat }: { chat: ChatType }) => {
     return <div>{chat.content}</div>;
 };
 
