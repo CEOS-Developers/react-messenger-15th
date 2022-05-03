@@ -3,9 +3,9 @@
     "id": 1,
     "text": "15기",
     "user": {
-      "id": 1,
-      "name": "krkorklo",
-      "profileImg": "krkorklo.jpg"
+      "id": 2,
+      "name": "ducky",
+      "profileImg": "ducky.jpg"
     },
     "time": "11:20"
   },
@@ -13,9 +13,9 @@
     "id": 2,
     "text": "프론트",
     "user": {
-      "id": 1,
-      "name": "krkorklo",
-      "profileImg": "krkorklo.jpg"
+      "id": 2,
+      "name": "ducky",
+      "profileImg": "ducky.jpg"
     },
     "time": "11:21"
   },
@@ -23,9 +23,9 @@
     "id": 3,
     "text": "짱이지♡",
     "user": {
-      "id": 2,
-      "name": "ducky",
-      "profileImg": "ducky.jpg"
+      "id": 1,
+      "name": "krkorklo",
+      "profileImg": "krkorklo.jpg"
     },
     "time": "11:41"
   }

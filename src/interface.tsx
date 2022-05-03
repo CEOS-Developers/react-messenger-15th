@@ -43,3 +43,8 @@ export interface IUserAction {
   type: "TOGGLE_USER";
   currentIdx: number;
 }
+
+export interface IAlert {
+  setVisibleAlert: React.Dispatch<boolean>;
+  value: string;
+}

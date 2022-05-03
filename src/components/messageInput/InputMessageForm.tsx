@@ -1,18 +1,20 @@
 import useInput from "hooks/useInput";
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import useMessage from "hooks/useMessage";
 import InputEmoticon from "./InputEmoticon";
+import Alert from "components/Alert";
 
 const InputMessageForm = () => {
   const { text, handleTextChange, resetText } = useInput("");
   const { addMessage } = useMessage();
+  const [visibleAlert, setVisibleAlert] = useState(false);
 
   // 메시지 전송
   const _addInputMessage = (e: React.FormEvent): void => {
     e.preventDefault();
 
-    if (!text.trim()) alert("메시지를 입력해주세요");
+    if (!text.trim()) setVisibleAlert(true);
     else {
       addMessage(text);
     }
@@ -27,6 +29,12 @@ const InputMessageForm = () => {
 
   return (
     <InputForm onSubmit={_addInputMessage}>
+      {visibleAlert && (
+        <Alert
+          setVisibleAlert={setVisibleAlert}
+          value="메시지를 입력해주세요"
+        />
+      )}
       <InputEmoticon addEmoticonMessage={addEmoticonMessage} />
       <Input
         placeholder="메시지를 입력하세요"
@@ -64,6 +72,11 @@ const InputButton = styled.button`
   border: none;
   margin-left: 10px;
   cursor: pointer;
+  padding-top: 6px;
+  :hover {
+    opacity: 0.7;
+    transition: 0.15s;
+  }
 `;
 
 export default InputMessageForm;
