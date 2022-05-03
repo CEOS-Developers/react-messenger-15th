@@ -1,5 +1,15 @@
+import { ChatRoomHeader } from './components/chatroom/ChatRoomHeader';
+import { ChatRoomMain } from './components/chatroom/ChatRoomMain';
+import { ChatRoomForm } from './components/chatroom/ChatRoomForm';
+
 function App() {
-  return <div className="App">test</div>;
+  return (
+    <>
+      <ChatRoomHeader />
+      <ChatRoomMain />
+      <ChatRoomForm />
+    </>
+  );
 }
 
 export default App;
