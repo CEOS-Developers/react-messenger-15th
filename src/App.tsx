@@ -18,7 +18,7 @@ export function App() {
 const Screen = styled.div`
   width: 360px;
   height: 600px;
-  margin-top: 80px;
+  margin-top: 20%;
 
   display: flex;
   flex-direction: column;

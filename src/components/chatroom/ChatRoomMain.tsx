@@ -1,3 +1,9 @@
+import styled from 'styled-components';
+
 export function ChatRoomMain() {
-  return <div>ChatRoomMain</div>;
+  return <ChatRoomMainBlock>main</ChatRoomMainBlock>;
 }
+
+const ChatRoomMainBlock = styled.div`
+  height: 70%;
+`;
