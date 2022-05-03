@@ -1,5 +1,10 @@
-function App() {
-  return <div>15기 파이팅 💖</div>;
-}
+import MessengerBox from './components/MessengerBox';
 
+const App = () => {
+  return (
+    <>
+      <MessengerBox />
+    </>
+  );
+};
 export default App;

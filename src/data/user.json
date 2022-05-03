@@ -1,11 +1,13 @@
 [
   {
     "userId": "me",
-    "userName": "chaaerim"
+    "userName": "chaaerim",
+    "userProfile": "me.jpeg"
   },
 
   {
     "userId": "friend",
-    "userName": "PeterParker"
+    "userName": "PeterParker",
+    "userProfile": "friend.JPG"
   }
 ]

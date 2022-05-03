@@ -1,4 +1,3 @@
-import MessengerInput from './Messengerinput';
 import UserNav from './UserNav';
 import { useState } from 'react';
 import user from '../data/user.json';
@@ -16,11 +15,10 @@ const MessengerBox = () => {
   };
 
   const [text, setText] = useState(message);
+  console.log(text);
   return (
     <div>
       <UserNav currentUser={currentUser} switchUser={switchUser} />
-      <MessengerList text={text}></MessengerList>
-      <MessengerInput />
     </div>
   );
 };
