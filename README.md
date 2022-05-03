@@ -1,169 +1,46 @@
-### Technical Features
+# Getting Started with Create React App
 
-https://kimdabin.tistory.com/entry/Reactjs-ESLint%EC%99%80-Prettier%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-React-%ED%99%98%EA%B2%BD-%EC%84%A4%EC%A0%95-VSCode
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Available Scripts
 
+In the project directory, you can run:
 
-### Library
+### `npm start`
 
-* CRA
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-```shell
-npx create-react-app . --template typescript
-```
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-* TS 환경 구성
+### `npm test`
 
-```shell
-npm i -D typescript @babel/core @babel/preset-env @babel/preset-typescript @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint prettier eslint-plugin-prettier
-```
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
+### `npm run build`
 
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-```html
-// index.html
+### `npm run eject`
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <!-- <link rel="icon" href="%PUBLIC_URL%/favicon.ico" /> -->
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <!-- <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" /> -->
-    <title>React App</title>
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
-</html>
-```
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-```.eslintignore
-// .eslintignore
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-node_modules
-dist
-```
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-```js
-// .eslintrc.js
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-module.exports = {
-  root: true,
-  env: {
-    browser: true,
-    node: true,
-  },
-  extends: [
-    'eslint:recommended',
-    'plugin:@typescript-eslint/eslint-recommended',
-    'plugin:@typescript-eslint/recommended',
-  ],
-  plugins: ['prettier', '@typescript-eslint'],
-  rules: {
-    'prettier/prettier': [
-      'error',
-      {
-        trailingComma: 'es5',
-        tabWidth: 2,
-        semi: true,
-        singleQuote: true,
-        useTabs: false,
-        printWidth: 80,
-        bracketSpacing: true,
-        arrowParens: 'avoid',
-      },
-    ],
-  },
-  parserOptions: {
-    parser: '@typescript-eslint/parser',
-  },
-};
-```
+## Learn More
 
-```json
-// pakage.json
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-{
-  "name": "react-messenger-15th",
-  "version": "1.0.0",
-  "main": "index.js",
-  "description": "CEOS 15th FE Study",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "^13.1.1",
-    "@testing-library/user-event": "^13.5.0",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
-  },
-  "keywords": [],
-  "author": "Sungwoo Shin",
-  "license": "MIT",
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "tsc",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "@babel/core": "^7.17.10",
-    "@babel/preset-env": "^7.17.10",
-    "@babel/preset-typescript": "^7.16.7",
-    "@typescript-eslint/eslint-plugin": "^5.21.0",
-    "@typescript-eslint/parser": "^5.21.0",
-    "eslint": "^8.14.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "prettier": "^2.6.2",
-    "typescript": "^4.6.4"
-  }
-}
-```
-
-```json
-// tsconfig.json
-
-{
-  "compilerOptions": {
-    "target": "ES5",
-    "module": "CommonJS",
-    "strict": true,
-    "esModuleInterop": true,
-    "outDir": "./dist",
-    "allowJs": true,
-    "moduleResolution": "Node",
-    "lib": ["ES2015", "DOM", "DOM.Iterable"],
-    "noImplicitAny": true
-  },
-  "include": ["./src/**/*"]
-}
-```
-
+To learn React, check out the [React documentation](https://reactjs.org/).

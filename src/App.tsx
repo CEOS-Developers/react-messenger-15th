@@ -1,10 +1,14 @@
-import React from 'react';
-
 function App() {
-  const test:  string = 'hello world';
+  const test: any = 'hello';
 
   return (
-    <div>Clean</div>
+    <>
+      <div>Clean</div>
+      <div>Clean</div>
+      <div>Clean</div>
+      <div>Clean</div>
+      <div>Clean</div>
+    </>
   );
 }
 
