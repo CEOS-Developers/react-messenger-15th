@@ -1,22 +1,42 @@
 {
     "rooms": [
         {
-            "roomId": "0",
-            "user": [{ "userId:": "0" }, { "userId:": "10" }],
+            "roomId": 0,
+            "user": [{ "userId": 0 }, { "userId": 10 }],
             "chat": [
                 {
-                    "userId": "10",
+                    "userId": 10,
                     "content": "hi 에이치아이",
                     "date": "",
                     "like": false,
-                    "chatId": "000000"
+                    "chatId": 100000
                 },
                 {
-                    "userId": "10",
+                    "userId": 10,
                     "content": "hello 에이치이엘엘오",
                     "date": "",
                     "like": false,
-                    "chatId": "000001"
+                    "chatId": 100001
+                }
+            ]
+        },
+        {
+            "roomId": 1,
+            "user": [{ "userId": 0 }, { "userId": 11 }],
+            "chat": [
+                {
+                    "userId": 11,
+                    "content": "채팅 데이터",
+                    "date": "",
+                    "like": false,
+                    "chatId": 100000
+                },
+                {
+                    "userId": 11,
+                    "content": "두번째입니다",
+                    "date": "",
+                    "like": false,
+                    "chatId": 100001
                 }
             ]
         }

@@ -8,7 +8,7 @@ function App() {
             <GlobalStyle />
             <RecoilRoot>
                 <Main>
-                    <ChatRoom roomId={'0'} />
+                    <ChatRoom roomId={0} />
                 </Main>
             </RecoilRoot>
         </>

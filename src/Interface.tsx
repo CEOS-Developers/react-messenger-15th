@@ -1,20 +1,20 @@
 export interface ChatType {
-    userId: string;
+    userId: number;
     content: string;
     date: string;
     like: boolean;
-    chatId: string;
+    chatId: number;
 }
 export interface ChatDataType {
-    roomId: string;
+    roomId: number;
     user: {
-        'userId:': string;
+        userId: number;
     }[];
     chat: ChatType[];
 }
 
 export interface UserType {
-    userId: string;
+    userId: number;
     userName: string;
     profileImage: string;
     statusMessage: string;

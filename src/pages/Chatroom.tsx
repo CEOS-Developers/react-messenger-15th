@@ -1,7 +1,7 @@
 import ChatItem from '../components/chatroom/ChatItem';
 import { ChatType } from '../Interface';
 import useApi from '../hooks/useApi';
-const ChatRoom = ({ roomId }: { roomId: string }) => {
+const ChatRoom = ({ roomId }: { roomId: number }) => {
     const { getChats } = useApi();
     const chats = getChats(roomId);
     return (
