@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import { ChatRoomHeader } from '../components/chatroom/ChatRoomHeader';
 import { ChatRoomMain } from '../components/chatroom/ChatRoomMain';
@@ -7,20 +7,20 @@ import { ChatRoomForm } from '../components/chatroom/ChatRoomForm';
 import chats from '../assets/chats.json';
 
 export function ChatRoom() {
-  const initialReceiverUserId = 'user1';
-  const [receiverUserId, setReceiverUserId] = useState<string>(
-    initialReceiverUserId
-  );
+  const tmpReceiverUserId = 'user1';
+  const [receiverUserId, setReceiverUserId] =
+    useState<string>(tmpReceiverUserId);
 
-  const filteredChats = chats.filter((user) => user.userId === 'user1');
+  // >
+  const filteredChats = chats.filter(
+    (user) => user.userId === tmpReceiverUserId
+  );
   const [chatList, setChatList] = useState(filteredChats[0]); // [0]: msg
 
   // const scrollRef = useRef() as React.MutableRefObject<HTMLDivElement>;
-
   // useEffect(() => {
   //   scrollRef.current.scrollTo(0, scrollRef.current.scrollHeight);
   // }, [chatList]);
-
   // scrollRef.current.scrollHeight
   // https://kyounghwan01.github.io/blog/TS/object-null/#%E1%84%8B%E1%85%A8%E1%84%89%E1%85%B5
 

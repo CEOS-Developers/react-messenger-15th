@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import styled from 'styled-components';
-
 import { AiOutlineLeft } from 'react-icons/ai';
 
 import me from '../../assets/me.json';
@@ -8,24 +7,29 @@ import friends from '../../assets/friends.json';
 
 type CharRoomHeaderProps = {
   receiverUserId: string;
-  setReceiverUserId: (currentUserId: string) => void;
+  setReceiverUserId: (receiverUserId: string) => void;
 };
 
 export function ChatRoomHeader({
   receiverUserId,
   setReceiverUserId,
 }: CharRoomHeaderProps) {
-  const user = friends.filter((friend) => friend.userId === 'user1')[0]; // [0]: userId
-  const [currentUserName, setCurrentUserName] = useState(user.userName);
+  // tmp receiver
+  const tmpReceiverUserId = 'user1';
+  const receiver = friends.filter(
+    (friend) => friend.userId === tmpReceiverUserId
+  )[0];
+  const [receiverUserName, setReceiverUserName] = useState(receiver.userName);
 
-  const handleToggleUser = () => {
+  // receriverUserId
+  const handleToggleReceiver = () => {
     receiverUserId === 'user0'
       ? setReceiverUserId('user1')
       : setReceiverUserId('user0');
 
     receiverUserId === 'user0'
-      ? setCurrentUserName(user.userName)
-      : setCurrentUserName(me.userName);
+      ? setReceiverUserName(receiver.userName)
+      : setReceiverUserName(me.userName);
   };
 
   return (
@@ -34,10 +38,10 @@ export function ChatRoomHeader({
         <AiOutlineLeft />
       </Button>
 
-      <ProfileWrapper onClick={handleToggleUser}>
+      <ProfileWrapper onClick={handleToggleReceiver}>
         <Img src={`${process.env.PUBLIC_URL}/imgs/${receiverUserId}.jpg`} />
         <TextWrapper>
-          <CurrentUserName>{currentUserName}</CurrentUserName>
+          <CurrentUserName>{receiverUserName}</CurrentUserName>
           <Typing>To</Typing>
         </TextWrapper>
       </ProfileWrapper>
