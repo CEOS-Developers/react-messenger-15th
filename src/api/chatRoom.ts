@@ -28,7 +28,6 @@ export const postMessage = (roomId: number, MessageObj: ChatType, chatData: Chat
     const [chatObj] = chatData.filter((room) => room.roomId === roomId);
 
     const newChatObj: ChatDataType = { ...chatObj, chat: [...chatObj.chat, MessageObj] };
-    console.log(chatData, chatObj, newChatObj);
     setChatData(chatData.map((room) => (room.roomId === roomId ? newChatObj : room)));
     return { status: 200 };
 };

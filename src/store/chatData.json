@@ -7,14 +7,14 @@
                 {
                     "userId": 10,
                     "content": "hi 에이치아이",
-                    "date": "",
+                    "date": "2022-05-04T19:11:18+09:00",
                     "like": false,
                     "chatId": "example1"
                 },
                 {
                     "userId": 10,
                     "content": "hello 에이치이엘엘오",
-                    "date": "",
+                    "date": "2022-05-04T19:11:23+09:00",
                     "like": false,
                     "chatId": "example2"
                 }
@@ -27,16 +27,16 @@
                 {
                     "userId": 11,
                     "content": "채팅 데이터",
-                    "date": "",
+                    "date": "2022-05-04T22:11:18+09:00",
                     "like": false,
                     "chatId": "example3"
                 },
                 {
                     "userId": 11,
                     "content": "두번째입니다",
-                    "date": "",
+                    "date": "2022-05-04T22:12:23+09:00",
                     "like": false,
-                    "chatId": "example4"
+                    "chatId": "example3"
                 }
             ]
         }
