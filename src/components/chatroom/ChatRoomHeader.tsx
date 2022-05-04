@@ -1,18 +1,44 @@
+import { useState } from 'react';
 import styled from 'styled-components';
+
 import { AiOutlineLeft } from 'react-icons/ai';
 
-export function ChatRoomHeader() {
+import me from '../../assets/me.json';
+import friends from '../../assets/friends.json';
+
+type CharRoomHeaderProps = {
+  currentUserId: string;
+  setCurrentUserId: (currentUserId: string) => void;
+};
+
+export function ChatRoomHeader({
+  currentUserId,
+  setCurrentUserId,
+}: CharRoomHeaderProps) {
+  const user = friends.filter((friend) => friend.userId === 'user1')[0]; // [0]: userId
+  const [currentUserName, setCurrentUserName] = useState(user.userName);
+
+  const handleToggleUser = () => {
+    currentUserId === 'user0'
+      ? setCurrentUserId('user1')
+      : setCurrentUserId('user0');
+
+    currentUserId === 'user0'
+      ? setCurrentUserName(user.userName)
+      : setCurrentUserName(me.userName);
+  };
+
   return (
     <ChatRoomHeaderBlock>
       <Button>
         <AiOutlineLeft />
       </Button>
 
-      <ProfileWrapper>
-        <Img />
+      <ProfileWrapper onClick={handleToggleUser}>
+        <Img src={`${process.env.PUBLIC_URL}/imgs/${currentUserId}.jpg`} />
         <TextWrapper>
-          <CurrentUserName>currentUserName</CurrentUserName>
-          <Typing>Typing...</Typing>
+          <CurrentUserName>{currentUserName}</CurrentUserName>
+          <Typing>To</Typing>
         </TextWrapper>
       </ProfileWrapper>
 
@@ -28,7 +54,7 @@ const ChatRoomHeaderBlock = styled.header`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 
   border-bottom: 1px solid #e2e2e2;
 

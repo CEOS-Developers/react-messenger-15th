@@ -18,10 +18,26 @@ export function ChatRoomMain() {
 }
 
 const ChatRoomMainBlock = styled.div`
-  height: 70%;
-
   width: 100%;
+  height: 75%;
+
   overflow: auto;
+
+  &::-webkit-scrollbar {
+    width: 20px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #e2e2e2;
+    background-clip: padding-box;
+    border-radius: 20px;
+    border: 8px solid transparent;
+  }
+
+  /* height: 70%; */
+
+  /* width: 100%; */
+  /* overflow: auto; */
 
   display: flex;
   flex-direction: column;

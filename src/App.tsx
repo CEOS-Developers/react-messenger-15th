@@ -1,28 +1,21 @@
-import styled from 'styled-components';
-import { ChatRoomHeader } from './components/chatroom/ChatRoomHeader';
-import { ChatRoomMain } from './components/chatroom/ChatRoomMain';
-import { ChatRoomForm } from './components/chatroom/ChatRoomForm';
+import { useEffect } from 'react';
+import { ChatRoom } from './pages/ChatRoom';
 
 export function App() {
+  const setResponsiveVh = () => {
+    document.documentElement.style.setProperty(
+      '--vh',
+      `${window.innerHeight * 0.01}px`
+    );
+  };
+
+  useEffect(() => {
+    setResponsiveVh();
+  });
+
   return (
     <>
-      <Screen>
-        <ChatRoomHeader />
-        <ChatRoomMain />
-        <ChatRoomForm />
-      </Screen>
+      <ChatRoom />
     </>
   );
 }
-
-const Screen = styled.div`
-  width: 360px;
-  height: 600px;
-  margin-top: 20%;
-
-  display: flex;
-  flex-direction: column;
-
-  border-radius: 20px;
-  box-shadow: 0 0 25px rgba(105, 85, 85, 0.5);
-`;
