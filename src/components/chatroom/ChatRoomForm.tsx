@@ -1,11 +1,61 @@
 import styled from 'styled-components';
 import { AiOutlineDownCircle } from 'react-icons/ai';
+import { useState } from 'react';
 
-export function ChatRoomForm() {
+const useInput = (initialText: any) => {
+  const [inputText, setInputText] = useState(initialText);
+
+  const handleInputChange = (e: any) => {
+    setInputText(e.target.value);
+  };
+
+  const reset = () => {
+    setInputText('');
+  };
+
+  return [inputText, handleInputChange, reset];
+};
+
+type ChatRoomFormProps = {
+  currentUserId: string;
+  chatList: any;
+  setChatList: any;
+};
+
+export function ChatRoomForm({
+  currentUserId,
+  chatList,
+  setChatList,
+}: ChatRoomFormProps) {
+  const [inputText, handleInputChange, reset] = useInput('');
+
+  const handleAddNewMsg = (e: any) => {
+    e.preventDefault();
+
+    if (inputText) {
+      const msg = {
+        userId: currentUserId,
+        message: inputText,
+        sentAt: Date.now(),
+      };
+
+      setChatList({ userId: 'user1', chats: [...chatList.chats, msg] });
+      reset();
+    } else {
+      alert('Please enter a message');
+    }
+  };
+
   return (
     <ChatRoomFormBlock>
-      <Input></Input>
-      <Button>
+      <Input
+        value={inputText}
+        onChange={handleInputChange}
+        placeholder="Message..."
+        spellCheck={false}
+      ></Input>
+
+      <Button onClick={handleAddNewMsg}>
         <AiOutlineDownCircle />
       </Button>
     </ChatRoomFormBlock>

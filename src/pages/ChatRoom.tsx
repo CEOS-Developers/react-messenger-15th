@@ -38,6 +38,12 @@ export function ChatRoom() {
   const filteredChats = chats.filter((user) => user.userId === 'user1');
   const [chatList, setChatList] = useState(filteredChats[0]); // [0]: msg
 
+  // const scrollRef = useRef() as React.MutableRefObject<HTMLDivElement>;
+
+  // useEffect(() => {
+  //   scrollRef.current.scrollTo(0, scrollRef.current.scrollHeight);
+  // }, [chatList]);
+
   // scrollRef.current.scrollHeight
   // https://kyounghwan01.github.io/blog/TS/object-null/#%E1%84%8B%E1%85%A8%E1%84%89%E1%85%B5
 
@@ -47,8 +53,13 @@ export function ChatRoom() {
         currentUserId={currentUserId}
         setCurrentUserId={setCurrentUserId}
       />
-      <ChatRoomMain />
-      <ChatRoomForm />
+      {/* <ChatRoomMain ref={scrollRef} chatList={chatList} /> */}
+      <ChatRoomMain chatList={chatList} />
+      <ChatRoomForm
+        currentUserId={currentUserId}
+        chatList={chatList}
+        setChatList={setChatList}
+      />
     </ChatRoomBlock>
   );
 }

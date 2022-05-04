@@ -1,18 +1,41 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export function ChatRoomMain() {
+import me from '../../assets/me.json';
+import friends from '../../assets/friends.json';
+import { GetTime } from '../../utils/GetTime';
+
+type ChatRoomMainProps = {
+  // ref: any;
+  chatList: any;
+};
+
+interface Chat {
+  userId: any;
+  sentAt: any;
+  message: any;
+}
+
+export function ChatRoomMain({ chatList }: ChatRoomMainProps) {
+  const userId = 'user1';
+  const userName = friends.filter((friend) => friend.userId === userId)[0]
+    .userName;
+
   return (
     <ChatRoomMainBlock>
-      <ChatItem>
-        <Img />
-        <TextWrapper>
-          <UserName>UserName</UserName>
-          <InfoWrapper>
-            <Bubble>Bubble</Bubble>
-            <Time>Time</Time>
-          </InfoWrapper>
-        </TextWrapper>
-      </ChatItem>
+      {chatList.chats.map(({ userId, sentAt, message }: Chat) => (
+        <ChatItem key={sentAt} sender={userId}>
+          <Img src={`${process.env.PUBLIC_URL}/imgs/${userId}.jpg`} />
+          <TextWrapper>
+            <UserName sender={userId}>
+              {userId === 'user0' ? me.userName : userName}
+            </UserName>
+            <InfoWrapper sender={userId}>
+              <Bubble sender={userId}>{message}</Bubble>
+              <Time>{GetTime(sentAt)}</Time>
+            </InfoWrapper>
+          </TextWrapper>
+        </ChatItem>
+      ))}
     </ChatRoomMainBlock>
   );
 }
@@ -43,11 +66,13 @@ const ChatRoomMainBlock = styled.div`
   flex-direction: column;
 `;
 
-const ChatItem = styled.div`
+const ChatItem = styled.div<{ sender: any }>`
   max-width: 95%;
   margin: 4%;
 
   display: flex;
+  flex-direction: ${({ sender }: any) =>
+    sender === 'user0' ? 'row-reverse' : 'row'};
   justify-content: space-between;
 `;
 
@@ -66,22 +91,26 @@ const TextWrapper = styled.div`
   flex-direction: column;
 `;
 
-const UserName = styled.div`
+const UserName = styled.div<{ sender: any }>`
   width: 100%;
 
   font-size: 14px;
   color: #343a40;
 
   display: flex;
+  flex-direction: ${({ sender }: any) =>
+    sender === 'user0' ? 'row-reverse' : 'row'};
 `;
 
-const InfoWrapper = styled.div`
+const InfoWrapper = styled.div<{ sender: any }>`
   width: 100%;
 
   display: flex;
+  flex-direction: ${({ sender }: any) =>
+    sender === 'user0' ? 'row-reverse' : 'row'};
 `;
 
-const Bubble = styled.div`
+const Bubble = styled.div<{ sender: any }>`
   padding: 3%;
   margin-top: 2.5%;
 
@@ -89,6 +118,21 @@ const Bubble = styled.div`
   line-height: 18px;
 
   display: flex;
+
+  ${({ sender }: any) =>
+    sender === 'user0'
+      ? css`
+          flex-direction: row-reverse;
+          color: #ffffff;
+          background: #1986fc;
+          border-radius: 12px 1px 12px 12px;
+        `
+      : css`
+          flex-direction: 'row';
+          color: #000000;
+          background: #f1f1f3;
+          border-radius: 1px 12px 12px 12px;
+        `}
 `;
 
 const Time = styled.div`
