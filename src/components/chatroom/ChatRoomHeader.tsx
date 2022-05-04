@@ -7,23 +7,23 @@ import me from '../../assets/me.json';
 import friends from '../../assets/friends.json';
 
 type CharRoomHeaderProps = {
-  currentUserId: string;
-  setCurrentUserId: (currentUserId: string) => void;
+  receiverUserId: string;
+  setReceiverUserId: (currentUserId: string) => void;
 };
 
 export function ChatRoomHeader({
-  currentUserId,
-  setCurrentUserId,
+  receiverUserId,
+  setReceiverUserId,
 }: CharRoomHeaderProps) {
   const user = friends.filter((friend) => friend.userId === 'user1')[0]; // [0]: userId
   const [currentUserName, setCurrentUserName] = useState(user.userName);
 
   const handleToggleUser = () => {
-    currentUserId === 'user0'
-      ? setCurrentUserId('user1')
-      : setCurrentUserId('user0');
+    receiverUserId === 'user0'
+      ? setReceiverUserId('user1')
+      : setReceiverUserId('user0');
 
-    currentUserId === 'user0'
+    receiverUserId === 'user0'
       ? setCurrentUserName(user.userName)
       : setCurrentUserName(me.userName);
   };
@@ -35,7 +35,7 @@ export function ChatRoomHeader({
       </Button>
 
       <ProfileWrapper onClick={handleToggleUser}>
-        <Img src={`${process.env.PUBLIC_URL}/imgs/${currentUserId}.jpg`} />
+        <Img src={`${process.env.PUBLIC_URL}/imgs/${receiverUserId}.jpg`} />
         <TextWrapper>
           <CurrentUserName>{currentUserName}</CurrentUserName>
           <Typing>To</Typing>

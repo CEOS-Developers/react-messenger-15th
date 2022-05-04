@@ -17,13 +17,13 @@ const useInput = (initialText: any) => {
 };
 
 type ChatRoomFormProps = {
-  currentUserId: string;
+  receiverUserId: string;
   chatList: any;
   setChatList: any;
 };
 
 export function ChatRoomForm({
-  currentUserId,
+  receiverUserId,
   chatList,
   setChatList,
 }: ChatRoomFormProps) {
@@ -34,7 +34,7 @@ export function ChatRoomForm({
 
     if (inputText) {
       const msg = {
-        userId: currentUserId,
+        userId: receiverUserId,
         message: inputText,
         sentAt: Date.now(),
       };

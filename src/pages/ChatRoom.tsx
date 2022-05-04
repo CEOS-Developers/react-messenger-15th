@@ -6,34 +6,11 @@ import { ChatRoomForm } from '../components/chatroom/ChatRoomForm';
 
 import chats from '../assets/chats.json';
 
-// {
-//   "userId": "user1",
-//   "chats": [
-//     {
-//       "userId": "user1",
-//       "message": "우리의 색은 gray and blue 엄지손가락으로 말풍선을 띄워",
-//       "sentAt": 1644809969387
-//     },
-//     {
-//       "userId": "user0",
-//       "message": "띄어쓰기없이보낼게사랑인것같애",
-//       "sentAt": 1644809969389
-//     },
-//     {
-//       "userId": "user0",
-//       "message": "백만 송이 장미꽃을 나랑 피워 볼래?",
-//       "sentAt": 1644809969390
-//     },
-//     {
-//       "userId": "user1",
-//       "message": "꽃잎의 색은 우리 마음 가는 대로 칠해 시들 때도 예쁘게",
-//       "sentAt": 1644809969391
-//     }
-//   ]
-// },
-
 export function ChatRoom() {
-  const [currentUserId, setCurrentUserId] = useState<string>('user1');
+  const initialReceiverUserId = 'user1';
+  const [receiverUserId, setReceiverUserId] = useState<string>(
+    initialReceiverUserId
+  );
 
   const filteredChats = chats.filter((user) => user.userId === 'user1');
   const [chatList, setChatList] = useState(filteredChats[0]); // [0]: msg
@@ -50,13 +27,13 @@ export function ChatRoom() {
   return (
     <ChatRoomBlock>
       <ChatRoomHeader
-        currentUserId={currentUserId}
-        setCurrentUserId={setCurrentUserId}
+        receiverUserId={receiverUserId}
+        setReceiverUserId={setReceiverUserId}
       />
       {/* <ChatRoomMain ref={scrollRef} chatList={chatList} /> */}
       <ChatRoomMain chatList={chatList} />
       <ChatRoomForm
-        currentUserId={currentUserId}
+        receiverUserId={receiverUserId}
         chatList={chatList}
         setChatList={setChatList}
       />
@@ -65,17 +42,20 @@ export function ChatRoom() {
 }
 
 const ChatRoomBlock = styled.div`
-  width: 350px;
-  height: 700px;
-
-  border: 1px solid #e2e2e2;
-
+  // Desktop
   @media screen and (min-width: 768px) {
-    margin-top: 10%;
+    margin-top: 30%;
+
+    width: 350px;
+    height: 700px;
+
+    border-radius: 20px;
+    box-shadow: 0 0 25px rgba(105, 85, 85, 0.5);
   }
 
+  // Mobile
   @media screen and (max-width: 768px) {
-    width: 100vw;
+    width: 100%;
     height: calc(var(--vh, 1vh) * 100);
   }
 `;
