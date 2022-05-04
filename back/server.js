@@ -1,5 +1,3 @@
-const { Socket } = require('socket.io');
-
 const httpServer = require('http').createServer();
 const io = require('socket.io')(httpServer, {
   cors: {
@@ -7,9 +5,16 @@ const io = require('socket.io')(httpServer, {
     methods: ['GET', 'POST'],
   },
 });
-
+let sockets = [];
+let msgs = [];
 io.on('connection', (socket) => {
-  console.log('connection');
+  socket.join('ceos-15-front');
+  sockets.push(socket);
+  console.log('connection', socket.rooms, sockets.length);
+  socket.on('send', (data) => {
+    msgs.push(data);
+    io.emit('sendBack', msgs);
+  });
 });
 
 httpServer.listen(3065, () => {

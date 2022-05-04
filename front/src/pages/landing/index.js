@@ -37,6 +37,7 @@ const Landing = () => {
             value={input}
             onChange={handleInput}
             placeholder="대화명을 입력해주세요."
+            maxLength="10"
           />
           <button>대화명 입력</button>
         </form>
