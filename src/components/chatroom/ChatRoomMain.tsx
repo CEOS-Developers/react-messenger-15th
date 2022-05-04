@@ -12,7 +12,7 @@ type ChatRoomMainProps = {
 interface Chat {
   userId: any;
   sentAt: any;
-  message: any;
+  msg: any;
 }
 
 export function ChatRoomMain({ chatList }: ChatRoomMainProps) {
@@ -22,7 +22,7 @@ export function ChatRoomMain({ chatList }: ChatRoomMainProps) {
 
   return (
     <ChatRoomMainBlock>
-      {chatList.chats.map(({ userId, sentAt, message }: Chat) => (
+      {chatList.chats.map(({ userId, sentAt, msg }: Chat) => (
         <ChatItem key={sentAt} sender={userId}>
           <Img src={`${process.env.PUBLIC_URL}/imgs/${userId}.jpg`} />
           <TextWrapper>
@@ -30,7 +30,7 @@ export function ChatRoomMain({ chatList }: ChatRoomMainProps) {
               {userId === 'user0' ? me.userName : userName}
             </UserName>
             <InfoWrapper sender={userId}>
-              <Bubble sender={userId}>{message}</Bubble>
+              <Bubble sender={userId}>{msg}</Bubble>
               <Time>{GetTime(sentAt)}</Time>
             </InfoWrapper>
           </TextWrapper>

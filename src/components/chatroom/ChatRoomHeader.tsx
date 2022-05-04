@@ -1,7 +1,6 @@
-import { useState } from 'react';
 import styled from 'styled-components';
+import { useState } from 'react';
 import { HiOutlineChevronLeft, HiOutlineChevronRight } from 'react-icons/hi';
-
 import me from '../../assets/me.json';
 import friends from '../../assets/friends.json';
 
@@ -15,6 +14,7 @@ export function ChatRoomHeader({
   setReceiverUserId,
 }: CharRoomHeaderProps) {
   const tmpReceiverUserId = 'user1';
+
   const receiver = friends.filter(
     (friend) => friend.userId === tmpReceiverUserId
   )[0];
@@ -32,9 +32,9 @@ export function ChatRoomHeader({
 
   return (
     <ChatRoomHeaderBlock>
-      <Button>
+      <Btn>
         <HiOutlineChevronLeft />
-      </Button>
+      </Btn>
       <ProfileWrapper onClick={handleToggleReceiver}>
         <img src={`${process.env.PUBLIC_URL}/imgs/${receiverUserId}.jpg`} />
         <ReceiverUserNameWrapper>
@@ -42,7 +42,7 @@ export function ChatRoomHeader({
           <HiOutlineChevronRight />
         </ReceiverUserNameWrapper>
       </ProfileWrapper>
-      <Button />
+      <Btn />
     </ChatRoomHeaderBlock>
   );
 }
@@ -102,7 +102,7 @@ const ReceiverUserNameWrapper = styled.div`
   }
 `;
 
-const Button = styled.div`
+const Btn = styled.div`
   width: 10%;
   height: 100%;
   margin-left: 3%;

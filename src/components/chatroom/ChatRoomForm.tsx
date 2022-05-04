@@ -1,25 +1,12 @@
 import styled from 'styled-components';
 import { AiOutlineDownCircle } from 'react-icons/ai';
-import { useState } from 'react';
-
-const useInput = (initialText: any) => {
-  const [inputText, setInputText] = useState(initialText);
-
-  const handleInputChange = (e: any) => {
-    setInputText(e.target.value);
-  };
-
-  const reset = () => {
-    setInputText('');
-  };
-
-  return [inputText, handleInputChange, reset];
-};
+import { chats } from '../../types/index';
+import { useInput } from '../../hooks/useInput';
 
 type ChatRoomFormProps = {
   receiverUserId: string;
-  chatList: any;
-  setChatList: any;
+  chatList: chats;
+  setChatList: (chatList: chats) => void;
 };
 
 export function ChatRoomForm({
@@ -27,37 +14,35 @@ export function ChatRoomForm({
   chatList,
   setChatList,
 }: ChatRoomFormProps) {
-  const [inputText, handleInputChange, reset] = useInput('');
+  const [inputValue, handleInputChange, resetInput] = useInput('');
 
-  const handleAddNewMsg = (e: any) => {
+  const handleSubmitBtnClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
+    if (!inputValue) alert('Please enter a message');
 
-    if (inputText) {
-      const msg = {
-        userId: receiverUserId,
-        message: inputText,
-        sentAt: Date.now(),
-      };
-
-      setChatList({ userId: 'user1', chats: [...chatList.chats, msg] });
-      reset();
-    } else {
-      alert('Please enter a message');
-    }
+    const tmpReceiverUserId = 'user1';
+    const newMsg = {
+      userId: receiverUserId,
+      msg: inputValue,
+      timestamp: Date.now(),
+    };
+    setChatList({
+      userId: tmpReceiverUserId,
+      chats: [...chatList.chats, newMsg],
+    });
+    resetInput();
   };
 
   return (
     <ChatRoomFormBlock>
-      <Input
-        value={inputText}
+      <input
+        placeholder="Text Message..."
+        value={inputValue}
         onChange={handleInputChange}
-        placeholder="Message..."
-        spellCheck={false}
-      ></Input>
-
-      <Button onClick={handleAddNewMsg}>
+      ></input>
+      <button onClick={handleSubmitBtnClick}>
         <AiOutlineDownCircle />
-      </Button>
+      </button>
     </ChatRoomFormBlock>
   );
 }
@@ -72,28 +57,28 @@ const ChatRoomFormBlock = styled.form`
   justify-content: space-evenly;
 
   border-top: 1px solid #e2e2e2;
-`;
 
-const Input = styled.input`
-  width: 60%;
-  height: 50%;
-  padding: 0 4%;
+  input {
+    width: 60%;
+    height: 50%;
+    padding: 0 4%;
 
-  outline: none;
-  font-size: 12px;
+    outline: none;
+    font-size: 12px;
 
-  border: 1px solid #d2d2d2;
-  border-radius: 12px;
-`;
+    border: 1px solid #d2d2d2;
+    border-radius: 12px;
+  }
 
-const Button = styled.button`
-  width: 10%;
-  height: 50%;
+  button {
+    width: 10%;
+    height: 50%;
 
-  border: none;
-  background: none;
+    border: none;
+    background: none;
 
-  :hover {
-    cursor: pointer;
+    :hover {
+      cursor: pointer;
+    }
   }
 `;

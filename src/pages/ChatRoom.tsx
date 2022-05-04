@@ -8,14 +8,11 @@ import chats from '../assets/chats.json';
 
 export function ChatRoom() {
   const tmpReceiverUserId = 'user1';
-  const [receiverUserId, setReceiverUserId] =
-    useState<string>(tmpReceiverUserId);
-
-  // >
-  const filteredChats = chats.filter(
+  const [receiverUserId, setReceiverUserId] = useState(tmpReceiverUserId);
+  const chatsWithReceiver = chats.filter(
     (user) => user.userId === tmpReceiverUserId
-  );
-  const [chatList, setChatList] = useState(filteredChats[0]); // [0]: msg
+  )[0];
+  const [chatList, setChatList] = useState(chatsWithReceiver);
 
   // const scrollRef = useRef() as React.MutableRefObject<HTMLDivElement>;
   // useEffect(() => {
