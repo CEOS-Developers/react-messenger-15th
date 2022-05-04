@@ -3,7 +3,7 @@ export interface ChatType {
     content: string;
     date: string;
     like: boolean;
-    chatId: number;
+    chatId: string;
 }
 export interface ChatDataType {
     roomId: number;

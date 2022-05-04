@@ -9,14 +9,14 @@
                     "content": "hi 에이치아이",
                     "date": "",
                     "like": false,
-                    "chatId": 100000
+                    "chatId": "example1"
                 },
                 {
                     "userId": 10,
                     "content": "hello 에이치이엘엘오",
                     "date": "",
                     "like": false,
-                    "chatId": 100001
+                    "chatId": "example2"
                 }
             ]
         },
@@ -29,14 +29,14 @@
                     "content": "채팅 데이터",
                     "date": "",
                     "like": false,
-                    "chatId": 100000
+                    "chatId": "example3"
                 },
                 {
                     "userId": 11,
                     "content": "두번째입니다",
                     "date": "",
                     "like": false,
-                    "chatId": 100001
+                    "chatId": "example4"
                 }
             ]
         }
