@@ -6,10 +6,10 @@ import { ChatRoomForm } from '../components/chatroom/ChatRoomForm';
 import chats from '../data/chats.json';
 
 export function ChatRoom() {
-  const tmpPartnerUserId = 'user1'; // const { partnerUserId } = useParams();
+  const tmpPartnerUserId = 1; // const { partnerUserId } = useParams();
   const [receiverUserId, setReceiverUserId] = useState(tmpPartnerUserId);
   const ChatsWithPartner = chats.filter(
-    (user) => user.userId === tmpPartnerUserId
+    (user) => parseInt(user.userId) === tmpPartnerUserId
   )[0];
   const [chatList, setChatList] = useState(ChatsWithPartner);
 

@@ -1,59 +1,59 @@
 [
   {
-    "userId": "user1",
+    "userId": "1",
     "chats": [
       {
-        "userId": "user1",
+        "userId": "1",
         "msg": "우리의 색은 gray and blue 엄지손가락으로 말풍선을 띄워",
         "unixTime": 1644809969387
       },
       {
-        "userId": "user0",
+        "userId": "0",
         "msg": "띄어쓰기없이보낼게사랑인것같애",
         "unixTime": 1644809969389
       },
       {
-        "userId": "user0",
+        "userId": "0",
         "msg": "백만 송이 장미꽃을 나랑 피워 볼래?",
         "unixTime": 1644809969390
       },
       {
-        "userId": "user1",
+        "userId": "1",
         "msg": "꽃잎의 색은 우리 마음 가는 대로 칠해 시들 때도 예쁘게",
         "unixTime": 1644809969391
       }
     ]
   },
   {
-    "userId": "user2",
+    "userId": "2",
     "chats": [
       {
-        "userId": "user2",
+        "userId": "2",
         "msg": "모두가 등한시하는 밤 하늘에 뜬 달 곁에 있는 별처럼 깨 있는 나",
         "unixTime": 1644809969392
       },
       {
-        "userId": "user2",
+        "userId": "2",
         "msg": "잠이 든 자에게는 내일이 와 허나 난 내가 먼저 내일을 봐",
         "unixTime": 1644809969393
       },
       {
-        "userId": "user0",
+        "userId": "0",
         "msg": "시간에 뒤쳐지거나 같이 뛰거나 선택하라면 난 신발을 신을 거야",
         "unixTime": 1644809970000
       }
     ]
   },
   {
-    "userId": "user3",
+    "userId": "3",
     "chats": [
       {
-        "userId": "user3",
+        "userId": "3",
         "msg": "ㄱㄴㄱㄴㄱㄴㄱㄴㄱㄴ",
         "unixTime": 1644809969379
       },
       {
-        "userId": "user0",
+        "userId": "0",
         "msg": "킹받네......",
         "unixTime": 1644809969381
       }

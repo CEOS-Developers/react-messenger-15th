@@ -1,10 +1,10 @@
 export interface Chat {
-  userId: string;
+  userId: number;
   msg: string;
   unixTime: number;
 }
 
 export interface Chats extends Chat {
-  userId: string;
+  userId: number;
   chats: Chat[];
 }

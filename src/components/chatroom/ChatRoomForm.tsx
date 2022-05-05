@@ -1,14 +1,13 @@
 import styled, { css } from 'styled-components';
 import { HiOutlineChevronDown } from 'react-icons/hi';
-import { Chats } from '../../types/index';
 import { useInput } from '../../hooks/useInput';
+import { Chats } from '../../types/index';
 import me from '../../data/me.json';
-import { getTimeStamp } from '../../utils/getTimeStamp';
 
 type ChatRoomFormProps = {
-  partnerUserId: string;
-  receiverUserId: string;
-  chatList: any;
+  partnerUserId: number;
+  receiverUserId: number;
+  chatList: Chats;
   setChatList: (chatList: any) => void;
 };
 
@@ -26,7 +25,7 @@ export function ChatRoomForm({
     if (!inputValue) alert('Please enter a message');
 
     let senderUserId;
-    if (receiverUserId == me.userId) senderUserId = partnerUserId;
+    if (receiverUserId == parseInt(me.userId)) senderUserId = partnerUserId;
     else senderUserId = me.userId;
 
     const newMsg = {

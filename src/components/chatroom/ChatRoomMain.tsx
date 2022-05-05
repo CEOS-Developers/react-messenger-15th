@@ -6,13 +6,13 @@ import friends from '../../data/friends.json';
 import { getTimeStamp } from '../../utils/getTimeStamp';
 
 type ChatRoomMainProps = {
-  partnerUserId: string;
+  partnerUserId: number;
   chatList: any;
 };
 
 export function ChatRoomMain({ partnerUserId, chatList }: ChatRoomMainProps) {
   const partner = friends.filter(
-    (friend) => friend.userId === partnerUserId
+    (friend) => parseInt(friend.userId) === partnerUserId
   )[0];
 
   const scrollRef = useRef<HTMLDivElement>(null);

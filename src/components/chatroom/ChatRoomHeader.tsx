@@ -4,9 +4,9 @@ import me from '../../data/me.json';
 import friends from '../../data/friends.json';
 
 type CharRoomHeaderProps = {
-  partnerUserId: string;
-  receiverUserId: string;
-  setReceiverUserId: (receiverUserId: string) => void;
+  partnerUserId: number;
+  receiverUserId: number;
+  setReceiverUserId: (receiverUserId: number) => void;
 };
 
 export function ChatRoomHeader({
@@ -15,15 +15,15 @@ export function ChatRoomHeader({
   setReceiverUserId,
 }: CharRoomHeaderProps) {
   const handleReceiverToggle = () => {
-    if (receiverUserId === me.userId) {
+    if (receiverUserId === parseInt(me.userId)) {
       setReceiverUserId(partnerUserId);
     } else {
-      setReceiverUserId(me.userId);
+      setReceiverUserId(parseInt(me.userId));
     }
   };
 
   const receiver = friends.filter(
-    (friend) => friend.userId === receiverUserId
+    (friend) => parseInt(friend.userId) === receiverUserId
   )[0];
 
   return (
