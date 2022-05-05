@@ -3,6 +3,7 @@ import { useState } from 'react';
 import user from '../data/user.json';
 import message from '../data/message.json';
 import MessengerInput from './MessengerInput';
+import MessageList from './MessageList';
 
 const MessengerBox = () => {
   // 사용자 나부터 시작
@@ -16,10 +17,11 @@ const MessengerBox = () => {
   };
 
   const [textList, setTextList] = useState(message);
-  console.log(textList);
+
   return (
     <div>
       <UserNav currentUser={currentUser} switchUser={switchUser} />
+      <MessageList currentUser={currentUser} textList={textList} />
       <MessengerInput
         currentUser={currentUser}
         textList={textList}

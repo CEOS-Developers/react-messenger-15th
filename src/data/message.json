@@ -1,18 +1,22 @@
 [
   {
     "userId": "me",
+    "userName": "chaaerim",
     "text": "With great power"
   },
   {
     "userId": "me",
+    "userName": "chaaerim",
     "text": "comes great responsibility"
   },
   {
     "userId": "freind",
+    "userName": "PeterParker",
     "text": "Come on,"
   },
   {
     "userId": "freind",
+    "userName": "PeterParker",
     "text": "Peter Tingle!"
   }
 ]
