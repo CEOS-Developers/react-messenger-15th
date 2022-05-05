@@ -9,7 +9,7 @@ const useUser = () => {
     const currentIdx = users.findIndex((user) => user.id === currentUser.id);
     dispatch({
       type: "TOGGLE_USER",
-      currentIdx,
+      currentIdx: (currentIdx + 1) % users.length,
     });
   };
 

@@ -23,7 +23,7 @@ const InputEmoticon = ({ addEmoticonMessage }: IInputEmoticon) => {
   );
 };
 
-const Emoticon = styled.div`
+const Emoticon = styled.section`
   width: 35px;
   margin-left: 15px;
   cursor: pointer;

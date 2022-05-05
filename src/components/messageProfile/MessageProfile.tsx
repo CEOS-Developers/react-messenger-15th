@@ -16,7 +16,6 @@ const MessageProfile = () => {
 };
 
 const Profile = styled.section`
-  height: 100%;
   display: flex;
   align-items: center;
   cursor: pointer;

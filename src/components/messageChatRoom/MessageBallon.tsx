@@ -31,7 +31,6 @@ const MessageBox = styled.section`
   padding-bottom: 10px;
 `;
 const MessageText = styled.p<{ isUser: boolean }>`
-  display: inline-block;
   padding: 10px;
   font-size: 12px;
   margin: 7px;

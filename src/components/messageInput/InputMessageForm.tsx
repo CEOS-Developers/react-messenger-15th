@@ -69,7 +69,6 @@ const InputText = styled.input<{ isMobile: boolean }>`
   }
 `;
 const InputButton = styled.button`
-  font-weight: bold;
   background: none;
   border: none;
   margin-left: 10px;

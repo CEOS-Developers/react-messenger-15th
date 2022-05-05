@@ -32,12 +32,6 @@ const PopoverContainer = styled.section`
   display: flex;
   padding: 10px;
   border-radius: 10px;
-`;
-const EmoticonBox = styled.section`
-  cursor: pointer;
-  & + & {
-    margin-left: 10px;
-  }
   :before {
     border-color: #f1f1f3 transparent;
     border-style: solid;
@@ -47,6 +41,12 @@ const EmoticonBox = styled.section`
     left: 20px;
     position: absolute;
     bottom: -8px;
+  }
+`;
+const EmoticonBox = styled.section`
+  cursor: pointer;
+  & + & {
+    margin-left: 10px;
   }
 `;
 

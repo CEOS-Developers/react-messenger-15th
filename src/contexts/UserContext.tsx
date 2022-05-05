@@ -16,7 +16,7 @@ const reducer = (state: IUserState, action: IUserAction): IUserState => {
     case "TOGGLE_USER":
       return {
         ...state,
-        currentUser: state.users[(action.currentIdx + 1) % state.users.length],
+        currentUser: state.users[action.currentIdx],
       };
     default:
       throw new Error();
