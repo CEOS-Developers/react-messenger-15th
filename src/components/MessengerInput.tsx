@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 
-const MessengerInput = ({ currentUser, textList, setTextList }: any) => {
+const MessengerInput = ({ currentUser, chatList, setChatList }: any) => {
   const [messageInput, setMessageInput] = useState('');
   const handleInputSubmit = (e: React.SyntheticEvent) => {
     if (messageInput) {
@@ -11,7 +11,7 @@ const MessengerInput = ({ currentUser, textList, setTextList }: any) => {
         text: messageInput,
       };
 
-      setTextList([...textList, message]);
+      setChatList([...chatList, message]);
     } else {
       alert('메세지를 입력하세요 ! ');
     }
@@ -21,7 +21,7 @@ const MessengerInput = ({ currentUser, textList, setTextList }: any) => {
     e.preventDefault();
   };
 
-  console.log(textList);
+  console.log(chatList);
   const handleInputChange = (e: any) => {
     setMessageInput(e.target.value);
   };

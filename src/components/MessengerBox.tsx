@@ -16,16 +16,16 @@ const MessengerBox = () => {
       : setCurrentUser(user[0]);
   };
 
-  const [textList, setTextList] = useState(message);
+  const [chatList, setChatList] = useState(message);
 
   return (
     <div>
       <UserNav currentUser={currentUser} switchUser={switchUser} />
-      <MessageList currentUser={currentUser} textList={textList} />
+      <MessageList currentUser={currentUser} chatList={chatList} />
       <MessengerInput
         currentUser={currentUser}
-        textList={textList}
-        setTextList={setTextList}
+        chatList={chatList}
+        setChatList={setChatList}
       />
     </div>
   );

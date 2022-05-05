@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 import SingleMessage from './SingleMessage';
 
-const MessageList = ({ currentUser, textList }: any) => {
+const MessageList = ({ currentUser, chatList }: any) => {
   return (
     <ListContainer>
       <ShowList>
-        {textList.map((chat: any) => (
+        {chatList.map((chat: any) => (
           <SingleMessage currentUser={currentUser} chat={chat} />
         ))}
       </ShowList>
