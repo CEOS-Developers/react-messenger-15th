@@ -36,21 +36,52 @@ const MessengerInput = ({
   console.log(chatList);
 
   return (
-    <form onSubmit={handleInputSubmit}>
-      <InputBox
-        value={messageInput}
-        onChange={handleInputChange}
-        placeholder="Send Message . . ."
-        type="text"
-      />
+    <SubmitForm onSubmit={handleInputSubmit}>
+      <InputBoxWrapper>
+        <InputBox
+          value={messageInput}
+          onChange={handleInputChange}
+          placeholder="Send Message . . ."
+          type="text"
+        />
+      </InputBoxWrapper>
+
       <SendButton>🕸</SendButton>
-    </form>
+    </SubmitForm>
   );
 };
 
-const InputBox = styled.input``;
-const SendButton = styled.button`
-  background-color: transparent;
+export default MessengerInput;
+
+const SubmitForm = styled.form`
+  align-items: center;
+  border-top-style: solid;
+  border-color: #c2bbbb;
+  border-width: 0.08rem;
+  padding: 0;
+  height: 6rem;
+  display: flex;
+  justify-content: space-evenly;
 `;
 
-export default MessengerInput;
+const InputBoxWrapper = styled.div`
+  padding-left: 2rem;
+`;
+
+const InputBox = styled.input`
+  padding-left: 1rem;
+  line-height: 5.5rem;
+  border-color: #c2bbbb;
+  border-width: 0.08rem;
+  border-style: solid;
+  border-radius: 0.5rem;
+  width: 20vw;
+  height: 4.3vh;
+  margin: 0;
+  line-height: 6rem;
+`;
+const SendButton = styled.button`
+  line-height: 6rem;
+  background-color: transparent;
+  font-size: 1.5rem;
+`;

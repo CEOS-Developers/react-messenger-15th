@@ -16,5 +16,9 @@ const MessageList = ({ chatList }: { chatList: IChat[] }) => {
 
 export default MessageList;
 
-const ListContainer = styled.div``;
+const ListContainer = styled.div`
+  height: 26rem;
+  padding: 1rem;
+  overflow: auto;
+`;
 const ShowList = styled.div``;
