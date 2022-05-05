@@ -1,30 +1,28 @@
 import styled from 'styled-components';
-import { useState } from 'react';
 import { HiOutlineChevronLeft, HiOutlineChevronRight } from 'react-icons/hi';
 import me from '../../assets/me.json';
 import friends from '../../assets/friends.json';
 
 type CharRoomHeaderProps = {
+  partnerUserId: string;
   receiverUserId: string;
   setReceiverUserId: (receiverUserId: string) => void;
 };
 
 export function ChatRoomHeader({
+  partnerUserId,
   receiverUserId,
   setReceiverUserId,
 }: CharRoomHeaderProps) {
   const receiver = friends.filter(
     (friend) => friend.userId === receiverUserId
   )[0];
-  const [receiverUserName, setReceiverUserName] = useState(receiver.userName);
 
-  const handleToggleReceiver = () => {
+  const handleReceiverToggle = () => {
     if (receiverUserId === me.userId) {
-      setReceiverUserId(receiverUserId);
-      setReceiverUserName(receiver.userName);
+      setReceiverUserId(partnerUserId);
     } else {
       setReceiverUserId(me.userId);
-      setReceiverUserName(me.userName);
     }
   };
 
@@ -33,14 +31,14 @@ export function ChatRoomHeader({
       <Btn>
         <HiOutlineChevronLeft />
       </Btn>
-      <ProfileWrapper onClick={handleToggleReceiver}>
+      <ProfileWrapper onClick={handleReceiverToggle}>
         <img src={`${process.env.PUBLIC_URL}/imgs/${receiverUserId}.jpg`} />
         <ReceiverUserNameWrapper>
-          <span>{receiverUserName}</span>
+          <span>{receiver.userName}</span>
           <HiOutlineChevronRight />
         </ReceiverUserNameWrapper>
       </ProfileWrapper>
-      <Btn />
+      <Btn /> {/* Dummy */}
     </ChatRoomHeaderBlock>
   );
 }
@@ -71,6 +69,10 @@ const ProfileWrapper = styled.div`
     height: 50px;
     border-radius: 50%;
     object-fit: cover;
+  }
+
+  &:hover {
+    cursor: pointer;
   }
 `;
 
@@ -112,5 +114,9 @@ const Btn = styled.div`
   svg {
     font-size: 1.8rem;
     color: #1986fc;
+  }
+
+  &:hover {
+    cursor: pointer;
   }
 `;

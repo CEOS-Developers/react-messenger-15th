@@ -7,12 +7,12 @@ import { ChatRoomForm } from '../components/chatroom/ChatRoomForm';
 import chats from '../assets/chats.json';
 
 export function ChatRoom() {
-  const tmpReceiverUserId = 'user1';
-  const [receiverUserId, setReceiverUserId] = useState(tmpReceiverUserId);
-  const chatsWithReceiver = chats.filter(
-    (user) => user.userId === tmpReceiverUserId
-  )[0];
-  const [chatList, setChatList] = useState(chatsWithReceiver);
+  const tmpPartnerUserId = 'user1'; // const { partnerUserId } = useParams();
+  const [partnerUserId, setPartnerUserId] = useState(tmpPartnerUserId);
+  const [receiverUserId, setReceiverUserId] = useState(tmpPartnerUserId);
+
+  const filterChats = chats.filter((user) => user.userId === partnerUserId)[0];
+  const [chatList, setChatList] = useState(filterChats);
 
   // const scrollRef = useRef() as React.MutableRefObject<HTMLDivElement>;
   // useEffect(() => {
@@ -24,16 +24,17 @@ export function ChatRoom() {
   return (
     <ChatRoomBlock>
       <ChatRoomHeader
+        partnerUserId={partnerUserId}
         receiverUserId={receiverUserId}
         setReceiverUserId={setReceiverUserId}
       />
       {/* <ChatRoomMain ref={scrollRef} chatList={chatList} /> */}
-      <ChatRoomMain receiverUserId={receiverUserId} chatList={chatList} />
+      {/* <ChatRoomMain partnerUserId={partnerUserId} chatList={chatList} />
       <ChatRoomForm
-        receiverUserId={receiverUserId}
+        partnerUserId={partnerUserId}
         chatList={chatList}
         setChatList={setChatList}
-      />
+      /> */}
     </ChatRoomBlock>
   );
 }
