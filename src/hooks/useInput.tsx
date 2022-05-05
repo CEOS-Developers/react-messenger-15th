@@ -1,0 +1,21 @@
+import { useState } from 'react';
+
+const useInput = (initialInput: string) => {
+  const [messageInput, setMessageInput] = useState(initialInput);
+
+  //input창에 입력된 todo를 todoText로 설정
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
+    const {
+      target: { value },
+    } = e;
+    setMessageInput(value);
+  };
+
+  // input창 값 비우기
+  const handleInputInitialize = () => {
+    setMessageInput('');
+  };
+
+  return { messageInput, handleInputChange, handleInputInitialize };
+};
+export default useInput;

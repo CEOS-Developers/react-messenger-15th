@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import styled from 'styled-components';
+import useInput from '../hooks/useInput';
 import { IMessengerInputProps } from '../interface/interface';
 
 const MessengerInput = ({
@@ -7,7 +8,8 @@ const MessengerInput = ({
   chatList,
   setChatList,
 }: IMessengerInputProps) => {
-  const [messageInput, setMessageInput] = useState('');
+  const { messageInput, handleInputChange, handleInputInitialize } =
+    useInput('');
   const handleInputSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     //공백이 아닐 때에만 send 가능
     if (messageInput.replace(/\s+/g, '')) {
@@ -25,18 +27,13 @@ const MessengerInput = ({
       alert('메세지를 입력하세요 ! ');
     }
 
-    //채팅 보낸 뒤 input 창 비우기
-    setMessageInput('');
+    handleInputInitialize();
 
     //새로고침 방지
     e.preventDefault();
   };
 
   console.log(chatList);
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setMessageInput(e.target.value);
-  };
 
   return (
     <form onSubmit={handleInputSubmit}>
