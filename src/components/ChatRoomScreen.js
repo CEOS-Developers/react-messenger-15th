@@ -8,21 +8,15 @@ const ChatRoomScreen = () => {
   const [chatList, setChatList] = useState([]);
   const [currentUserId, setCurrentUserId] = useState('user0');
 
-  const scrollRef = useRef();
-
-  useEffect(() => {
-    scrollRef.current.scrollTo(0, scrollRef.current.scrollHeight);
-  }, [chatList]);
-
   return (
     <Wrapper>
       <ChatRoomHeader
         currentUserId={currentUserId}
         setCurrentUserId={setCurrentUserId}
       />
-      <BodyWrapper ref={scrollRef}>
-        <ChatRoomBody chatList={chatList} setChatList={setChatList} />
-      </BodyWrapper>
+
+      <ChatRoomBody chatList={chatList} setChatList={setChatList} />
+
       <InputForm
         currentUserId={currentUserId}
         chatList={chatList}
@@ -47,24 +41,5 @@ const Wrapper = styled.section`
   @media screen and (max-width: 768px) {
     width: 100vw;
     height: calc(var(--vh, 1vh) * 100);
-  }
-`;
-
-const BodyWrapper = styled.section`
-  overflow: auto;
-  width: 100%;
-  height: 75%;
-
-  overflow: auto;
-
-  &::-webkit-scrollbar {
-    width: 20px;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background: #e2e2e2;
-    background-clip: padding-box;
-    border-radius: 20px;
-    border: 8px solid transparent;
   }
 `;

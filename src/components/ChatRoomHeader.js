@@ -31,8 +31,11 @@ const ChatRoomHeader = ({ currentUserId, setCurrentUserId }) => {
 };
 
 const Header = styled.header`
+  padding: 5%;
   display: flex;
   justifycontent: space-evenly;
+
+  border-bottom: 1px solid #e2e2e2;
 `;
 
 const ProfileWrapper = styled.section`
@@ -80,6 +83,7 @@ const ProfileImg = styled.img`
 const Button = styled.div`
   width: 10%;
   height: 100%;
+  margin-top: 6%;
   margin-right: 12%;
 
   display: flex;

@@ -16,8 +16,6 @@ const GlobalStyle = createGlobalStyle`
 
 html, 
 body {
-    margin: 10%;
-    padding: 0;
 
     display: flex;
     align-items: center;
