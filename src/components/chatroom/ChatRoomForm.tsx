@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { useState } from 'react';
-import { HiOutlineChevronUp } from 'react-icons/hi';
+import { HiOutlineChevronDown } from 'react-icons/hi';
 import { chats } from '../../types/index';
 import { useInput } from '../../hooks/useInput';
 
@@ -33,6 +33,7 @@ export function ChatRoomForm({
       chats: [...chatList.chats, newMsg],
     });
     resetInput();
+    setIsTyping((prevIsTyping) => !prevIsTyping);
   };
 
   return (
@@ -42,8 +43,8 @@ export function ChatRoomForm({
         value={inputValue}
         onChange={handleInputChange}
       ></input>
-      <Btn onClick={handleSubmitBtnClick}>
-        <HiOutlineChevronUp />
+      <Btn onClick={handleSubmitBtnClick} isTyping={isTyping}>
+        <HiOutlineChevronDown />
       </Btn>
     </ChatRoomFormBlock>
   );
@@ -73,7 +74,7 @@ const ChatRoomFormBlock = styled.form`
   }
 `;
 
-const Btn = styled.button`
+const Btn = styled.button<{ isTyping: boolean }>`
   position: absolute;
   z-index: 5;
   top: 27.5%;
@@ -91,7 +92,7 @@ const Btn = styled.button`
     font-size: 1.7rem;
 
     color: white;
-    background: #1986fc;
+    background: #5e5d5d6e;
     border-radius: 50%;
 
     &:hover {
@@ -100,6 +101,16 @@ const Btn = styled.button`
     &:active {
       background: #1987fc9d;
     }
+
+    ${({ isTyping }) =>
+      isTyping &&
+      css`
+        background: #1986fc;
+        &:active {
+          background: #1987fc9d;
+        }
+        transform: rotate(180deg);
+      `}
   }
 `;
 
