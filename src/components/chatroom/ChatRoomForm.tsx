@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { AiOutlineDownCircle } from 'react-icons/ai';
+import { useState } from 'react';
+import { HiOutlineChevronUp } from 'react-icons/hi';
 import { chats } from '../../types/index';
 import { useInput } from '../../hooks/useInput';
 
@@ -15,6 +16,7 @@ export function ChatRoomForm({
   setChatList,
 }: ChatRoomFormProps) {
   const [inputValue, handleInputChange, resetInput] = useInput('');
+  const [isTyping, setIsTyping] = useState(false);
 
   const handleSubmitBtnClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
@@ -40,9 +42,9 @@ export function ChatRoomForm({
         value={inputValue}
         onChange={handleInputChange}
       ></input>
-      <button onClick={handleSubmitBtnClick}>
-        <AiOutlineDownCircle />
-      </button>
+      <Btn onClick={handleSubmitBtnClick}>
+        <HiOutlineChevronUp />
+      </Btn>
     </ChatRoomFormBlock>
   );
 }
@@ -52,33 +54,56 @@ const ChatRoomFormBlock = styled.form`
   height: 10%;
 
   display: flex;
-  flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
+  position: relative;
 
   border-top: 1px solid #e2e2e2;
 
   input {
-    width: 60%;
+    width: 90%;
     height: 50%;
-    padding: 0 4%;
+    padding-left: 4%;
+    padding-right: 11.5%;
 
-    outline: none;
-    font-size: 12px;
+    font-size: 0.8rem;
 
     border: 1px solid #d2d2d2;
-    border-radius: 12px;
+    border-radius: 20px;
   }
+`;
 
-  button {
-    width: 10%;
-    height: 50%;
+const Btn = styled.button`
+  position: absolute;
+  z-index: 5;
+  top: 27.5%;
+  right: 5.5%;
 
-    border: none;
-    background: none;
+  width: 10%;
+  height: 50%;
+  padding: 0;
 
-    :hover {
+  border: none;
+  background: none;
+
+  svg {
+    flex: 1;
+    font-size: 1.7rem;
+
+    color: white;
+    background: #1986fc;
+    border-radius: 50%;
+
+    &:hover {
       cursor: pointer;
+    }
+    &:active {
+      background: #1987fc9d;
     }
   }
 `;
+
+/*
+ ** [HTML, CSS] Input박스 안에 아이콘 넣기 (fontawesome)
+ ** https://joogaem.com/m/entry/HTML-CSS-Input%EB%B0%95%EC%8A%A4-%EC%95%88%EC%97%90-%EC%95%84%EC%9D%B4%EC%BD%98-%EB%84%A3%EA%B8%B0-fontawesome
+ */
