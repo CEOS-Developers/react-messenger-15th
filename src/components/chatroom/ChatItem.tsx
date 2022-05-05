@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 import { ChatType, UserType } from '../../Interface';
 import { timeForToday } from '../../utils/timeForToday';
+import Squircle from '../user/Squircle';
 
 interface ChatItemProps {
     chat: ChatType;
@@ -21,21 +22,21 @@ const ChatItem = ({ chat, user, currentUser, prevChat }: ChatItemProps) => {
         <ChatItemContainer isCurrentUser={isCurrentUser} isPrevSame={isPrevSame}>
             {isCurrentUser ? (
                 <ChatWrapper isCurrentUser={isCurrentUser}>
-                    <ChatDate>{timeForToday(chat.date)}</ChatDate>
+                    <ChatDate isCurrentUser={isCurrentUser}>{timeForToday(chat.date)}</ChatDate>
                     <ChatBubble isCurrentUser={isCurrentUser} isPrevSame={isPrevSame}>
                         {chat.content}
                     </ChatBubble>
                 </ChatWrapper>
             ) : (
                 <>
-                    <ProfileImage isPrevSame={isPrevSame} />
+                    <ProfileImage>{!isPrevSame && <Squircle imageUrl={user.profileImage} selected={false} />}</ProfileImage>
                     <div>
                         {!isPrevSame && <div style={{ color: '#333' }}>{user.userName}</div>}
                         <ChatWrapper isCurrentUser={isCurrentUser}>
                             <ChatBubble isCurrentUser={isCurrentUser} isPrevSame={isPrevSame}>
                                 {chat.content}
                             </ChatBubble>
-                            <ChatDate>{timeForToday(chat.date)}</ChatDate>
+                            <ChatDate isCurrentUser={isCurrentUser}>{timeForToday(chat.date)}</ChatDate>
                         </ChatWrapper>
                     </div>
                 </>
@@ -53,27 +54,25 @@ const ChatItemContainer = styled.div<IsCurrentUserProps>`
                   margin-top: none;
               `
             : css`
-                  margin-top: 3%;
+                  margin-top: 12px;
               `}
     ${({ isCurrentUser }) =>
         !isCurrentUser &&
         css`
             display: grid;
             grid-template-columns: 40px auto;
-            grid-gap: 3%;
+            grid-gap: 12px;
         `}
+        &:last-of-type {
+        margin-bottom: 12px;
+    }
 `;
 
 const ProfileImage = styled.div<IsCurrentUserProps>`
     width: 40px;
     height: 40px;
-    background-color: #ccc;
+    background-color: transparent;
     border-radius: 12px;
-    ${({ isPrevSame }) =>
-        isPrevSame &&
-        css`
-            background-color: transparent;
-        `}
 `;
 
 const ChatWrapper = styled.div<IsCurrentUserProps>`
@@ -90,17 +89,17 @@ const ChatBubble = styled.div<IsCurrentUserProps>`
     padding: 10px;
     white-space: pre-wrap;
     border-radius: 5px;
-    margin-top: 2%;
+    margin-top: 8px;
     position: relative;
     ${({ isCurrentUser }) =>
         isCurrentUser
             ? css`
                   background-color: #fbe64d;
-                  margin-left: 2%;
+                  margin-left: 8px;
               `
             : css`
                   background-color: #fff;
-                  margin-right: 2%;
+                  margin-right: 8px;
               `};
     ${({ isPrevSame, isCurrentUser }) =>
         !isPrevSame &&
@@ -138,9 +137,18 @@ const ChatBubble = styled.div<IsCurrentUserProps>`
             }
         `}
 `;
-const ChatDate = styled.div`
+const ChatDate = styled.div<IsCurrentUserProps>`
     font-size: 8px;
     color: #333;
     display: flex;
     align-items: flex-end;
+    min-width: 50px;
+    ${({ isCurrentUser }) =>
+        isCurrentUser
+            ? css`
+                  justify-content: flex-end;
+              `
+            : css`
+                  justify-content: flex-start;
+              `}
 `;

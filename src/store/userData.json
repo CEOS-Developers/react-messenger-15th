@@ -1,7 +1,19 @@
 {
     "users": [
-        { "userId": 0, "userName": "한규진", "profileImage": "", "statusMessage": "", "myAccount": true },
-        { "userId": 10, "userName": "두규진", "profileImage": "", "statusMessage": "", "myAccount": false },
-        { "userId": 11, "userName": "세규진", "profileImage": "", "statusMessage": "", "myAccount": false }
+        {
+            "userId": 0,
+            "userName": "한규진",
+            "profileImage": "https://i.ibb.co/kBV7WsL/2022-05-05-10-58-23.png",
+            "statusMessage": "",
+            "myAccount": true
+        },
+        {
+            "userId": 10,
+            "userName": "박명수",
+            "profileImage": "https://i.ibb.co/xDPMfHR/2022-05-05-10-47-58.png",
+            "statusMessage": "",
+            "myAccount": false
+        },
+        { "userId": 11, "userName": "두규진", "profileImage": "", "statusMessage": "", "myAccount": false }
     ]
 }

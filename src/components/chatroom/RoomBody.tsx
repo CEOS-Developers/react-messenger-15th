@@ -1,8 +1,10 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { ChatType, UserType } from '../../Interface';
 import ChatItem from './ChatItem';
 import { useEffect, useRef, useState } from 'react';
 import { getUserInfoById } from '../../api';
+import { ReactComponent as Bottom } from '../../assets/bottom.svg';
+import { throttle } from 'lodash';
 
 interface RoomBodyProps {
     chats: ChatType[];
@@ -12,27 +14,27 @@ interface RoomBodyProps {
 
 const RoomBody = ({ chats, users, currentUser }: RoomBodyProps) => {
     const [scrollButtonVisible, setScrollButtonVisible] = useState<boolean>(false);
-    //const [scrollBarVisible, setScrollBarVisible] = useState<boolean>(false);
+    const [scrollBarVisible, setScrollBarVisible] = useState<boolean>(false);
 
     const bodyRef = useRef<HTMLDivElement>(null);
 
-    const handleScrollY = () => {
+    const handleScrollY = throttle(() => {
         if (bodyRef.current) {
             const roomBodyScrollY = bodyRef.current.scrollHeight - bodyRef.current.scrollTop;
-            if (roomBodyScrollY > 1000) {
+            if (roomBodyScrollY > 800 && !scrollButtonVisible) {
                 console.log('visible');
                 setScrollButtonVisible(true);
-            } else {
+            } else if (roomBodyScrollY <= 800 && scrollBarVisible) {
                 console.log('hide');
                 setScrollButtonVisible(false);
             }
         }
 
-        /* setScrollBarVisible(true);
+        setScrollBarVisible(false);
         setTimeout(() => {
-            setScrollBarVisible(false);
-        }, 500); */
-    };
+            setScrollBarVisible(true);
+        }, 800);
+    }, 300);
 
     const goToBottom = () => {
         if (bodyRef.current) {
@@ -49,7 +51,7 @@ const RoomBody = ({ chats, users, currentUser }: RoomBodyProps) => {
     };
 
     return (
-        <RoomBodyContainer ref={bodyRef} onScroll={handleScrollY}>
+        <RoomBodyContainer ref={bodyRef} onScroll={handleScrollY} scrollBarVisible={scrollBarVisible}>
             {chats.map((chat: ChatType, index: number) => (
                 <ChatItem
                     chat={chat}
@@ -59,29 +61,47 @@ const RoomBody = ({ chats, users, currentUser }: RoomBodyProps) => {
                     currentUser={currentUser}
                 />
             ))}
-            {scrollButtonVisible ? <GoToBottom onClick={handleClickGoToBottom} /> : null}
+            {scrollButtonVisible ? (
+                <GoToBottom onClick={handleClickGoToBottom}>
+                    <Bottom style={{ marginTop: '5px' }} />
+                </GoToBottom>
+            ) : null}
         </RoomBodyContainer>
     );
 };
 
 export default RoomBody;
 
-const RoomBodyContainer = styled.div`
-    padding: 0px 16px;
+const RoomBodyContainer = styled.div<{ scrollBarVisible: boolean }>`
+    padding: 0px 10px 0px 16px;
     overflow-y: scroll;
     background-color: #8989bb;
     background-image: linear-gradient(315deg, #8989bb 0%, #a5a4cb 74%);
     position: relative;
+    ${({ scrollBarVisible }) =>
+        scrollBarVisible &&
+        css`
+            &::-webkit-scrollbar-thumb {
+                background-color: rgba(211, 211, 211, 0);
+                border-radius: 3px;
+            }
+        `}
 `;
 
 const GoToBottom = styled.button`
     position: sticky;
-    bottom: 30px;
+    bottom: 20px;
     float: right;
 
+    background-color: white;
     width: 40px;
     height: 40px;
     border-radius: 50%;
     border: none;
-    box-shadow: rgba(0, 0, 0, 0.05) 0 0 10px;
+    box-shadow: rgba(0, 0, 0, 0.5) 0 0 5px;
+
+    &:active {
+        background-color: #f3f3f3;
+        box-shadow: none;
+    }
 `;

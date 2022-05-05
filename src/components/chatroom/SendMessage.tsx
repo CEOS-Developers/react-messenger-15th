@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import useInput from '../../hooks/useInput';
-import { ChatDataType, ChatType, UserType } from '../../Interface';
+import { ChatDataType, ChatType } from '../../Interface';
 import dayjs from 'dayjs';
 import { v4 as uuidv4 } from 'uuid';
 import * as api from '../../api/index';

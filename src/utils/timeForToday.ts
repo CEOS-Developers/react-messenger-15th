@@ -4,10 +4,8 @@ export const timeForToday = (value: string) => {
     const today = dayjs();
     const timeValue = dayjs(value);
     const betweenTime = today.diff(timeValue, 'minute');
-    if (betweenTime < 1) return '방금 전';
-    if (betweenTime < 60) {
-        return `${betweenTime}분 전`;
-    }
+    if (betweenTime < 60) return timeValue.format('A h : m');
+    // if (betweenTime < 60) return `${betweenTime}분 전`;
 
     const betweenTimeHour = Math.floor(betweenTime / 60);
     if (betweenTimeHour < 24) {
