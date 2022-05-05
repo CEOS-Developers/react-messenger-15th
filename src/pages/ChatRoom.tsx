@@ -49,10 +49,3 @@ const ChatRoomBlock = styled.div`
     height: calc(var(--vh, 1vh) * 100);
   }
 `;
-
-// const scrollRef = useRef() as React.MutableRefObject<HTMLDivElement>;
-// useEffect(() => {
-//   scrollRef.current.scrollTo(0, scrollRef.current.scrollHeight);
-// }, [chatList]);
-// scrollRef.current.scrollHeight
-// https://kyounghwan01.github.io/blog/TS/object-null/#%E1%84%8B%E1%85%A8%E1%84%89%E1%85%B5

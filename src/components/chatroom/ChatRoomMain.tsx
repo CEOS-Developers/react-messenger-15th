@@ -1,3 +1,4 @@
+import { useState, useRef, useEffect } from 'react';
 import styled, { css } from 'styled-components';
 import { Chats, Chat } from '../../types/index';
 import me from '../../data/me.json';
@@ -14,8 +15,16 @@ export function ChatRoomMain({ partnerUserId, chatList }: ChatRoomMainProps) {
     (friend) => friend.userId === partnerUserId
   )[0];
 
+  const scrollRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    scrollRef.current!.scrollTo({
+      top: scrollRef.current!.scrollHeight,
+      behavior: 'smooth',
+    });
+  }, [chatList]);
+
   return (
-    <ChatRoomMainBlock>
+    <ChatRoomMainBlock ref={scrollRef}>
       {chatList.chats.map(({ userId, msg, unixTime }: Chat, idx: number) => (
         <ChatItem key={idx} userId={userId}>
           <img src={`${process.env.PUBLIC_URL}/imgs/${userId}.jpg`} />
@@ -41,6 +50,16 @@ const ChatRoomMainBlock = styled.div`
 
   display: flex;
   flex-direction: column;
+
+  &::-webkit-scrollbar {
+    width: 20px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #e2e2e2;
+    background-clip: padding-box;
+    border-radius: 20px;
+    border: 8px solid transparent;
+  }
 `;
 
 const ChatItem = styled.div<{ userId: string }>`
