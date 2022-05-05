@@ -13,16 +13,27 @@ import RoomBody from '../components/chatroom/RoomBody';
 const ChatRoom = ({ roomId }: { roomId: number }) => {
     const chatData = useRecoilValue<ChatDataType[]>(chatState);
     const userData = useRecoilValue<UserType[]>(userState);
+    const [currentUser, setCurrentUser] = useState<UserType | null>(null);
     const { getChats, getUserInfoListByRoomId } = api;
+
     const chats = getChats(roomId, chatData);
-    const userList = getUserInfoListByRoomId(roomId, chatData, userData);
+    const users = getUserInfoListByRoomId(roomId, chatData, userData);
+
+    //user list 첫번째 인덱스로 초기화
+    useEffect(() => {
+        if (!currentUser) setCurrentUser(users[0]);
+    }, [currentUser, users]);
 
     return (
-        <RoomContainer>
-            <RoomHeader />
-            <RoomBody chats={chats} />
-            <SendMessage roomId={roomId} chatData={chatData} />
-        </RoomContainer>
+        <>
+            {currentUser ? (
+                <RoomContainer>
+                    <RoomHeader users={users} currentUser={currentUser} setCurrentUser={setCurrentUser} />
+                    <RoomBody chats={chats} users={users} currentUser={currentUser} />
+                    <SendMessage roomId={roomId} chatData={chatData} userId={currentUser?.userId} />
+                </RoomContainer>
+            ) : null}
+        </>
     );
 };
 

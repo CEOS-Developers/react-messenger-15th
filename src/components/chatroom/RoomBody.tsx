@@ -1,17 +1,20 @@
 import styled from 'styled-components';
-import { ChatType } from '../../Interface';
+import { ChatType, UserType } from '../../Interface';
 import ChatItem from './ChatItem';
 import { useEffect, useRef, useState } from 'react';
-const RoomBody = ({ chats }: { chats: ChatType[] }) => {
-    const [scrollButtonVisible, setScrollButtonVisible] = useState<boolean>(false);
-    const [scrollBarVisible, setScrollBarVisible] = useState<boolean>(false);
-    const bodyRef = useRef<HTMLDivElement>(null);
+import { getUserInfoById } from '../../api';
 
-    useEffect(() => {
-        if (bodyRef.current) {
-            bodyRef.current.scrollTo(0, bodyRef.current.scrollHeight);
-        }
-    }, [chats]);
+interface RoomBodyProps {
+    chats: ChatType[];
+    users: UserType[];
+    currentUser: UserType;
+}
+
+const RoomBody = ({ chats, users, currentUser }: RoomBodyProps) => {
+    const [scrollButtonVisible, setScrollButtonVisible] = useState<boolean>(false);
+    //const [scrollBarVisible, setScrollBarVisible] = useState<boolean>(false);
+
+    const bodyRef = useRef<HTMLDivElement>(null);
 
     const handleScrollY = () => {
         if (bodyRef.current) {
@@ -25,10 +28,10 @@ const RoomBody = ({ chats }: { chats: ChatType[] }) => {
             }
         }
 
-        setScrollBarVisible(true);
+        /* setScrollBarVisible(true);
         setTimeout(() => {
             setScrollBarVisible(false);
-        }, 500);
+        }, 500); */
     };
 
     const goToBottom = () => {
@@ -37,12 +40,26 @@ const RoomBody = ({ chats }: { chats: ChatType[] }) => {
         }
     };
 
+    useEffect(() => {
+        goToBottom();
+    }, [chats]);
+
+    const handleClickGoToBottom = () => {
+        goToBottom();
+    };
+
     return (
         <RoomBodyContainer ref={bodyRef} onScroll={handleScrollY}>
-            {chats.map((chat: ChatType) => (
-                <ChatItem chat={chat} key={chat.chatId} />
+            {chats.map((chat: ChatType, index: number) => (
+                <ChatItem
+                    chat={chat}
+                    prevChat={chats[index - 1]}
+                    key={chat.chatId}
+                    user={getUserInfoById(chat.userId, users)}
+                    currentUser={currentUser}
+                />
             ))}
-            {scrollButtonVisible ? <GoToBottom onClick={goToBottom} /> : null}
+            {scrollButtonVisible ? <GoToBottom onClick={handleClickGoToBottom} /> : null}
         </RoomBodyContainer>
     );
 };

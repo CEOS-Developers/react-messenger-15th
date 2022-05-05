@@ -3,20 +3,20 @@ import { ChatDataType, ChatType, UserType } from '../Interface';
 import { getUserInfoById } from './userInfo';
 
 // 채팅 내역 가져오기
-export const getChats = (roomId: number, chatData: ChatDataType[]) => {
+export const getChats = (roomId: number, chatData: ChatDataType[]): ChatType[] => {
     const [chatObj] = chatData.filter((room) => room.roomId === roomId);
     return chatObj.chat;
 };
 
 // 채팅방 내 대화상대 id 가져오기
-export const getUserIdListByRoom = (roomId: number, chatData: ChatDataType[]) => {
+export const getUserIdListByRoom = (roomId: number, chatData: ChatDataType[]): number[] => {
     const [chatObj] = chatData.filter((room) => room.roomId === roomId);
     const userIdList = chatObj['user'].map((user) => user['userId']);
     return userIdList;
 };
 
 // 채팅방 내 대화상대 정보 가져오기
-export const getUserInfoListByRoomId = (roomId: number, chatData: ChatDataType[], userData: UserType[]) => {
+export const getUserInfoListByRoomId = (roomId: number, chatData: ChatDataType[], userData: UserType[]): UserType[] => {
     const userIdList = getUserIdListByRoom(roomId, chatData);
     //const userInfoList = userData.filter((user, index) => user.userId === userIdList[index]);
     const userInfoList = userIdList.map((userId) => getUserInfoById(userId, userData));

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import useInput from '../../hooks/useInput';
-import { ChatDataType, ChatType } from '../../Interface';
+import { ChatDataType, ChatType, UserType } from '../../Interface';
 import dayjs from 'dayjs';
 import { v4 as uuidv4 } from 'uuid';
 import * as api from '../../api/index';
@@ -8,7 +8,13 @@ import { KeyboardEvent, FormEvent, useRef, useEffect } from 'react';
 import { useSetRecoilState } from 'recoil';
 import { chatState } from '../../store/recoil/recoil';
 
-const SendMessage = ({ roomId, chatData }: { roomId: number; chatData: ChatDataType[] }) => {
+interface SendMessageProps {
+    roomId: number;
+    chatData: ChatDataType[];
+    userId: number;
+}
+
+const SendMessage = ({ roomId, chatData, userId }: SendMessageProps) => {
     const setChatData = useSetRecoilState(chatState);
     const { value, onChange, resetValue } = useInput('');
     const { postMessage } = api;
@@ -21,9 +27,9 @@ const SendMessage = ({ roomId, chatData }: { roomId: number; chatData: ChatDataT
     }, []);
 
     const sendMessage = () => {
-        if (value.length !== 0) {
+        if (value.length !== 0 && value.replace(/ /g, '').length !== 0) {
             const MessageObj: ChatType = {
-                userId: 1,
+                userId: userId,
                 content: value,
                 date: dayjs().format(),
                 like: false,
@@ -57,8 +63,7 @@ const SendMessage = ({ roomId, chatData }: { roomId: number; chatData: ChatDataT
             <StyledForm onSubmit={onSubmit}>
                 <MessageInput value={value} onChange={onChange} ref={inputRef} onKeyDown={onEnter} />
                 <SendButton type="submit" disabled={value.length === 0 ? true : false}>
-                    {' '}
-                    send{' '}
+                    전송
                 </SendButton>
             </StyledForm>
         </SendMessageContainer>
@@ -93,4 +98,11 @@ const MessageInput = styled.textarea`
 const SendButton = styled.button`
     width: 88px;
     height: 88px;
+    background-color: #fbe64d;
+    border: 1px solid #eeda48;
+    border-radius: 5px;
+    &:disabled {
+        background-color: #f9f9f9;
+        border: 1px solid #ececec;
+    }
 `;

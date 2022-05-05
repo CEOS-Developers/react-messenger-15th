@@ -4,7 +4,6 @@ export const Main = styled.main`
     background-color: #fff;
     width: 100vw;
     height: 100vh;
-
     @media screen and (min-width: 600px) {
         width: 400px;
         height: 700px;

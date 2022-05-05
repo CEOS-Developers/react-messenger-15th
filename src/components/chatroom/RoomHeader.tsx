@@ -1,6 +1,14 @@
 import styled from 'styled-components';
+import { UserType } from '../../Interface';
+import { Dispatch, SetStateAction } from 'react';
 
-const RoomHeader = () => {
+interface RoomHeaderProps {
+    users: UserType[];
+    currentUser: UserType | null;
+    setCurrentUser: Dispatch<SetStateAction<UserType | null>>;
+}
+
+const RoomHeader = ({ users, currentUser, setCurrentUser }: RoomHeaderProps) => {
     return <RoomHeaderContainer></RoomHeaderContainer>;
 };
 
