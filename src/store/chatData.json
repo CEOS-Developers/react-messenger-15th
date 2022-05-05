@@ -23,21 +23,21 @@
                     "content": "천안분들 어떡해",
                     "date": "2022-05-05T22:52:18+09:00",
                     "like": false,
-                    "chatId": "example1"
+                    "chatId": "example3"
                 },
                 {
                     "userId": 0,
                     "content": "천안분들 난리나게...",
                     "date": "2022-05-05T22:52:25+09:00",
                     "like": false,
-                    "chatId": "example2"
+                    "chatId": "example4"
                 },
                 {
                     "userId": 10,
                     "content": "다시 가!",
                     "date": "2022-05-05T22:52:25+09:00",
                     "like": false,
-                    "chatId": "example2"
+                    "chatId": "example5"
                 }
             ]
         },

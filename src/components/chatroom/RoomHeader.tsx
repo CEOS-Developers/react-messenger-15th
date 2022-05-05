@@ -13,7 +13,7 @@ const RoomHeader = ({ users, currentUser, setCurrentUser }: RoomHeaderProps) => 
         <RoomHeaderContainer>
             <CurrentSelecter>
                 {users.map((user) => (
-                    <UserIcon onClick={() => setCurrentUser(user)}>
+                    <UserIcon onClick={() => setCurrentUser(user)} key={user.userId}>
                         {currentUser.userId === user.userId && <SelectedIcon>선택 중</SelectedIcon>}
                         <Squircle imageUrl={user.profileImage} selected={currentUser.userId === user.userId} />
 
