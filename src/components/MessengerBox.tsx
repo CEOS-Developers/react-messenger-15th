@@ -4,6 +4,7 @@ import user from '../data/user.json';
 import message from '../data/message.json';
 import MessengerInput from './MessengerInput';
 import MessageList from './MessageList';
+import { IChat } from '../interface/interface';
 
 const MessengerBox = () => {
   // 사용자 나부터 시작
@@ -26,7 +27,7 @@ const MessengerBox = () => {
         currentUser={currentUser}
         chatList={chatList}
         setChatList={setChatList}
-      />
+      ></MessengerInput>
     </div>
   );
 };

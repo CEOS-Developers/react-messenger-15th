@@ -1,7 +1,8 @@
 import styled from 'styled-components';
-const SingleMessage = ({ chat }: any) => {
+import { IChat } from '../interface/interface';
+const SingleMessage = ({ chat }: { chat: IChat }) => {
   const { userId, userName, text, time } = chat;
-  console.log(text);
+  console.log(chat);
   return (
     <>
       <ProfileImg src={`/assets/${userId}.jpg`} />

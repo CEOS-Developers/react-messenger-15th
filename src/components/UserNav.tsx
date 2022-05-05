@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { IUserNavProps } from '../interface/interface';
 
-const UserNav = ({ currentUser, switchUser }: any) => {
+const UserNav = ({ currentUser, switchUser }: IUserNavProps) => {
   const userName = currentUser.userName;
   console.log(userName);
   console.log(currentUser.userProfile);
