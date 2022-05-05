@@ -34,7 +34,7 @@ const InputForm = ({ currentUserId, chatList, setChatList }) => {
   };
 
   return (
-    <Form>
+    <FormWrapper>
       <Button onClick={handleHeartClick}>❤️</Button>
       <Input
         value={inputText}
@@ -42,20 +42,19 @@ const InputForm = ({ currentUserId, chatList, setChatList }) => {
         placeholder="Type something here"
       />
       <Button onClick={handleNewMsg}>+</Button>
-    </Form>
+    </FormWrapper>
   );
 };
 
-const Form = styled.form`
-  position: fixed;
-
-  bottom: 0;
-  height: 15%;
-  width: 100%;
+const FormWrapper = styled.form`
+  height: 10%;
 
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  align-items: center;
+  justify-content: space-evenly;
+
+  border-top: 1px solid #e2e2e2;
 `;
 
 const Input = styled.input`
