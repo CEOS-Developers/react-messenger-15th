@@ -31,15 +31,15 @@ const Room = () => {
   const [messageObj, setMessageObj] = useState({});
   const [msg, setMsg] = useState([]);
 
-  const createMessageObj = (id?: string, msg?: any) => {
+  const createMessageObj = (id?: string, msg?: string) => {
     const time = new Date().toString().slice(16, -21).slice(0, 5);
     setMessageObj({ usr: id, time, msg });
   };
 
-  const handleInput = (e: any) => {
+  const handleInput = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setInput(e.target.value);
   };
-  const onSubmitForm = (e: any) => {
+  const onSubmitForm = (e: React.SyntheticEvent): void => {
     e.preventDefault();
     if (!input || !input.trim()) {
       return alert('메세지를 입력해주세요');
@@ -47,7 +47,7 @@ const Room = () => {
     createMessageObj(id, input);
     setInput('');
   };
-  const onClickHeart = (e: any) => {
+  const onClickHeart = (e: React.MouseEvent<HTMLButtonElement>): void => {
     e.preventDefault();
     createMessageObj(id, '💜');
   };
@@ -63,7 +63,7 @@ const Room = () => {
 
   useEffect(() => {
     socket.on('sendBack', (data) => {
-      const cleanData = data.filter((obj: any) => {
+      const cleanData = data.filter((obj: IUserInfo) => {
         return Object.keys(obj).length !== 0;
       });
 

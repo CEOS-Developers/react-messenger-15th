@@ -6,10 +6,10 @@ const Landing = () => {
   const [usr, setUsr] = useState('');
   const [toggle, setToggle] = useState(false);
   let navigator = useNavigate();
-  const handleInput = (e: any) => {
+  const handleInput = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setInput(e.target.value);
   };
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: React.SyntheticEvent): void => {
     e.preventDefault();
     setUsr(input);
     setToggle((prev) => !prev);
