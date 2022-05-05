@@ -27,11 +27,13 @@ export function ChatRoomForm({
     let senderUserId;
     if (receiverUserId == me.userId) senderUserId = partnerUserId;
     else senderUserId = me.userId;
+
     const newMsg = {
       userId: senderUserId,
       msg: inputValue,
       timestamp: Date.now(),
     };
+
     setChatList({
       userId: partnerUserId,
       chats: [...chatList.chats, newMsg],
@@ -120,8 +122,3 @@ const Btn = styled.button<{ isValid: boolean }>`
       `}
   }
 `;
-
-/*
- ** [HTML, CSS] Input박스 안에 아이콘 넣기 (fontawesome)
- ** https://joogaem.com/m/entry/HTML-CSS-Input%EB%B0%95%EC%8A%A4-%EC%95%88%EC%97%90-%EC%95%84%EC%9D%B4%EC%BD%98-%EB%84%A3%EA%B8%B0-fontawesome
- */
