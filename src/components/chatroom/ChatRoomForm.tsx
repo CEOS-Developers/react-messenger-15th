@@ -15,8 +15,9 @@ export function ChatRoomForm({
   chatList,
   setChatList,
 }: ChatRoomFormProps) {
-  const [inputValue, handleInputChange, resetInput] = useInput('');
-  const [isTyping, setIsTyping] = useState(false);
+  const [inputValue, handleInputChange, resetInput, isValid, setIsValid] =
+    useInput('');
+  // const [isTyping, setIsTyping] = useState(false);
 
   const handleSubmitBtnClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
@@ -33,7 +34,7 @@ export function ChatRoomForm({
       chats: [...chatList.chats, newMsg],
     });
     resetInput();
-    setIsTyping((prevIsTyping) => !prevIsTyping);
+    setIsValid(false);
   };
 
   return (
@@ -43,7 +44,7 @@ export function ChatRoomForm({
         value={inputValue}
         onChange={handleInputChange}
       ></input>
-      <Btn onClick={handleSubmitBtnClick} isTyping={isTyping}>
+      <Btn onClick={handleSubmitBtnClick} isValid={isValid}>
         <HiOutlineChevronDown />
       </Btn>
     </ChatRoomFormBlock>
@@ -74,7 +75,7 @@ const ChatRoomFormBlock = styled.form`
   }
 `;
 
-const Btn = styled.button<{ isTyping: boolean }>`
+const Btn = styled.button<{ isValid: boolean }>`
   position: absolute;
   z-index: 5;
   top: 27.5%;
@@ -102,14 +103,17 @@ const Btn = styled.button<{ isTyping: boolean }>`
       background: #1987fc9d;
     }
 
-    ${({ isTyping }) =>
-      isTyping &&
+    transition: 0.125s all ease-in;
+
+    ${({ isValid }) =>
+      isValid &&
       css`
         background: #1986fc;
         &:active {
           background: #1987fc9d;
         }
         transform: rotate(180deg);
+        transition: 0.125s all ease-in;
       `}
   }
 `;
