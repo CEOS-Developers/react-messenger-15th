@@ -20,7 +20,7 @@ import { useParams, useNavigate } from 'react-router';
 import io, { Socket } from 'socket.io-client';
 import { useEffect, useState } from 'react';
 import gravatar from 'gravatar';
-const socket = io.connect(`https://13.124.245.172:3065`);
+const socket = io.connect(`http://13.124.245.172`);
 const Room = () => {
   const { id } = useParams();
   let navigator = useNavigate();
