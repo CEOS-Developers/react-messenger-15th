@@ -7,6 +7,7 @@ const MessengerInput = ({ currentUser, textList, setTextList }: any) => {
     if (messageInput) {
       const message = {
         userId: currentUser.userId,
+        userName: currentUser.userName,
         text: messageInput,
       };
 
@@ -19,6 +20,7 @@ const MessengerInput = ({ currentUser, textList, setTextList }: any) => {
 
     e.preventDefault();
   };
+
   console.log(textList);
   const handleInputChange = (e: any) => {
     setMessageInput(e.target.value);
