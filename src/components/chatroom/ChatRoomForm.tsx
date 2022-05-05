@@ -16,6 +16,7 @@ export function ChatRoomForm({
 }: ChatRoomFormProps) {
   const [inputValue, handleInputChange, resetInput, isValid, setIsValid] =
     useInput('');
+
   const handleSubmitBtnClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     if (!inputValue) alert('Please enter a message');

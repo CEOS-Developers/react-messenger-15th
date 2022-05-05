@@ -52,7 +52,7 @@ const ChatRoomBlock = styled.div`
 
   // Mobile
   @media screen and (max-width: 768px) {
-    width: 100%;
+    width: 100vw;
     height: calc(var(--vh, 1vh) * 100);
   }
 `;

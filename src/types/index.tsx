@@ -1,7 +1,7 @@
 export interface Chat {
   userId: string;
   msg: string;
-  timestamp: number;
+  unixTime: number;
 }
 
 export interface Chats extends Chat {

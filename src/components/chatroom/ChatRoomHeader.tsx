@@ -13,16 +13,14 @@ export function ChatRoomHeader({
   receiverUserId,
   setReceiverUserId,
 }: CharRoomHeaderProps) {
-  const tmpReceiverUserId = 'user1';
-
   const receiver = friends.filter(
-    (friend) => friend.userId === tmpReceiverUserId
+    (friend) => friend.userId === receiverUserId
   )[0];
   const [receiverUserName, setReceiverUserName] = useState(receiver.userName);
 
   const handleToggleReceiver = () => {
     if (receiverUserId === me.userId) {
-      setReceiverUserId(tmpReceiverUserId);
+      setReceiverUserId(receiverUserId);
       setReceiverUserName(receiver.userName);
     } else {
       setReceiverUserId(me.userId);
