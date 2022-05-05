@@ -1,29 +1,27 @@
 import styled, { css } from 'styled-components';
+import { GetTime } from '../utils/GetTime';
 
 const Chat = ({ userId, message, msgId }) => {
   return (
-    <ChatSection userId={userId} msgId={msgId}>
-      <ProfileImg src={`${process.env.PUBLIC_URL}/imgs/${userId}.jpg`} />
-      <Bubble userId={userId}>
-        <TextWrapper userId={userId}>{message}</TextWrapper>
-      </Bubble>
-    </ChatSection>
+    <Wrapper>
+      <ChatWrapper userId={userId} msgId={msgId}>
+        <ProfileImg src={`${process.env.PUBLIC_URL}/imgs/${userId}.jpg`} />
+        <ChatInfo>
+          <UserName userId={userId}>{userId}</UserName>
+          <Bubble userId={userId}>{message}</Bubble>
+        </ChatInfo>
+        <Time>{GetTime(msgId)}</Time>
+      </ChatWrapper>
+    </Wrapper>
   );
 };
 
 export default Chat;
 
-const TextWrapper = styled.section`
-  max-width: 88%;
-  display: flex;
-
-  flex-direction: ${({ userId }) =>
-    userId === 'user0' ? 'row' : 'row-reverse'};
-`;
-
 const Bubble = styled.section`
   display: flex;
   padding: 2% 4% 2% 4%;
+
   ${({ userId }) =>
     userId === 'user0'
       ? css`
@@ -40,6 +38,26 @@ const Bubble = styled.section`
         `}
 `;
 
+const Time = styled.section`
+  display: flex;
+  align-items: end;
+  margin: 0 2%;
+  font-size: 6px;
+`;
+
+const UserName = styled.section`
+  max-width: 100%;
+  display: flex;
+
+  flex-direction: ${({ userId }) =>
+    userId === 'user0' ? 'row-reverse' : 'row'};
+`;
+
+const ChatInfo = styled.section`
+  display: flex;
+  flex-direction: column;
+`;
+
 const ProfileImg = styled.img`
   width: 30px;
   height: 30px;
@@ -50,10 +68,18 @@ const ProfileImg = styled.img`
   margin-top: 0%;
 `;
 
-const ChatSection = styled.section`
+const ChatWrapper = styled.section`
   max-width: 95%;
   margin: 4%;
   display: flex;
   flex-direction: ${({ userId }) =>
     userId === 'user0' ? 'row-reverse' : 'row'};
+`;
+
+const Wrapper = styled.section`
+  width: 100%;
+  overflow: auto;
+
+  display: flex;
+  flex-direction: column;
 `;
