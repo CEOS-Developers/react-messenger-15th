@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components';
-import { useState } from 'react';
 import { HiOutlineChevronDown } from 'react-icons/hi';
 import { chats } from '../../types/index';
 import { useInput } from '../../hooks/useInput';
@@ -17,8 +16,6 @@ export function ChatRoomForm({
 }: ChatRoomFormProps) {
   const [inputValue, handleInputChange, resetInput, isValid, setIsValid] =
     useInput('');
-  // const [isTyping, setIsTyping] = useState(false);
-
   const handleSubmitBtnClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     if (!inputValue) alert('Please enter a message');
@@ -96,22 +93,20 @@ const Btn = styled.button<{ isValid: boolean }>`
     background: #5e5d5d6e;
     border-radius: 50%;
 
-    &:hover {
-      cursor: pointer;
-    }
-    &:active {
-      background: #1987fc9d;
-    }
-
     transition: 0.125s all ease-in;
 
     ${({ isValid }) =>
       isValid &&
       css`
         background: #1986fc;
+
+        &:hover {
+          cursor: pointer;
+        }
         &:active {
           background: #1987fc9d;
         }
+
         transform: rotate(180deg);
         transition: 0.125s all ease-in;
       `}
