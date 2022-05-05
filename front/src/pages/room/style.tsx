@@ -32,12 +32,12 @@ export const MessageBox = styled.div`
   height: 500px;
 `;
 
-export const NameBox = styled.span`
+export const NameBox = styled.span<{ me?: boolean }>`
   display: flex;
   justify-content: ${(props) => (props.me ? 'flex-end' : null)};
 `;
 
-export const MsgBox = styled.span`
+export const MsgBox = styled.span<{ me?: boolean }>`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -49,7 +49,7 @@ export const MsgBox = styled.span`
     props.me ? 'rgb(25, 134, 252)' : 'rgb(241, 241, 243)'};
 `;
 
-export const MsgWrapper = styled.div`
+export const MsgWrapper = styled.div<{ me?: boolean }>`
   padding: 10px;
   margin: 15px 0;
 
@@ -66,11 +66,11 @@ export const Time = styled.div`
 `;
 export const TimeDiv = styled.div``;
 
-export const MiddleDiv = styled.div`
+export const MiddleDiv = styled.div<{ me?: boolean }>`
   display: flex;
 `;
 
-export const MiddleBox = styled.div`
+export const MiddleBox = styled.div<{ me?: boolean }>`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -95,4 +95,8 @@ export const FormBox = styled.form`
 export const ButtonStyle = styled.button`
   background: none;
   border: none;
+`;
+
+export const Input = styled.input`
+  max-length: 35;
 `;

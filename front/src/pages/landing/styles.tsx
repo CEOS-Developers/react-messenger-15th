@@ -25,3 +25,14 @@ export const Center = {
 export const Btn = styled.button`
   border-radius: 10px;
 `;
+
+export const H1 = styled.h1`
+  text-align: center;
+`;
+
+export const H3 = styled.h3`
+  text-align: center;
+`;
+export const Input = styled.input`
+  max-length: 10;
+`;

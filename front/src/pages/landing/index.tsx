@@ -1,15 +1,15 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Form1Style, Container, Center, Btn } from './styles';
+import { Form1Style, Container, Center, Btn, H1, H3, Input } from './styles';
 const Landing = () => {
   const [input, setInput] = useState('');
   const [usr, setUsr] = useState('');
   const [toggle, setToggle] = useState(false);
   let navigator = useNavigate();
-  const handleInput = (e) => {
+  const handleInput = (e: any) => {
     setInput(e.target.value);
   };
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: any) => {
     e.preventDefault();
     setUsr(input);
     setToggle((prev) => !prev);
@@ -24,9 +24,9 @@ const Landing = () => {
   return (
     <Container>
       <div>
-        <h1 style={Center}>CEOS 15 FRONT </h1>
-        <h1 style={Center}>4TH STUDY </h1>
-        <h3 style={Center}>messenger</h3>
+        <H1>CEOS 15 FRONT </H1>
+        <H1>4TH STUDY </H1>
+        <H3>messenger</H3>
       </div>
       {toggle ? (
         <>
@@ -38,13 +38,12 @@ const Landing = () => {
         </>
       ) : (
         <Form1Style onSubmit={handleSubmit}>
-          <input
+          <Input
             required
             type="text"
             value={input}
             onChange={handleInput}
             placeholder="대화명을 입력해주세요."
-            maxLength="10"
           />
           <Btn>대화명 입력</Btn>
         </Form1Style>

@@ -14,30 +14,32 @@ import {
   MiddleDiv,
   BackBtn,
   ButtonStyle,
+  Input,
 } from './style';
 import { useRef } from 'react';
 import { useParams, useNavigate } from 'react-router';
 import io, { Socket } from 'socket.io-client';
 import { useEffect, useState } from 'react';
 import gravatar from 'gravatar';
-const socket = io.connect(`http://13.124.245.172:80`);
+import { IUserInfo } from 'interface';
+const socket = io(`http://localhost:3065`);
 const Room = () => {
   const { id } = useParams();
   let navigator = useNavigate();
-  const scrollRef = useRef();
+  const scrollRef = useRef<HTMLInputElement>(null);
   const [input, setInput] = useState('');
   const [messageObj, setMessageObj] = useState({});
-  const [msg, setMsg] = useState();
+  const [msg, setMsg] = useState([]);
 
-  const createMessageObj = (id, msg) => {
+  const createMessageObj = (id?: string, msg?: any) => {
     const time = new Date().toString().slice(16, -21).slice(0, 5);
     setMessageObj({ usr: id, time, msg });
   };
 
-  const handleInput = (e) => {
+  const handleInput = (e: any) => {
     setInput(e.target.value);
   };
-  const onSubmitForm = (e) => {
+  const onSubmitForm = (e: any) => {
     e.preventDefault();
     if (!input || !input.trim()) {
       return alert('메세지를 입력해주세요');
@@ -45,7 +47,7 @@ const Room = () => {
     createMessageObj(id, input);
     setInput('');
   };
-  const onClickHeart = (e) => {
+  const onClickHeart = (e: any) => {
     e.preventDefault();
     createMessageObj(id, '💜');
   };
@@ -61,7 +63,7 @@ const Room = () => {
 
   useEffect(() => {
     socket.on('sendBack', (data) => {
-      const cleanData = data.filter((obj) => {
+      const cleanData = data.filter((obj: any) => {
         return Object.keys(obj).length !== 0;
       });
 
@@ -79,7 +81,7 @@ const Room = () => {
           <h3></h3>
         </NameField>
         <MessageBox ref={scrollRef}>
-          {msg?.map((m, i) => {
+          {msg?.map((m: IUserInfo, i) => {
             return (
               <>
                 {m.usr == id ? (
@@ -94,7 +96,7 @@ const Room = () => {
                       </MiddleDiv>
                     </MiddleBox>
                     <ImgBox
-                      src={gravatar.url(id, {
+                      src={gravatar.url('', {
                         s: '28px',
                         d: '404',
                       })}
@@ -103,7 +105,7 @@ const Room = () => {
                 ) : (
                   <MsgWrapper key={i}>
                     <ImgBox
-                      src={gravatar.url(m.usr, {
+                      src={gravatar.url('', {
                         s: '28px',
                         d: '404',
                       })}
@@ -127,14 +129,13 @@ const Room = () => {
         </MessageBox>
         <FormBox>
           <ButtonStyle onClick={onSubmitForm}>+</ButtonStyle>
-          <input
+          <Input
             required
             type="text"
             placeholder="메세지 입력"
             onChange={handleInput}
             value={input}
             style={{ width: '100%' }}
-            maxLength="35"
           />
           <ButtonStyle onClick={onClickHeart}>💜</ButtonStyle>
         </FormBox>

@@ -6,7 +6,7 @@ const GlobalStyle = createGlobalStyle`
     --bg-color : black;
     --font-color1 : white;
     --font-color2 : #bf9053;
-    --font-color3 : black; 
+    --font-color3 : black;
 
     // mode toggle
     --bg-TColor : white;
