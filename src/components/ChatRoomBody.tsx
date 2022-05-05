@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Chat from './Chat';
 import db from '../db/db.json';
-import { useState, useRef, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 
 const ChatRoomBody = ({ chatList, setChatList }) => {
   const scrollRef = useRef();
