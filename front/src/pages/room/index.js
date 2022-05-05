@@ -13,6 +13,7 @@ import {
   FormBox,
   MiddleDiv,
   BackBtn,
+  ButtonStyle,
 } from './style';
 import { useRef } from 'react';
 import { useParams, useNavigate } from 'react-router';
@@ -95,7 +96,7 @@ const Room = () => {
                     <ImgBox
                       src={gravatar.url(id, {
                         s: '28px',
-                        d: 'wavatar',
+                        d: '404',
                       })}
                     />
                   </MsgWrapper>
@@ -104,7 +105,7 @@ const Room = () => {
                     <ImgBox
                       src={gravatar.url(m.usr, {
                         s: '28px',
-                        d: 'wavatar',
+                        d: '404',
                       })}
                     ></ImgBox>
                     <MiddleBox>
@@ -125,6 +126,7 @@ const Room = () => {
           })}
         </MessageBox>
         <FormBox>
+          <ButtonStyle onClick={onSubmitForm}>+</ButtonStyle>
           <input
             required
             type="text"
@@ -134,8 +136,7 @@ const Room = () => {
             style={{ width: '100%' }}
             maxLength="35"
           />
-          <button onClick={onSubmitForm}>+</button>
-          <button onClick={onClickHeart}>💜</button>
+          <ButtonStyle onClick={onClickHeart}>💜</ButtonStyle>
         </FormBox>
       </ChatBox>
     </Wrapper>

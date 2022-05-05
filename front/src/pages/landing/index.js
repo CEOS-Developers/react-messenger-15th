@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Form1Style, Container, Center, Btn } from './styles';
 const Landing = () => {
   const [input, setInput] = useState('');
   const [usr, setUsr] = useState('');
@@ -19,18 +20,24 @@ const Landing = () => {
   const handleCancle = () => {
     setToggle((prev) => !prev);
   };
+
   return (
-    <div>
+    <Container>
+      <div>
+        <h1 style={Center}>CEOS 15 FRONT </h1>
+        <h1 style={Center}>4TH STUDY </h1>
+        <h3 style={Center}>messenger</h3>
+      </div>
       {toggle ? (
         <>
-          <form>
+          <Form1Style>
             대화명 [{input}]으로 입장하시겠습니까?
             <button onClick={handleEnter}>입장</button>
             <button onClick={handleCancle}>취소</button>
-          </form>
+          </Form1Style>
         </>
       ) : (
-        <form onSubmit={handleSubmit}>
+        <Form1Style onSubmit={handleSubmit}>
           <input
             required
             type="text"
@@ -39,10 +46,10 @@ const Landing = () => {
             placeholder="대화명을 입력해주세요."
             maxLength="10"
           />
-          <button>대화명 입력</button>
-        </form>
+          <Btn>대화명 입력</Btn>
+        </Form1Style>
       )}
-    </div>
+    </Container>
   );
 };
 export default Landing;
