@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { HiOutlineChevronLeft, HiOutlineChevronRight } from 'react-icons/hi';
-
 import me from '../../data/me.json';
 import friends from '../../data/friends.json';
 
@@ -10,7 +9,7 @@ type CharRoomHeaderProps = {
   setReceiverUserId: (receiverUserId: number) => void;
 };
 
-export function ChatRoomHeader({
+function ChatRoomHeader({
   partnerUserId,
   receiverUserId,
   setReceiverUserId,
@@ -121,3 +120,5 @@ const ReceiverUserNameWrapper = styled.div`
     color: #9f9fa3bd;
   }
 `;
+
+export default ChatRoomHeader;

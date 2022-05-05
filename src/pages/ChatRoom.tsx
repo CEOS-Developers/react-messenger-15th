@@ -1,8 +1,8 @@
 import { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
-import { ChatRoomHeader } from '../components/chatroom/ChatRoomHeader';
-import { ChatRoomMain } from '../components/chatroom/ChatRoomMain';
-import { ChatRoomForm } from '../components/chatroom/ChatRoomForm';
+import ChatRoomHeader from '../components/chatroom/ChatRoomHeader';
+import ChatRoomMain from '../components/chatroom/ChatRoomMain';
+import ChatRoomForm from '../components/chatroom/ChatRoomForm';
 
 import { Chats } from '../types/index';
 import chats from '../data/chats.json';

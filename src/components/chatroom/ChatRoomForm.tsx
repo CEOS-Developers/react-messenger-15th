@@ -1,9 +1,7 @@
 import styled, { css } from 'styled-components';
 import { HiOutlineChevronDown } from 'react-icons/hi';
-
 import { useInput } from '../../hooks/useInput';
 import { Chats } from '../../types/index';
-
 import me from '../../data/me.json';
 
 type ChatRoomFormProps = {
@@ -13,7 +11,7 @@ type ChatRoomFormProps = {
   setChatList: (chatList: Chats) => void;
 };
 
-export function ChatRoomForm({
+function ChatRoomForm({
   partnerUserId,
   receiverUserId,
   chatList,
@@ -120,3 +118,5 @@ const Btn = styled.button<{ isValid: boolean }>`
       `}
   }
 `;
+
+export default ChatRoomForm;

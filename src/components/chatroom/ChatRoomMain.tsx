@@ -10,7 +10,7 @@ type ChatRoomMainProps = {
   chatList: Chats;
 };
 
-export function ChatRoomMain({ partnerUserId, chatList }: ChatRoomMainProps) {
+function ChatRoomMain({ partnerUserId, chatList }: ChatRoomMainProps) {
   const partner = friends.filter(
     (friend) => friend.userId === partnerUserId
   )[0];
@@ -140,3 +140,5 @@ const Timestamp = styled.span`
   flex-direction: column;
   justify-content: flex-end;
 `;
+
+export default ChatRoomMain;
