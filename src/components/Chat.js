@@ -18,8 +18,8 @@ const TextWrapper = styled.section`
 `;
 
 const ProfileImg = styled.img`
-  width: 10%;
-  height: 10%;
+  width: 30px;
+  height: 30px;
 
   border-radius: 50%;
 `;

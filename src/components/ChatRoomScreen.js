@@ -1,15 +1,19 @@
+import styled from 'styled-components';
 import { useState } from 'react';
 import InputForm from './InputForm';
 import ChatRoomBody from './ChatRoomBody';
-import styled from 'styled-components';
+import ChatRoomHeader from './ChatRoomHeader';
 
 const ChatRoomScreen = () => {
   const [chatList, setChatList] = useState([]);
-  const userId = 'user1';
-  const [currentUserId, setCurrentUserId] = useState(userId);
+  const [currentUserId, setCurrentUserId] = useState('user0');
 
   return (
     <Wrapper>
+      <ChatRoomHeader
+        currentUserId={currentUserId}
+        setCurrentUserId={setCurrentUserId}
+      />
       <ChatRoomBody chatList={chatList} setChatList={setChatList} />
       <InputForm
         currentUserId={currentUserId}

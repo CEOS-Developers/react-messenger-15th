@@ -11,7 +11,7 @@ const InputForm = ({ currentUserId, chatList, setChatList }) => {
       const msg = {
         userId: currentUserId,
         message: inputText,
-        msgId: Date.now(),
+        msgId: Date.now().toString(),
       };
 
       setChatList([...chatList, msg]);
@@ -27,7 +27,7 @@ const InputForm = ({ currentUserId, chatList, setChatList }) => {
     const heartMsg = {
       userId: currentUserId,
       message: '❤️',
-      msgId: Date.now(),
+      msgId: Date.now().toString(),
     };
 
     setChatList([...chatList, heartMsg]);

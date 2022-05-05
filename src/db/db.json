@@ -7,12 +7,12 @@
     {
       "userId": "user0",
       "message": "Olaf, you are melting!",
-      "msgId": "Date.Now()"
+      "msgId": "1"
     },
     {
       "userId": "user1",
       "message": "Some people are worth melting for.",
-      "msgId": "Date.Now()"
+      "msgId": "2"
     }
   ]
 }
