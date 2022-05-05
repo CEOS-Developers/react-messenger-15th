@@ -1,18 +1,18 @@
 [
   {
-    "userId": "0",
+    "userId": 0,
     "userName": "sshin"
   },
   {
-    "userId": "1",
+    "userId": 1,
     "userName": "dlwlrma"
   },
   {
-    "userId": "2",
+    "userId": 2,
     "userName": "realisshoman"
   },
   {
-    "userId": "3",
+    "userId": 3,
     "userName": "meenoie"
   }
 ]

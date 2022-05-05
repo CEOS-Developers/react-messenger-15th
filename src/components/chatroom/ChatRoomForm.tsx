@@ -1,14 +1,16 @@
 import styled, { css } from 'styled-components';
 import { HiOutlineChevronDown } from 'react-icons/hi';
+
 import { useInput } from '../../hooks/useInput';
 import { Chats } from '../../types/index';
+
 import me from '../../data/me.json';
 
 type ChatRoomFormProps = {
   partnerUserId: number;
   receiverUserId: number;
   chatList: Chats;
-  setChatList: (chatList: any) => void;
+  setChatList: (chatList: Chats) => void;
 };
 
 export function ChatRoomForm({
@@ -25,7 +27,7 @@ export function ChatRoomForm({
     if (!inputValue) alert('Please enter a message');
 
     let senderUserId;
-    if (receiverUserId == parseInt(me.userId)) senderUserId = partnerUserId;
+    if (receiverUserId == me.userId) senderUserId = partnerUserId;
     else senderUserId = me.userId;
 
     const newMsg = {
@@ -33,12 +35,8 @@ export function ChatRoomForm({
       msg: inputValue,
       unixTime: Date.now(),
     };
-
-    setChatList({
-      userId: partnerUserId,
-      chats: [...chatList.chats, newMsg],
-    });
-
+    const nextChatList = chatList.concat(newMsg);
+    setChatList(nextChatList);
     resetInput();
     setIsValid(false);
   };

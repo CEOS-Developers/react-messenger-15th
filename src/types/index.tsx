@@ -4,7 +4,4 @@ export interface Chat {
   unixTime: number;
 }
 
-export interface Chats extends Chat {
-  userId: number;
-  chats: Chat[];
-}
+export interface Chats extends Array<Chat> {}

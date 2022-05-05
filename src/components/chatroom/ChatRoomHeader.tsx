@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { HiOutlineChevronLeft, HiOutlineChevronRight } from 'react-icons/hi';
+
 import me from '../../data/me.json';
 import friends from '../../data/friends.json';
 
@@ -15,15 +16,15 @@ export function ChatRoomHeader({
   setReceiverUserId,
 }: CharRoomHeaderProps) {
   const handleReceiverToggle = () => {
-    if (receiverUserId === parseInt(me.userId)) {
+    if (receiverUserId === me.userId) {
       setReceiverUserId(partnerUserId);
     } else {
-      setReceiverUserId(parseInt(me.userId));
+      setReceiverUserId(me.userId);
     }
   };
 
   const receiver = friends.filter(
-    (friend) => parseInt(friend.userId) === receiverUserId
+    (friend) => friend.userId === receiverUserId
   )[0];
 
   return (
@@ -55,6 +56,25 @@ const ChatRoomHeaderBlock = styled.header`
   border-bottom: 1px solid #e2e2e2;
 `;
 
+const Btn = styled.div`
+  width: 10%;
+  height: 100%;
+  margin-left: 3%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    font-size: 1.8rem;
+    color: #1986fc;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+`;
+
 const ProfileWrapper = styled.div`
   width: 40%;
   height: 100%;
@@ -84,11 +104,6 @@ const ReceiverUserNameWrapper = styled.div`
   align-items: center;
   justify-content: center;
 
-  svg {
-    margin-top: 10%;
-    color: #9f9fa3bd;
-  }
-
   span {
     margin-top: 10%;
     margin-right: 2px;
@@ -100,23 +115,9 @@ const ReceiverUserNameWrapper = styled.div`
     display: flex;
     align-items: center;
   }
-`;
-
-const Btn = styled.div`
-  width: 10%;
-  height: 100%;
-  margin-left: 3%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
   svg {
-    font-size: 1.8rem;
-    color: #1986fc;
-  }
-
-  &:hover {
-    cursor: pointer;
+    margin-top: 10%;
+    color: #9f9fa3bd;
   }
 `;

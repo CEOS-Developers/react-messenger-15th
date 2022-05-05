@@ -7,8 +7,8 @@ import { useState, useCallback } from 'react';
  */
 
 export const useInput = (initialForm: any) => {
-  const [form, setForm] = useState(initialForm);
-  const [isValid, setIsValid] = useState(false);
+  const [form, setForm] = useState<any>(initialForm);
+  const [isValid, setIsValid] = useState<boolean | null>(false);
 
   const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     // const { name, value } = e.target;

@@ -1,18 +1,18 @@
 import { useState, useRef, useEffect } from 'react';
 import styled, { css } from 'styled-components';
-import { Chats, Chat } from '../../types/index';
+import { Chat, Chats } from '../../types/index';
 import me from '../../data/me.json';
 import friends from '../../data/friends.json';
 import { getTimeStamp } from '../../utils/getTimeStamp';
 
 type ChatRoomMainProps = {
   partnerUserId: number;
-  chatList: any;
+  chatList: Chats;
 };
 
 export function ChatRoomMain({ partnerUserId, chatList }: ChatRoomMainProps) {
   const partner = friends.filter(
-    (friend) => parseInt(friend.userId) === partnerUserId
+    (friend) => friend.userId === partnerUserId
   )[0];
 
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -25,7 +25,7 @@ export function ChatRoomMain({ partnerUserId, chatList }: ChatRoomMainProps) {
 
   return (
     <ChatRoomMainBlock ref={scrollRef}>
-      {chatList.chats.map(({ userId, msg, unixTime }: Chat, idx: number) => (
+      {chatList.map(({ userId, msg, unixTime }: Chat, idx: number) => (
         <ChatItem key={idx} userId={userId}>
           <img src={`${process.env.PUBLIC_URL}/imgs/${userId}.jpg`} />
           <TextWrapper>
@@ -62,7 +62,7 @@ const ChatRoomMainBlock = styled.div`
   }
 `;
 
-const ChatItem = styled.div<{ userId: string }>`
+const ChatItem = styled.div<{ userId: number }>`
   margin: 3%;
 
   display: flex;
@@ -88,7 +88,7 @@ const TextWrapper = styled.div`
   flex-direction: column;
 `;
 
-const UserName = styled.span<{ userId: string }>`
+const UserName = styled.span<{ userId: number }>`
   font-size: 0.7rem;
   color: #3f464db2;
 
@@ -97,7 +97,7 @@ const UserName = styled.span<{ userId: string }>`
     userId === me.userId ? 'row-reverse' : 'row'};
 `;
 
-const MsgWrapper = styled.div<{ userId: string }>`
+const MsgWrapper = styled.div<{ userId: number }>`
   width: 100%;
 
   display: flex;
@@ -105,7 +105,7 @@ const MsgWrapper = styled.div<{ userId: string }>`
     userId === me.userId ? 'row-reverse' : 'row'};
 `;
 
-const Bubble = styled.div<{ userId: string }>`
+const Bubble = styled.div<{ userId: number }>`
   padding: 3.5%;
   margin-top: 2%;
 

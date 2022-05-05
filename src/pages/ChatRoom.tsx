@@ -3,15 +3,18 @@ import styled from 'styled-components';
 import { ChatRoomHeader } from '../components/chatroom/ChatRoomHeader';
 import { ChatRoomMain } from '../components/chatroom/ChatRoomMain';
 import { ChatRoomForm } from '../components/chatroom/ChatRoomForm';
+
+import { Chats } from '../types/index';
 import chats from '../data/chats.json';
 
 export function ChatRoom() {
   const tmpPartnerUserId = 1; // const { partnerUserId } = useParams();
-  const [receiverUserId, setReceiverUserId] = useState(tmpPartnerUserId);
+  const [receiverUserId, setReceiverUserId] =
+    useState<number>(tmpPartnerUserId);
   const ChatsWithPartner = chats.filter(
-    (user) => parseInt(user.userId) === tmpPartnerUserId
-  )[0];
-  const [chatList, setChatList] = useState(ChatsWithPartner);
+    (user) => user.userId === tmpPartnerUserId
+  )[0].chats;
+  const [chatList, setChatList] = useState<Chats>(ChatsWithPartner);
 
   return (
     <ChatRoomBlock>
