@@ -81,6 +81,8 @@ const ChatItem = styled.div<{ userId: string }>`
 
 const TextWrapper = styled.div`
   width: 83%;
+  margin-left: 1%;
+  margin-right: 1%;
 
   display: flex;
   flex-direction: column;
