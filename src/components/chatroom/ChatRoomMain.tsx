@@ -1,40 +1,34 @@
 import styled, { css } from 'styled-components';
-
+import { Chats, Chat } from '../../types/index';
 import me from '../../assets/me.json';
 import friends from '../../assets/friends.json';
 import { GetTime } from '../../utils/GetTime';
 
 type ChatRoomMainProps = {
-  // ref: any;
+  receiverUserId: string;
   chatList: any;
 };
 
-interface Chat {
-  userId: any;
-  sentAt: any;
-  msg: any;
-}
-
-export function ChatRoomMain({ chatList }: ChatRoomMainProps) {
-  const userId = 'user1';
-  const userName = friends.filter((friend) => friend.userId === userId)[0]
-    .userName;
+export function ChatRoomMain({ receiverUserId, chatList }: ChatRoomMainProps) {
+  const receiverUserName = friends.filter(
+    (friend) => friend.userId === receiverUserId
+  )[0].userName;
 
   return (
     <ChatRoomMainBlock>
-      {chatList.chats.map(({ userId, sentAt, msg }: Chat) => (
-        <ChatItem key={sentAt} sender={userId}>
-          <Img src={`${process.env.PUBLIC_URL}/imgs/${userId}.jpg`} />
+      {chatList.chats.map(({ userId, msg, timestamp }: Chat, idx: number) => (
+        <ChatWrapper key={idx} userId={userId}>
+          <ProfileImg src={`${process.env.PUBLIC_URL}/imgs/${userId}.jpg`} />
           <TextWrapper>
-            <UserName sender={userId}>
-              {userId === 'user0' ? me.userName : userName}
+            <UserName userId={userId}>
+              {userId === 'user0' ? me.userName : receiverUserName}
             </UserName>
-            <InfoWrapper sender={userId}>
-              <Bubble sender={userId}>{msg}</Bubble>
-              <Time>{GetTime(sentAt)}</Time>
-            </InfoWrapper>
+            <ChatInfoWrapper userId={userId}>
+              <Bubble userId={userId}>{msg}</Bubble>
+              <Time>{GetTime(timestamp)}</Time>
+            </ChatInfoWrapper>
           </TextWrapper>
-        </ChatItem>
+        </ChatWrapper>
       ))}
     </ChatRoomMainBlock>
   );
@@ -43,40 +37,23 @@ export function ChatRoomMain({ chatList }: ChatRoomMainProps) {
 const ChatRoomMainBlock = styled.div`
   width: 100%;
   height: 75%;
-
-  overflow: auto;
-
-  &::-webkit-scrollbar {
-    width: 20px;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background: #e2e2e2;
-    background-clip: padding-box;
-    border-radius: 20px;
-    border: 8px solid transparent;
-  }
-
-  /* height: 70%; */
-
-  /* width: 100%; */
-  /* overflow: auto; */
+  overflow-y: auto;
 
   display: flex;
   flex-direction: column;
 `;
 
-const ChatItem = styled.div<{ sender: any }>`
+const ChatWrapper = styled.div<{ userId: any }>`
   max-width: 95%;
   margin: 4%;
 
   display: flex;
-  flex-direction: ${({ sender }: any) =>
-    sender === 'user0' ? 'row-reverse' : 'row'};
+  flex-direction: ${({ userId }) =>
+    userId === 'user0' ? 'row-reverse' : 'row'};
   justify-content: space-between;
 `;
 
-const Img = styled.img`
+const ProfileImg = styled.img`
   width: 10%;
   height: 10%;
 
@@ -91,26 +68,26 @@ const TextWrapper = styled.div`
   flex-direction: column;
 `;
 
-const UserName = styled.div<{ sender: any }>`
+const UserName = styled.div<{ userId: any }>`
   width: 100%;
 
   font-size: 14px;
   color: #343a40;
 
   display: flex;
-  flex-direction: ${({ sender }: any) =>
-    sender === 'user0' ? 'row-reverse' : 'row'};
+  flex-direction: ${({ userId }) =>
+    userId === 'user0' ? 'row-reverse' : 'row'};
 `;
 
-const InfoWrapper = styled.div<{ sender: any }>`
+const ChatInfoWrapper = styled.div<{ userId: any }>`
   width: 100%;
 
   display: flex;
-  flex-direction: ${({ sender }: any) =>
-    sender === 'user0' ? 'row-reverse' : 'row'};
+  flex-direction: ${({ userId }) =>
+    userId === 'user0' ? 'row-reverse' : 'row'};
 `;
 
-const Bubble = styled.div<{ sender: any }>`
+const Bubble = styled.div<{ userId: any }>`
   padding: 3%;
   margin-top: 2.5%;
 
@@ -119,8 +96,8 @@ const Bubble = styled.div<{ sender: any }>`
 
   display: flex;
 
-  ${({ sender }: any) =>
-    sender === 'user0'
+  ${({ userId }) =>
+    userId === 'user0'
       ? css`
           flex-direction: row-reverse;
           color: #ffffff;
@@ -143,3 +120,126 @@ const Time = styled.div`
   display: flex;
   align-items: end;
 `;
+
+//   return (
+//     <ChatRoomMainBlock>
+//       {chatList.chats.map(({ userId, msg, timestamp }: Chat, index: number) => (
+//         <ChatItem key={index} userId={userId}>
+//           <img src={`${process.env.PUBLIC_URL}/imgs/${userId}.jpg`} />
+//           <TextWrapper>
+//             <UserName userId={userId} />
+//             <InfoWrapper userId={userId}>
+//               <Bubble userId={userId}>{msg}</Bubble>
+//               <Time>{GetTime(timestamp)}</Time>
+//             </InfoWrapper>
+//           </TextWrapper>
+//         </ChatItem>
+//       ))}
+//     </ChatRoomMainBlock>
+//   );
+// }
+
+// const ChatRoomMainBlock = styled.main`
+//   width: 100%;
+//   height: 75%;
+
+//   overflow-y: auto;
+
+//   &::-webkit-scrollbar {
+//     width: 20px;
+//   }
+//   &::-webkit-scrollbar-thumb {
+//     background: #e2e2e2;
+//     background-clip: padding-box;
+//     border-radius: 20px;
+//     border: 8px solid transparent;
+//   }
+
+//   display: flex;
+//   flex-direction: column;
+// `;
+
+// const ChatItem = styled.div<{ userId: string }>`
+//   width: 90%;
+//   margin: 3.5%;
+
+//   display: flex;
+//   flex-direction: ${({ userId }) =>
+//     userId === me.userId ? 'row-reverse' : 'row'};
+//   justify-content: flex-start;
+
+//   img {
+//     width: 10%;
+//     height: 10%;
+//     /* flex: 1; */
+
+//     border-radius: 50%;
+//     object-fit: cover;
+//   }
+// `;
+
+// const TextWrapper = styled.div`
+//   display: flex;
+//   flex-direction: inherit;
+// `;
+
+// const Img = styled.img`
+//   width: 10%;
+//   height: 10%;
+
+//   border-radius: 50%;
+//   object-fit: cover;
+// `;
+
+// const UserName = styled.div<{ userId: any }>`
+//   width: 100%;
+
+//   font-size: 14px;
+//   color: #343a40;
+
+//   display: flex;
+//   flex-direction: ${({ userId }: any) =>
+//     userId === 'user0' ? 'row-reverse' : 'row'};
+// `;
+
+// const InfoWrapper = styled.div<{ userId: any }>`
+//   width: 100%;
+
+//   display: flex;
+//   flex-direction: ${({ userId }: any) =>
+//     userId === 'user0' ? 'row-reverse' : 'row'};
+// `;
+
+// const Bubble = styled.div<{ userId: any }>`
+//   padding: 3%;
+//   margin-top: 2.5%;
+
+//   font-size: 12px;
+//   line-height: 18px;
+
+//   display: flex;
+
+//   ${({ userId }: any) =>
+//     userId === 'user0'
+//       ? css`
+//           flex-direction: row-reverse;
+//           color: #ffffff;
+//           background: #1986fc;
+//           border-radius: 12px 1px 12px 12px;
+//         `
+//       : css`
+//           flex-direction: 'row';
+//           color: #000000;
+//           background: #f1f1f3;
+//           border-radius: 1px 12px 12px 12px;
+//         `}
+// `;
+
+// const Time = styled.div`
+//   color: #c8c8c8;
+//   font-size: 10px;
+//   margin: 0 2%;
+
+//   display: flex;
+//   align-items: end;
+// `;

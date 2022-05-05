@@ -1,12 +1,12 @@
 import styled, { css } from 'styled-components';
 import { HiOutlineChevronDown } from 'react-icons/hi';
-import { chats } from '../../types/index';
+import { Chats } from '../../types/index';
 import { useInput } from '../../hooks/useInput';
 
 type ChatRoomFormProps = {
   receiverUserId: string;
-  chatList: chats;
-  setChatList: (chatList: chats) => void;
+  chatList: any;
+  setChatList: (chatList: any) => void;
 };
 
 export function ChatRoomForm({
@@ -40,6 +40,7 @@ export function ChatRoomForm({
         placeholder="Text Message..."
         value={inputValue}
         onChange={handleInputChange}
+        autoFocus
       ></input>
       <Btn onClick={handleSubmitBtnClick} isValid={isValid}>
         <HiOutlineChevronDown />

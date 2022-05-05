@@ -28,7 +28,7 @@ export function ChatRoom() {
         setReceiverUserId={setReceiverUserId}
       />
       {/* <ChatRoomMain ref={scrollRef} chatList={chatList} /> */}
-      <ChatRoomMain chatList={chatList} />
+      <ChatRoomMain receiverUserId={receiverUserId} chatList={chatList} />
       <ChatRoomForm
         receiverUserId={receiverUserId}
         chatList={chatList}

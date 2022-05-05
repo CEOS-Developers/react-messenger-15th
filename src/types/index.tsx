@@ -1,8 +1,10 @@
-export interface chats {
+export interface Chat {
   userId: string;
-  chats: {
-    userId: string;
-    msg: string;
-    timestamp: number;
-  }[];
+  msg: string;
+  timestamp: number;
+}
+
+export interface Chats extends Chat {
+  userId: string;
+  chats: Chat[];
 }
