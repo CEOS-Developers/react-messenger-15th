@@ -5,13 +5,13 @@ import friends from '../../data/friends.json';
 import { getTimeStamp } from '../../utils/getTimeStamp';
 
 type ChatRoomMainProps = {
-  receiverUserId: string;
+  partnerUserId: string;
   chatList: any;
 };
 
-export function ChatRoomMain({ receiverUserId, chatList }: ChatRoomMainProps) {
-  const receiver = friends.filter(
-    (friend) => friend.userId === receiverUserId
+export function ChatRoomMain({ partnerUserId, chatList }: ChatRoomMainProps) {
+  const partner = friends.filter(
+    (friend) => friend.userId === partnerUserId
   )[0];
 
   return (
@@ -21,7 +21,7 @@ export function ChatRoomMain({ receiverUserId, chatList }: ChatRoomMainProps) {
           <img src={`${process.env.PUBLIC_URL}/imgs/${userId}.jpg`} />
           <TextWrapper>
             <UserName userId={userId}>
-              {userId === me.userName ? me.userName : receiver.userName}
+              {userId === me.userId ? me.userName : partner.userName}
             </UserName>
             <MsgWrapper userId={userId}>
               <Bubble userId={userId}>{msg}</Bubble>
