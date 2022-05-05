@@ -13,7 +13,7 @@ const MessageProfileContainer = () => {
 };
 
 const Container = styled.section`
-  height: 120px;
+  height: 19%;
   border-bottom: 1px solid lightgrey;
   display: grid;
   grid-template-columns: 1fr 150px 1fr;

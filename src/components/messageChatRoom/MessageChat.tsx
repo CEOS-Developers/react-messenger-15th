@@ -37,7 +37,7 @@ const MessageChat = () => {
 const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
-  height: 430px;
+  height: 67%;
   overflow: auto;
   padding: 12px 10px 0 12px;
   ::-webkit-scrollbar {

@@ -48,3 +48,13 @@ export interface IAlert {
   setVisibleAlert: React.Dispatch<boolean>;
   value: string;
 }
+
+export interface IResponsiveSizeAction {
+  type: "RESIZE";
+  isMobile: boolean;
+}
+
+export interface IResponsiveSizeState {
+  isMobile: boolean;
+  dispatch: React.Dispatch<IResponsiveSizeAction>;
+}

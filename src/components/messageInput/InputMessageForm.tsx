@@ -2,12 +2,14 @@ import useInput from "hooks/useInput";
 import React, { useState } from "react";
 import styled from "styled-components";
 import useMessage from "hooks/useMessage";
+import useResponsiveSize from "hooks/useResponsiveSize";
 import InputEmoticon from "./InputEmoticon";
 import Alert from "components/Alert";
 
 const InputMessageForm = () => {
   const { text, handleTextChange, resetText } = useInput("");
   const { addMessage } = useMessage();
+  const { isMobile } = useResponsiveSize();
   const [visibleAlert, setVisibleAlert] = useState(false);
 
   // 메시지 전송
@@ -40,6 +42,7 @@ const InputMessageForm = () => {
         placeholder="메시지를 입력하세요"
         value={text}
         onChange={handleTextChange}
+        isMobile={isMobile}
       />
       <InputButton>
         <img alt="send" src="send.png" width={20} />
@@ -49,17 +52,16 @@ const InputMessageForm = () => {
 };
 
 const InputForm = styled.form`
-  height: 50px;
   border-top: 1px solid lightgrey;
   display: flex;
   align-items: center;
-  padding-top: 10px;
+  padding-top: 15px;
 `;
-const InputText = styled.input`
+const InputText = styled.input<{ isMobile: boolean }>`
   border: 1px solid lightgrey;
   border-radius: 10px;
   padding: 12px;
-  width: 230px;
+  width: ${({ isMobile }) => (isMobile ? "78%" : "230px")};
   height: 15px;
   font-size: 12px;
   :focus {

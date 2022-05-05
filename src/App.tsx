@@ -1,12 +1,35 @@
 import MessageChat from "components/messageChatRoom/MessageChat";
 import InputMessageForm from "components/messageInput/InputMessageForm";
 import MessageProfileContainer from "components/messageProfile/MessageProfileContainer";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+import useResponsiveSize from "hooks/useResponsiveSize";
+import { useEffect } from "react";
 
 const App = () => {
+  const { isMobile, setIsMobile } = useResponsiveSize();
+
+  const _handleResize = () => {
+    if (window.innerWidth <= 640) {
+      setIsMobile(true);
+    } else {
+      setIsMobile(false);
+    }
+  };
+
+  useEffect(() => {
+    if (window.innerWidth <= 640) {
+      setIsMobile(true);
+    }
+
+    window.addEventListener("resize", _handleResize);
+    return () => {
+      window.removeEventListener("resize", _handleResize);
+    };
+  }, []);
+
   return (
     <Wrapper>
-      <Container>
+      <Container isMobile={isMobile}>
         <MessageProfileContainer />
         <MessageChat />
         <InputMessageForm />
@@ -21,11 +44,19 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
 `;
-const Container = styled.div`
-  height: 640px;
-  width: 360px;
+const Container = styled.div<{ isMobile: boolean }>`
   border: 1px solid lightgrey;
-  border-radius: 7px;
+  ${({ isMobile }) =>
+    isMobile
+      ? css`
+          height: 100%;
+          width: 100%;
+        `
+      : css`
+          height: 640px;
+          width: 360px;
+          border-radius: 7px;
+        `}
 `;
 
 export default App;
