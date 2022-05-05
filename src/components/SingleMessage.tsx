@@ -1,11 +1,15 @@
 import styled from 'styled-components';
-const SingleMessage = ({ currentUser, chat }: any) => {
-  const { userId, userName, text } = chat;
+const SingleMessage = ({ chat }: any) => {
+  const { userId, userName, text, time } = chat;
   console.log(text);
   return (
     <>
+      <ProfileImg src={`/assets/${userId}.jpg`} />
       <span>{userName}</span>
-      <MessageText>{text}</MessageText>
+      <MessageText>
+        {text}
+        {time}
+      </MessageText>
     </>
   );
 };
@@ -13,3 +17,8 @@ const SingleMessage = ({ currentUser, chat }: any) => {
 export default SingleMessage;
 
 const MessageText = styled.div``;
+const ProfileImg = styled.img`
+  width: 3rem;
+  height: 3rem;
+  border-radius: 70%;
+`;

@@ -2,21 +2,25 @@
   {
     "userId": "me",
     "userName": "chaaerim",
-    "text": "With great power"
+    "text": "With great power",
+    "time": "11:10"
   },
   {
     "userId": "me",
     "userName": "chaaerim",
-    "text": "comes great responsibility"
+    "text": "comes great responsibility",
+    "time": "11:11"
   },
   {
-    "userId": "freind",
+    "userId": "friend",
     "userName": "PeterParker",
-    "text": "Come on,"
+    "text": "Come on,",
+    "time": "11:16"
   },
   {
-    "userId": "freind",
+    "userId": "friend",
     "userName": "PeterParker",
-    "text": "Peter Tingle!"
+    "text": "Peter Tingle!",
+    "time": "11:17"
   }
 ]

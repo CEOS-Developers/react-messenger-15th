@@ -21,7 +21,7 @@ const MessengerBox = () => {
   return (
     <div>
       <UserNav currentUser={currentUser} switchUser={switchUser} />
-      <MessageList currentUser={currentUser} chatList={chatList} />
+      <MessageList chatList={chatList} />
       <MessengerInput
         currentUser={currentUser}
         chatList={chatList}
