@@ -3,6 +3,7 @@ import { HiOutlineChevronDown } from 'react-icons/hi';
 import { Chats } from '../../types/index';
 import { useInput } from '../../hooks/useInput';
 import me from '../../data/me.json';
+import { getTimeStamp } from '../../utils/getTimeStamp';
 
 type ChatRoomFormProps = {
   partnerUserId: string;
@@ -31,7 +32,7 @@ export function ChatRoomForm({
     const newMsg = {
       userId: senderUserId,
       msg: inputValue,
-      timestamp: Date.now(),
+      unixTime: Date.now(),
     };
 
     setChatList({
