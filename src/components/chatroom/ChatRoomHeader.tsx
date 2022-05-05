@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { HiOutlineChevronLeft, HiOutlineChevronRight } from 'react-icons/hi';
-import me from '../../assets/me.json';
-import friends from '../../assets/friends.json';
+import me from '../../data/me.json';
+import friends from '../../data/friends.json';
 
 type CharRoomHeaderProps = {
   partnerUserId: string;
@@ -14,10 +14,6 @@ export function ChatRoomHeader({
   receiverUserId,
   setReceiverUserId,
 }: CharRoomHeaderProps) {
-  const receiver = friends.filter(
-    (friend) => friend.userId === receiverUserId
-  )[0];
-
   const handleReceiverToggle = () => {
     if (receiverUserId === me.userId) {
       setReceiverUserId(partnerUserId);
@@ -25,6 +21,10 @@ export function ChatRoomHeader({
       setReceiverUserId(me.userId);
     }
   };
+
+  const receiver = friends.filter(
+    (friend) => friend.userId === receiverUserId
+  )[0];
 
   return (
     <ChatRoomHeaderBlock>

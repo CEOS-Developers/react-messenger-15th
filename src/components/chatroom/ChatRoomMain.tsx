@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import { Chats, Chat } from '../../types/index';
-import me from '../../assets/me.json';
-import friends from '../../assets/friends.json';
+import me from '../../data/me.json';
+import friends from '../../data/friends.json';
 import { getTimeStamp } from '../../utils/getTimeStamp';
 
 type ChatRoomMainProps = {

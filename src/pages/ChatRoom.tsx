@@ -3,38 +3,30 @@ import styled from 'styled-components';
 import { ChatRoomHeader } from '../components/chatroom/ChatRoomHeader';
 import { ChatRoomMain } from '../components/chatroom/ChatRoomMain';
 import { ChatRoomForm } from '../components/chatroom/ChatRoomForm';
-
-import chats from '../assets/chats.json';
+import chats from '../data/chats.json';
 
 export function ChatRoom() {
   const tmpPartnerUserId = 'user1'; // const { partnerUserId } = useParams();
-  const [partnerUserId, setPartnerUserId] = useState(tmpPartnerUserId);
   const [receiverUserId, setReceiverUserId] = useState(tmpPartnerUserId);
-
-  const filterChats = chats.filter((user) => user.userId === partnerUserId)[0];
-  const [chatList, setChatList] = useState(filterChats);
-
-  // const scrollRef = useRef() as React.MutableRefObject<HTMLDivElement>;
-  // useEffect(() => {
-  //   scrollRef.current.scrollTo(0, scrollRef.current.scrollHeight);
-  // }, [chatList]);
-  // scrollRef.current.scrollHeight
-  // https://kyounghwan01.github.io/blog/TS/object-null/#%E1%84%8B%E1%85%A8%E1%84%89%E1%85%B5
+  const ChatsWithPartner = chats.filter(
+    (user) => user.userId === tmpPartnerUserId
+  )[0];
+  const [chatList, setChatList] = useState(ChatsWithPartner);
 
   return (
     <ChatRoomBlock>
       <ChatRoomHeader
-        partnerUserId={partnerUserId}
+        partnerUserId={tmpPartnerUserId}
         receiverUserId={receiverUserId}
         setReceiverUserId={setReceiverUserId}
       />
-      {/* <ChatRoomMain ref={scrollRef} chatList={chatList} /> */}
-      {/* <ChatRoomMain partnerUserId={partnerUserId} chatList={chatList} />
+      <ChatRoomMain partnerUserId={tmpPartnerUserId} chatList={chatList} />
       <ChatRoomForm
-        partnerUserId={partnerUserId}
+        partnerUserId={tmpPartnerUserId}
+        receiverUserId={receiverUserId}
         chatList={chatList}
         setChatList={setChatList}
-      /> */}
+      />
     </ChatRoomBlock>
   );
 }
@@ -57,3 +49,10 @@ const ChatRoomBlock = styled.div`
     height: calc(var(--vh, 1vh) * 100);
   }
 `;
+
+// const scrollRef = useRef() as React.MutableRefObject<HTMLDivElement>;
+// useEffect(() => {
+//   scrollRef.current.scrollTo(0, scrollRef.current.scrollHeight);
+// }, [chatList]);
+// scrollRef.current.scrollHeight
+// https://kyounghwan01.github.io/blog/TS/object-null/#%E1%84%8B%E1%85%A8%E1%84%89%E1%85%B5
