@@ -23,20 +23,21 @@ function ChatRoomForm({
   const handleSubmitBtnClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     if (!inputValue) alert('Please enter a message');
+    else {
+      let senderUserId;
+      if (receiverUserId == me.userId) senderUserId = partnerUserId;
+      else senderUserId = me.userId;
 
-    let senderUserId;
-    if (receiverUserId == me.userId) senderUserId = partnerUserId;
-    else senderUserId = me.userId;
-
-    const newMsg = {
-      userId: senderUserId,
-      msg: inputValue,
-      unixTime: Date.now(),
-    };
-    const nextChatList = chatList.concat(newMsg);
-    setChatList(nextChatList);
-    resetInput();
-    setIsValid(false);
+      const newMsg = {
+        userId: senderUserId,
+        msg: inputValue,
+        unixTime: Date.now(),
+      };
+      const nextChatList = chatList.concat(newMsg);
+      setChatList(nextChatList);
+      resetInput();
+      setIsValid(false);
+    }
   };
 
   return (

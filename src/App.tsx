@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { ChatRoom } from './pages/ChatRoom';
+import ChatRoom from './pages/ChatRoom';
 
 export function App() {
   const setVh = () => {

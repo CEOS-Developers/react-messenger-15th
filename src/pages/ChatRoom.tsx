@@ -7,7 +7,7 @@ import ChatRoomForm from '../components/chatroom/ChatRoomForm';
 import { Chats } from '../types/index';
 import chats from '../data/chats.json';
 
-export function ChatRoom() {
+function ChatRoom() {
   const tmpPartnerUserId = 1; // const { partnerUserId } = useParams();
   const [receiverUserId, setReceiverUserId] =
     useState<number>(tmpPartnerUserId);
@@ -52,3 +52,5 @@ const ChatRoomBlock = styled.div`
     height: calc(var(--vh, 1vh) * 100);
   }
 `;
+
+export default ChatRoom;
