@@ -13,12 +13,15 @@ const MessengerInput = ({
   const handleInputSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     //공백이 아닐 때에만 send 가능
     if (messageInput.replace(/\s+/g, '')) {
+      const date = new Date();
+      const hours = String(date.getHours()).padStart(2, '0');
+      const minutes = String(date.getMinutes()).padStart(2, '0');
       const message = {
         id: Date.now(),
         userId: currentUser.userId,
         userName: currentUser.userName,
         text: messageInput,
-        time: `${new Date().getHours()}:${new Date().getMinutes()}`,
+        time: `${hours}:${minutes}`,
       };
 
       setChatList([...chatList, message]);
