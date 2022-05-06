@@ -1,3 +1,7 @@
+### Deployment
+
+https://react-messenger-15th-d2eoz2mh4-24siefil.vercel.app/
+
 ### TODO
 
 - [x] 채팅방 상단의 프로필을 클릭하면 사용자를 변경할 수 있다.
@@ -20,7 +24,8 @@ ChatRoomHeader    ChatRoomList   ChatRoomForm
 ### Features
 
 * React Router를 활용한 SPA 개발을 염두하여 코드를 작성한다.
-
+* [The trick to viewport units on mobile](https://css-tricks.com/the-trick-to-viewport-units-on-mobile/)를 참고하여 반응형으로 제작한다.
+* transform을 활용하여 유저에게 메세지 전송 가능 여부를 시각적으로 전달한다.
 * React.memo를 사용하여 리스트 컴포넌트의 성능을 최적화한다.
 * [작업중] Context API를 사용하여 상태를 전역적으로 관리한다.
 

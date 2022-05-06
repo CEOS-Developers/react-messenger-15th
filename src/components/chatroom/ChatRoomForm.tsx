@@ -28,12 +28,12 @@ function ChatRoomForm({
       if (receiverUserId == me.userId) senderUserId = partnerUserId;
       else senderUserId = me.userId;
 
-      const newMsg = {
+      const newChat = {
         userId: senderUserId,
         msg: inputValue,
         unixTime: Date.now(),
       };
-      setChatList(chatList.concat(newMsg));
+      setChatList(chatList.concat(newChat));
       resetInput();
       setIsValid(false);
     }
@@ -109,6 +109,7 @@ const Btn = styled.button<{ isValid: boolean }>`
         &:hover {
           cursor: pointer;
         }
+
         &:active {
           background: #1987fc9d;
         }
