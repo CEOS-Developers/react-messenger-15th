@@ -4,7 +4,4 @@ const ChatRoomList = () =>{
     );
 };
 
-
-
-
 export default ChatRoomList;
