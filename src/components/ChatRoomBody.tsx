@@ -2,9 +2,10 @@ import styled from 'styled-components';
 import Chat from './Chat';
 import db from '../db/db.json';
 import { useRef, useEffect } from 'react';
+import { IChatRoomBodyProps } from './Interface';
 
-const ChatRoomBody = ({ chatList, setChatList }) => {
-  const scrollRef = useRef();
+const ChatRoomBody = ({ chatList, setChatList }: IChatRoomBodyProps) => {
+  const scrollRef = useRef<HTMLElement | null>();
 
   useEffect(() => {
     scrollRef.current.scrollTo(0, scrollRef.current.scrollHeight);

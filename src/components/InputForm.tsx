@@ -1,7 +1,12 @@
 import useInput from '../hooks/useInput';
 import styled from 'styled-components';
+import { IInputFormProps } from './Interface';
 
-const InputForm = ({ currentUserId, chatList, setChatList }) => {
+const InputForm = ({
+  currentUserId,
+  chatList,
+  setChatList,
+}: IInputFormProps) => {
   const [inputText, handleInputChange, reset] = useInput('');
 
   const handleNewMsg = (e) => {

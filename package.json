@@ -53,7 +53,9 @@
       "ES2015",
       "DOM",
       "DOM.Iterable"
-    ]
+    ],
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true
   },
   "include": [
     "./src/**/*"
@@ -61,7 +63,5 @@
   "exclude": [
     "node_modules",
     "dist"
-  ],
-  "allowSyntheticDefaultImports": true,
-  "esModuleInterop": true
+  ]
 }

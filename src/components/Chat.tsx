@@ -1,7 +1,16 @@
 import styled, { css } from 'styled-components';
 import { GetTime } from '../utils/GetTime';
+import { IChatProps } from './Interface';
 
-const Chat = ({ userId, message, msgId }) => {
+declare module 'react' {
+  interface HTMLAttributes<T> extends AriaAttributes, DOMAttributes<T> {
+    userId?: string;
+    message?: string;
+    msgId?: number;
+  }
+}
+
+const Chat = ({ userId, message, msgId }: IChatProps) => {
   return (
     <Wrapper>
       <ChatWrapper userId={userId} msgId={msgId}>
