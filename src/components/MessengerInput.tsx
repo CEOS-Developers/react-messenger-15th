@@ -37,8 +37,6 @@ const MessengerInput = ({
     e.preventDefault();
   };
 
-  console.log(chatList);
-
   return (
     <SubmitForm onSubmit={handleInputSubmit}>
       <InputBoxWrapper>
