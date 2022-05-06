@@ -2,6 +2,8 @@ import {Profileprops} from "./type";
 import React from "react";
 import { Dispatch, SetStateAction, useCallback} from "react";
 import {Profileimg,Profile,ProfileName,ProfileIntro} from "./UserProfileDesign"
+import nowUser from "./data/user.json";
+import ProfileImage from "./Image";
 
 function UserProfile({changeUser,setChangeUser} : Profileprops){
 
