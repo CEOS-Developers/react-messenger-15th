@@ -1,5 +1,4 @@
 import styled  from "styled-components";
-import "./style.css";
 import ChatRoom from "./ChatRoom";
 import Menu from "./Menu";
 
@@ -7,7 +6,6 @@ function App() {
  
 
 const Container = styled.div`
-
 
 text-align: center;
 width: 400px;
