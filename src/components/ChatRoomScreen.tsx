@@ -3,11 +3,14 @@ import { useState } from 'react';
 import InputForm from './InputForm';
 import ChatRoomBody from './ChatRoomBody';
 import ChatRoomHeader from './ChatRoomHeader';
+import { IChatRoomBodyProps, IChatRoomHeaderProps } from './Interface';
 
-const ChatRoomScreen = () => {
-  const [chatList, setChatList] = useState([]);
-  const [currentUserId, setCurrentUserId] = useState('user0');
-
+const ChatRoomScreen = ({
+  chatList,
+  setChatList,
+  currentUserId,
+  setCurrentUserId,
+}: IChatRoomBodyProps & IChatRoomHeaderProps) => {
   return (
     <Wrapper>
       <ChatRoomHeader
@@ -19,6 +22,7 @@ const ChatRoomScreen = () => {
 
       <InputForm
         currentUserId={currentUserId}
+        setCurrentUserId={setCurrentUserId}
         chatList={chatList}
         setChatList={setChatList}
       />

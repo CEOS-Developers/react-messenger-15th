@@ -8,7 +8,7 @@ declare module 'react' {
     message?: string;
     msgId?: number;
   }
-}
+} //jsx안에 사용
 
 const Chat = ({ userId, message, msgId }: IChatProps) => {
   return (

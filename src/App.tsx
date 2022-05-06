@@ -1,11 +1,20 @@
 import { createGlobalStyle } from 'styled-components';
 import ChatRoomScreen from './components/ChatRoomScreen';
+import { useState } from 'react';
 
 function App() {
+  const [chatList, setChatList] = useState<object>([]);
+  const [currentUserId, setCurrentUserId] = useState<string>('');
+
   return (
     <>
       <GlobalStyle />
-      <ChatRoomScreen />
+      <ChatRoomScreen
+        chatList={chatList}
+        setChatList={setChatList}
+        currentUserId={currentUserId}
+        setCurrentUserId={setCurrentUserId}
+      />
     </>
   );
 }

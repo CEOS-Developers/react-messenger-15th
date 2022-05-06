@@ -1,7 +1,11 @@
 import styled from 'styled-components';
 import { FiChevronLeft } from 'react-icons/fi';
+import { IChatRoomHeaderProps } from './Interface';
 
-const ChatRoomHeader = ({ currentUserId, setCurrentUserId }) => {
+const ChatRoomHeader = ({
+  currentUserId,
+  setCurrentUserId,
+}: IChatRoomHeaderProps) => {
   const userId = 'user1';
   const handleToggleUser = () => {
     currentUserId === 'user0'
