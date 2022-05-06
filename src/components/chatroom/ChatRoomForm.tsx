@@ -33,8 +33,7 @@ function ChatRoomForm({
         msg: inputValue,
         unixTime: Date.now(),
       };
-      const nextChatList = chatList.concat(newMsg);
-      setChatList(nextChatList);
+      setChatList(chatList.concat(newMsg));
       resetInput();
       setIsValid(false);
     }

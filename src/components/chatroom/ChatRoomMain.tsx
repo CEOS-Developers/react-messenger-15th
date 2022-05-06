@@ -43,6 +43,7 @@ const ChatRoomMainBlock = styled.div`
   &::-webkit-scrollbar {
     width: 20px;
   }
+
   &::-webkit-scrollbar-thumb {
     background: #e2e2e2;
     background-clip: padding-box;

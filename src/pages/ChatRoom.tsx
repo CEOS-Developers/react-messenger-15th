@@ -9,10 +9,10 @@ function ChatRoom() {
   const tmpPartnerUserId = 1; // const { partnerUserId } = useParams();
   const [receiverUserId, setReceiverUserId] =
     useState<number>(tmpPartnerUserId);
-  const ChatsWithPartner = chats.filter(
+  const chatsWithPartner = chats.filter(
     (user) => user.userId === tmpPartnerUserId
   )[0].chats;
-  const [chatList, setChatList] = useState<Chats>(ChatsWithPartner);
+  const [chatList, setChatList] = useState<Chats>(chatsWithPartner);
 
   return (
     <>
