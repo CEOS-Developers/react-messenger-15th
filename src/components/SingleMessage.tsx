@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { IChat } from '../interface/interface';
 const SingleMessage = ({ chat }: { chat: IChat }) => {
-  const { userId, userName, text, time } = chat;
+  const { id, userId, userName, text, time } = chat;
   console.log(chat);
   return (
     <>

@@ -1,4 +1,5 @@
 interface IChat {
+  id: number;
   userId: string;
   userName: string;
   text: string;

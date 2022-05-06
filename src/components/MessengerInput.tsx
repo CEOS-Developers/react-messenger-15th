@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import useInput from '../hooks/useInput';
 import { IMessengerInputProps } from '../interface/interface';
@@ -14,6 +14,7 @@ const MessengerInput = ({
     //공백이 아닐 때에만 send 가능
     if (messageInput.replace(/\s+/g, '')) {
       const message = {
+        id: Date.now(),
         userId: currentUser.userId,
         userName: currentUser.userName,
         text: messageInput,
