@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { useState, useRef, useEffect } from 'react';
+import { useState } from 'react';
 import InputForm from './InputForm';
 import ChatRoomBody from './ChatRoomBody';
 import ChatRoomHeader from './ChatRoomHeader';
