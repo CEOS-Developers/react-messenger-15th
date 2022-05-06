@@ -49,7 +49,8 @@ const ChatItemBlock = styled.div<{ userId: number }>`
 `;
 
 const TextWrapper = styled.div`
-  width: 79%;
+  width: 85%;
+  max-width: 78.5%;
   margin-left: 1%;
   margin-right: 1%;
 
