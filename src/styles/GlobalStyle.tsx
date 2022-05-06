@@ -23,7 +23,7 @@ body {
     font-family: 'Noto Sans KR', 'sans-serif', 'serif';
 }
 
-:root {
+&:root {
   --vh: 100%;
 }
 `;
