@@ -6,11 +6,10 @@ const ChatRoomHeader = ({
   currentUserId,
   setCurrentUserId,
 }: IChatRoomHeaderProps) => {
-  const userId = 'user1';
   const handleToggleUser = () => {
-    currentUserId === 'user0'
-      ? setCurrentUserId(userId)
-      : setCurrentUserId('user0');
+    currentUserId === 'user1'
+      ? setCurrentUserId('user0')
+      : setCurrentUserId('user1');
   };
 
   return (

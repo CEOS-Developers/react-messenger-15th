@@ -5,7 +5,7 @@ import { IChatProps } from './components/Interface';
 
 function App() {
   const [chatList, setChatList] = useState<IChatProps[]>([]);
-  const [currentUserId, setCurrentUserId] = useState<string>('');
+  const [currentUserId, setCurrentUserId] = useState<string>('user0');
 
   return (
     <>
