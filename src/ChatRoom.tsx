@@ -3,6 +3,7 @@ import UserProfile from "./UserProfile";
 import styled  from "styled-components";
 import useMessageList from "./useMessageList";
 import Inputform from "./InputForm";
+import Message from "./Message";
 
 function ChatRoom(){
 
@@ -20,6 +21,7 @@ function ChatRoom(){
     return(
     <ChatWrapper>
         <UserProfile changeUser={changeUser} setChangeUser = {setChangeUser}/>
+        <Message messageList={messageList}/>
         <Inputform changeUser={changeUser} messageList={messageList} setMessageList={setMessageList}></Inputform> 
     </ChatWrapper>
     );
