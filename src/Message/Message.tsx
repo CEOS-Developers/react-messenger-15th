@@ -1,8 +1,8 @@
-import { MessageItem } from "./type";
+import { MessageItem } from "../type";
 import {useRef,useEffect,useMemo} from "react";
 import {Wrapper,ChatMessage,ChatProfile,Chatcontainer,MessageBox,ChatName} from "./MessageDesign";
-import ProfileImage from "./Image"; 
-import user from "./data/user.json";
+import ProfileImage from "../Image"; 
+import user from "../data/user.json";
 import React from "react";
 
 type MessageList = {

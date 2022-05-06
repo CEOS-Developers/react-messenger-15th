@@ -1,6 +1,6 @@
 import {useState,useCallback,useRef} from "react";
-import { MessageItem } from "./type";
-import chatting from "./data/chat.json";
+import { MessageItem } from "../type";
+import chatting from "../data/chat.json";
 
 
 const useMessageList = () => {
