@@ -21,8 +21,8 @@ ChatRoomHeader    ChatRoomList   ChatRoomForm
 
 * React Router를 활용한 SPA 개발을 염두하여 코드를 작성한다.
 
-* React.memo를 사용하여 컴포넌트 성능을 최적화한다.
-* [작업중] Context API를 사용하여 상태를 전역으로 관리한다.
+* React.memo를 사용하여 리스트 컴포넌트의 성능을 최적화한다.
+* [작업중] Context API를 사용하여 상태를 전역적으로 관리한다.
 
 ### Reference
 
