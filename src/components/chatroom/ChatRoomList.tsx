@@ -4,12 +4,12 @@ import styled from 'styled-components';
 import { Chat, Chats } from '../../types/index';
 import ChatItem from './ChatRoomItem';
 
-type ChatRoomMainProps = {
+type ChatRoomListProps = {
   partnerUserId: number;
   chatList: Chats;
 };
 
-function ChatRoomList({ partnerUserId, chatList }: ChatRoomMainProps) {
+function ChatRoomList({ partnerUserId, chatList }: ChatRoomListProps) {
   const scrollRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     scrollRef.current!.scrollTo({

@@ -9,11 +9,20 @@
 
 ### Component Structure
 
-* App
+```
+                  ChatRoom
+             /         |        \
+ChatRoomHeader    ChatRoomList   ChatRoomForm
+                       |
+                  ChatRoomItem
+```
 
-### Technical Features
+### Features
 
-* React.memo를 사용하여 리랜더링 최적화
+* React Router를 활용한 SPA 개발을 염두하여 코드를 작성한다.
+
+* React.memo를 사용하여 컴포넌트 성능을 최적화한다.
+* [작업중] Context API를 사용하여 상태를 전역으로 관리한다.
 
 ### Reference
 
