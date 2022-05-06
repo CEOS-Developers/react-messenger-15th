@@ -43,6 +43,7 @@
     ]
   },
   "devDependencies": {
+    "@types/react-devtools": "^3.6.0",
     "@types/styled-components": "^5.1.25",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",

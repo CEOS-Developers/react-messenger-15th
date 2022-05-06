@@ -1,14 +1,15 @@
+import React from 'react';
 import { useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import { Chat, Chats } from '../../types/index';
-import ChatItem from './ChatItem';
+import ChatItem from './ChatRoomItem';
 
 type ChatRoomMainProps = {
   partnerUserId: number;
   chatList: Chats;
 };
 
-function ChatRoomMain({ partnerUserId, chatList }: ChatRoomMainProps) {
+function ChatRoomList({ partnerUserId, chatList }: ChatRoomMainProps) {
   const scrollRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     scrollRef.current!.scrollTo({
@@ -18,7 +19,7 @@ function ChatRoomMain({ partnerUserId, chatList }: ChatRoomMainProps) {
   }, [chatList]);
 
   return (
-    <ChatRoomMainBlock ref={scrollRef}>
+    <ChatRoomListBlock ref={scrollRef}>
       {chatList.map(({ userId, msg, unixTime }: Chat, idx: number) => (
         <ChatItem
           key={idx}
@@ -28,11 +29,11 @@ function ChatRoomMain({ partnerUserId, chatList }: ChatRoomMainProps) {
           unixTime={unixTime}
         />
       ))}
-    </ChatRoomMainBlock>
+    </ChatRoomListBlock>
   );
 }
 
-const ChatRoomMainBlock = styled.div`
+const ChatRoomListBlock = styled.div`
   width: 100%;
   height: 75%;
   overflow-y: auto;
@@ -52,4 +53,4 @@ const ChatRoomMainBlock = styled.div`
   }
 `;
 
-export default ChatRoomMain;
+export default React.memo(ChatRoomList);

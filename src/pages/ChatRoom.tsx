@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import ChatRoomHeader from '../components/chatroom/ChatRoomHeader';
-import ChatRoomMain from '../components/chatroom/ChatRoomMain';
+import ChatRoomList from '../components/chatroom/ChatRoomList';
 import ChatRoomForm from '../components/chatroom/ChatRoomForm';
 import { Chats } from '../types/index';
 import chats from '../data/chats.json';
@@ -21,7 +21,7 @@ function ChatRoom() {
         receiverUserId={receiverUserId}
         setReceiverUserId={setReceiverUserId}
       />
-      <ChatRoomMain partnerUserId={tmpPartnerUserId} chatList={chatList} />
+      <ChatRoomList partnerUserId={tmpPartnerUserId} chatList={chatList} />
       <ChatRoomForm
         partnerUserId={tmpPartnerUserId}
         receiverUserId={receiverUserId}

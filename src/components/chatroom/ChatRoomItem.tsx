@@ -1,16 +1,22 @@
+import React from 'react';
 import styled, { css } from 'styled-components';
 import me from '../../data/me.json';
 import friends from '../../data/friends.json';
 import { getTimeStamp } from '../../utils/getTimeStamp';
 
-type ChatItemProps = {
+type ChatRoomItemProps = {
   partnerUserId: number;
   userId: number;
   msg: string;
   unixTime: number;
 };
 
-function ChatItem({ partnerUserId, userId, msg, unixTime }: ChatItemProps) {
+function ChatRoomItem({
+  partnerUserId,
+  userId,
+  msg,
+  unixTime,
+}: ChatRoomItemProps) {
   const partner = friends.filter(
     (friend) => friend.userId === partnerUserId
   )[0];
@@ -111,4 +117,4 @@ const Timestamp = styled.span`
   justify-content: flex-end;
 `;
 
-export default ChatItem;
+export default React.memo(ChatRoomItem);
