@@ -2,6 +2,7 @@ import { useState,useMemo } from "react";
 import UserProfile from "./UserProfile";
 import styled  from "styled-components";
 import useMessageList from "./useMessageList";
+import Inputform from "./InputForm";
 
 function ChatRoom(){
 
@@ -19,7 +20,7 @@ function ChatRoom(){
     return(
     <ChatWrapper>
         <UserProfile changeUser={changeUser} setChangeUser = {setChangeUser}/>
-        
+        <Inputform changeUser={changeUser} messageList={messageList} setMessageList={setMessageList}></Inputform> 
     </ChatWrapper>
     );
 }
