@@ -1,14 +1,13 @@
 import useInput from "hooks/useInput";
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import styled from "styled-components";
-import useMessage from "hooks/useMessage";
 import useResponsiveSize from "hooks/useResponsiveSize";
 import InputEmoticon from "./InputEmoticon";
+import { IInputMessageForm } from "interface";
 import Alert from "components/Alert";
 
-const InputMessageForm = () => {
+const InputMessageForm = ({ sendMessage }: IInputMessageForm) => {
   const { text, handleTextChange, resetText } = useInput("");
-  const { addMessage } = useMessage();
   const { isMobile } = useResponsiveSize();
   const [visibleAlert, setVisibleAlert] = useState(false);
 
@@ -18,16 +17,19 @@ const InputMessageForm = () => {
 
     if (!text.trim()) setVisibleAlert(true);
     else {
-      addMessage(text);
+      sendMessage(text);
     }
     resetText();
   };
 
   // 이모티콘 전송
-  const addEmoticonMessage = (emo: string): void => {
-    addMessage(emo);
-    resetText();
-  };
+  const addEmoticonMessage = useCallback(
+    (emo: string): void => {
+      sendMessage(emo);
+      resetText();
+    },
+    [sendMessage],
+  );
 
   return (
     <InputForm onSubmit={_addInputMessage}>
@@ -80,4 +82,4 @@ const InputButton = styled.button`
   }
 `;
 
-export default InputMessageForm;
+export default React.memo(InputMessageForm);

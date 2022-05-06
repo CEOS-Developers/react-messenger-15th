@@ -3,10 +3,12 @@ import InputMessageForm from "components/messageInput/InputMessageForm";
 import MessageProfileContainer from "components/messageProfile/MessageProfileContainer";
 import styled, { css } from "styled-components";
 import useResponsiveSize from "hooks/useResponsiveSize";
+import useMessage from "hooks/useMessage";
 import { useEffect } from "react";
 
 const App = () => {
   const { isMobile, setIsMobile } = useResponsiveSize();
+  const { messages, addMessage } = useMessage();
 
   const _handleResize = () => {
     if (window.innerWidth <= 640) {
@@ -31,8 +33,8 @@ const App = () => {
     <Wrapper>
       <Container isMobile={isMobile}>
         <MessageProfileContainer />
-        <MessageChat />
-        <InputMessageForm />
+        <MessageChat messages={messages} />
+        <InputMessageForm sendMessage={addMessage} />
       </Container>
     </Wrapper>
   );

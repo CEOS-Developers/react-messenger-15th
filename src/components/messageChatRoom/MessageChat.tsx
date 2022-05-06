@@ -1,12 +1,11 @@
 import styled from "styled-components";
 import MessageBallon from "./MessageBallon";
-import useMessage from "hooks/useMessage";
 import useUser from "hooks/useUser";
+import { IMessageChat } from "interface";
 import { useEffect, useRef } from "react";
 
-const MessageChat = () => {
+const MessageChat = ({ messages }: IMessageChat) => {
   const messageWrapperRef = useRef<HTMLElement>(null);
-  const { messages } = useMessage();
   const { currentUser } = useUser();
 
   const _scrollToBottom = (): void => {

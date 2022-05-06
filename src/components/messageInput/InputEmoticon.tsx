@@ -1,7 +1,7 @@
 import { IInputEmoticon } from "interface";
 import EmoticonPopover from "./EmoticonPopover";
 import styled from "styled-components";
-import { useState } from "react";
+import React, { useState } from "react";
 
 const InputEmoticon = ({ addEmoticonMessage }: IInputEmoticon) => {
   const [visiblePopover, setVisiblePopover] = useState(false);
@@ -29,4 +29,4 @@ const Emoticon = styled.section`
   cursor: pointer;
 `;
 
-export default InputEmoticon;
+export default React.memo(InputEmoticon);

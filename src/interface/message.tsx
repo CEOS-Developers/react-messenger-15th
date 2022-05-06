@@ -11,6 +11,14 @@ export interface IMessageBallon {
   message: IMessageType;
 }
 
+export interface IInputMessageForm {
+  sendMessage: (text: string) => void;
+}
+
+export interface IMessageChat {
+  messages: IMessageType[];
+}
+
 export interface IMessageState {
   messages: IMessageType[];
   dispatch: React.Dispatch<IMessageAction>;
