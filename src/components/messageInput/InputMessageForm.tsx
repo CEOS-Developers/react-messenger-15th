@@ -1,14 +1,15 @@
 import useInput from "hooks/useInput";
 import React, { useState, useCallback } from "react";
 import styled from "styled-components";
-import useResponsiveSize from "hooks/useResponsiveSize";
+import { useRecoilValue } from "recoil";
+import { resizeState } from "recoil/recoil";
 import InputEmoticon from "./InputEmoticon";
 import { IInputMessageForm } from "interface";
 import Alert from "components/Alert";
 
 const InputMessageForm = ({ sendMessage }: IInputMessageForm) => {
   const { text, handleTextChange, resetText } = useInput("");
-  const { isMobile } = useResponsiveSize();
+  const isMobile = useRecoilValue(resizeState);
   const [visibleAlert, setVisibleAlert] = useState(false);
 
   // 메시지 전송
@@ -82,4 +83,4 @@ const InputButton = styled.button`
   }
 `;
 
-export default React.memo(InputMessageForm);
+export default InputMessageForm;

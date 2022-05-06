@@ -1,10 +1,9 @@
-import { MessageContext } from "contexts/MessageContext";
-import { useContext } from "react";
-import useUser from "./useUser";
+import { messageState, userState } from "recoil/recoil";
+import { useRecoilState, useRecoilValue } from "recoil";
 
 const useMessage = () => {
-  const { messages, dispatch } = useContext(MessageContext);
-  const { currentUser } = useUser();
+  const [messages, setMessages] = useRecoilState(messageState);
+  const user = useRecoilValue(userState);
 
   // 메시지 추가
   const addMessage = (text: string): void => {
@@ -14,14 +13,11 @@ const useMessage = () => {
       String(new Date().getMinutes()).padStart(2, "0");
     const messageObj = {
       id: new Date().valueOf(),
-      user: currentUser,
+      user: user.currentUser,
       time: curTime,
       text,
     };
-    dispatch({
-      type: "ADD_MESSAGE",
-      message: messageObj,
-    });
+    setMessages([...messages, messageObj]);
   };
 
   return { messages, addMessage };

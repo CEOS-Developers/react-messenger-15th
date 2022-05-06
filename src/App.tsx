@@ -2,12 +2,13 @@ import MessageChat from "components/messageChatRoom/MessageChat";
 import InputMessageForm from "components/messageInput/InputMessageForm";
 import MessageProfileContainer from "components/messageProfile/MessageProfileContainer";
 import styled, { css } from "styled-components";
-import useResponsiveSize from "hooks/useResponsiveSize";
+import { useRecoilState } from "recoil";
 import useMessage from "hooks/useMessage";
+import { resizeState } from "recoil/recoil";
 import { useEffect } from "react";
 
 const App = () => {
-  const { isMobile, setIsMobile } = useResponsiveSize();
+  const [isMobile, setIsMobile] = useRecoilState(resizeState);
   const { messages, addMessage } = useMessage();
 
   const _handleResize = () => {

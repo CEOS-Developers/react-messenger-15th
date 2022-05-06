@@ -1,6 +1,4 @@
-import { MessageProvider } from "contexts/MessageContext";
-import { ResponsiveSizeProvider } from "contexts/ResponsiveContext";
-import { UserProvider } from "contexts/UserContext";
+import { RecoilRoot } from "recoil";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import GlobalStyle from "style/GlobalStyle";
@@ -12,13 +10,9 @@ const root = ReactDOM.createRoot(rootElement);
 
 root.render(
   <React.StrictMode>
-    <GlobalStyle />
-    <ResponsiveSizeProvider>
-      <UserProvider>
-        <MessageProvider>
-          <App />
-        </MessageProvider>
-      </UserProvider>
-    </ResponsiveSizeProvider>
+    <RecoilRoot>
+      <GlobalStyle />
+      <App />
+    </RecoilRoot>
   </React.StrictMode>,
 );

@@ -1,26 +1,21 @@
-import { IUserState, IUserAction } from "./user";
+import { IUserType } from "./user";
 import {
   IMessageBallon,
   IInputMessageForm,
   IMessageChat,
-  IMessageState,
-  IMessageAction,
+  IMessageType,
+  IInputEmoticon,
+  IEmoticonPopover,
 } from "./message";
-import { IResponsiveSizeState, IResponsiveSizeAction } from "./responsiveSize";
-import { IInputEmoticon, IEmoticonPopover } from "./message";
 import { IAlert } from "./alert";
 
 export type {
-  IUserState,
-  IUserAction,
+  IUserType,
   IInputEmoticon,
   IEmoticonPopover,
   IAlert,
   IMessageBallon,
   IInputMessageForm,
   IMessageChat,
-  IMessageState,
-  IMessageAction,
-  IResponsiveSizeState,
-  IResponsiveSizeAction,
+  IMessageType,
 };

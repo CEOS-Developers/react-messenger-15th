@@ -1,19 +1,21 @@
-import { UserContext } from "contexts/UserContext";
-import { useContext } from "react";
+import { useRecoilState } from "recoil";
+import { userState } from "recoil/recoil";
 
 const useUser = () => {
-  const { users, currentUser, dispatch } = useContext(UserContext);
+  const [userStore, setUserStore] = useRecoilState(userState);
 
   // user 토글 함수
   const toggleUser = (): void => {
-    const currentIdx = users.findIndex((user) => user.id === currentUser.id);
-    dispatch({
-      type: "TOGGLE_USER",
-      currentIdx: (currentIdx + 1) % users.length,
-    });
+    const nextIdx =
+      (userStore.users.findIndex(
+        (user) => user.id === userStore.currentUser.id,
+      ) +
+        1) %
+      userStore.users.length;
+    setUserStore({ ...userStore, currentUser: userStore.users[nextIdx] });
   };
 
-  return { currentUser, toggleUser };
+  return { currentUser: userStore.currentUser, toggleUser };
 };
 
 export default useUser;
