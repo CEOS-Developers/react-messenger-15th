@@ -5,3 +5,9 @@ export interface Profileprops{
     setChangeUser : Dispatch<SetStateAction<number>>
 };
 
+export interface MessageItem{
+
+    userId : number;
+    text: string;
+   
+  }

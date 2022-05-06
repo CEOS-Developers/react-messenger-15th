@@ -1,6 +1,7 @@
 import { useState,useMemo } from "react";
 import UserProfile from "./UserProfile";
 import styled  from "styled-components";
+import useMessageList from "./useMessageList";
 
 function ChatRoom(){
 
@@ -21,3 +22,6 @@ function ChatRoom(){
         
     </ChatWrapper>
     );
+}
+
+export default ChatRoom;
