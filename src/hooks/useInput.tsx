@@ -3,11 +3,11 @@ import { useState } from 'react';
 const useInput = (initialText) => {
   const [inputText, setInputText] = useState(initialText);
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setInputText(e.target.value);
   };
 
-  const reset = () => {
+  const reset = (): void => {
     setInputText('');
   };
 

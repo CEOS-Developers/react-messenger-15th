@@ -5,7 +5,7 @@ import { useRef, useEffect } from 'react';
 import { IChatRoomBodyProps } from './Interface';
 
 const ChatRoomBody = ({ chatList, setChatList }: IChatRoomBodyProps) => {
-  const scrollRef = useRef<HTMLElement | null>();
+  const scrollRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     scrollRef.current.scrollTo(0, scrollRef.current.scrollHeight);

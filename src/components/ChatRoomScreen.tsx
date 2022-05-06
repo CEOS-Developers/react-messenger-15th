@@ -1,16 +1,15 @@
 import styled from 'styled-components';
-import { useState } from 'react';
 import InputForm from './InputForm';
 import ChatRoomBody from './ChatRoomBody';
 import ChatRoomHeader from './ChatRoomHeader';
-import { IChatRoomBodyProps, IChatRoomHeaderProps } from './Interface';
+import { IChatRoomScreenProps } from './Interface';
 
 const ChatRoomScreen = ({
   chatList,
   setChatList,
   currentUserId,
   setCurrentUserId,
-}: IChatRoomBodyProps & IChatRoomHeaderProps) => {
+}: IChatRoomScreenProps) => {
   return (
     <Wrapper>
       <ChatRoomHeader
