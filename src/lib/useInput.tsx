@@ -14,10 +14,9 @@ export const useInput = (initialForm: any) => {
     // const { name, value } = e.target;
     // setForm((form: any) => ({ ...form, [name]: value }));
     setForm(e.target.value);
-    console.log(e.target.value);
     if (e.target.value) setIsValid(true);
     else setIsValid(false);
   }, []);
-  const reset = useCallback(() => setForm(initialForm), [initialForm]);
+  const reset = useCallback(() => setForm(initialForm), [initialForm]); // 함수형 업데이트 사용?
   return [form, handleChange, reset, isValid, setIsValid];
 };

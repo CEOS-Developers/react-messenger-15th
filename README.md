@@ -11,6 +11,10 @@
 
 * App
 
+### Technical Features
+
+* React.memo를 사용하여 리랜더링 최적화
+
 ### Reference
 
 * The trick to viewport units on mobile

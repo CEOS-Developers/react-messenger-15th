@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { HiOutlineChevronDown } from 'react-icons/hi';
-import { useInput } from '../../hooks/useInput';
+import { useInput } from '../../lib/useInput';
 import { Chats } from '../../types/index';
 import me from '../../data/me.json';
 
