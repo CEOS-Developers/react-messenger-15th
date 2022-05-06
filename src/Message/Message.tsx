@@ -43,4 +43,4 @@ function Message({messageList} : MessageList){
 
 }
 
-export default Message;
+export default React.memo(Message);
