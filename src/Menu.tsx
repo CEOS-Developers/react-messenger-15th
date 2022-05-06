@@ -13,7 +13,6 @@ function Menu () {
      `
      ;
 
-
     const Menu1 = styled.div
     `
     flex:0.1;
