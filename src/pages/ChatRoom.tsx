@@ -8,10 +8,13 @@ import chats from '../data/chats.json';
 function ChatRoom() {
   const tmpPartnerUserId = 1; // const { partnerUserId } = useParams();
   const receiverUserIdDispatch = useReceiverUserIdDispatch();
-  receiverUserIdDispatch({
-    type: 'INITIALIZE',
-    partnerUserId: tmpPartnerUserId,
-  });
+  const initializeReceiverUserId = () => {
+    receiverUserIdDispatch({
+      type: 'INITIALIZE',
+      partnerUserId: tmpPartnerUserId,
+    });
+  };
+  initializeReceiverUserId();
 
   const chatsWithPartner = chats.filter(
     (user) => user.userId === tmpPartnerUserId
