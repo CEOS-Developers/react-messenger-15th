@@ -6,7 +6,6 @@ import { Scrollbars } from 'react-custom-scrollbars';
 
 const MessageList = ({ chatList }: { chatList: IChat[] }) => {
   const scrollbarRef = useRef<Scrollbars>(null);
-  const onScroll = useCallback(() => {}, []);
 
   //채팅 submit시 스크롤바 아래로
   useEffect(() => {
@@ -27,7 +26,6 @@ const MessageList = ({ chatList }: { chatList: IChat[] }) => {
         )}
         style={{ overflowX: 'hidden' }}
         ref={scrollbarRef}
-        onScrollFrame={onScroll}
       >
         <ShowList>
           {chatList?.map((chat: IChat) => (
