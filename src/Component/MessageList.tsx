@@ -1,64 +1,98 @@
 import React from "react";
 import styled from 'styled-components';
-import { useMessageState, useMessageDispatch } from '../Context/MessageContext';
+import { useMessageState } from '../Context/MessageContext';
 
 /*
 type MessageListProps = {
-    };*/
+    };
+    useMessageDispatch
+    */
     
 const MessageList = ( ) => {
     const state = useMessageState();
-    const dispatch = useMessageDispatch();
+    //const dispatch = useMessageDispatch();
 
 return (
-    <div>
+    <MessageListArea>
         <MessageListField>
-        {state.map(({ userID, text }) => (<>
-            <ProfileImg src={`./0.png`} />
-            <UserName>
-                {userID === 1 ? 'Judi' : 'Nick'}
-            </UserName>
+        {state.map(({ userID, text }) => (
             <ChatInfoWrapper>
-                <Bubble>{text}</Bubble>
+                <UserWrapper>
+                    <ProfileImg src={`./0.png`} />
+                    <UserName>
+                        {userID === 1 ? 'Judi' : 'Nick'}
+                    </UserName>
+                </UserWrapper>
+                <Bubble>
+                    {text}
+                </Bubble>
             </ChatInfoWrapper>
-            </>
         ))}
         </MessageListField>
-    </div>);
-};
-        
+    </MessageListArea>);
+}
+
+const MessageListArea = styled.div`
+    width: 100%;
+    height: 56%;
+    display : flex;
+    flex-direction : column;
+    font-family: sans-serif;
+    align-items: left;
+    background: #FFFFFF;
+    border-radius: 24px;
+`;
+
 const MessageListField = styled.div`
     width: 100%;
-    overflow: auto;
+    height: 90%;
+    display : flex;
+    flex-direction : column;
+    margin : auto; 
+    font-family: sans-serif;
+    align-items: flex-start;
+    background: #FFFFFF;
+    border-radius: 24px;
+    overflow : auto;
+`;
+
+const ChatInfoWrapper = styled.div`
+    margin : 0px 24px;
     display: flex;
-    flex-direction: column;
+    flex-direction : column;
+    justify-content : left;
+`;
+
+const UserWrapper = styled.div`
+    width: 60px;
+    display: flex;
+    padding : 2px 0px px 0px;
 `;
 
 const ProfileImg = styled.img`
-    width: 10%;
-    height: 10%;
-    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    border-radius: 8px;
     object-fit: cover;
 `;
         
 const UserName = styled.div`
-    width: 100%;
-    font-size: 14px;
-    color: #343a40;
-    display: flex;
+    font-size: 12px;
+    font-weight : 400;
+    color: #000000;
+    margin : auto 8px ;
 `;
 
-const ChatInfoWrapper = styled.div`
-    width: 100%;
-    display: flex;
-`;
-
-const Bubble = styled.div`
-    padding: 3%;
-    margin-top: 2.5%;
+const Bubble = styled.span`
+    padding: 6px 12px;
+    width : auto;
+    margin: 3px;
     font-size: 12px;
     line-height: 18px;
-    display: flex;
+    color : #FFFFFF;
+    font-weight: 650;
+    border-radius : 12px;
+    background-color : #567BFF;
 
 `;
 

@@ -52,7 +52,7 @@ export function MessageProvider({ children } : { children: React.ReactNode } ) {
     <MessageStateContext.Provider value={state}>
         <MessageDispatchContext.Provider value={dispatch}>
             {children}
-        </MessageDispatchContext.Provider>;
+        </MessageDispatchContext.Provider>
     </MessageStateContext.Provider>);
 }
 

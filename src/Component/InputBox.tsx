@@ -1,9 +1,9 @@
 import React from "react";
 import styled from 'styled-components';
-import { useMessageState, useMessageDispatch } from '../Context/MessageContext';
+import { useMessageDispatch } from '../Context/MessageContext';
 import useInput from '../Hooks/useInput';
 
-
+// useMessageState
 
 const InputBox = ( ) => {
     //const state = useMessageState();
@@ -28,7 +28,7 @@ const InputBox = ( ) => {
         <InputField
             value = { input }
             onChange = { onInputChange }
-            placeholder = "메세지를 입력해 주세요."
+            placeholder = "Text your message here."
         />
         <InsertBtn onClick={onSubmit}>
         +
@@ -37,22 +37,26 @@ const InputBox = ( ) => {
 }
 
 const InputArea = styled.div`
+    width: 100%;
+    height: 12%;
+    margin: auto;
+    display : flex;
+    flex-direction : row;
     font-family: sans-serif;
-    text-align : center;
-    width: 60%;
-    height: 40px;
     align-items: center;
-    display: flex;
     justify-content: space-evenly;
+    background: #FCFCFC;
+    border-radius: 24px;
 `;
 
 const InputField = styled.input`
     font-family: sans-serif;
     text-align: left;
-    width: 60%;
-    height: 100%;
-
-    outline: none;
+    justify-content : center;
+    width: calc(100% - 120px) ;
+    height : 36px;
+    margin: 0px 24px;
+    padding : 0px 16px;
     font-size: 12px;
 
     border: 1px solid #d2d2d2;
@@ -60,13 +64,14 @@ const InputField = styled.input`
 `;
 
 const InsertBtn = styled.button`
-    font-family: sans-serif;
-    width: 10%;
-    height: 50%;
-
-    border: none;
-    background: none;
+    width: 40px;
+    height: 40px;
+    margin-right: 24px;
+    border-radius : 16px;
+    background: #567BFF;
+    border : none;
+    color : white;
+    font-size : 24px;
 `;
-
 
 export default InputBox;
