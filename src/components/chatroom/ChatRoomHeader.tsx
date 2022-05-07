@@ -9,33 +9,20 @@ import friends from '../../data/friends.json';
 
 type CharRoomHeaderProps = {
   partnerUserId: number;
-  receiverUserId: number;
-  setReceiverUserId: (receiverUserId: number) => void;
 };
 
-function ChatRoomHeader({
-  partnerUserId,
-}: CharRoomHeaderProps) {
-  const state = useReceiverUserIdState();
-  const dispatch = useReceiverUserIdDispatch();
+function ChatRoomHeader({ partnerUserId }: CharRoomHeaderProps) {
+  const receiverUserIdState = useReceiverUserIdState();
+  const receiverUserIdDispatch = useReceiverUserIdDispatch();
+  const toggleReceiverUserId = () =>
+    receiverUserIdDispatch({ type: 'TOGGLE', partnerUserId: partnerUserId });
 
   function handleReceiverUserIdToggle() {
-    const toggleReceiverUserId = () =>
-      dispatch({ type: 'TOGGLE', partnerUserId: 1 });
     toggleReceiverUserId();
-    console.log(state.receiverUserId);
   }
 
-  // function handleReceiverUserIdToggle() {
-  //   if (receiverUserId === me.userId) {
-  //     setReceiverUserId(partnerUserId);
-  //   } else {
-  //     setReceiverUserId(me.userId);
-  //   }
-  // }
-
   const receiver = friends.filter(
-    (friend) => friend.userId === receiverUserId
+    (friend) => friend.userId === receiverUserIdState.receiverUserId
   )[0];
 
   return (
@@ -44,7 +31,9 @@ function ChatRoomHeader({
         <HiOutlineChevronLeft />
       </Btn>
       <ProfileWrapper onClick={handleReceiverUserIdToggle}>
-        <img src={`${process.env.PUBLIC_URL}/imgs/${receiverUserId}.jpg`} />
+        <img
+          src={`${process.env.PUBLIC_URL}/imgs/${receiverUserIdState.receiverUserId}.jpg`}
+        />
         <ReceiverUserNameWrapper>
           <span>{receiver.userName}</span>
           <HiOutlineChevronRight />

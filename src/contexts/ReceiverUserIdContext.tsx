@@ -5,7 +5,9 @@ type TState = {
   receiverUserId: number;
 };
 
-type TAction = { type: 'TOGGLE'; partnerUserId: number };
+type TAction =
+  | { type: 'INITIALIZE'; partnerUserId: number }
+  | { type: 'TOGGLE'; partnerUserId: number };
 
 type TDispatch = Dispatch<TAction>;
 
@@ -14,17 +16,23 @@ const ReceiverUserIdDispatchContext = createContext<TDispatch | null>(null);
 
 function reducer(state: TState, action: TAction): TState {
   switch (action.type) {
+    case 'INITIALIZE':
+      return {
+        ...state,
+        receiverUserId: action.partnerUserId,
+      };
     case 'TOGGLE':
-      if (state.receiverUserId == me.userId)
+      if (state.receiverUserId === me.userId) {
         return {
           ...state,
           receiverUserId: action.partnerUserId,
         };
-      else
+      } else {
         return {
           ...state,
           receiverUserId: me.userId,
         };
+      }
     default:
       throw new Error('Unhandled action');
   }
@@ -35,7 +43,7 @@ export function ReceiverUserIdProvider({
 }: {
   children: React.ReactNode;
 }) {
-  const [state, dispatch] = useReducer(reducer, { receiverUserId: 1 });
+  const [state, dispatch] = useReducer(reducer, { receiverUserId: 0 });
 
   return (
     <ReceiverUserIdContext.Provider value={state}>

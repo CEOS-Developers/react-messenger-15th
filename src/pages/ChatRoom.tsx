@@ -1,4 +1,4 @@
-import { ReceiverUserIdProvider } from '../contexts/ReceiverUserIdContext';
+import { useReceiverUserIdDispatch } from '../contexts/ReceiverUserIdContext';
 import { useState } from 'react';
 import ChatRoomHeader from '../components/chatroom/ChatRoomHeader';
 import ChatRoomList from '../components/chatroom/ChatRoomList';
@@ -7,6 +7,8 @@ import chats from '../data/chats.json';
 
 function ChatRoom() {
   const tmpPartnerUserId = 1; // const { partnerUserId } = useParams();
+  // const receiverUserIdDispatch = useReceiverUserIdDispatch();
+  // receiverUserIdDispatch({ type: 'TOGGLE', partnerUserId: tmpPartnerUserId });
 
   const [receiverUserId, setReceiverUserId] = useState(tmpPartnerUserId);
 
@@ -17,20 +19,14 @@ function ChatRoom() {
 
   return (
     <>
-      <ReceiverUserIdProvider>
-        <ChatRoomHeader
-          partnerUserId={tmpPartnerUserId}
-          receiverUserId={receiverUserId}
-          setReceiverUserId={setReceiverUserId}
-        />
-        <ChatRoomList partnerUserId={tmpPartnerUserId} chatList={chatList} />
-        <ChatRoomForm
-          partnerUserId={tmpPartnerUserId}
-          receiverUserId={receiverUserId}
-          chatList={chatList}
-          setChatList={setChatList}
-        />
-      </ReceiverUserIdProvider>
+      <ChatRoomHeader partnerUserId={tmpPartnerUserId} />
+      <ChatRoomList partnerUserId={tmpPartnerUserId} chatList={chatList} />
+      <ChatRoomForm
+        partnerUserId={tmpPartnerUserId}
+        receiverUserId={receiverUserId}
+        chatList={chatList}
+        setChatList={setChatList}
+      />
     </>
   );
 }

@@ -1,3 +1,4 @@
+import { ReceiverUserIdProvider } from '../src/contexts/ReceiverUserIdContext';
 import { useEffect } from 'react';
 import styled from 'styled-components';
 import ChatRoom from './pages/ChatRoom';
@@ -14,7 +15,9 @@ function App() {
 
   return (
     <ResponsiveBlock>
-      <ChatRoom />
+      <ReceiverUserIdProvider>
+        <ChatRoom />
+      </ReceiverUserIdProvider>
     </ResponsiveBlock>
   );
 }
