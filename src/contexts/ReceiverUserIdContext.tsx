@@ -11,7 +11,7 @@ type TAction =
 
 type TDispatch = Dispatch<TAction>;
 
-const ReceiverUserIdContext = createContext<TState | null>(null);
+const ReceiverUserIdStateContext = createContext<TState | null>(null);
 const ReceiverUserIdDispatchContext = createContext<TDispatch | null>(null);
 
 function reducer(state: TState, action: TAction): TState {
@@ -47,22 +47,22 @@ export function ReceiverUserIdProvider({
   // 0 is dummy value for the initialization
 
   return (
-    <ReceiverUserIdContext.Provider value={state}>
+    <ReceiverUserIdStateContext.Provider value={state}>
       <ReceiverUserIdDispatchContext.Provider value={dispatch}>
         {children}
       </ReceiverUserIdDispatchContext.Provider>
-    </ReceiverUserIdContext.Provider>
+    </ReceiverUserIdStateContext.Provider>
   );
 }
 
 export function useReceiverUserIdState() {
-  const state = useContext(ReceiverUserIdContext);
-  if (!state) throw new Error('Cannot find SampleProvider');
+  const state = useContext(ReceiverUserIdStateContext);
+  if (!state) throw new Error('Cannot find the Provider');
   return state;
 }
 
 export function useReceiverUserIdDispatch() {
   const dispatch = useContext(ReceiverUserIdDispatchContext);
-  if (!dispatch) throw new Error('Cannot find SampleProvider');
+  if (!dispatch) throw new Error('Cannot find the Provider');
   return dispatch;
 }

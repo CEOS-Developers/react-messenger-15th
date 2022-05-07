@@ -1,27 +1,25 @@
-import { useChatListState } from '../../contexts/ChatListContext';
+import { useChatListDispatch } from '../../contexts/ChatListContext';
 import { useReceiverUserIdState } from '../../contexts/ReceiverUserIdContext';
 import styled, { css } from 'styled-components';
 import { HiOutlineChevronDown } from 'react-icons/hi';
 import { useInput } from '../../lib/useInput';
-import { IChats } from '../../types/index';
+import { IChat, IChats } from '../../types/index';
 import me from '../../data/me.json';
 import React from 'react';
 
 type TChatRoomFormProps = {
   partnerUserId: number;
-  chatList: IChats;
-  setChatList: (chatList: IChats) => void;
 };
 
-function ChatRoomForm({
-  partnerUserId,
-  chatList,
-  setChatList,
-}: TChatRoomFormProps) {
+function ChatRoomForm({ partnerUserId }: TChatRoomFormProps) {
   const receiverUserIdState = useReceiverUserIdState();
-  const chatListState = useChatListState();
-
-  console.log(chatListState);
+  const chatListDispatch = useChatListDispatch();
+  const concatNewChat = (newChat: IChat) => {
+    chatListDispatch({
+      type: 'CONCAT',
+      newChat: newChat,
+    });
+  };
 
   const [inputValue, handleInputChange, resetInput, isValid, setIsValid] =
     useInput('');
@@ -34,13 +32,12 @@ function ChatRoomForm({
       if (receiverUserIdState.receiverUserId == me.userId)
         senderUserId = partnerUserId;
       else senderUserId = me.userId;
-
-      const newChat = {
+      const newChat: IChat = {
         userId: senderUserId,
         msg: inputValue,
         unixTime: Date.now(),
       };
-      setChatList(chatList.concat(newChat));
+      concatNewChat(newChat);
       resetInput();
       setIsValid(false);
     }

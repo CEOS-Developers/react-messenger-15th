@@ -1,3 +1,4 @@
+import { useChatListState } from '../../contexts/ChatListContext';
 import React from 'react';
 import { useRef, useEffect } from 'react';
 import styled from 'styled-components';
@@ -6,29 +7,32 @@ import ChatItem from './ChatRoomItem';
 
 type TChatRoomListProps = {
   partnerUserId: number;
-  chatList: IChats;
 };
 
-function ChatRoomList({ partnerUserId, chatList }: TChatRoomListProps) {
+function ChatRoomList({ partnerUserId }: TChatRoomListProps) {
+  const chatListState = useChatListState();
+
   const scrollRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     scrollRef.current!.scrollTo({
       top: scrollRef.current!.scrollHeight,
       behavior: 'smooth',
     });
-  }, [chatList]);
+  }, [chatListState.chatList]);
 
   return (
     <ChatRoomListBlock ref={scrollRef}>
-      {chatList.map(({ userId, msg, unixTime }: IChat, idx: number) => (
-        <ChatItem
-          key={idx}
-          partnerUserId={partnerUserId}
-          userId={userId}
-          msg={msg}
-          unixTime={unixTime}
-        />
-      ))}
+      {chatListState.chatList.map(
+        ({ userId, msg, unixTime }: IChat, idx: number) => (
+          <ChatItem
+            key={idx}
+            partnerUserId={partnerUserId}
+            userId={userId}
+            msg={msg}
+            unixTime={unixTime}
+          />
+        )
+      )}
     </ChatRoomListBlock>
   );
 }

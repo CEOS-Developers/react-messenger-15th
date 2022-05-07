@@ -1,8 +1,10 @@
+import { IChat } from '../../types/index';
 import React from 'react';
 import styled, { css } from 'styled-components';
 import me from '../../data/me.json';
 import friends from '../../data/friends.json';
 import { getTimeStamp } from '../../utils/getTimeStamp';
+import { useReceiverUserIdDispatch } from '../../contexts/ReceiverUserIdContext';
 
 type TChatRoomItemProps = {
   partnerUserId: number;

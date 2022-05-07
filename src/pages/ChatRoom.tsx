@@ -1,13 +1,21 @@
-import { useChatListDispatch } from '../contexts/ChatListContext';
-import { useReceiverUserIdDispatch } from '../contexts/ReceiverUserIdContext';
-import { useState } from 'react';
+import { useEffect } from 'react';
+import {
+  useChatListState,
+  useChatListDispatch,
+} from '../contexts/ChatListContext';
+import {
+  useReceiverUserIdState,
+  useReceiverUserIdDispatch,
+} from '../contexts/ReceiverUserIdContext';
 import ChatRoomHeader from '../components/chatroom/ChatRoomHeader';
 import ChatRoomList from '../components/chatroom/ChatRoomList';
 import ChatRoomForm from '../components/chatroom/ChatRoomForm';
-import chats from '../data/chats.json';
 
 function ChatRoom() {
   const tmpPartnerUserId = 1; // const { partnerUserId } = useParams();
+  const receiverUserIdState = useReceiverUserIdState();
+
+  console.log(receiverUserIdState);
 
   const receiverUserIdDispatch = useReceiverUserIdDispatch();
   const initReceiverUserId = () => {
@@ -16,29 +24,30 @@ function ChatRoom() {
       partnerUserId: tmpPartnerUserId,
     });
   };
-  initReceiverUserId();
+  useEffect(() => {
+    initReceiverUserId();
+  }, [tmpPartnerUserId]);
+
+  console.log(receiverUserIdState);
+
+  const chatListState = useChatListState();
+
+  console.log(chatListState);
 
   const chatListDispatch = useChatListDispatch();
-  const initChatList = () => {
-    chatListDispatch({
-      type: 'INITIALIZE',
-      partnerUserId: tmpPartnerUserId,
-    });
-  };
-  initChatList();
+  const initChatList = () =>
+    chatListDispatch({ type: 'INITIALIZE', partnerUserId: tmpPartnerUserId });
+  useEffect(() => {
+    initChatList();
+  }, [tmpPartnerUserId]);
 
-  // const chatsWithPartner = chats.filter(
-  //   (user) => user.userId === tmpPartnerUserId
-  // )[0].chats;
-  // const [chatList, setChatList] = useState(chatsWithPartner);
+  console.log(chatListState);
 
   return (
     <>
       <ChatRoomHeader partnerUserId={tmpPartnerUserId} />
-      {/* <ChatRoomList partnerUserId={tmpPartnerUserId} chatList={chatList} /> */}
-      <ChatRoomForm
-        partnerUserId={tmpPartnerUserId}
-      />
+      <ChatRoomList partnerUserId={tmpPartnerUserId} />
+      <ChatRoomForm partnerUserId={tmpPartnerUserId} />
     </>
   );
 }

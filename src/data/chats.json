@@ -1,15 +1,5 @@
 [
   {
-    "userId": 0,
-    "chats": [
-      {
-        "userId": 0,
-        "msg": "dummy",
-        "unixTime": 0
-      }
-    ]
-  },
-  {
     "userId": 1,
     "chats": [
       {
