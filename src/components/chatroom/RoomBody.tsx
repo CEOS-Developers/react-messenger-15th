@@ -18,6 +18,7 @@ const RoomBody = ({ chats, users, currentUser }: RoomBodyProps) => {
 
     const bodyRef = useRef<HTMLDivElement>(null);
 
+    // 맨 아래로 버튼 보이기 & 스크롤바 숨기기
     const handleScrollY = throttle(() => {
         if (bodyRef.current) {
             const roomBodyScrollY = bodyRef.current.scrollHeight - bodyRef.current.scrollTop;

@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 import { ChatType, UserType } from '../../Interface';
 import { timeForToday } from '../../utils/timeForToday';
 import Squircle from '../user/Squircle';
-
+import React from 'react';
 interface ChatItemProps {
     chat: ChatType;
     prevChat: ChatType;
@@ -45,7 +45,7 @@ const ChatItem = ({ chat, user, currentUser, prevChat }: ChatItemProps) => {
     );
 };
 
-export default ChatItem;
+export default React.memo(ChatItem);
 
 const ChatItemContainer = styled.div<IsCurrentUserProps>`
     ${({ isPrevSame }) =>
