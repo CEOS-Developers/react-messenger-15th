@@ -1,5 +1,6 @@
-<!-- > [https://react-todo-15th-47y241e55-poodlepoodle.vercel.app](https://react-todo-15th-47y241e55-poodlepoodle.vercel.app) -->
-> [배포 링크 나중에 위치시키기](배포링크)
+**일단 pull request로 올려 놓고 계속 개발하면서 push 중입니다...!! 죄송합니다ㅠㅠ**
+
+> [배포 링크](https://react-messenger-15th-lilac.vercel.app)
 
 # 🔥 개요
 
