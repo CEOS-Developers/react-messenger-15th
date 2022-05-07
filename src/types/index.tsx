@@ -1,7 +1,7 @@
-export interface Chat {
+export interface IChat {
   userId: number;
   msg: string;
   unixTime: number;
 }
 
-export interface Chats extends Array<Chat> {}
+export interface IChats extends Array<IChat> {}

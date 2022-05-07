@@ -1,15 +1,15 @@
 import React from 'react';
 import { useRef, useEffect } from 'react';
 import styled from 'styled-components';
-import { Chat, Chats } from '../../types/index';
+import { IChat, IChats } from '../../types/index';
 import ChatItem from './ChatRoomItem';
 
-type ChatRoomListProps = {
+type TChatRoomListProps = {
   partnerUserId: number;
-  chatList: Chats;
+  chatList: IChats;
 };
 
-function ChatRoomList({ partnerUserId, chatList }: ChatRoomListProps) {
+function ChatRoomList({ partnerUserId, chatList }: TChatRoomListProps) {
   const scrollRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     scrollRef.current!.scrollTo({
@@ -20,7 +20,7 @@ function ChatRoomList({ partnerUserId, chatList }: ChatRoomListProps) {
 
   return (
     <ChatRoomListBlock ref={scrollRef}>
-      {chatList.map(({ userId, msg, unixTime }: Chat, idx: number) => (
+      {chatList.map(({ userId, msg, unixTime }: IChat, idx: number) => (
         <ChatItem
           key={idx}
           partnerUserId={partnerUserId}

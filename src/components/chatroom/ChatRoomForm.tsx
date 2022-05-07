@@ -2,21 +2,21 @@ import { useReceiverUserIdState } from '../../contexts/ReceiverUserIdContext';
 import styled, { css } from 'styled-components';
 import { HiOutlineChevronDown } from 'react-icons/hi';
 import { useInput } from '../../lib/useInput';
-import { Chats } from '../../types/index';
+import { IChats } from '../../types/index';
 import me from '../../data/me.json';
 import React from 'react';
 
-type ChatRoomFormProps = {
+type TChatRoomFormProps = {
   partnerUserId: number;
-  chatList: Chats;
-  setChatList: (chatList: Chats) => void;
+  chatList: IChats;
+  setChatList: (chatList: IChats) => void;
 };
 
 function ChatRoomForm({
   partnerUserId,
   chatList,
   setChatList,
-}: ChatRoomFormProps) {
+}: TChatRoomFormProps) {
   const receiverUserIdState = useReceiverUserIdState();
 
   const [inputValue, handleInputChange, resetInput, isValid, setIsValid] =

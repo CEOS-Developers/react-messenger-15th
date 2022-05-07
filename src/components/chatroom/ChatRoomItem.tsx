@@ -4,7 +4,7 @@ import me from '../../data/me.json';
 import friends from '../../data/friends.json';
 import { getTimeStamp } from '../../utils/getTimeStamp';
 
-type ChatRoomItemProps = {
+type TChatRoomItemProps = {
   partnerUserId: number;
   userId: number;
   msg: string;
@@ -16,7 +16,7 @@ function ChatRoomItem({
   userId,
   msg,
   unixTime,
-}: ChatRoomItemProps) {
+}: TChatRoomItemProps) {
   const partner = friends.filter(
     (friend) => friend.userId === partnerUserId
   )[0];

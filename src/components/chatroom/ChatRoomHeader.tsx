@@ -4,22 +4,17 @@ import {
 } from '../../contexts/ReceiverUserIdContext';
 import styled from 'styled-components';
 import { HiOutlineChevronLeft, HiOutlineChevronRight } from 'react-icons/hi';
-import me from '../../data/me.json';
 import friends from '../../data/friends.json';
 
-type CharRoomHeaderProps = {
+type TChatRoomHeaderProps = {
   partnerUserId: number;
 };
 
-function ChatRoomHeader({ partnerUserId }: CharRoomHeaderProps) {
+function ChatRoomHeader({ partnerUserId }: TChatRoomHeaderProps) {
   const receiverUserIdState = useReceiverUserIdState();
   const receiverUserIdDispatch = useReceiverUserIdDispatch();
-  const toggleReceiverUserId = () =>
+  const handleReceiverUserIdToggle = () =>
     receiverUserIdDispatch({ type: 'TOGGLE', partnerUserId: partnerUserId });
-
-  function handleReceiverUserIdToggle() {
-    toggleReceiverUserId();
-  }
 
   const receiver = friends.filter(
     (friend) => friend.userId === receiverUserIdState.receiverUserId
