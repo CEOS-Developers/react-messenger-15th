@@ -20,7 +20,6 @@ function ChatRoomHeader({ partnerUserId }: TChatRoomHeaderProps) {
     (friend) => friend.userId === receiverUserIdState.receiverUserId
   )[0];
 
-  console.log(receiverUserIdState);
   return (
     <ChatRoomHeaderBlock>
       <Btn>
