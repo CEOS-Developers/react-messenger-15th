@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import styled from "styled-components";
+import React, { useState } from 'react';
+import styled from 'styled-components';
 
-import ChatList from "./ChatList";
+import ChatList from './ChatList';
 
-import profile_pic from "../assets/profile_pic.png";
-import cr_pic from "../assets/cr_pic.png";
-import smile_icon from "../assets/smile_icon.png";
-import thumb_icon from "../assets/thumb_icon.png";
+import profile_pic from '../assets/profile_pic.png';
+import cr_pic from '../assets/cr_pic.png';
+import smile_icon from '../assets/smile_icon.png';
+import thumb_icon from '../assets/thumb_icon.png';
 
 const ChatContentWrapper = styled.div`
   display: flex;
@@ -14,12 +14,12 @@ const ChatContentWrapper = styled.div`
   justify-content: center;
   align-items: center;
 
-  flex : 1;
+  flex: 1;
   width: 100%;
   height: 100%;
 
-  border-top: 1px solid #EEEEEE;
-  border-right: 1px solid #EEEEEE;
+  border-top: 1px solid #eeeeee;
+  border-right: 1px solid #eeeeee;
 `;
 
 const ChatContentHeader = styled.div`
@@ -66,11 +66,11 @@ const ChatContentHeaderNewProfile = styled.div`
   height: 28px;
 
   font-size: 20px;
-  color: #098AFF;
+  color: #098aff;
 
-  background-color: #ECF5FF;
+  background-color: #ecf5ff;
   border-radius: 50%;
-  border: 2px solid #ECF5FF;
+  border: 2px solid #ecf5ff;
 
   margin-left: -8px;
 `;
@@ -92,7 +92,7 @@ const ChatContentFooter = styled.div`
   width: 100%;
   height: 60px;
 
-  border-top: 1px solid #EEEEEE;
+  border-top: 1px solid #eeeeee;
 `;
 
 const ChatContentForm = styled.form`
@@ -107,8 +107,8 @@ const ChatContentInput = styled.input`
   outline: none;
   border-radius: 8px;
   border-color: transparent;
-  background-color: #F8F8FA;
-  
+  background-color: #f8f8fa;
+
   text-align: left;
   /* color: #F8F8FA; */
   font-size: 11px;
@@ -132,39 +132,38 @@ const ChatContentInputIcon = styled.img`
 `;
 
 const ChatContent = () => {
-    return (
-      <ChatContentWrapper>
-        <ChatContentHeader>
-          <ChatContentHeaderName>
-            김채림
-          </ChatContentHeaderName>
-          <ChatContentHeaderProfiles>
-            <ChatContentHeaderProfile src={cr_pic} />
-            <ChatContentHeaderProfile src={profile_pic} />
-            <ChatContentHeaderNewProfile>+</ChatContentHeaderNewProfile>
-          </ChatContentHeaderProfiles>
-        </ChatContentHeader>
+  return (
+    <ChatContentWrapper>
+      <ChatContentHeader>
+        <ChatContentHeaderName>김채림</ChatContentHeaderName>
+        <ChatContentHeaderProfiles>
+          <ChatContentHeaderProfile src={cr_pic} />
+          <ChatContentHeaderProfile src={profile_pic} />
+          <ChatContentHeaderNewProfile>+</ChatContentHeaderNewProfile>
+        </ChatContentHeaderProfiles>
+      </ChatContentHeader>
 
-        <ChatView>
-          <ChatList />
-        </ChatView>
+      <ChatView>
+        <ChatList />
+      </ChatView>
 
-        <ChatContentFooter>
-          <ChatContentForm>
-            <ChatContentInput 
-              type="text"
-              autoFocus
-              // value={content}
-              placeholder="Type something here..." />
-              {/* onChange={handleChange} /> */}
-          </ChatContentForm>
-          <ChatContentInputIcons>
-            <ChatContentInputIcon src={smile_icon} />
-            <ChatContentInputIcon src={thumb_icon} />
-          </ChatContentInputIcons>
-        </ChatContentFooter>
-      </ChatContentWrapper>
-    );
-  }
-  
-  export default ChatContent;
+      <ChatContentFooter>
+        <ChatContentForm>
+          <ChatContentInput
+            type="text"
+            autoFocus
+            // value={content}
+            placeholder="Type something here..."
+          />
+          {/* onChange={handleChange} /> */}
+        </ChatContentForm>
+        <ChatContentInputIcons>
+          <ChatContentInputIcon src={smile_icon} />
+          <ChatContentInputIcon src={thumb_icon} />
+        </ChatContentInputIcons>
+      </ChatContentFooter>
+    </ChatContentWrapper>
+  );
+};
+
+export default ChatContent;

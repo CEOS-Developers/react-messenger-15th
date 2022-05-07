@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import styled from "styled-components";
+import React, { useState } from 'react';
+import styled from 'styled-components';
 
-import MainHeader from "./MainHeader";
-import MainContent from "./MainContent";
+import MainHeader from './MainHeader';
+import MainContent from './MainContent';
 
 const MainWrapper = styled.div`
   display: flex;
@@ -20,12 +20,12 @@ const MainWrapper = styled.div`
 `;
 
 const MainView = () => {
-    return (
-      <MainWrapper>
-        <MainHeader />
-        <MainContent />
-      </MainWrapper>
-    );
-  }
-  
-  export default MainView;
+  return (
+    <MainWrapper>
+      <MainHeader />
+      <MainContent />
+    </MainWrapper>
+  );
+};
+
+export default MainView;

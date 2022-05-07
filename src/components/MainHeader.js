@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import styled from "styled-components";
+import React, { useState } from 'react';
+import styled from 'styled-components';
 
-import fm_logo from "../assets/fm_logo.png";
-import search_icon from "../assets/search_icon.png";
-import setting_icon from "../assets/setting_icon.png";
-import profile_pic from "../assets/profile_pic.png";
+import fm_logo from '../assets/fm_logo.png';
+import search_icon from '../assets/search_icon.png';
+import setting_icon from '../assets/setting_icon.png';
+import profile_pic from '../assets/profile_pic.png';
 
 const MainHeaderWrapper = styled.div`
   display: flex;
@@ -53,13 +53,13 @@ const MainHeaderSearchBarInput = styled.input`
   outline: none;
   border-radius: 10px;
   border-color: transparent;
-  
+
   text-align: left;
   color: #999999;
   font-size: 11px;
   font-weight: 400;
 `;
-  
+
 const MainHeaderMenu = styled.div`
   display: flex;
   align-items: center;
@@ -73,13 +73,13 @@ const MainHeaderMenuIcon = styled.img`
 
   background-color: white;
   border-radius: 50%;
-  border: 1px solid #CCCCCC;
-  
+  border: 1px solid #cccccc;
+
   padding: 6px;
   margin-right: 10px;
-  
+
   opacity: 0.5;
-  `;
+`;
 
 const MainHeaderMenuProfile = styled.img`
   width: 32px;
@@ -87,29 +87,29 @@ const MainHeaderMenuProfile = styled.img`
 `;
 
 const MainHeader = () => {
-    return (
-      <MainHeaderWrapper>
-        <MainHeaderIcon src={fm_logo} />
-        
-        <MainHeaderSearchBar>
-          <MainHeaderSearchBarIcon src={search_icon} />
-          <MainHeaderSearchBarForm>
-            <MainHeaderSearchBarInput
-              type="text"
-              autoFocus
-              // value={content}
-              placeholder="Search..." />
-              {/* onChange={handleChange} /> */}
-          </MainHeaderSearchBarForm>
+  return (
+    <MainHeaderWrapper>
+      <MainHeaderIcon src={fm_logo} />
 
-        </MainHeaderSearchBar>
+      <MainHeaderSearchBar>
+        <MainHeaderSearchBarIcon src={search_icon} />
+        <MainHeaderSearchBarForm>
+          <MainHeaderSearchBarInput
+            type="text"
+            autoFocus
+            // value={content}
+            placeholder="Search..."
+          />
+          {/* onChange={handleChange} /> */}
+        </MainHeaderSearchBarForm>
+      </MainHeaderSearchBar>
 
-        <MainHeaderMenu>
-          <MainHeaderMenuIcon src={setting_icon} />
-          <MainHeaderMenuProfile src={profile_pic} />
-        </MainHeaderMenu>
-      </MainHeaderWrapper>
-    );
-  }
-  
-  export default MainHeader;
+      <MainHeaderMenu>
+        <MainHeaderMenuIcon src={setting_icon} />
+        <MainHeaderMenuProfile src={profile_pic} />
+      </MainHeaderMenu>
+    </MainHeaderWrapper>
+  );
+};
+
+export default MainHeader;

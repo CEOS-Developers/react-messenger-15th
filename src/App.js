@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import styled, { createGlobalStyle, keyframes } from "styled-components";
-import MainView from "./components/MainView";
+import React, { useState } from 'react';
+import styled, { createGlobalStyle, keyframes } from 'styled-components';
+import MainView from './components/MainView';
 // import './App.css';
 
 const GlobalStyle = createGlobalStyle`
@@ -36,7 +36,7 @@ const WrapperDiv = styled.div`
   height: 100vh;
 
   // background-image: linear-gradient(19deg, #faaca8 0%, #ddd6f3 100%);
-  background: #EFF2F5;
+  background: #eff2f5;
 `;
 
 const HeaderEmoji = styled.div`
@@ -49,9 +49,9 @@ const HeaderDiv = styled.header`
   top: 40px;
   left: 40px;
   text-align: left;
-  
+
   display: flex;
-  flex : 1;
+  flex: 1;
   flex-direction: horizontal;
   justify-content: center;
   align-items: center;
@@ -75,7 +75,7 @@ const FooterDiv = styled.footer`
   font-weight: 300;
   color: #333333;
 `;
-  
+
 const BlinkingEffect = () => {
   return keyframes`
   50% {
@@ -83,7 +83,7 @@ const BlinkingEffect = () => {
   }
   `;
 };
-  
+
 const AnimatedCursor = styled.div`
   animation: ${BlinkingEffect} 1.25s ease-in-out infinite;
   margin-left: 5px;
@@ -117,6 +117,6 @@ const App = () => {
       </FooterDiv>
     </WrapperDiv>
   );
-}
+};
 
 export default App;

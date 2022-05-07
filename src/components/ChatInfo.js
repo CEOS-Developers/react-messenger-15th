@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import styled from "styled-components";
+import React, { useState } from 'react';
+import styled from 'styled-components';
 
 const ChatInfoWrapper = styled.div`
   display: flex;
@@ -11,17 +11,17 @@ const ChatInfoWrapper = styled.div`
   height: 100%;
 
   margin-right: 25px;
-  border-top: 1px solid #EEEEEE;
+  border-top: 1px solid #eeeeee;
 `;
 
 const ChatInfo = () => {
-    return (
-      <ChatInfoWrapper>
-        <h4>채팅방 정보</h4>
-        <br />
-        <h4>Under construction...</h4>
-      </ChatInfoWrapper>
-    );
-  }
-  
-  export default ChatInfo;
+  return (
+    <ChatInfoWrapper>
+      <h4>채팅방 정보</h4>
+      <br />
+      <h4>Under construction...</h4>
+    </ChatInfoWrapper>
+  );
+};
+
+export default ChatInfo;

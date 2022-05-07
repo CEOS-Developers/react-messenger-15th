@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import styled from "styled-components";
+import React, { useState } from 'react';
+import styled from 'styled-components';
 
 const ChatListWrapper = styled.div`
   flex: 1;
@@ -10,10 +10,7 @@ const ChatListWrapper = styled.div`
 `;
 
 const ChatList = () => {
-    return (
-      <ChatListWrapper>
-      </ChatListWrapper>
-    );
-  }
-  
-  export default ChatList;
+  return <ChatListWrapper></ChatListWrapper>;
+};
+
+export default ChatList;
