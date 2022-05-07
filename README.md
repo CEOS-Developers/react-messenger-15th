@@ -102,3 +102,5 @@ _design concept by dribbble@alex banaga_
 - [React의 Hooks 완벽 정복하기](https://velog.io/@velopert/react-hooks#1-usestate)
 - [useEffect 완벽 가이드](https://overreacted.io/ko/a-complete-guide-to-useeffect/)
 - [리액트 프로젝트에서 타입스크립트 사용하기 (시리즈)](https://velog.io/@velopert/series/react-with-typescript)
+- [Simple text blinking animation using styled-components](https://dev.to/vellerbauer/simple-text-blinking-animation-using-styled-components-3bi5)
+- 
