@@ -25,6 +25,7 @@ function ChatRoomHeader({ partnerUserId }: CharRoomHeaderProps) {
     (friend) => friend.userId === receiverUserIdState.receiverUserId
   )[0];
 
+  console.log(receiverUserIdState);
   return (
     <ChatRoomHeaderBlock>
       <Btn>

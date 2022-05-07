@@ -7,8 +7,11 @@ import chats from '../data/chats.json';
 
 function ChatRoom() {
   const tmpPartnerUserId = 1; // const { partnerUserId } = useParams();
-  // const receiverUserIdDispatch = useReceiverUserIdDispatch();
-  // receiverUserIdDispatch({ type: 'TOGGLE', partnerUserId: tmpPartnerUserId });
+  const receiverUserIdDispatch = useReceiverUserIdDispatch();
+  receiverUserIdDispatch({
+    type: 'INITIALIZE',
+    partnerUserId: tmpPartnerUserId,
+  });
 
   const [receiverUserId, setReceiverUserId] = useState(tmpPartnerUserId);
 

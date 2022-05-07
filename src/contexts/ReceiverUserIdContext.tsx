@@ -43,7 +43,7 @@ export function ReceiverUserIdProvider({
 }: {
   children: React.ReactNode;
 }) {
-  const [state, dispatch] = useReducer(reducer, { receiverUserId: 0 });
+  const [state, dispatch] = useReducer(reducer, { receiverUserId: 3 });
 
   return (
     <ReceiverUserIdContext.Provider value={state}>
