@@ -13,8 +13,6 @@ function ChatRoom() {
     partnerUserId: tmpPartnerUserId,
   });
 
-  const [receiverUserId, setReceiverUserId] = useState(tmpPartnerUserId);
-
   const chatsWithPartner = chats.filter(
     (user) => user.userId === tmpPartnerUserId
   )[0].chats;
@@ -26,7 +24,6 @@ function ChatRoom() {
       <ChatRoomList partnerUserId={tmpPartnerUserId} chatList={chatList} />
       <ChatRoomForm
         partnerUserId={tmpPartnerUserId}
-        receiverUserId={receiverUserId}
         chatList={chatList}
         setChatList={setChatList}
       />

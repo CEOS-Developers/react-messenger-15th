@@ -1,3 +1,4 @@
+import { useReceiverUserIdState } from '../../contexts/ReceiverUserIdContext';
 import styled, { css } from 'styled-components';
 import { HiOutlineChevronDown } from 'react-icons/hi';
 import { useInput } from '../../lib/useInput';
@@ -7,25 +8,27 @@ import React from 'react';
 
 type ChatRoomFormProps = {
   partnerUserId: number;
-  receiverUserId: number;
   chatList: Chats;
   setChatList: (chatList: Chats) => void;
 };
 
 function ChatRoomForm({
   partnerUserId,
-  receiverUserId,
   chatList,
   setChatList,
 }: ChatRoomFormProps) {
+  const receiverUserIdState = useReceiverUserIdState();
+
   const [inputValue, handleInputChange, resetInput, isValid, setIsValid] =
     useInput('');
+
   function handleSubmitBtnClick(e: React.MouseEvent<HTMLButtonElement>) {
     e.preventDefault();
     if (!inputValue) alert('Please enter a message');
     else {
       let senderUserId;
-      if (receiverUserId == me.userId) senderUserId = partnerUserId;
+      if (receiverUserIdState.receiverUserId == me.userId)
+        senderUserId = partnerUserId;
       else senderUserId = me.userId;
 
       const newChat = {
