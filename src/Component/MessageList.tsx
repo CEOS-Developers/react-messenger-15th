@@ -8,13 +8,13 @@ type MessageListProps = {
     
 const MessageList = ( ) => {
     const state = useMessageState();
-    //const dispatch = useMessageDispatch();
+    const dispatch = useMessageDispatch();
 
 return (
     <div>
         <MessageListField>
         {state.map(({ userID, text }) => (<>
-            <ProfileImg src={`./imgs/0.png`} />
+            <ProfileImg src={`./0.png`} />
             <UserName>
                 {userID === 1 ? 'Judi' : 'Nick'}
             </UserName>
