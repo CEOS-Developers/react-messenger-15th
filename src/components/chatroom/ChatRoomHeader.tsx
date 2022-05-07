@@ -1,6 +1,6 @@
 import {
-  useSampleState,
-  useSampleDispatch,
+  useReceiverUserIdState,
+  useReceiverUserIdDispatch,
 } from '../../contexts/ReceiverUserIdContext';
 import styled from 'styled-components';
 import { HiOutlineChevronLeft, HiOutlineChevronRight } from 'react-icons/hi';
@@ -15,33 +15,24 @@ type CharRoomHeaderProps = {
 
 function ChatRoomHeader({
   partnerUserId,
-  receiverUserId,
-  setReceiverUserId,
 }: CharRoomHeaderProps) {
-  const state = useSampleState();
-  const dispatch = useSampleDispatch();
-  console.log(state);
-  // console.log(state.count);
-  // console.log(state.text);
-  // console.log(state.color);
-
-  // const state = useReceiverUserIdState();
-  // const dispatch = useReceiverUserIdDispatch();
-  // console.log(state);
-  // const toggleReceiverUserId = () => {
-  //   dispatch({ type: 'TOGGLE' });
-  // };
-  // console.log(state);
-  // toggleReceiverUserId();
-  // console.log(state);
+  const state = useReceiverUserIdState();
+  const dispatch = useReceiverUserIdDispatch();
 
   function handleReceiverUserIdToggle() {
-    if (receiverUserId === me.userId) {
-      setReceiverUserId(partnerUserId);
-    } else {
-      setReceiverUserId(me.userId);
-    }
+    const toggleReceiverUserId = () =>
+      dispatch({ type: 'TOGGLE', partnerUserId: 1 });
+    toggleReceiverUserId();
+    console.log(state.receiverUserId);
   }
+
+  // function handleReceiverUserIdToggle() {
+  //   if (receiverUserId === me.userId) {
+  //     setReceiverUserId(partnerUserId);
+  //   } else {
+  //     setReceiverUserId(me.userId);
+  //   }
+  // }
 
   const receiver = friends.filter(
     (friend) => friend.userId === receiverUserId
