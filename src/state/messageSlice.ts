@@ -12,9 +12,11 @@ const messageSlice = createSlice({
   reducers: {
     addMessage(state, action: PayloadAction<Message>) {
       state.messages.push(action.payload)
+      console.log("message added")
     },
   }
 })
+
 
 export const messageReducer = messageSlice.reducer
 export const {addMessage} = messageSlice.actions
