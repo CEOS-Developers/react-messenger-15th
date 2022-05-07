@@ -1,3 +1,4 @@
+import { useChatListDispatch } from '../contexts/ChatListContext';
 import { useReceiverUserIdDispatch } from '../contexts/ReceiverUserIdContext';
 import { useState } from 'react';
 import ChatRoomHeader from '../components/chatroom/ChatRoomHeader';
@@ -7,28 +8,36 @@ import chats from '../data/chats.json';
 
 function ChatRoom() {
   const tmpPartnerUserId = 1; // const { partnerUserId } = useParams();
+
   const receiverUserIdDispatch = useReceiverUserIdDispatch();
-  const initializeReceiverUserId = () => {
+  const initReceiverUserId = () => {
     receiverUserIdDispatch({
       type: 'INITIALIZE',
       partnerUserId: tmpPartnerUserId,
     });
   };
-  initializeReceiverUserId();
+  initReceiverUserId();
 
-  const chatsWithPartner = chats.filter(
-    (user) => user.userId === tmpPartnerUserId
-  )[0].chats;
-  const [chatList, setChatList] = useState(chatsWithPartner);
+  const chatListDispatch = useChatListDispatch();
+  const initChatList = () => {
+    chatListDispatch({
+      type: 'INITIALIZE',
+      partnerUserId: tmpPartnerUserId,
+    });
+  };
+  initChatList();
+
+  // const chatsWithPartner = chats.filter(
+  //   (user) => user.userId === tmpPartnerUserId
+  // )[0].chats;
+  // const [chatList, setChatList] = useState(chatsWithPartner);
 
   return (
     <>
       <ChatRoomHeader partnerUserId={tmpPartnerUserId} />
-      <ChatRoomList partnerUserId={tmpPartnerUserId} chatList={chatList} />
+      {/* <ChatRoomList partnerUserId={tmpPartnerUserId} chatList={chatList} /> */}
       <ChatRoomForm
         partnerUserId={tmpPartnerUserId}
-        chatList={chatList}
-        setChatList={setChatList}
       />
     </>
   );

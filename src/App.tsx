@@ -2,6 +2,7 @@ import { ReceiverUserIdProvider } from '../src/contexts/ReceiverUserIdContext';
 import { useEffect } from 'react';
 import styled from 'styled-components';
 import ChatRoom from './pages/ChatRoom';
+import { ChatListProvider } from './contexts/ChatListContext';
 
 function App() {
   function setVh() {
@@ -16,7 +17,9 @@ function App() {
   return (
     <ResponsiveBlock>
       <ReceiverUserIdProvider>
-        <ChatRoom />
+        <ChatListProvider>
+          <ChatRoom />
+        </ChatListProvider>
       </ReceiverUserIdProvider>
     </ResponsiveBlock>
   );

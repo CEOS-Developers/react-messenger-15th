@@ -1,3 +1,4 @@
+import { useChatListState } from '../../contexts/ChatListContext';
 import { useReceiverUserIdState } from '../../contexts/ReceiverUserIdContext';
 import styled, { css } from 'styled-components';
 import { HiOutlineChevronDown } from 'react-icons/hi';
@@ -18,6 +19,9 @@ function ChatRoomForm({
   setChatList,
 }: TChatRoomFormProps) {
   const receiverUserIdState = useReceiverUserIdState();
+  const chatListState = useChatListState();
+
+  console.log(chatListState);
 
   const [inputValue, handleInputChange, resetInput, isValid, setIsValid] =
     useInput('');
