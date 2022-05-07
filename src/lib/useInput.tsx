@@ -6,9 +6,9 @@ import { useState, useCallback } from 'react';
  ** string으로 작성하면 오류가 발생합니다.
  */
 
-export const useInput = (initialForm: any) => {
-  const [form, setForm] = useState<any>(initialForm);
-  const [isValid, setIsValid] = useState<boolean | null>(false);
+export function useInput(initialForm: any) {
+  const [form, setForm] = useState(initialForm);
+  const [isValid, setIsValid] = useState(false);
 
   const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     // const { name, value } = e.target;
@@ -19,4 +19,4 @@ export const useInput = (initialForm: any) => {
   }, []);
   const reset = useCallback(() => setForm(initialForm), [initialForm]);
   return [form, handleChange, reset, isValid, setIsValid];
-};
+}

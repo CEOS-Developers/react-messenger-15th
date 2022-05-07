@@ -1,3 +1,7 @@
+import {
+  useSampleState,
+  useSampleDispatch,
+} from '../../contexts/ReceiverUserIdContext';
 import styled from 'styled-components';
 import { HiOutlineChevronLeft, HiOutlineChevronRight } from 'react-icons/hi';
 import me from '../../data/me.json';
@@ -14,7 +18,24 @@ function ChatRoomHeader({
   receiverUserId,
   setReceiverUserId,
 }: CharRoomHeaderProps) {
-  function handleReceiverToggle() {
+  const state = useSampleState();
+  const dispatch = useSampleDispatch();
+  console.log(state);
+  // console.log(state.count);
+  // console.log(state.text);
+  // console.log(state.color);
+
+  // const state = useReceiverUserIdState();
+  // const dispatch = useReceiverUserIdDispatch();
+  // console.log(state);
+  // const toggleReceiverUserId = () => {
+  //   dispatch({ type: 'TOGGLE' });
+  // };
+  // console.log(state);
+  // toggleReceiverUserId();
+  // console.log(state);
+
+  function handleReceiverUserIdToggle() {
     if (receiverUserId === me.userId) {
       setReceiverUserId(partnerUserId);
     } else {
@@ -31,7 +52,7 @@ function ChatRoomHeader({
       <Btn>
         <HiOutlineChevronLeft />
       </Btn>
-      <ProfileWrapper onClick={handleReceiverToggle}>
+      <ProfileWrapper onClick={handleReceiverUserIdToggle}>
         <img src={`${process.env.PUBLIC_URL}/imgs/${receiverUserId}.jpg`} />
         <ReceiverUserNameWrapper>
           <span>{receiver.userName}</span>
