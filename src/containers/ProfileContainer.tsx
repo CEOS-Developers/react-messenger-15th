@@ -32,7 +32,6 @@ const ProfileDiv = styled.div`
 const ProfileName = styled.p<{selected: boolean}>`
   border-radius: 0.4rem;
   background-color: rgba(255, 255, 255, ${(props)=>(props.selected? "1":"0")});
-  box-shadow: 0px 0px 5px rgba(255, 255, 255, 1);
   color: rgba(150, 150, 150, 1);
   margin-top: 0.6rem;
   padding: 0 1rem 0 1rem;
