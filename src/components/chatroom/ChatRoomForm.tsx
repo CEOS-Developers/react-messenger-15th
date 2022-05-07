@@ -3,6 +3,7 @@ import { HiOutlineChevronDown } from 'react-icons/hi';
 import { useInput } from '../../lib/useInput';
 import { Chats } from '../../types/index';
 import me from '../../data/me.json';
+import React from 'react';
 
 type ChatRoomFormProps = {
   partnerUserId: number;
@@ -20,7 +21,7 @@ function ChatRoomForm({
   const [inputValue, handleInputChange, resetInput, isValid, setIsValid] =
     useInput('');
 
-  const handleSubmitBtnClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+  function handleSubmitBtnClick(e: React.MouseEvent<HTMLButtonElement>) {
     e.preventDefault();
     if (!inputValue) alert('Please enter a message');
     else {
@@ -37,7 +38,7 @@ function ChatRoomForm({
       resetInput();
       setIsValid(false);
     }
-  };
+  }
 
   return (
     <ChatRoomFormBlock>

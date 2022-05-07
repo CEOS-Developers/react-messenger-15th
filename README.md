@@ -14,11 +14,11 @@ https://react-messenger-15th-d2eoz2mh4-24siefil.vercel.app/
 ### Component Structure
 
 ```
-                  ChatRoom
-             /         |        \
-ChatRoomHeader    ChatRoomList   ChatRoomForm
-                       |
-                  ChatRoomItem
+└── chatroom
+    ├── ChatRoomHeader
+    ├── ChatRoomList
+    │    └── ChatRoomItem
+    └── ChatRoomForm
 ```
 
 ### Features

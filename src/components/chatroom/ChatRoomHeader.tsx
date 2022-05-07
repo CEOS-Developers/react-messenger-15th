@@ -14,13 +14,13 @@ function ChatRoomHeader({
   receiverUserId,
   setReceiverUserId,
 }: CharRoomHeaderProps) {
-  const handleReceiverToggle = () => {
+  function handleReceiverToggle() {
     if (receiverUserId === me.userId) {
       setReceiverUserId(partnerUserId);
     } else {
       setReceiverUserId(me.userId);
     }
-  };
+  }
 
   const receiver = friends.filter(
     (friend) => friend.userId === receiverUserId
