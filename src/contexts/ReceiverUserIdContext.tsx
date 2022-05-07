@@ -44,7 +44,7 @@ export function ReceiverUserIdProvider({
   children: React.ReactNode;
 }) {
   const [state, dispatch] = useReducer(reducer, { receiverUserId: 0 });
-  // 0 is dummy value for the instantiation
+  // 0 is dummy value for the initialization
 
   return (
     <ReceiverUserIdContext.Provider value={state}>
