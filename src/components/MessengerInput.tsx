@@ -77,8 +77,8 @@ const InputBox = styled.input`
   border-width: 0.08rem;
   border-style: solid;
   border-radius: 0.5rem;
-  width: 20vw;
-  height: 4.3vh;
+  width: 18rem;
+  height: 2.3rem;
   margin: 0;
   line-height: 6rem;
 `;

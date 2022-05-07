@@ -15,13 +15,12 @@ const App = () => {
 export default App;
 
 const MessengerContainer = styled.div`
+  /* 너비 | 스타일 | 색 */
+  border: 0.08rem solid #c2bbbb;
   margin: 0 auto;
   margin-top: 5rem;
   background: white;
-  border-color: #c2bbbb;
   border-radius: 0.5rem;
-  border-width: 0.08rem;
-  border-style: solid;
-  height: 80vh;
-  width: 30vw;
+  height: 43rem;
+  width: 26rem;
 `;

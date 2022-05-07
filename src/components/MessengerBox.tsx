@@ -4,12 +4,11 @@ import user from '../data/user.json';
 import message from '../data/message.json';
 import MessengerInput from './MessengerInput';
 import MessageList from './MessageList';
-import { IChat } from '../interface/interface';
-import styled from 'styled-components';
 
 const MessengerBox = () => {
   // 사용자 나부터 시작
   const [currentUser, setCurrentUser] = useState(user[0]);
+  const [chatList, setChatList] = useState(message);
 
   //현재 메세지를 보내는 사람이 나일 경우 친구로 유저 변경
   const switchUser = () => {
@@ -17,8 +16,6 @@ const MessengerBox = () => {
       ? setCurrentUser(user[1])
       : setCurrentUser(user[0]);
   };
-
-  const [chatList, setChatList] = useState(message);
 
   return (
     <>
