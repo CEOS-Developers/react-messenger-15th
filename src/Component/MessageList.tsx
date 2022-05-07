@@ -18,7 +18,7 @@ return (
         {state.map(({ userID, text }) => (
             <ChatInfoWrapper>
                 <UserWrapper>
-                    <ProfileImg src={`./0.png`} />
+                    <ProfileImg />
                     <UserName>
                         {userID === 1 ? 'Judi' : 'Nick'}
                     </UserName>
@@ -57,7 +57,7 @@ const MessageListField = styled.div`
 `;
 
 const ChatInfoWrapper = styled.div`
-    margin : 0px 24px;
+    margin : 4px 24px 2px 24px;
     display: flex;
     flex-direction : column;
     justify-content : left;
@@ -74,13 +74,14 @@ const ProfileImg = styled.img`
     height: 20px;
     border-radius: 8px;
     object-fit: cover;
+    background-color : #999999;
 `;
         
 const UserName = styled.div`
     font-size: 12px;
     font-weight : 400;
-    color: #000000;
-    margin : auto 8px ;
+    color: #444444;
+    margin : auto 6px ;
 `;
 
 const Bubble = styled.span`
@@ -88,9 +89,9 @@ const Bubble = styled.span`
     width : auto;
     margin: 3px;
     font-size: 12px;
-    line-height: 18px;
+    line-height: 16px;
     color : #FFFFFF;
-    font-weight: 650;
+    font-weight: 500;
     border-radius : 12px;
     background-color : #567BFF;
 

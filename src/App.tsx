@@ -38,7 +38,6 @@ const AppField = styled.div`
     width: 90%;
     height: 95%;
     margin : auto;
-    
 `;
 
 const BodyField = styled.div`

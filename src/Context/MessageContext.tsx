@@ -23,15 +23,11 @@ const initialMessages = [
     },
     {
         userID : 1,
-        text: 'Dumb fox'
+        text: 'Dumb fox.'
     },
     {
         userID : 0,
-        text: 'Come on'
-    },
-    {
-        userID : 0,
-        text: 'you know I love you'
+        text: 'Come on, you know I love you'
     }
 ];
 
@@ -39,8 +35,8 @@ function messageReducer(state: Message[], action: Action) {
     switch (action.type) {
         case "ADD":
             return state.concat({ 
-                    userID : 0, 
-                    text: 'action.payload' });
+                    userID : 1, 
+                    text: 'Okay' });
         default :
             throw new Error(`Unhandled action type: ${action.type}`);
     }
