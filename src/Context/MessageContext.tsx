@@ -14,7 +14,7 @@ const MessageStateContext = createContext<Message[]>([{
     userID : 0,
     text: 'Dummy'
 }]);
-const MessageDispatchContext = createContext<MessageDispatch | null>(null);
+const MessageDispatchContext = createContext<MessageDispatch | null >(null);
 
 const initialMessages = [
     {

@@ -14,7 +14,7 @@ const UserBox = ( ) => {
         return<>
         <UserField onClick={onClick}>
             <ProfileImg
-                src={`./imgs/0.png`}
+                src={`../imgs/0.png`}
                 />
             <UserName>{"Nick Wild"}</UserName>
         </UserField>

@@ -6,7 +6,7 @@ import useInput from '../Hooks/useInput';
 
 
 const InputBox = ( ) => {
-    const state = useMessageState();
+    //const state = useMessageState();
     const dispatch = useMessageDispatch();
     const { input , onInputChange, resetInput } = useInput('');
 
@@ -15,7 +15,10 @@ const InputBox = ( ) => {
         if (!input){
             alert('메세지를 입력하세요 !');
         }
-        else {
+        else if(dispatch) {
+            dispatch({
+                type: 'ADD'
+            });
         }
         resetInput();
     }
