@@ -3,7 +3,7 @@ import { useReceiverUserIdState } from '../../contexts/ReceiverUserIdContext';
 import styled, { css } from 'styled-components';
 import { HiOutlineChevronDown } from 'react-icons/hi';
 import { useInput } from '../../lib/useInput';
-import { IChat, IChats } from '../../types/index';
+import { IChat } from '../../types/index';
 import me from '../../data/me.json';
 import React from 'react';
 
@@ -12,6 +12,9 @@ type TChatRoomFormProps = {
 };
 
 function ChatRoomForm({ partnerUserId }: TChatRoomFormProps) {
+  const [inputValue, handleInputChange, resetInput, isValid, setIsValid] =
+    useInput('');
+
   const receiverUserIdState = useReceiverUserIdState();
   const chatListDispatch = useChatListDispatch();
   const concatNewChat = (newChat: IChat) => {
@@ -20,9 +23,6 @@ function ChatRoomForm({ partnerUserId }: TChatRoomFormProps) {
       newChat: newChat,
     });
   };
-
-  const [inputValue, handleInputChange, resetInput, isValid, setIsValid] =
-    useInput('');
 
   function handleSubmitBtnClick(e: React.MouseEvent<HTMLButtonElement>) {
     e.preventDefault();

@@ -1,8 +1,8 @@
 import { ReceiverUserIdProvider } from '../src/contexts/ReceiverUserIdContext';
+import { ChatListProvider } from './contexts/ChatListContext';
 import { useEffect } from 'react';
 import styled from 'styled-components';
 import ChatRoom from './pages/ChatRoom';
-import { ChatListProvider } from './contexts/ChatListContext';
 
 function App() {
   function setVh() {

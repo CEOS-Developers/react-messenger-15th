@@ -2,7 +2,7 @@ import { useChatListState } from '../../contexts/ChatListContext';
 import React from 'react';
 import { useRef, useEffect } from 'react';
 import styled from 'styled-components';
-import { IChat, IChats } from '../../types/index';
+import { IChat } from '../../types/index';
 import ChatItem from './ChatRoomItem';
 
 type TChatRoomListProps = {

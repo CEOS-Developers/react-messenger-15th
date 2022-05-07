@@ -23,17 +23,17 @@ https://react-messenger-15th-d2eoz2mh4-24siefil.vercel.app/
 
 ### Features
 
-* React Router를 활용한 SPA 개발을 염두하여 코드를 작성한다.
-* [The trick to viewport units on mobile](https://css-tricks.com/the-trick-to-viewport-units-on-mobile/)를 참고하여 반응형으로 제작한다.
-* transform을 활용하여 유저에게 메세지 전송 가능 여부를 시각적으로 전달한다.
-* React.memo를 사용하여 리스트 컴포넌트의 성능을 최적화한다.
-* [작업중] Context API를 사용하여 상태를 전역적으로 관리한다.
+- React Router를 활용한 SPA 개발을 염두하여 코드를 작성한다.
+- [The trick to viewport units on mobile](https://css-tricks.com/the-trick-to-viewport-units-on-mobile/)를 참고하여 반응형으로 제작한다.
+- transform을 활용하여 유저에게 메세지 전송 가능 여부를 시각적으로 전달한다.
+- React.memo를 사용하여 리스트 컴포넌트의 성능을 최적화한다.
+- Context API를 사용하여 상태를 전역적으로 관리한다.
 
 ### Reference
 
-* The trick to viewport units on mobile
-  * https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
+- The trick to viewport units on mobile
 
-* [HTML, CSS] Input박스 안에 아이콘 넣기 (fontawesome)
-  * https://joogaem.com/m/entry/HTML-CSS-Input%EB%B0%95%EC%8A%A4-%EC%95%88%EC%97%90-%EC%95%84%EC%9D%B4%EC%BD%98-%EB%84%A3%EA%B8%B0-fontawesome
+  - https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
 
+- [HTML, CSS] Input박스 안에 아이콘 넣기 (fontawesome)
+  - https://joogaem.com/m/entry/HTML-CSS-Input%EB%B0%95%EC%8A%A4-%EC%95%88%EC%97%90-%EC%95%84%EC%9D%B4%EC%BD%98-%EB%84%A3%EA%B8%B0-fontawesome
