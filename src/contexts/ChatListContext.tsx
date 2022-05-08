@@ -40,7 +40,7 @@ export function ChatListProvider({ children }: { children: React.ReactNode }) {
     chatList: [
       {
         userId: 0,
-        msg: 'dummy',
+        msg: 'Dummy',
         unixTime: 0,
       },
     ],
