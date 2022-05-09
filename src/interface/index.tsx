@@ -1,4 +1,4 @@
-import { IUserType } from "./user";
+import { IUserType, IUserState } from "./user";
 import {
   IInputMessageForm,
   IMessageType,
@@ -7,11 +7,13 @@ import {
   IChatListItem,
   IMessageChat,
   IList,
+  IChatRoomState,
 } from "./message";
 import { IAlert } from "./alert";
 
 export type {
   IUserType,
+  IUserState,
   IInputEmoticon,
   IEmoticonPopover,
   IAlert,
@@ -20,4 +22,5 @@ export type {
   IChatListItem,
   IMessageChat,
   IList,
+  IChatRoomState,
 };

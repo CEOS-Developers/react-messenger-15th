@@ -1,14 +1,23 @@
 import styled from "styled-components";
-import useUser from "hooks/useUser";
+import useChatRoom from "hooks/useChatRoom";
+import { useParams } from "react-router-dom";
+import { useRecoilValue } from "recoil";
+import { chatRoomState } from "recoil/recoil";
 
 const MessageProfile = () => {
-  const { currentUser, toggleUser } = useUser();
+  const { id } = useParams();
+  const { toggleUser } = useChatRoom();
+  const { currentUser } = useRecoilValue(chatRoomState);
+
+  const _handleUser = (): void => {
+    toggleUser(Number(id));
+  };
 
   return (
-    <Profile onClick={toggleUser}>
+    <Profile onClick={_handleUser}>
       <ProfileImg
         alt="profile"
-        src={`profile/${currentUser.name}.jpg`}
+        src={`/images/${currentUser.name}.jpg`}
         height={50}
       />
       <ProfileContent>

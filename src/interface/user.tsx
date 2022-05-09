@@ -3,3 +3,8 @@ export interface IUserType {
   name: string;
   statusMessage: string;
 }
+
+export interface IUserState {
+  users: IUserType[];
+  mainUser: IUserType;
+}

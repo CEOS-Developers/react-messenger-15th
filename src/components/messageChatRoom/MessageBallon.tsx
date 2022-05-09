@@ -1,16 +1,17 @@
-import useUser from "hooks/useUser";
 import { IMessageType } from "interface";
+import { useRecoilValue } from "recoil";
+import { chatRoomState } from "recoil/recoil";
 import styled, { css } from "styled-components";
 
 const MessageBallon = ({ message }: { message: IMessageType }) => {
-  const { currentUser } = useUser();
+  const { currentUser } = useRecoilValue(chatRoomState);
   const isUser = message.user.id === currentUser.id;
 
   return (
     <MessageBox isUser={isUser}>
       <MessageImg
         alt="profile"
-        src={`profile/${message.user.name}.jpg`}
+        src={`/images/${message.user.name}.jpg`}
         height={30}
       />
       <section>

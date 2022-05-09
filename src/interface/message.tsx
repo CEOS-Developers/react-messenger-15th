@@ -25,8 +25,12 @@ export interface IChatListItem {
 }
 
 export interface IMessageChat {
-  messages: IMessageType[];
-  toggleChat: (idx: number) => void;
+  handleChatRoom: (idx: number) => void;
+}
+
+export interface IChatRoomState {
+  message: IMessageType[];
+  currentUser: IUserType;
 }
 
 export interface IList {

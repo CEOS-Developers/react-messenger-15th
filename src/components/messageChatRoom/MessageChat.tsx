@@ -1,14 +1,15 @@
 import styled from "styled-components";
 import MessageBallon from "./MessageBallon";
-import useUser from "hooks/useUser";
 import { IMessageChat } from "interface";
 import { useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
+import { useRecoilValue } from "recoil";
+import { chatRoomState } from "recoil/recoil";
 
-const MessageChat = ({ messages, toggleChat }: IMessageChat) => {
+const MessageChat = ({ handleChatRoom }: IMessageChat) => {
   const { id } = useParams();
   const messageWrapperRef = useRef<HTMLElement>(null);
-  const { currentUser } = useUser();
+  const { message, currentUser } = useRecoilValue(chatRoomState);
 
   const _scrollToBottom = (): void => {
     if (messageWrapperRef.current) {
@@ -18,15 +19,15 @@ const MessageChat = ({ messages, toggleChat }: IMessageChat) => {
   };
 
   useEffect(() => {
-    toggleChat(Number(id));
+    handleChatRoom(Number(id));
   }, []);
   useEffect(() => {
     _scrollToBottom();
-  }, [messages]);
+  }, [message]);
 
   return (
     <Wrapper ref={messageWrapperRef}>
-      {messages.map((msg) => (
+      {message.map((msg) => (
         <MessageBallonContainer
           key={msg.id}
           isUser={msg.user.name === currentUser.name}

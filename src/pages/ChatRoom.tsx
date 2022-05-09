@@ -1,15 +1,15 @@
-import useMessage from "hooks/useMessage";
+import useChatRoom from "hooks/useChatRoom";
 import MessageChat from "components/messageChatRoom/MessageChat";
 import InputMessageForm from "components/messageInput/InputMessageForm";
 import MessageProfileContainer from "components/messageProfile/MessageProfileContainer";
 
 const ChatRoom = () => {
-  const { messages, addMessage, toggleChat } = useMessage();
+  const { addMessage, handleChatRoom } = useChatRoom();
 
   return (
     <>
       <MessageProfileContainer />
-      <MessageChat messages={messages} toggleChat={toggleChat} />
+      <MessageChat handleChatRoom={handleChatRoom} />
       <InputMessageForm sendMessage={addMessage} />
     </>
   );

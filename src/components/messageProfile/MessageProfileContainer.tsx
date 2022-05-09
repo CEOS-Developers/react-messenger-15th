@@ -6,7 +6,11 @@ const MessageProfileContainer = () => {
   return (
     <Container>
       <BackButton to="/chatList">
-        <BackButtonImg alt="backbutton" src="backbutton.png" height={12} />
+        <BackButtonImg
+          alt="backbutton"
+          src="/images/backbutton.png"
+          height={12}
+        />
       </BackButton>
       <MessageProfile />
     </Container>

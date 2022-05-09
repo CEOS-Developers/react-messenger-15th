@@ -48,7 +48,7 @@ const InputMessageForm = ({ sendMessage }: IInputMessageForm) => {
         isMobile={isMobile}
       />
       <InputButton>
-        <img alt="send" src="send.png" width={20} />
+        <img alt="send" src="/images/send.png" width={20} />
       </InputButton>
     </InputForm>
   );

@@ -6,7 +6,7 @@ const List = ({ link, img, title, subTitle }: IList) => {
   return (
     <ListItem to={"/chatRoom/" + link}>
       <ProfileImgBox>
-        <ProfileImg alt="profile" src={`profile/${img}.jpg`} height={50} />
+        <ProfileImg alt="profile" src={`images/${img}.jpg`} height={50} />
       </ProfileImgBox>
       <ListContent>
         <ListTitle>{title}</ListTitle>

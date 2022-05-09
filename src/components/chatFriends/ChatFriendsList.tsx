@@ -5,7 +5,7 @@ import List from "components/layout/List";
 const ChatFriendsList = () => {
   return (
     <Container>
-      {user.map((user) => (
+      {user.slice(1).map((user) => (
         <List
           key={user.id}
           link={user.id}
