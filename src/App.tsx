@@ -1,15 +1,12 @@
-import MessageChat from "components/messageChatRoom/MessageChat";
-import InputMessageForm from "components/messageInput/InputMessageForm";
-import MessageProfileContainer from "components/messageProfile/MessageProfileContainer";
+import ChatRoom from "pages/ChatRoom";
 import styled, { css } from "styled-components";
 import { useRecoilState } from "recoil";
-import useMessage from "hooks/useMessage";
 import { resizeState } from "recoil/recoil";
 import { useEffect } from "react";
+import { Route, Routes } from "react-router-dom";
 
 const App = () => {
   const [isMobile, setIsMobile] = useRecoilState(resizeState);
-  const { messages, addMessage } = useMessage();
 
   const _handleResize = () => {
     if (window.innerWidth <= 640) {
@@ -33,9 +30,9 @@ const App = () => {
   return (
     <Wrapper>
       <Container isMobile={isMobile}>
-        <MessageProfileContainer />
-        <MessageChat messages={messages} />
-        <InputMessageForm sendMessage={addMessage} />
+        <Routes>
+          <Route path="/chatRoom" element={<ChatRoom />} />
+        </Routes>
       </Container>
     </Wrapper>
   );
