@@ -7,16 +7,8 @@ export interface IMessageType {
   time: string;
 }
 
-export interface IMessageBallon {
-  message: IMessageType;
-}
-
 export interface IInputMessageForm {
   sendMessage: (text: string) => void;
-}
-
-export interface IMessageChat {
-  messages: IMessageType[];
 }
 
 export interface IInputEmoticon {
@@ -32,4 +24,10 @@ export interface IChatListItem {
     user: IUserType;
     messages: IMessageType[];
   };
+}
+
+export interface IList {
+  img: string;
+  title: string;
+  subTitle: string;
 }

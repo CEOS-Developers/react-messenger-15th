@@ -12,7 +12,7 @@
         "user": {
           "id": 2,
           "name": "ducky",
-          "statusMessage": ""
+          "statusMessage": "꽥"
         },
         "time": "11:20"
       },
@@ -22,7 +22,7 @@
         "user": {
           "id": 2,
           "name": "ducky",
-          "statusMessage": ""
+          "statusMessage": "꽥"
         },
         "time": "11:21"
       },
@@ -42,7 +42,7 @@
     "user": {
       "id": 3,
       "name": "jerry",
-      "statusMessage": ""
+      "statusMessage": "jerry berry"
     },
     "messages": [
       {
@@ -51,7 +51,7 @@
         "user": {
           "id": 3,
           "name": "jerry",
-          "statusMessage": ""
+          "statusMessage": "jerry berry"
         },
         "time": "12:20"
       },
@@ -71,7 +71,7 @@
     "user": {
       "id": 4,
       "name": "ghost",
-      "statusMessage": ""
+      "statusMessage": "유령의 집"
     },
     "messages": [
       {
@@ -80,7 +80,7 @@
         "user": {
           "id": 4,
           "name": "ghost",
-          "statusMessage": ""
+          "statusMessage": "유령의 집"
         },
         "time": "05:40"
       },
@@ -90,7 +90,7 @@
         "user": {
           "id": 4,
           "name": "ghost",
-          "statusMessage": ""
+          "statusMessage": "유령의 집"
         },
         "time": "05:50"
       },
@@ -110,7 +110,7 @@
     "user": {
       "id": 5,
       "name": "keshi",
-      "statusMessage": ""
+      "statusMessage": "right here"
     },
     "messages": [
       {
@@ -139,7 +139,7 @@
         "user": {
           "id": 5,
           "name": "keshi",
-          "statusMessage": ""
+          "statusMessage": "right here"
         },
         "time": "23:20"
       },
@@ -149,7 +149,7 @@
         "user": {
           "id": 5,
           "name": "keshi",
-          "statusMessage": ""
+          "statusMessage": "right here"
         },
         "time": "23:20"
       }
@@ -159,7 +159,7 @@
     "user": {
       "id": 6,
       "name": "joan",
-      "statusMessage": ""
+      "statusMessage": "good vibe🙌"
     },
     "messages": [
       {
@@ -168,7 +168,7 @@
         "user": {
           "id": 6,
           "name": "joan",
-          "statusMessage": ""
+          "statusMessage": "good vibe🙌"
         },
         "time": "15:45"
       },
@@ -227,7 +227,7 @@
     "user": {
       "id": 8,
       "name": "taeng_ss",
-      "statusMessage": ""
+      "statusMessage": "정말 너를 사랑했을까"
     },
     "messages": [
       {
@@ -236,7 +236,7 @@
         "user": {
           "id": 8,
           "name": "taeng_ss",
-          "statusMessage": ""
+          "statusMessage": "정말 너를 사랑했을까"
         },
         "time": "15:08"
       },

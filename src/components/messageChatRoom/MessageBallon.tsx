@@ -1,8 +1,8 @@
 import useUser from "hooks/useUser";
-import { IMessageBallon } from "interface";
+import { IMessageType } from "interface";
 import styled, { css } from "styled-components";
 
-const MessageBallon = ({ message }: IMessageBallon) => {
+const MessageBallon = ({ message }: { message: IMessageType }) => {
   const { currentUser } = useUser();
   const isUser = message.user.id === currentUser.id;
 

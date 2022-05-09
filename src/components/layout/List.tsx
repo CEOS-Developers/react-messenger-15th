@@ -1,21 +1,15 @@
 import styled from "styled-components";
-import { IChatListItem } from "interface";
+import { IList } from "interface";
 
-const ChatListItem = ({ msgInfo }: IChatListItem) => {
+const List = ({ img, title, subTitle }: IList) => {
   return (
     <ListItem>
       <ProfileImgBox>
-        <ProfileImg
-          alt="profile"
-          src={`profile/${msgInfo.user.name}.jpg`}
-          height={50}
-        />
+        <ProfileImg alt="profile" src={`profile/${img}.jpg`} height={50} />
       </ProfileImgBox>
       <ListContent>
-        <ListUser>{msgInfo.user.name}</ListUser>
-        <ListText>
-          {msgInfo.messages[msgInfo.messages.length - 1].text}
-        </ListText>
+        <ListTitle>{title}</ListTitle>
+        <ListSubTitle>{subTitle}</ListSubTitle>
       </ListContent>
     </ListItem>
   );
@@ -29,15 +23,16 @@ const ListItem = styled.section`
 const ListContent = styled.section`
   margin: 1rem;
 `;
-const ListUser = styled.p`
+const ListTitle = styled.p`
   margin-top: 0;
   margin-bottom: 0.5rem;
 `;
-const ListText = styled.p`
+const ListSubTitle = styled.p`
   margin-top: 0;
   font-size: 0.7em;
   display: block;
   width: 15rem;
+  color: grey;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -51,4 +46,4 @@ const ProfileImg = styled.img`
   margin-left: 1rem;
 `;
 
-export default ChatListItem;
+export default List;

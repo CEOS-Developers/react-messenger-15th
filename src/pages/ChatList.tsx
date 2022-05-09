@@ -1,5 +1,5 @@
-import ChatFooter from "components/ChatFooter";
-import ChatHeader from "components/ChatHeader";
+import ChatFooter from "components/layout/ChatFooter";
+import ChatHeader from "components/layout/ChatHeader";
 import MessageChatList from "components/chatList/MessageChatList";
 
 const ChatList = () => {

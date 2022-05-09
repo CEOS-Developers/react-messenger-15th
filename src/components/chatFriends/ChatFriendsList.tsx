@@ -1,16 +1,16 @@
-import List from "components/layout/List";
-import message from "data/message.json";
 import styled from "styled-components";
+import user from "data/user.json";
+import List from "components/layout/List";
 
-const MessageChatList = () => {
+const ChatFriendsList = () => {
   return (
     <Container>
-      {message.map((msg) => (
+      {user.map((user) => (
         <List
-          key={msg.user.id}
-          img={msg.user.name}
-          title={msg.user.name}
-          subTitle={msg.messages[msg.messages.length - 1].text}
+          key={user.id}
+          img={user.name}
+          title={user.name}
+          subTitle={user.statusMessage}
         />
       ))}
     </Container>
@@ -34,4 +34,4 @@ const Container = styled.section`
   border-bottom: 1px solid lightgrey;
 `;
 
-export default MessageChatList;
+export default ChatFriendsList;

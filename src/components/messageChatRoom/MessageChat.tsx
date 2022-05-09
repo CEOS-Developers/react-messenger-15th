@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import MessageBallon from "./MessageBallon";
 import useUser from "hooks/useUser";
-import { IMessageChat } from "interface";
+import { IMessageType } from "interface";
 import { useEffect, useRef } from "react";
 
-const MessageChat = ({ messages }: IMessageChat) => {
+const MessageChat = ({ messages }: { messages: IMessageType[] }) => {
   const messageWrapperRef = useRef<HTMLElement>(null);
   const { currentUser } = useUser();
 

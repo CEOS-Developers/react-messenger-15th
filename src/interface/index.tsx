@@ -1,12 +1,11 @@
 import { IUserType } from "./user";
 import {
-  IMessageBallon,
   IInputMessageForm,
-  IMessageChat,
   IMessageType,
   IInputEmoticon,
   IEmoticonPopover,
   IChatListItem,
+  IList,
 } from "./message";
 import { IAlert } from "./alert";
 
@@ -15,9 +14,8 @@ export type {
   IInputEmoticon,
   IEmoticonPopover,
   IAlert,
-  IMessageBallon,
   IInputMessageForm,
-  IMessageChat,
   IMessageType,
   IChatListItem,
+  IList,
 };

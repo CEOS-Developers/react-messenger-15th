@@ -26,6 +26,7 @@ const Container = styled.section`
 const IconBox = styled(Link)`
   display: flex;
   justify-content: center;
+  margin: 1rem;
   color: #1986fc;
   cursor: pointer;
   :hover {
