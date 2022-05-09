@@ -26,7 +26,6 @@ const Container = styled.section`
     background-clip: padding-box;
     border: 5px solid transparent;
   }
-  border-bottom: 1px solid lightgrey;
 `;
 const ListItem = styled.section`
   display: flex;

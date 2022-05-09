@@ -18,24 +18,3 @@ export interface IInputEmoticon {
 export interface IEmoticonPopover extends IInputEmoticon {
   handlePopover: () => void;
 }
-
-export interface IChatListItem {
-  user: IUserType;
-  messages: IMessageType[];
-}
-
-export interface IMessageChat {
-  handleChatRoom: (idx: number) => void;
-}
-
-export interface IChatRoomState {
-  message: IMessageType[];
-  currentUser: IUserType;
-}
-
-export interface IList {
-  link: number;
-  img: string;
-  title: string;
-  subTitle: string;
-}

@@ -34,12 +34,12 @@ const useChatRoom = () => {
   const handleChatRoom = (id: number): void => {
     const toggleIndex = messageList.findIndex((msg) => msg.user.id === id);
     setChatState({
-      currentUser: messageList[toggleIndex].user,
+      currentUser: userStore.mainUser,
       message: messageList[toggleIndex].messages,
     });
   };
 
-  return { chatState, addMessage, handleChatRoom, toggleUser };
+  return { addMessage, handleChatRoom, toggleUser };
 };
 
 export default useChatRoom;

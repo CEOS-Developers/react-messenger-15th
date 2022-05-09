@@ -4,12 +4,9 @@ import {
   IMessageType,
   IInputEmoticon,
   IEmoticonPopover,
-  IChatListItem,
-  IMessageChat,
-  IList,
-  IChatRoomState,
 } from "./message";
 import { IAlert } from "./alert";
+import { IChatListItem, IList, IChatRoomState, ISearch } from "./chat";
 
 export type {
   IUserType,
@@ -20,7 +17,7 @@ export type {
   IInputMessageForm,
   IMessageType,
   IChatListItem,
-  IMessageChat,
   IList,
   IChatRoomState,
+  ISearch,
 };

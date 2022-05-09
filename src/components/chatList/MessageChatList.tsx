@@ -1,11 +1,28 @@
 import List from "components/layout/List";
 import message from "data/message.json";
 import styled from "styled-components";
+import { useState } from "react";
+import Search from "components/common/Search";
 
 const MessageChatList = () => {
+  const totalMessage = message;
+  const [showMessage, setShowMessage] = useState(totalMessage);
+
+  const filterMessage = (text: string): void => {
+    if (!text.trim()) {
+      setShowMessage(totalMessage);
+    } else {
+      const filtered = totalMessage.filter((msg) =>
+        msg.user.name.includes(text),
+      );
+      setShowMessage(filtered);
+    }
+  };
+
   return (
     <Container>
-      {message.map((msg) => (
+      <Search filter={filterMessage} />
+      {showMessage.map((msg) => (
         <List
           key={msg.user.id}
           link={msg.user.id}
@@ -32,7 +49,6 @@ const Container = styled.section`
     background-clip: padding-box;
     border: 5px solid transparent;
   }
-  border-bottom: 1px solid lightgrey;
 `;
 
 export default MessageChatList;

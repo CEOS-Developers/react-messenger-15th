@@ -1,13 +1,10 @@
 import styled from "styled-components";
 import MessageBallon from "./MessageBallon";
-import { IMessageChat } from "interface";
 import { useEffect, useRef } from "react";
-import { useParams } from "react-router-dom";
 import { useRecoilValue } from "recoil";
 import { chatRoomState } from "recoil/recoil";
 
-const MessageChat = ({ handleChatRoom }: IMessageChat) => {
-  const { id } = useParams();
+const MessageChat = () => {
   const messageWrapperRef = useRef<HTMLElement>(null);
   const { message, currentUser } = useRecoilValue(chatRoomState);
 
@@ -18,9 +15,6 @@ const MessageChat = ({ handleChatRoom }: IMessageChat) => {
     }
   };
 
-  useEffect(() => {
-    handleChatRoom(Number(id));
-  }, []);
   useEffect(() => {
     _scrollToBottom();
   }, [message]);

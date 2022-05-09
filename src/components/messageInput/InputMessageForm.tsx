@@ -5,7 +5,7 @@ import { useRecoilValue } from "recoil";
 import { resizeState } from "recoil/recoil";
 import InputEmoticon from "./InputEmoticon";
 import { IInputMessageForm } from "interface";
-import Alert from "components/Alert";
+import Alert from "components/common/Alert";
 
 const InputMessageForm = ({ sendMessage }: IInputMessageForm) => {
   const { text, handleTextChange, resetText } = useInput("");

@@ -1,11 +1,26 @@
 import styled from "styled-components";
 import user from "data/user.json";
 import List from "components/layout/List";
+import Search from "components/common/Search";
+import { useState } from "react";
 
-const ChatFriendsList = () => {
+const ChatList = () => {
+  const totalUser = user.slice(1);
+  const [showUser, setShowUser] = useState(totalUser);
+
+  const filterUser = (text: string): void => {
+    if (!text.trim()) {
+      setShowUser(totalUser);
+    } else {
+      const filtered = totalUser.filter((user) => user.name.includes(text));
+      setShowUser(filtered);
+    }
+  };
+
   return (
     <Container>
-      {user.slice(1).map((user) => (
+      <Search filter={filterUser} />
+      {showUser.map((user) => (
         <List
           key={user.id}
           link={user.id}
@@ -32,7 +47,6 @@ const Container = styled.section`
     background-clip: padding-box;
     border: 5px solid transparent;
   }
-  border-bottom: 1px solid lightgrey;
 `;
 
-export default ChatFriendsList;
+export default ChatList;

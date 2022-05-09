@@ -20,6 +20,7 @@ const ChatFooter = () => {
 };
 
 const Container = styled.section`
+  border-top: 1px solid lightgrey;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 `;
