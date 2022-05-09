@@ -19,14 +19,14 @@ const MessageProfileContainer = () => {
 
 const Container = styled.section`
   height: 19%;
-  border-bottom: 1px solid lightgrey;
+  border-bottom: 0.05rem solid lightgrey;
   display: grid;
-  grid-template-columns: 1fr 150px 1fr;
+  grid-template-columns: 1fr 8rem 1fr;
 `;
 const BackButton = styled(Link)`
   display: flex;
   align-items: center;
-  margin-left: 40px;
+  margin-left: 2rem;
 `;
 const BackButtonImg = styled.img`
   cursor: pointer;

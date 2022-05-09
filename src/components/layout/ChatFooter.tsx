@@ -1,18 +1,32 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { AiOutlineUser, AiOutlineSetting } from "react-icons/ai";
 import { BiMessage } from "react-icons/bi";
+import { useEffect, useState } from "react";
 
 const ChatFooter = () => {
+  const { pathname } = useLocation();
+  const [selected, setSelected] = useState("");
+
+  useEffect(() => {
+    if (pathname.includes("chatList")) {
+      setSelected("chatList");
+    } else if (pathname.includes("setting")) {
+      setSelected("setting");
+    } else {
+      setSelected("friends");
+    }
+  }, [pathname]);
+
   return (
     <Container>
-      <IconBox to="/">
+      <IconBox to="/" isSelected={selected === "friends"}>
         <AiOutlineUser size={22} />
       </IconBox>
-      <IconBox to="/chatList">
+      <IconBox to="/chatList" isSelected={selected === "chatList"}>
         <BiMessage size={22} />
       </IconBox>
-      <IconBox to="/setting">
+      <IconBox to="/setting" isSelected={selected === "setting"}>
         <AiOutlineSetting size={22} />
       </IconBox>
     </Container>
@@ -20,15 +34,15 @@ const ChatFooter = () => {
 };
 
 const Container = styled.section`
-  border-top: 1px solid lightgrey;
+  border-top: 0.05rem solid lightgrey;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 `;
-const IconBox = styled(Link)`
+const IconBox = styled(Link)<{ isSelected: boolean }>`
   display: flex;
   justify-content: center;
   margin: 1rem;
-  color: #1986fc;
+  color: ${({ isSelected }) => (isSelected ? "#1986fc" : "#000000")};
   cursor: pointer;
   :hover {
     opacity: 0.7;

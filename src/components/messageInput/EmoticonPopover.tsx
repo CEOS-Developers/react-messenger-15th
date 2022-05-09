@@ -30,23 +30,23 @@ const PopoverContainer = styled.section`
   transform: translate(0, -120%);
   background-color: #f1f1f3;
   display: flex;
-  padding: 10px;
-  border-radius: 10px;
+  padding: 0.6rem;
+  border-radius: 0.5rem;
   :before {
     border-color: #f1f1f3 transparent;
     border-style: solid;
-    border-width: 8px 6px 0 6.5px;
+    border-width: 0.5rem 0.5rem 0 0.5rem;
     content: "";
     display: block;
-    left: 20px;
+    left: 1.15rem;
     position: absolute;
-    bottom: -8px;
+    bottom: -0.5rem;
   }
 `;
 const EmoticonBox = styled.section`
   cursor: pointer;
   & + & {
-    margin-left: 10px;
+    margin-left: 0.7rem;
   }
 `;
 

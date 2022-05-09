@@ -48,24 +48,24 @@ const Background = styled.div`
 `;
 const Container = styled.section`
   position: absolute;
-  width: 400px;
-  height: 150px;
+  width: 25rem;
+  height: 9rem;
   background: #ffffff;
-  border-radius: 5px;
+  border-radius: 0.4rem;
 `;
 const AlertContent = styled.section`
-  margin: 30px;
-  font-size: 17px;
+  margin: 1.8rem;
+  font-size: 1.1em;
 `;
 const AlertButtonBox = styled.section`
   display: flex;
   justify-content: flex-end;
-  margin: 20px;
+  margin: 1.5rem;
 `;
 const AlertButton = styled.button`
   border: none;
   background: none;
-  font-size: 20px;
+  font-size: 1.2em;
   cursor: pointer;
   :hover {
     opacity: 0.5;

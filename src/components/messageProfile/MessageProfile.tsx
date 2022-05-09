@@ -39,16 +39,16 @@ const ProfileImg = styled.img`
 const ProfileContent = styled.section`
   display: flex;
   flex-direction: column;
-  margin-left: 10px;
+  margin-left: 0.8rem;
 `;
 const ProfileName = styled.p`
   margin: 0;
-  font-size: 16px;
+  font-size: 0.9em;
 `;
 const ProfileTyping = styled.p`
-  font-size: 10px;
+  font-size: 0.7rem;
   color: lightgrey;
-  margin-top: 5px;
+  margin-top: 0.3rem;
 `;
 
 export default MessageProfile;

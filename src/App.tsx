@@ -51,7 +51,7 @@ const Wrapper = styled.div`
   align-items: center;
 `;
 const Container = styled.div<{ isMobile: boolean }>`
-  border: 1px solid lightgrey;
+  border: 0.05rem solid lightgrey;
   ${({ isMobile }) =>
     isMobile
       ? css`
@@ -61,7 +61,7 @@ const Container = styled.div<{ isMobile: boolean }>`
       : css`
           height: 640px;
           width: 360px;
-          border-radius: 7px;
+          border-radius: 0.5rem;
         `}
 `;
 

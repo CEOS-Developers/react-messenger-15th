@@ -26,53 +26,53 @@ const MessageBallon = ({ message }: { message: IMessageType }) => {
 const MessageBox = styled.section<{ isUser: boolean }>`
   display: flex;
   flex-direction: ${({ isUser }) => isUser && "row-reverse"};
-  padding-bottom: 10px;
+  padding-bottom: 1rem;
 `;
 const MessageText = styled.p<{ isUser: boolean }>`
-  padding: 10px;
-  font-size: 12px;
-  margin: 7px;
+  padding: 0.65rem;
+  font-size: 0.75em;
+  margin: 0.4rem;
   ${({ isUser }) =>
     isUser
       ? css`
-          border-radius: 10px 0 10px 10px;
+          border-radius: 0.5rem 0 0.5rem 0.5rem;
           background-color: #1986fc;
           color: #ffffff;
         `
       : css`
-          border-radius: 0 10px 10px 10px;
+          border-radius: 0 0.5rem 0.5rem 0.5rem;
           background-color: #f1f1f3;
         `};
 `;
 const MessageUser = styled.p<{ isUser: boolean }>`
-  font-size: 12px;
+  font-size: 0.75em;
   margin: 0;
   display: flex;
   ${({ isUser }) =>
     isUser
       ? css`
           justify-content: flex-end;
-          margin-right: 5px;
+          margin-right: 0.5rem;
         `
       : css`
-          margin-left: 5px;
+          margin-left: 0.5rem;
         `}
 `;
 const MessageImg = styled.img`
   border-radius: 70%;
 `;
 const MessageTime = styled.p<{ isUser: boolean }>`
-  font-size: 10px;
+  font-size: 0.5rem;
   color: lightgrey;
   display: flex;
   align-items: flex-end;
   ${({ isUser }) =>
     isUser
       ? css`
-          margin-left: 12px;
+          margin-left: 0.5rem;
         `
       : css`
-          margin-right: 12px;
+          margin-right: 0.5rem;
         `}
 `;
 

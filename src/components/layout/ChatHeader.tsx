@@ -10,7 +10,7 @@ const ChatHeader = ({ title }: { title: string }) => {
 
 const Container = styled.section`
   height: 19%;
-  border-bottom: 1px solid lightgrey;
+  border-bottom: 0.05rem solid lightgrey;
   display: flex;
   align-items: center;
 `;

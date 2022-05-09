@@ -55,18 +55,18 @@ const InputMessageForm = ({ sendMessage }: IInputMessageForm) => {
 };
 
 const InputForm = styled.form`
-  border-top: 1px solid lightgrey;
+  border-top: 0.05rem solid lightgrey;
   display: flex;
   align-items: center;
-  padding-top: 15px;
+  padding-top: 1rem;
 `;
 const InputText = styled.input<{ isMobile: boolean }>`
-  border: 1px solid lightgrey;
-  border-radius: 10px;
-  padding: 12px;
+  border: 0.05rem solid lightgrey;
+  border-radius: 0.7rem;
+  padding: 0.7rem;
   width: ${({ isMobile }) => (isMobile ? "78%" : "230px")};
-  height: 15px;
-  font-size: 12px;
+  height: 1rem;
+  font-size: 0.75em;
   :focus {
     outline: none;
   }
@@ -74,9 +74,9 @@ const InputText = styled.input<{ isMobile: boolean }>`
 const InputButton = styled.button`
   background: none;
   border: none;
-  margin-left: 10px;
+  margin-left: 0.7rem;
   cursor: pointer;
-  padding-top: 6px;
+  padding-top: 0.5rem;
   :hover {
     opacity: 0.7;
     transition: 0.15s;

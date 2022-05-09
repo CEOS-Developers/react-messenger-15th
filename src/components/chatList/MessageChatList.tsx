@@ -41,13 +41,13 @@ const Container = styled.section`
   height: 67%;
   overflow: auto;
   ::-webkit-scrollbar {
-    width: 15px;
+    width: 0.9rem;
   }
   ::-webkit-scrollbar-thumb {
     background-color: rgba(0, 0, 0, 0.2);
-    border-radius: 15px;
+    border-radius: 1rem;
     background-clip: padding-box;
-    border: 5px solid transparent;
+    border: 0.3rem solid transparent;
   }
 `;
 

@@ -38,15 +38,15 @@ const Wrapper = styled.section`
   flex-direction: column;
   height: 67%;
   overflow: auto;
-  padding: 12px 10px 0 12px;
+  padding: 1rem 0.8rem 0 0.8rem;
   ::-webkit-scrollbar {
-    width: 15px;
+    width: 0.9rem;
   }
   ::-webkit-scrollbar-thumb {
     background-color: rgba(0, 0, 0, 0.2);
-    border-radius: 15px;
+    border-radius: 1rem;
     background-clip: padding-box;
-    border: 5px solid transparent;
+    border: 0.3rem solid transparent;
   }
 `;
 const MessageBallonContainer = styled.section<{ isUser: boolean }>`
