@@ -20,13 +20,17 @@ export interface IEmoticonPopover extends IInputEmoticon {
 }
 
 export interface IChatListItem {
-  msgInfo: {
-    user: IUserType;
-    messages: IMessageType[];
-  };
+  user: IUserType;
+  messages: IMessageType[];
+}
+
+export interface IMessageChat {
+  messages: IMessageType[];
+  toggleChat: (idx: number) => void;
 }
 
 export interface IList {
+  link: number;
   img: string;
   title: string;
   subTitle: string;

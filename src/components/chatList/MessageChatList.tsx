@@ -8,6 +8,7 @@ const MessageChatList = () => {
       {message.map((msg) => (
         <List
           key={msg.user.id}
+          link={msg.user.id}
           img={msg.user.name}
           title={msg.user.name}
           subTitle={msg.messages[msg.messages.length - 1].text}

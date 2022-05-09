@@ -8,6 +8,7 @@ const ChatFriendsList = () => {
       {user.map((user) => (
         <List
           key={user.id}
+          link={user.id}
           img={user.name}
           title={user.name}
           subTitle={user.statusMessage}

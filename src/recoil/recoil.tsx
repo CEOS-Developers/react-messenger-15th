@@ -1,11 +1,15 @@
 import messages from "data/message.json";
 import users from "data/user.json";
-import { IMessageType, IUserType } from "interface";
+import { IChatListItem, IUserType } from "interface";
 import { atom } from "recoil";
 
-export const messageState = atom<IMessageType[]>({
+export const messageState = atom<{
+  messageList: IChatListItem[];
+}>({
   key: "messages",
-  default: messages[0].messages,
+  default: {
+    messageList: messages,
+  },
 });
 
 export const userState = atom<{ users: IUserType[]; currentUser: IUserType }>({

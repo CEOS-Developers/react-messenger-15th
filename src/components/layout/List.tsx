@@ -1,9 +1,10 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import { IList } from "interface";
 
-const List = ({ img, title, subTitle }: IList) => {
+const List = ({ link, img, title, subTitle }: IList) => {
   return (
-    <ListItem>
+    <ListItem to={"/chatRoom/" + link}>
       <ProfileImgBox>
         <ProfileImg alt="profile" src={`profile/${img}.jpg`} height={50} />
       </ProfileImgBox>
@@ -15,10 +16,11 @@ const List = ({ img, title, subTitle }: IList) => {
   );
 };
 
-const ListItem = styled.section`
+const ListItem = styled(Link)`
   display: flex;
   height: 5rem;
   cursor: pointer;
+  text-decoration: none;
 `;
 const ListContent = styled.section`
   margin: 1rem;
@@ -26,6 +28,7 @@ const ListContent = styled.section`
 const ListTitle = styled.p`
   margin-top: 0;
   margin-bottom: 0.5rem;
+  color: black;
 `;
 const ListSubTitle = styled.p`
   margin-top: 0;

@@ -4,12 +4,12 @@ import InputMessageForm from "components/messageInput/InputMessageForm";
 import MessageProfileContainer from "components/messageProfile/MessageProfileContainer";
 
 const ChatRoom = () => {
-  const { messages, addMessage } = useMessage();
+  const { messages, addMessage, toggleChat } = useMessage();
 
   return (
     <>
       <MessageProfileContainer />
-      <MessageChat messages={messages} />
+      <MessageChat messages={messages} toggleChat={toggleChat} />
       <InputMessageForm sendMessage={addMessage} />
     </>
   );

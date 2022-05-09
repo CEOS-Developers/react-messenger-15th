@@ -34,7 +34,7 @@ const App = () => {
       <Container isMobile={isMobile}>
         <Routes>
           <Route path="/chatList" element={<ChatList />} />
-          <Route path="/chatRoom" element={<ChatRoom />} />
+          <Route path="/chatRoom/:id" element={<ChatRoom />} />
           <Route path="/" element={<ChatFriends />} />
         </Routes>
       </Container>

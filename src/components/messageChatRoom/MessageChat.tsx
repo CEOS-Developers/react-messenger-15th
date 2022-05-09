@@ -1,10 +1,12 @@
 import styled from "styled-components";
 import MessageBallon from "./MessageBallon";
 import useUser from "hooks/useUser";
-import { IMessageType } from "interface";
+import { IMessageChat } from "interface";
 import { useEffect, useRef } from "react";
+import { useParams } from "react-router-dom";
 
-const MessageChat = ({ messages }: { messages: IMessageType[] }) => {
+const MessageChat = ({ messages, toggleChat }: IMessageChat) => {
+  const { id } = useParams();
   const messageWrapperRef = useRef<HTMLElement>(null);
   const { currentUser } = useUser();
 
@@ -15,6 +17,9 @@ const MessageChat = ({ messages }: { messages: IMessageType[] }) => {
     }
   };
 
+  useEffect(() => {
+    toggleChat(Number(id));
+  }, []);
   useEffect(() => {
     _scrollToBottom();
   }, [messages]);
