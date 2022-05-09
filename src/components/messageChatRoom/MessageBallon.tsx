@@ -7,27 +7,20 @@ const MessageBallon = ({ message }: IMessageBallon) => {
   const isUser = message.user.id === currentUser.id;
 
   return (
-    <MessageBox>
-      {!isUser ? (
-        <MessageImg alt="profile" src={message.user.profileImg} height={30} />
-      ) : (
-        <MessageTime isUser={isUser}>{message.time}</MessageTime>
-      )}
+    <MessageBox isUser={isUser}>
+      <MessageImg alt="profile" src={message.user.profileImg} height={30} />
       <section>
         <MessageUser isUser={isUser}>{message.user.name}</MessageUser>
         <MessageText isUser={isUser}>{message.text}</MessageText>
       </section>
-      {isUser ? (
-        <MessageImg alt="profile" src={message.user.profileImg} height={30} />
-      ) : (
-        <MessageTime isUser={isUser}>{message.time}</MessageTime>
-      )}
+      <MessageTime isUser={isUser}>{message.time}</MessageTime>
     </MessageBox>
   );
 };
 
-const MessageBox = styled.section`
+const MessageBox = styled.section<{ isUser: boolean }>`
   display: flex;
+  flex-direction: ${({ isUser }) => isUser && "row-reverse"};
   padding-bottom: 10px;
 `;
 const MessageText = styled.p<{ isUser: boolean }>`

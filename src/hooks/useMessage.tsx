@@ -15,7 +15,7 @@ const useMessage = () => {
       id: new Date().valueOf(),
       user: user.currentUser,
       time: curTime,
-      text,
+      text: text,
     };
     setMessages([...messages, messageObj]);
   };
