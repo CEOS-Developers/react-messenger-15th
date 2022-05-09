@@ -1,6 +1,8 @@
+import { Route, Routes } from 'react-router-dom';
 import styled  from "styled-components";
 import ChatRoom from "./ChatRoom";
 import Menu from "./Menu";
+import FriendList from './FriendList';
 
 function App() {
  
@@ -34,10 +36,23 @@ box-shadow:3px 3px 3px 3px lightgrey;
 
         */
     <div>
-       <Container>  
-        <Menu></Menu>
-        <ChatRoom></ChatRoom>
-    </Container> 
+       
+       <Container>
+         <Menu/>
+         <Routes>
+           
+           
+           
+           <Route path="/FriendList" element={<FriendList />} />
+           <Route path ="/chatroom" element ={<ChatRoom/>}/>
+        
+        
+        </Routes>
+        </Container>
+        
+    
+    
+     
     </div>
   );
 }

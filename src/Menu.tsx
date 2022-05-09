@@ -1,6 +1,11 @@
 import styled  from "styled-components";
+import { Outlet , useNavigate} from 'react-router-dom';
+import React from "react";
 
 function Menu () {
+
+    const navigate = useNavigate();
+
      const Menu = styled.div
      `
      text-align: center;
@@ -26,16 +31,31 @@ function Menu () {
     `
     ;
 
+    const FriendListLink = (event : React.MouseEvent<HTMLDivElement>) =>{
+        navigate('/FriendList');
+    }
+
+    const ChatRoomtLink = (event : React.MouseEvent<HTMLDivElement>) =>{
+        navigate('/ChatRoom');
+    }
+
+
 return (
 
     //추후에 링크가 들어가게 될 부분
-    <Menu>
-        <Menu1>🏠</Menu1>
-        <Menu1>👩‍👦</Menu1>
-        <Menu1>💬</Menu1>
-    </Menu>
+    
+        <Menu>
+            <Menu1>🏠</Menu1>
+            <Menu1 onClick={FriendListLink}>👩‍👦</Menu1>
+            <Menu1 onClick ={ChatRoomtLink}>💬</Menu1>
+            <main>
+             <Outlet/>   
+            </main>
+        </Menu>
+
+   
 );
 
 }
 
-export default Menu;
+export default React.memo(Menu);
