@@ -6,7 +6,7 @@ import { v4 as uuidv4 } from 'uuid';
 import * as api from '../../api/index';
 import { KeyboardEvent, FormEvent, useRef, useEffect } from 'react';
 import { useSetRecoilState } from 'recoil';
-import { chatState } from '../../store/recoil/recoil';
+import { chatState } from '../../store/recoil';
 
 interface SendMessageProps {
     roomId: number;

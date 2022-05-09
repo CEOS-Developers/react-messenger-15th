@@ -19,3 +19,9 @@ export interface UserType {
     profileImage: string;
     statusMessage: string;
 }
+
+export interface AuthType {
+    userName: string;
+    profileImage: string;
+    init: boolean;
+}

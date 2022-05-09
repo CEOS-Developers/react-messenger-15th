@@ -3,8 +3,9 @@ import { ChatDataType, ChatType, UserType } from '../Interface';
 import { getUserInfoById } from './userInfo';
 
 // 채팅 내역 가져오기
-export const getChats = (roomId: number, chatData: ChatDataType[]): ChatType[] => {
+export const getChats = (roomId: number, chatData: ChatDataType[]) => {
     const [chatObj] = chatData.filter((room) => room.roomId === roomId);
+    if (!chatObj) throw new Error('존재하지 않는 ID');
     return chatObj.chat;
 };
 

@@ -17,6 +17,8 @@
         "lodash": "^4.17.21",
         "react": "^18.1.0",
         "react-dom": "^18.1.0",
+        "react-kakao-login": "^2.1.0",
+        "react-router-dom": "^6.3.0",
         "react-scripts": "5.0.1",
         "recoil": "^0.7.2",
         "styled-components": "^5.3.5",
@@ -52,6 +54,7 @@
     "devDependencies": {
         "@typescript-eslint/eslint-plugin": "^5.21.0",
         "@typescript-eslint/parser": "^5.21.0",
-        "eslint": "^8.14.0"
+        "eslint": "^8.14.0",
+        "eslint-plugin-no-loops": "^0.3.0"
     }
 }
