@@ -55,7 +55,7 @@ const Container = styled.section`
 `;
 const AlertContent = styled.section`
   margin: 1.8rem;
-  font-size: 1.1em;
+  font-size: 1.1rem;
 `;
 const AlertButtonBox = styled.section`
   display: flex;
@@ -65,7 +65,7 @@ const AlertButtonBox = styled.section`
 const AlertButton = styled.button`
   border: none;
   background: none;
-  font-size: 1.2em;
+  font-size: 1.2rem;
   cursor: pointer;
   :hover {
     opacity: 0.5;

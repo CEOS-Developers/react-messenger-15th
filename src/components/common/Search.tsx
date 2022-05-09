@@ -42,7 +42,7 @@ const SearchInput = styled.input<{ isMobile: boolean }>`
   margin-top: 0.7rem;
   width: ${({ isMobile }) => (isMobile ? "85%" : "17rem")};
   height: 1rem;
-  font-size: 0.7em;
+  font-size: 0.7rem;
   :focus {
     outline: none;
   }

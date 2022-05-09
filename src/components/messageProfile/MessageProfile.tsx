@@ -43,7 +43,7 @@ const ProfileContent = styled.section`
 `;
 const ProfileName = styled.p`
   margin: 0;
-  font-size: 0.9em;
+  font-size: 0.9rem;
 `;
 const ProfileTyping = styled.p`
   font-size: 0.7rem;

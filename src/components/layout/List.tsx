@@ -16,14 +16,20 @@ const List = ({ link, img, title, subTitle }: IList) => {
   );
 };
 
+const ListContent = styled.section`
+  margin: 1rem;
+`;
 const ListItem = styled(Link)`
   display: flex;
   height: 5rem;
-  cursor: pointer;
   text-decoration: none;
-`;
-const ListContent = styled.section`
-  margin: 1rem;
+  cursor: pointer;
+  :hover {
+    ${ListContent} {
+      opacity: 0.7;
+      transition: 0.15s;
+    }
+  }
 `;
 const ListTitle = styled.p`
   margin-top: 0;
@@ -32,7 +38,7 @@ const ListTitle = styled.p`
 `;
 const ListSubTitle = styled.p`
   margin-top: 0;
-  font-size: 0.7em;
+  font-size: 0.7rem;
   display: block;
   width: 15rem;
   color: grey;

@@ -66,7 +66,7 @@ const InputText = styled.input<{ isMobile: boolean }>`
   padding: 0.7rem;
   width: ${({ isMobile }) => (isMobile ? "78%" : "230px")};
   height: 1rem;
-  font-size: 0.75em;
+  font-size: 0.75rem;
   :focus {
     outline: none;
   }

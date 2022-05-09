@@ -1,12 +1,9 @@
-import ChatRoom from "pages/ChatRoom";
 import styled, { css } from "styled-components";
 import { useRecoilState } from "recoil";
 import { resizeState } from "recoil/recoil";
 import { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
-import ChatList from "pages/ChatList";
-import ChatFriends from "pages/ChatFriends";
-import Setting from "pages/Setting";
+import { ChatList, ChatFriends, ChatRoom, Setting } from "pages";
 
 const App = () => {
   const [isMobile, setIsMobile] = useRecoilState(resizeState);

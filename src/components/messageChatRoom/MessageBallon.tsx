@@ -30,7 +30,7 @@ const MessageBox = styled.section<{ isUser: boolean }>`
 `;
 const MessageText = styled.p<{ isUser: boolean }>`
   padding: 0.65rem;
-  font-size: 0.75em;
+  font-size: 0.75rem;
   margin: 0.4rem;
   ${({ isUser }) =>
     isUser
@@ -45,7 +45,7 @@ const MessageText = styled.p<{ isUser: boolean }>`
         `};
 `;
 const MessageUser = styled.p<{ isUser: boolean }>`
-  font-size: 0.75em;
+  font-size: 0.75rem;
   margin: 0;
   display: flex;
   ${({ isUser }) =>

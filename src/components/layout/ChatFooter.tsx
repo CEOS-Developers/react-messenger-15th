@@ -20,13 +20,13 @@ const ChatFooter = () => {
 
   return (
     <Container>
-      <IconBox to="/" isSelected={selected === "friends"}>
+      <IconBox to="/" selected={selected === "friends"}>
         <AiOutlineUser size={22} />
       </IconBox>
-      <IconBox to="/chatList" isSelected={selected === "chatList"}>
+      <IconBox to="/chatList" selected={selected === "chatList"}>
         <BiMessage size={22} />
       </IconBox>
-      <IconBox to="/setting" isSelected={selected === "setting"}>
+      <IconBox to="/setting" selected={selected === "setting"}>
         <AiOutlineSetting size={22} />
       </IconBox>
     </Container>
@@ -38,11 +38,11 @@ const Container = styled.section`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 `;
-const IconBox = styled(Link)<{ isSelected: boolean }>`
+const IconBox = styled(Link)<{ selected: boolean }>`
   display: flex;
   justify-content: center;
   margin: 1rem;
-  color: ${({ isSelected }) => (isSelected ? "#1986fc" : "#000000")};
+  color: ${({ selected }) => (selected ? "#1986fc" : "#000000")};
   cursor: pointer;
   :hover {
     opacity: 0.7;

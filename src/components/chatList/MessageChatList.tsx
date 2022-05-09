@@ -38,7 +38,7 @@ const MessageChatList = () => {
 const Container = styled.section`
   display: flex;
   flex-direction: column;
-  height: 67%;
+  height: 70%;
   overflow: auto;
   ::-webkit-scrollbar {
     width: 0.9rem;
