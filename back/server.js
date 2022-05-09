@@ -1,4 +1,11 @@
-const httpServer = require('http').createServer();
+const express = require('express');
+const app = express();
+const httpServer = require('http').createServer(app);
+
+app.get('/', (_, res) => {
+  res.send('hi');
+});
+
 const io = require('socket.io')(httpServer, {
   cors: {
     origin: '*',
@@ -14,6 +21,9 @@ io.on('connection', (socket) => {
   socket.on('send', (data) => {
     msgs.push(data);
     io.emit('sendBack', msgs);
+  });
+  socket.on('disconnect', () => {
+    sockets = sockets.filter((id) => id !== socket.id);
   });
 });
 
