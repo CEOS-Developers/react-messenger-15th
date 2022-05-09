@@ -5,7 +5,7 @@ import { atom } from "recoil";
 
 export const messageState = atom<IMessageType[]>({
   key: "messages",
-  default: messages,
+  default: messages[0].messages,
 });
 
 export const userState = atom<{ users: IUserType[]; currentUser: IUserType }>({

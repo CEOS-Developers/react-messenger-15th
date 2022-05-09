@@ -26,3 +26,10 @@ export interface IInputEmoticon {
 export interface IEmoticonPopover extends IInputEmoticon {
   handlePopover: () => void;
 }
+
+export interface IChatListItem {
+  msgInfo: {
+    user: IUserType;
+    messages: IMessageType[];
+  };
+}

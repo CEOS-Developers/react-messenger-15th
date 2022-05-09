@@ -2,11 +2,41 @@
   {
     "id": 1,
     "name": "krkorklo",
-    "profileImg": "krkorklo.jpg"
+    "statusMessage": "🙃"
   },
   {
     "id": 2,
     "name": "ducky",
-    "profileImg": "ducky.jpg"
+    "statusMessage": ""
+  },
+  {
+    "id": 3,
+    "name": "jerry",
+    "statusMessage": ""
+  },
+  {
+    "id": 4,
+    "name": "ghost",
+    "statusMessage": ""
+  },
+  {
+    "id": 5,
+    "name": "keshi",
+    "statusMessage": ""
+  },
+  {
+    "id": 6,
+    "name": "joan",
+    "statusMessage": ""
+  },
+  {
+    "id": 7,
+    "name": "smiley",
+    "statusMessage": ""
+  },
+  {
+    "id": 8,
+    "name": "taeng_ss",
+    "statusMessage": ""
   }
 ]

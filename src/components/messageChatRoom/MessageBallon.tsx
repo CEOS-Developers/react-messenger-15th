@@ -8,7 +8,11 @@ const MessageBallon = ({ message }: IMessageBallon) => {
 
   return (
     <MessageBox isUser={isUser}>
-      <MessageImg alt="profile" src={message.user.profileImg} height={30} />
+      <MessageImg
+        alt="profile"
+        src={`profile/${message.user.name}.jpg`}
+        height={30}
+      />
       <section>
         <MessageUser isUser={isUser}>{message.user.name}</MessageUser>
         <MessageText isUser={isUser}>{message.text}</MessageText>

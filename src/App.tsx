@@ -4,6 +4,7 @@ import { useRecoilState } from "recoil";
 import { resizeState } from "recoil/recoil";
 import { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
+import ChatList from "pages/ChatList";
 
 const App = () => {
   const [isMobile, setIsMobile] = useRecoilState(resizeState);
@@ -31,6 +32,7 @@ const App = () => {
     <Wrapper>
       <Container isMobile={isMobile}>
         <Routes>
+          <Route path="/chatList" element={<ChatList />} />
           <Route path="/chatRoom" element={<ChatRoom />} />
         </Routes>
       </Container>

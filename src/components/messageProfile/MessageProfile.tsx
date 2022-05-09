@@ -6,7 +6,11 @@ const MessageProfile = () => {
 
   return (
     <Profile onClick={toggleUser}>
-      <ProfileImg alt="profile" src={currentUser.profileImg} height={50} />
+      <ProfileImg
+        alt="profile"
+        src={`profile/${currentUser.name}.jpg`}
+        height={50}
+      />
       <ProfileContent>
         <ProfileName>{currentUser.name}</ProfileName>
         <ProfileTyping>Typing...</ProfileTyping>

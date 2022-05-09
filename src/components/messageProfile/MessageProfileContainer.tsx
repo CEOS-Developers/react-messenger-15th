@@ -1,10 +1,11 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import MessageProfile from "./MessageProfile";
 
 const MessageProfileContainer = () => {
   return (
     <Container>
-      <BackButton>
+      <BackButton to="/chatList">
         <BackButtonImg alt="backbutton" src="backbutton.png" height={12} />
       </BackButton>
       <MessageProfile />
@@ -18,13 +19,17 @@ const Container = styled.section`
   display: grid;
   grid-template-columns: 1fr 150px 1fr;
 `;
-const BackButton = styled.div`
+const BackButton = styled(Link)`
   display: flex;
   align-items: center;
   margin-left: 40px;
 `;
 const BackButtonImg = styled.img`
   cursor: pointer;
+  :hover {
+    opacity: 0.7;
+    transition: 0.15s;
+  }
 `;
 
 export default MessageProfileContainer;

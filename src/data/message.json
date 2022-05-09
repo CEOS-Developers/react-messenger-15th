@@ -1,32 +1,265 @@
 [
   {
-    "id": 1,
-    "text": "15기",
     "user": {
       "id": 2,
       "name": "ducky",
-      "profileImg": "ducky.jpg"
+      "statusMessage": ""
     },
-    "time": "11:20"
+    "messages": [
+      {
+        "id": 1,
+        "text": "15기",
+        "user": {
+          "id": 2,
+          "name": "ducky",
+          "statusMessage": ""
+        },
+        "time": "11:20"
+      },
+      {
+        "id": 2,
+        "text": "프론트",
+        "user": {
+          "id": 2,
+          "name": "ducky",
+          "statusMessage": ""
+        },
+        "time": "11:21"
+      },
+      {
+        "id": 3,
+        "text": "짱이지♡",
+        "user": {
+          "id": 1,
+          "name": "krkorklo",
+          "statusMessage": "🙃"
+        },
+        "time": "11:41"
+      }
+    ]
   },
   {
-    "id": 2,
-    "text": "프론트",
     "user": {
-      "id": 2,
-      "name": "ducky",
-      "profileImg": "ducky.jpg"
+      "id": 3,
+      "name": "jerry",
+      "statusMessage": ""
     },
-    "time": "11:21"
+    "messages": [
+      {
+        "id": 1,
+        "text": "You're just too good to be true. Can't take my eyes off of you.",
+        "user": {
+          "id": 3,
+          "name": "jerry",
+          "statusMessage": ""
+        },
+        "time": "12:20"
+      },
+      {
+        "id": 2,
+        "text": "You'd be like heaven to touch. I wanna hold you so much.",
+        "user": {
+          "id": 1,
+          "name": "krkorklo",
+          "statusMessage": "🙃"
+        },
+        "time": "12:30"
+      }
+    ]
   },
   {
-    "id": 3,
-    "text": "짱이지♡",
     "user": {
-      "id": 1,
-      "name": "krkorklo",
-      "profileImg": "krkorklo.jpg"
+      "id": 4,
+      "name": "ghost",
+      "statusMessage": ""
     },
-    "time": "11:41"
+    "messages": [
+      {
+        "id": 1,
+        "text": "How you been?",
+        "user": {
+          "id": 4,
+          "name": "ghost",
+          "statusMessage": ""
+        },
+        "time": "05:40"
+      },
+      {
+        "id": 2,
+        "text": "You been good? I been drinkin'",
+        "user": {
+          "id": 4,
+          "name": "ghost",
+          "statusMessage": ""
+        },
+        "time": "05:50"
+      },
+      {
+        "id": 3,
+        "text": "Every day, every night getting wasted",
+        "user": {
+          "id": 1,
+          "name": "krkorklo",
+          "statusMessage": "🙃"
+        },
+        "time": "08:12"
+      }
+    ]
+  },
+  {
+    "user": {
+      "id": 5,
+      "name": "keshi",
+      "statusMessage": ""
+    },
+    "messages": [
+      {
+        "id": 1,
+        "text": "If you need me, I'll be here",
+        "user": {
+          "id": 1,
+          "name": "krkorklo",
+          "statusMessage": "🙃"
+        },
+        "time": "22:03"
+      },
+      {
+        "id": 2,
+        "text": "Said I'm here",
+        "user": {
+          "id": 1,
+          "name": "krkorklo",
+          "statusMessage": "🙃"
+        },
+        "time": "22:11"
+      },
+      {
+        "id": 3,
+        "text": "you do not know who to be",
+        "user": {
+          "id": 5,
+          "name": "keshi",
+          "statusMessage": ""
+        },
+        "time": "23:20"
+      },
+      {
+        "id": 4,
+        "text": "Then go on and come home to me",
+        "user": {
+          "id": 5,
+          "name": "keshi",
+          "statusMessage": ""
+        },
+        "time": "23:20"
+      }
+    ]
+  },
+  {
+    "user": {
+      "id": 6,
+      "name": "joan",
+      "statusMessage": ""
+    },
+    "messages": [
+      {
+        "id": 1,
+        "text": "You took my breath away",
+        "user": {
+          "id": 6,
+          "name": "joan",
+          "statusMessage": ""
+        },
+        "time": "15:45"
+      },
+      {
+        "id": 2,
+        "text": "I just can't believe my eyes",
+        "user": {
+          "id": 1,
+          "name": "krkorklo",
+          "statusMessage": "🙃"
+        },
+        "time": "15:46"
+      },
+      {
+        "id": 3,
+        "text": "Now you're here, life has never felt so good",
+        "user": {
+          "id": 1,
+          "name": "krkorklo",
+          "statusMessage": "🙃"
+        },
+        "time": "15:46"
+      }
+    ]
+  },
+  {
+    "user": {
+      "id": 7,
+      "name": "smiley",
+      "statusMessage": ""
+    },
+    "messages": [
+      {
+        "id": 1,
+        "text": "사실 나의 맘속은 그게 아닌데, 웃어넘기기에 난 너무 행복해",
+        "user": {
+          "id": 1,
+          "name": "krkorklo",
+          "statusMessage": "🙃"
+        },
+        "time": "13:36"
+      },
+      {
+        "id": 2,
+        "text": "세상 환히 웃고 있는 내게 미친 세상은 날 미쳤다 하겠지",
+        "user": {
+          "id": 7,
+          "name": "smiley",
+          "statusMessage": ""
+        },
+        "time": "14:46"
+      }
+    ]
+  },
+  {
+    "user": {
+      "id": 8,
+      "name": "taeng_ss",
+      "statusMessage": ""
+    },
+    "messages": [
+      {
+        "id": 1,
+        "text": "서로를 그리워했고 서로를 지겨워하지",
+        "user": {
+          "id": 8,
+          "name": "taeng_ss",
+          "statusMessage": ""
+        },
+        "time": "15:08"
+      },
+      {
+        "id": 2,
+        "text": "그 긴 낮과 밤들이 낡아 녹슬기 전에",
+        "user": {
+          "id": 1,
+          "name": "krkorklo",
+          "statusMessage": "🙃"
+        },
+        "time": "15:09"
+      },
+      {
+        "id": 2,
+        "text": "우리 다시 반짝이자",
+        "user": {
+          "id": 1,
+          "name": "krkorklo",
+          "statusMessage": "🙃"
+        },
+        "time": "17:08"
+      }
+    ]
   }
 ]

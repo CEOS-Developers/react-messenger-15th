@@ -6,6 +6,7 @@ import {
   IMessageType,
   IInputEmoticon,
   IEmoticonPopover,
+  IChatListItem,
 } from "./message";
 import { IAlert } from "./alert";
 
@@ -18,4 +19,5 @@ export type {
   IInputMessageForm,
   IMessageChat,
   IMessageType,
+  IChatListItem,
 };
