@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 import ChatRoomScreen from './components/ChatRoomScreen';
 import { useState } from 'react';
-import { IChatProps } from './components/Interface';
+import { IChatProps } from './components/Interfaces';
 
 function App() {
   const [chatList, setChatList] = useState<IChatProps[]>([]);

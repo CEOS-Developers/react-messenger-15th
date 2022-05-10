@@ -1,6 +1,6 @@
 import useInput from '../hooks/useInput';
 import styled from 'styled-components';
-import { IInputFormProps } from './Interface';
+import { IInputFormProps } from './Interfaces';
 
 const InputForm = ({
   currentUserId,
@@ -9,7 +9,7 @@ const InputForm = ({
 }: IInputFormProps) => {
   const { inputText, handleInputChange, reset } = useInput('');
 
-  const handleNewMsg = (e) => {
+  const handleNewMsg = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
 
     if (inputText) {
@@ -26,7 +26,7 @@ const InputForm = ({
     }
   };
 
-  const handleHeartClick = (e) => {
+  const handleHeartClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
 
     const heartMsg = {

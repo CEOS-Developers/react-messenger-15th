@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { GetTime } from '../utils/GetTime';
-import { IChatProps } from './Interface';
+import { IChatProps } from './Interfaces';
 
 declare module 'react' {
   interface HTMLAttributes<T> extends AriaAttributes, DOMAttributes<T> {

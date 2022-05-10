@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 import { FiChevronLeft } from 'react-icons/fi';
-import { IChatRoomHeaderProps } from './Interface';
+import { IChatRoomHeaderProps } from './Interfaces';
 
 const ChatRoomHeader = ({
   currentUserId,
   setCurrentUserId,
 }: IChatRoomHeaderProps) => {
-  const handleToggleUser = () => {
+  const handleCurrentUserToggle = () => {
     currentUserId === 'user1'
       ? setCurrentUserId('user0')
       : setCurrentUserId('user1');
@@ -18,7 +18,7 @@ const ChatRoomHeader = ({
         <FiChevronLeft />
       </Button>
 
-      <ProfileWrapper onClick={() => handleToggleUser()}>
+      <ProfileWrapper onClick={handleCurrentUserToggle}>
         <ProfileImg
           src={`${process.env.PUBLIC_URL}/imgs/${currentUserId}.jpg`}
         />
@@ -27,7 +27,6 @@ const ChatRoomHeader = ({
           <Typing>Typing...</Typing>
         </TextWrapper>
       </ProfileWrapper>
-
       <Button />
     </Header>
   );
@@ -36,9 +35,20 @@ const ChatRoomHeader = ({
 const Header = styled.header`
   padding: 5%;
   display: flex;
-  justifycontent: space-evenly;
+  justify-content: space-evenly;
 
   border-bottom: 1px solid #e2e2e2;
+`;
+
+const Button = styled.div`
+  width: 10%;
+  height: 100%;
+  margin-top: 6%;
+  margin-right: 12%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const ProfileWrapper = styled.section`
@@ -48,6 +58,14 @@ const ProfileWrapper = styled.section`
   display: flex;
   align-items: center;
   justify-content: space-between;
+`;
+
+const ProfileImg = styled.img`
+  width: 40px;
+  height: 40px;
+
+  border-radius: 50%;
+  object-fit: cover;
 `;
 
 const TextWrapper = styled.div`
@@ -73,25 +91,6 @@ const Typing = styled.div`
 
   font-size: 12px;
   color: #c8c8c8;
-`;
-
-const ProfileImg = styled.img`
-  width: 40px;
-  height: 40px;
-
-  border-radius: 50%;
-  object-fit: cover;
-`;
-
-const Button = styled.div`
-  width: 10%;
-  height: 100%;
-  margin-top: 6%;
-  margin-right: 12%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
 `;
 
 export default ChatRoomHeader;

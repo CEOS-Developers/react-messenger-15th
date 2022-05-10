@@ -2,9 +2,9 @@ import styled from 'styled-components';
 import Chat from './Chat';
 import db from '../db/db.json';
 import { useRef, useEffect } from 'react';
-import { IChatRoomBodyProps } from './Interface';
+import { IChatRoomBodyProps } from './Interfaces';
 
-const ChatRoomBody = ({ chatList, setChatList }: IChatRoomBodyProps) => {
+const ChatRoomBody = ({ chatList }: IChatRoomBodyProps) => {
   const scrollRef = useRef<HTMLElement>(null);
 
   useEffect(() => {

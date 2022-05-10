@@ -2,13 +2,13 @@ import styled from 'styled-components';
 import InputForm from './InputForm';
 import ChatRoomBody from './ChatRoomBody';
 import ChatRoomHeader from './ChatRoomHeader';
-import { IChatRoomScreenProps } from './Interface';
+import { IChatRoomScreenProps } from './Interfaces';
 
 const ChatRoomScreen = ({
   chatList,
-  setChatList,
   currentUserId,
   setCurrentUserId,
+  setChatList,
 }: IChatRoomScreenProps) => {
   return (
     <Wrapper>
@@ -17,7 +17,7 @@ const ChatRoomScreen = ({
         setCurrentUserId={setCurrentUserId}
       />
 
-      <ChatRoomBody chatList={chatList} setChatList={setChatList} />
+      <ChatRoomBody chatList={chatList} />
 
       <InputForm
         currentUserId={currentUserId}

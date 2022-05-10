@@ -5,14 +5,12 @@ interface IUserId {
 }
 
 interface IChatProps extends IUserId {
-  userId: string;
   message: string;
   msgId: number;
 }
 
 interface IChatRoomBodyProps {
   chatList: IChatProps[];
-  setChatList: Dispatch<SetStateAction<IChatProps[]>>;
 }
 
 interface ICurrentUserId {
@@ -25,9 +23,13 @@ interface IChatRoomHeaderProps extends ICurrentUserId {
 
 interface IChatRoomScreenProps
   extends IChatRoomBodyProps,
-    IChatRoomHeaderProps {}
+    IChatRoomHeaderProps {
+  setChatList: Dispatch<SetStateAction<IChatProps[]>>;
+}
 
-interface IInputFormProps extends IChatRoomHeaderProps, IChatRoomBodyProps {}
+interface IInputFormProps extends IChatRoomHeaderProps, IChatRoomBodyProps {
+  setChatList: Dispatch<SetStateAction<IChatProps[]>>;
+}
 
 export type {
   IUserId,
