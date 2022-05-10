@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { GetTime } from '../utils/GetTime';
-import { IChatProps } from './Interfaces';
+import { IChat } from './Interfaces';
 
 declare module 'react' {
   interface HTMLAttributes<T> extends AriaAttributes, DOMAttributes<T> {
@@ -10,7 +10,7 @@ declare module 'react' {
   }
 } //jsx안에 사용
 
-const Chat = ({ userId, message, msgId }: IChatProps) => {
+const Chat = ({ userId, message, msgId }: IChat) => {
   return (
     <Wrapper>
       <ChatWrapper userId={userId} msgId={msgId}>

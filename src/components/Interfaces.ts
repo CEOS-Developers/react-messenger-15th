@@ -4,13 +4,13 @@ interface IUserId {
   userId: string;
 }
 
-interface IChatProps extends IUserId {
+interface IChat extends IUserId {
   message: string;
   msgId: number;
 }
 
 interface IChatRoomBodyProps {
-  chatList: IChatProps[];
+  chatList: IChat[];
 }
 
 interface ICurrentUserId {
@@ -24,17 +24,17 @@ interface IChatRoomHeaderProps extends ICurrentUserId {
 interface IChatRoomScreenProps
   extends IChatRoomBodyProps,
     IChatRoomHeaderProps {
-  setChatList: Dispatch<SetStateAction<IChatProps[]>>;
+  setChatList: Dispatch<SetStateAction<IChat[]>>;
 }
 
 interface IInputFormProps extends IChatRoomHeaderProps, IChatRoomBodyProps {
-  setChatList: Dispatch<SetStateAction<IChatProps[]>>;
+  setChatList: Dispatch<SetStateAction<IChat[]>>;
 }
 
 export type {
   IUserId,
   ICurrentUserId,
-  IChatProps,
+  IChat,
   IChatRoomBodyProps,
   IChatRoomHeaderProps,
   IChatRoomScreenProps,
