@@ -21,7 +21,6 @@ const ChatRoomScreen = ({
 
       <InputForm
         currentUserId={currentUserId}
-        setCurrentUserId={setCurrentUserId}
         chatList={chatList}
         setChatList={setChatList}
       />

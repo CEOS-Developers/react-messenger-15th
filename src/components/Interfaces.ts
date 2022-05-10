@@ -27,7 +27,7 @@ interface IChatRoomScreenProps
   setChatList: Dispatch<SetStateAction<IChat[]>>;
 }
 
-interface IInputFormProps extends IChatRoomHeaderProps, IChatRoomBodyProps {
+interface IInputFormProps extends ICurrentUserId, IChatRoomBodyProps {
   setChatList: Dispatch<SetStateAction<IChat[]>>;
 }
 
