@@ -18,6 +18,7 @@ export default Friends;
 
 const FriendList = styled.div`
   display: flex;
+  height: 5rem;
 `;
 
 const Profile = styled.div`

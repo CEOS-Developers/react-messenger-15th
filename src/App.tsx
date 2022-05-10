@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import FriendList from './routes/FriendList';
 import ChatList from './routes/ChatList';
 import Setting from './routes/Setting';
-import user from './data/user.json';
+
 import MessengerBox from './components/MessengerBox';
 
 const App = () => {

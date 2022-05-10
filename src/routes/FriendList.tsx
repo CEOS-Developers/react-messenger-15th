@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import UserNav from '../components/UserNav';
 import user from '../data/user.json';
 import Friends from '../components/Friends';
+import UnderNavBar from '../components/UnderNavBar';
 
 const FriendList = () => {
   return (
@@ -17,6 +18,7 @@ const FriendList = () => {
           />
         ))}
       </Content>
+      <UnderNavBar />
     </FriendListContainer>
   );
 };

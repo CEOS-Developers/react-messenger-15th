@@ -3,6 +3,7 @@ import { CgProfile } from 'react-icons/cg';
 import { AiOutlineLock } from 'react-icons/ai';
 import { FiSettings } from 'react-icons/fi';
 import { MdPayment } from 'react-icons/md';
+import UnderNavBar from '../components/UnderNavBar';
 
 const Setting = () => {
   return (
@@ -27,6 +28,7 @@ const Setting = () => {
             Payments
           </SettingButton>
         </Content>
+        <UnderNavBar />
       </SettingContainer>
     </>
   );
