@@ -24,7 +24,7 @@ const FriendsList = () => {
                 <Divider />
                 <SubHeading>친구 {friends.length}</SubHeading>
                 {friends.map((friend) => (
-                    <UserListItem user={friend} />
+                    <UserListItem user={friend} key={friend.userId} />
                 ))}
             </ListBody>
         </div>

@@ -5,7 +5,7 @@ export interface ChatType {
     like: boolean;
     chatId: string;
 }
-export interface ChatDataType {
+export interface RoomType {
     roomId: number;
     user: {
         userId: number;

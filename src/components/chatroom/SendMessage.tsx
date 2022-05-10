@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import useInput from '../../hooks/useInput';
-import { ChatDataType, ChatType } from '../../Interface';
+import { RoomType, ChatType } from '../../Interface';
 import dayjs from 'dayjs';
 import { v4 as uuidv4 } from 'uuid';
 import * as api from '../../api/index';
@@ -10,7 +10,7 @@ import { chatState } from '../../store/recoil';
 
 interface SendMessageProps {
     roomId: number;
-    chatData: ChatDataType[];
+    chatData: RoomType[];
     userId: number;
 }
 

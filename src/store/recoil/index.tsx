@@ -1,9 +1,9 @@
 import { atom } from 'recoil';
-import { ChatDataType, UserType, AuthType } from '../../Interface';
+import { RoomType, UserType, AuthType } from '../../Interface';
 import chatData from '../chatData.json';
 import userData from '../userData.json';
 
-export const chatState = atom<ChatDataType[]>({
+export const chatState = atom<RoomType[]>({
     key: 'chats',
     default: chatData.rooms,
 });

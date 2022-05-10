@@ -2,7 +2,7 @@ import * as api from '../api';
 import { useEffect, useState } from 'react';
 import { useRecoilValue } from 'recoil';
 import { chatState, userState } from '../store/recoil';
-import { ChatDataType, UserType } from '../Interface';
+import { RoomType, UserType } from '../Interface';
 import SendMessage from '../components/chatroom/SendMessage';
 import RoomHeader from '../components/chatroom/RoomHeader';
 import styled from 'styled-components';
@@ -10,7 +10,7 @@ import RoomBody from '../components/chatroom/RoomBody';
 import { useParams } from 'react-router-dom';
 
 const ChatRoom = () => {
-    const chatData = useRecoilValue<ChatDataType[]>(chatState);
+    const chatData = useRecoilValue<RoomType[]>(chatState);
     const userData = useRecoilValue<UserType[]>(userState);
     const [currentUser, setCurrentUser] = useState<UserType | null>(null);
     const { getChats, getUserInfoListByRoomId } = api;
