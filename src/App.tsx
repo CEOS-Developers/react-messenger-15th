@@ -1,10 +1,10 @@
 import { createGlobalStyle } from 'styled-components';
 import ChatRoomScreen from './components/ChatRoomScreen';
 import { useState } from 'react';
-import { IChatProps } from './components/Interfaces';
+import { IChat } from './components/Interfaces';
 
 function App() {
-  const [chatList, setChatList] = useState<IChatProps[]>([]);
+  const [chatList, setChatList] = useState<IChat[]>([]);
   const [currentUserId, setCurrentUserId] = useState<string>('user0');
 
   return (
