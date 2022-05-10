@@ -10,8 +10,14 @@ const GlobalStyle = createGlobalStyle`
         justify-content: center;
         height: 100vh;
         font-family: 'Noto Sans KR', sans-serif;
-        font-size: 10pt;
+  
     }
+    a:link { text-decoration: none; }
+    a:visited { text-decoration: none; }
+    a:hover { text-decoration: none; }
+    a:active { text-decoration: none; }
+
+
     h1 {
         margin-bottom: 20px;
     }

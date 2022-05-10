@@ -14,3 +14,9 @@ export const Main = styled.main`
         border: 1px solid #cecece;
     }
 `;
+
+/* export const ListContainer = styled.div`
+    padding: 0px 18px;
+`; */
+
+export const ListBody = styled.div``;

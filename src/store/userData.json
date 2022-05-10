@@ -10,10 +10,16 @@
         {
             "userId": 10,
             "userName": "박명수",
-            "profileImage": "https://i.ibb.co/xDPMfHR/2022-05-05-10-47-58.png",
-            "statusMessage": "",
+            "profileImage": "https://i.ibb.co/SK2x480/2022-05-05-10-47-58.png",
+            "statusMessage": "북쪽에 계신 메리메리",
             "myAccount": false
         },
-        { "userId": 11, "userName": "두규진", "profileImage": "", "statusMessage": "", "myAccount": false }
+        {
+            "userId": 11,
+            "userName": "데프콘",
+            "profileImage": "https://i.ibb.co/Jdmk2VM/2022-05-10-10-04-21.png",
+            "statusMessage": "",
+            "myAccount": false
+        }
     ]
 }

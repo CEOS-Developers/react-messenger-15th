@@ -86,6 +86,7 @@ const StyledForm = styled.form`
     display: grid;
     grid-template-columns: auto 88px;
     grid-gap: 16px;
+    font-size: 13px;
 `;
 const MessageInput = styled.textarea`
     border: 0px;

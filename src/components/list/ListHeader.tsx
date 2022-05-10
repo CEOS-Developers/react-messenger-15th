@@ -11,7 +11,7 @@ const ListHeader = ({ title }: { title: string }) => {
 export default ListHeader;
 
 const ListHeaderContainer = styled.div`
-    padding: 20px;
+    padding: 18px;
 `;
 const Title = styled.h2`
     margin: 0px;

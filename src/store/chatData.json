@@ -46,18 +46,25 @@
             "user": [{ "userId": 0 }, { "userId": 11 }],
             "chat": [
                 {
-                    "userId": 11,
-                    "content": "채팅 데이터",
+                    "userId": 0,
+                    "content": "형 내일 동묘가기로 했어요.",
                     "date": "2022-05-04T22:11:18+09:00",
                     "like": false,
                     "chatId": "example6"
                 },
                 {
                     "userId": 11,
-                    "content": "두번째입니다",
+                    "content": "쓰~읍 난 좀 반댄데?",
                     "date": "2022-05-04T22:12:23+09:00",
                     "like": false,
                     "chatId": "example7"
+                },
+                {
+                    "userId": 0,
+                    "content": "왜요?",
+                    "date": "2022-05-04T22:12:23+09:00",
+                    "like": false,
+                    "chatId": "example8"
                 }
             ]
         }

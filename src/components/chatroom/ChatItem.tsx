@@ -48,6 +48,7 @@ const ChatItem = ({ chat, user, currentUser, prevChat }: ChatItemProps) => {
 export default React.memo(ChatItem);
 
 const ChatItemContainer = styled.div<IsCurrentUserProps>`
+    font-size: 13px;
     ${({ isPrevSame }) =>
         isPrevSame
             ? css`
