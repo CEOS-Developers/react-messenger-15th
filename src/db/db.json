@@ -1,8 +1,4 @@
 {
-  "user": [
-    { "id": "user0", "userId": "user0" },
-    { "id": "user1", "userId": "user1" }
-  ],
   "data": [
     {
       "userId": "user0",

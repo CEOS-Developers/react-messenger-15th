@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import ChatRoomScreen from './components/ChatRoomScreen';
+import FriendsListScreen from './pages/FriendsListScreen';
 import { useState } from 'react';
 import { IChat } from './components/Interfaces';
 
@@ -10,12 +10,7 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <ChatRoomScreen
-        chatList={chatList}
-        setChatList={setChatList}
-        currentUserId={currentUserId}
-        setCurrentUserId={setCurrentUserId}
-      />
+      <FriendsListScreen />
     </>
   );
 }
