@@ -5,8 +5,6 @@ import styled from 'styled-components';
 import Squircle from '../components/user/Squircle';
 import { ListBody } from '../styles/Container';
 import UserListItem from '../components/list/UserListItem';
-import { Link } from 'react-router-dom';
-
 const FriendsList = () => {
     const userList = useRecoilValue(userState);
     const me = userList[0];
