@@ -1,16 +1,19 @@
 import { createGlobalStyle } from 'styled-components';
-import SettingScreen from './pages/SettingScreen';
+import ChatListScreen from './pages/ChatListScreen';
 import { useState } from 'react';
-import { IChat } from './components/Interfaces';
+import { useParams } from 'react-router';
+import chats from './db/data.json';
 
 function App() {
-  const [chatList, setChatList] = useState<IChat[]>([]);
+  const { userId } = useParams();
   const [currentUserId, setCurrentUserId] = useState<string>('user0');
+  const filteredChats = chats.filter((user) => user.userId === userId);
+  const [chatList, setChatList] = useState(filteredChats[0]);
 
   return (
     <>
       <GlobalStyle />
-      <SettingScreen />
+      <ChatListScreen />
     </>
   );
 }

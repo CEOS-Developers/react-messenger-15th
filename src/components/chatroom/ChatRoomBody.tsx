@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import Chat from './Chat';
-import db from '../../db/db.json';
+import data from '../../db/data.json';
 import { useRef, useEffect } from 'react';
 import { IChatRoomBodyProps } from '../Interfaces';
 
@@ -14,9 +14,6 @@ const ChatRoomBody = ({ chatList }: IChatRoomBodyProps) => {
   return (
     <>
       <BodyWrapper ref={scrollRef}>
-        {db?.data.map(({ userId, message, msgId }) => (
-          <Chat key={msgId} userId={userId} message={message} msgId={msgId} />
-        ))}
         {chatList?.map(({ userId, message, msgId }) => (
           <Chat key={msgId} userId={userId} message={message} msgId={msgId} />
         ))}
