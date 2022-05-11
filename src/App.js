@@ -96,8 +96,8 @@ const App = () => {
       <AppHeader className="App-header">
         <AppHeaderEmoji>🍊</AppHeaderEmoji>
         <div>
-          <strong>Title</strong>
-          title
+          <strong>Orange</strong>
+          Chat
         </div>
         <AnimatedCursor>|</AnimatedCursor>
       </AppHeader>

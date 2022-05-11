@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
+import SideBar from './SideBar';
+
 const MainWrapper = styled.div`
   display: flex;
-
-  /* justify-content: center; */
-  /* align-items: center; */
 
   width: 1000px;
   height: 550px;
@@ -19,11 +18,14 @@ const MainWrapper = styled.div`
 const MainView = styled.div`
   flex: 1;
   display: flex;
+
+  background: white;
 `;
 
 const MainContainer = () => {
   return (
     <MainWrapper>
+      <SideBar />
       <MainView />
     </MainWrapper>
   );
