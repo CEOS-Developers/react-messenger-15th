@@ -1,6 +1,6 @@
 [
   {
-    "roomId": "1",
+    "partnerId": "user1",
     "chats": [
       {
         "userId": "user0",
@@ -15,7 +15,7 @@
     ]
   },
   {
-    "roomId": "2",
+    "partnerId": "user2",
     "chats": [
       {
         "userId": "user2",
@@ -35,7 +35,7 @@
     ]
   },
   {
-    "roomId": "3",
+    "partnerId": "user3",
     "chats": [
       {
         "userId": "user3",
@@ -50,10 +50,10 @@
     ]
   },
   {
-    "roomId": "4",
+    "partnerId": "user4",
     "chats": [
       {
-        "userId": "user3",
+        "userId": "user4",
         "message": "!!!!!",
         "msgId": 1644809969379
       },
