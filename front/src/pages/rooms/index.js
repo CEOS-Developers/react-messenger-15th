@@ -2,10 +2,11 @@ import { Container } from '../../styles/Container';
 import Sidebar from '../../components/sidebar';
 import Header from '../../components/header2';
 import Main from '../../components/main';
-import { useState } from 'react';
 import Search from '../../components/search';
+import { useRecoilState } from 'recoil';
+import { searchToggleState } from '../../state';
 const Rooms = () => {
-  const [searchToggle, setSearchToggle] = useState(false);
+  const [searchToggle, setSearchToggle] = useRecoilState(searchToggleState);
   return (
     <Container>
       <Sidebar />

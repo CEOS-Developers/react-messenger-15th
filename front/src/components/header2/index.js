@@ -1,11 +1,14 @@
 import styled from 'styled-components';
 import { useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import { useRecoilState } from 'recoil';
+import { searchToggleState } from '../../state';
 function Header() {
+  const [searchToggle, setSearchToggle] = useRecoilState(searchToggleState);
+  const onToggle = () => setSearchToggle((prev) => !prev);
   const location = useLocation();
   const [path, setPath] = useState('');
   useEffect(() => {
-    console.log(location);
     setPath(location.pathname.slice(1));
   }, [location]);
   return (
@@ -18,13 +21,13 @@ function Header() {
       <RigthContents>
         {path === '' && (
           <>
-            <div>돋보기</div>
+            <button onClick={onToggle}>돋보기</button>
             <div>사람+</div>
           </>
         )}
         {path === 'rooms' && (
           <>
-            <div>돋보기</div>
+            <button onClick={onToggle}>돋보기</button>
             <div>말풍선+</div>
           </>
         )}
