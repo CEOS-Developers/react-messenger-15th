@@ -36,8 +36,9 @@ const ChatList = () => {
 const Container = styled.section`
   display: flex;
   flex-direction: column;
-  height: 70%;
+  height: 67%;
   overflow: auto;
+  padding-top: 1rem;
   ::-webkit-scrollbar {
     width: 0.9rem;
   }

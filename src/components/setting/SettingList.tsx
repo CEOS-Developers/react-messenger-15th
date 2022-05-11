@@ -15,8 +15,9 @@ const SettingList = () => {
 const Container = styled.section`
   display: flex;
   flex-direction: column;
-  height: 70%;
+  height: 67%;
   overflow: auto;
+  padding-top: 1rem;
   ::-webkit-scrollbar {
     width: 0.9rem;
   }
@@ -32,7 +33,7 @@ const ListItem = styled.section`
   cursor: pointer;
   text-decoration: none;
   margin-left: 2.5rem;
-  margin-top: 2.5rem;
+  padding-top: 2rem;
   :hover {
     opacity: 0.7;
     transition: 0.15s;

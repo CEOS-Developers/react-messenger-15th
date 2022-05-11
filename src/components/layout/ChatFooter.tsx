@@ -41,7 +41,7 @@ const Container = styled.section`
 const IconBox = styled(Link)<{ selected: boolean }>`
   display: flex;
   justify-content: center;
-  margin: 1rem;
+  margin: 1.3rem;
   color: ${({ selected }) => (selected ? "#1986fc" : "#000000")};
   cursor: pointer;
   :hover {

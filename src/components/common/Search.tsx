@@ -33,13 +33,12 @@ const Container = styled.section`
   display: flex;
 `;
 const IconBox = styled.section`
-  margin: 1rem 0.5rem 0 1rem;
+  margin: 0.3rem 0.5rem 0 1rem;
 `;
 const SearchInput = styled.input<{ isMobile: boolean }>`
   border: 0.05rem solid lightgrey;
   border-radius: 0.5rem;
   padding: 0.5rem;
-  margin-top: 0.7rem;
   width: ${({ isMobile }) => (isMobile ? "85%" : "17rem")};
   height: 1rem;
   font-size: 0.7rem;
