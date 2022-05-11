@@ -34,6 +34,13 @@
             "profileImage": "https://i.ibb.co/0CT39hS/2022-05-11-8-19-41.png",
             "statusMessage": "웃지마",
             "myAccount": false
+        },
+        {
+            "userId": 14,
+            "userName": "유재석",
+            "profileImage": "https://i.ibb.co/RgBCJtd/2022-05-12-2-55-06.png",
+            "statusMessage": "",
+            "myAccount": false
         }
     ]
 }

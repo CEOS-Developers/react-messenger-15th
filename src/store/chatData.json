@@ -121,6 +121,33 @@
                     "chatId": "example14"
                 }
             ]
+        },
+        {
+            "roomId": 4,
+            "user": [{ "userId": 0 }, { "userId": 14 }],
+            "chat": [
+                {
+                    "userId": 14,
+                    "content": "What's your name?",
+                    "date": "2022-05-12T02:10:18+09:00",
+                    "like": false,
+                    "chatId": "example12"
+                },
+                {
+                    "userId": 0,
+                    "content": "스테파니",
+                    "date": "2022-05-12T02:10:23+09:00",
+                    "like": false,
+                    "chatId": "example13"
+                },
+                {
+                    "userId": 14,
+                    "content": "싸브레??",
+                    "date": "2022-05-12T02:11:40+09:00",
+                    "like": false,
+                    "chatId": "example14"
+                }
+            ]
         }
     ]
 }
