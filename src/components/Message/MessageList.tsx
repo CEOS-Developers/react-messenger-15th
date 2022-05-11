@@ -3,8 +3,9 @@ import styled from 'styled-components';
 import { IChat } from '../../interface/interface';
 import SingleMessage from './SingleMessage';
 import { Scrollbars } from 'react-custom-scrollbars';
+import ChatList from '../../routes/ChatList';
 
-const MessageList = ({ chatList }: { chatList: IChat[] }) => {
+const MessageList = ({ chatList }: { chatList: any }) => {
   const scrollbarRef = useRef<Scrollbars>(null);
 
   //채팅 submit시 스크롤바 아래로
@@ -28,8 +29,8 @@ const MessageList = ({ chatList }: { chatList: IChat[] }) => {
         ref={scrollbarRef}
       >
         <ShowList>
-          {chatList?.map((chat: IChat) => (
-            <SingleMessage chat={chat} key={chat.id} />
+          {chatList?.map((chat: any) => (
+            <SingleMessage chat={chat} key={chat.userId} />
           ))}
         </ShowList>
       </Scrollbars>

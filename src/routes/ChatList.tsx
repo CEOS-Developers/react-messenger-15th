@@ -6,22 +6,20 @@ import message from '../data/message.json';
 
 const ChatList = () => {
   return (
-    <>
-      <ChatListContainer>
-        <HeaderContains>Message</HeaderContains>
-        <Content>
-          {message.map(({ userId, userName, messages }) => (
-            <Messages
-              key={userId}
-              userId={userId}
-              userName={userName}
-              message={messages[length - 1]}
-            />
-          ))}
-        </Content>
-        <UnderNavBar />
-      </ChatListContainer>
-    </>
+    <ChatListContainer>
+      <HeaderContains>Message</HeaderContains>
+      <Content>
+        {message.map((usermessage) => (
+          <Messages
+            key={usermessage.userId}
+            userId={usermessage.userId}
+            userName={usermessage.userName}
+            message={usermessage.messages[usermessage.messages.length - 1].text}
+          />
+        ))}
+      </Content>
+      <UnderNavBar />
+    </ChatListContainer>
   );
 };
 

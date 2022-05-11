@@ -3,11 +3,7 @@ import styled from 'styled-components';
 import useInput from '../../hooks/useInput';
 import { IMessengerInputProps } from '../../interface/interface';
 
-const MessengerInput = ({
-  currentUser,
-  chatList,
-  setChatList,
-}: IMessengerInputProps) => {
+const MessengerInput = ({ currentUser, chatList, setChatList }: any) => {
   const { messageInput, handleInputChange, handleInputInitialize } =
     useInput('');
   const handleInputSubmit = (e: React.FormEvent<HTMLFormElement>) => {

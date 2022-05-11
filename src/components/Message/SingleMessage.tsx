@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { IChat, IUserIdProps } from '../../interface/interface';
-const SingleMessage = ({ chat }: { chat: IChat }) => {
+const SingleMessage = ({ chat }: { chat: any }) => {
   const { id, userId, userName, text, time } = chat;
   return (
     <SingleMessageContainer userId={userId}>
