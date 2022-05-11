@@ -16,15 +16,16 @@ const MessageChatList = () => {
       const filtered = totalMessage.filter(
         (msg) =>
           msg.user.filter((user) =>
-            user.name.toLowerCase().includes(text.toLowerCase()),
-          ).length !== 0,
+            user.name.toLowerCase().includes(text.toLowerCase())
+          ).length !== 0
       );
       setShowMessage(filtered);
     }
   };
   const _handleFriendsName = (friends: IUserType[]): string => {
-    if (friends.length === 1) return friends[0].name;
-    return friends.map((user) => user.name).join(", ");
+    return friends.length === 1
+      ? friends[0].name
+      : friends.map((user) => user.name).join(", ");
   };
 
   return (
@@ -40,7 +41,7 @@ const MessageChatList = () => {
               title={_handleFriendsName(msg.user)}
               subTitle={msg.messages[msg.messages.length - 1].text}
             />
-          ),
+          )
       )}
     </Container>
   );

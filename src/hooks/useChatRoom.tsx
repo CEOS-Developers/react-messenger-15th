@@ -27,22 +27,21 @@ const useChatRoom = () => {
     if (id <= 1000 && chatState.currentUser.id === userStore.mainUser.id) {
       toggleIdx = userStore.users.findIndex((user) => user.id === id);
     } else if (id > 1000) {
+      // 단체 chat의 경우
       let users =
         messageList[messageList.findIndex((msg) => msg.id === id)].user;
-      console.log(users);
       toggleIdx = users.findIndex(
-        (user) => user.id === chatState.currentUser.id,
+        (user) => user.id === chatState.currentUser.id
       );
       if (toggleIdx === -1) {
         toggleIdx = userStore.users.findIndex(
-          (user) => user.id === users[0].id,
+          (user) => user.id === users[0].id
         );
       } else if (toggleIdx === users.length - 1) {
         toggleIdx = 0;
       } else {
-        console.log("3", toggleIdx);
         toggleIdx = userStore.users.findIndex(
-          (user) => user.id === users[toggleIdx + 1].id,
+          (user) => user.id === users[toggleIdx + 1].id
         );
       }
     }
