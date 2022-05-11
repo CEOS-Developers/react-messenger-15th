@@ -6,7 +6,7 @@ import user from "./data/user.json";
 function FriendList(){
 
     const [search, setSearch] = useState<string>("");
-    const [friendList, setFriendList] = useState<FriendItem[]>(user);
+    const [friendList, setFriendList] = useState<FriendItem[]>(user); //이거왜오류발생..?(갑자기 FriendItem 속성에 profile이 없다고 뜨는..)
   
     const onChange = useCallback((event : React.ChangeEvent<HTMLInputElement>) => {setSearch(event.target.value)},[]);
    
@@ -21,37 +21,44 @@ function FriendList(){
       height: 50px;
       border-radius: 9px;
       margin:10px;
-
-      `
-
-      const FriendBox = styled.div
-      `  flex:0.1;
-         background-color:red;
+     
 
       `;
 
+    const FriendContainer = styled.div
+    `
+      display:flex;
+      display: inline-block
+      flex-direction:column;
+       
+    `;
+    
       const FriendProfile =styled.img
     `
-    
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
     border-radius: 30px;
+    border:1px solid lightgrey;
     margin:10px;
+    cursor:pointer;
     `;
 
 
       const FriendName = styled.div
       `  
       text-align:left;
-      margin-left:10px;
+      padding:20px;
       font-size:13px;
         
       `;
 
-      const FriendIntro = styled.span
+    
+      const FriendIntro = styled.div
       `
-      margin-left : 5px;
-      font-size:10px;
+      padding:20px;
+      margin-left : 0px;
+      font-size:12px;
+      color:skyblue;
       `;
     return(
        <div id ="Wrapper">
@@ -65,20 +72,21 @@ function FriendList(){
                 
               />
 
-             <FriendBox>
-                 
                     {
-                        searchFriend.map((friend)=> (
+                    searchFriend.map((friend)=> (
                    <>
+                   <FriendContainer>
                    <FriendProfile src = {friend.profile}/>
-                  <FriendName>{friend.name}</FriendName>
+                   <FriendName>{friend.name}</FriendName>
                    <FriendIntro>{friend.intro}</FriendIntro>
-                   </> 
+                   </FriendContainer>
+                   </>
+                
+                  
                    ))
                 }
-                  
+
             
-            </FriendBox>
        </div> 
     );
 

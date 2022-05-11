@@ -27,10 +27,11 @@ function Message({messageList} : MessageList){
         <Wrapper ref={messageRef}>
             {messageList.map((message) => (
                 <Chatcontainer key ={message.userId}>
-                <ChatProfile src = {ProfileImage[message.userId]}/>
-                 <MessageBox>
-                     <ChatName>{user[message.userId].name} 님의 말: </ChatName>
-                      <ChatMessage>{message.text}</ChatMessage>   
+               
+                    <ChatProfile src = {user[message.userId].profile}/> 
+                     <MessageBox>
+                        <ChatName>{user[message.userId].name} 님의 말: </ChatName>
+                        <ChatMessage>{message.text}</ChatMessage>   
                  </MessageBox>
             </Chatcontainer>
                 ))
