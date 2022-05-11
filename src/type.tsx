@@ -19,3 +19,10 @@ export interface FriendItem{
     intro : string;
     profile: string;
 }
+
+export interface ChatItem{
+
+    roomId : number;
+    chat : MessageItem[];
+
+}

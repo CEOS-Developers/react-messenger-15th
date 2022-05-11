@@ -3,8 +3,8 @@ import { MessageItem } from "../type";
 import chatting from "../data/chat.json";
 
 
-const useMessageList = () => {
-    const [messageList, setMessageList] = useState<MessageItem[]>(chatting[1].chat);
+const useMessageList = (roomIds:number) => {
+    const [messageList, setMessageList] = useState<MessageItem[]>(chatting[roomIds].chat);
     return { messageList, setMessageList};
   };
   

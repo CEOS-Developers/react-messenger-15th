@@ -12,11 +12,11 @@ function UserProfile({changeUser,setChangeUser} : Profileprops){
         },[]);
     //확장성 고려해서 roomid로 바꾸기
 
-    const {name, intro} = nowUser[changeUser];
+    const {name, intro , profile} = nowUser[changeUser];
     
     return( 
     <Profile>
-        <Profileimg  src = {ProfileImage[changeUser]} onClick = {toggleUser}/>
+        <Profileimg  src = {profile} onClick = {toggleUser}/>
         <ProfileName>{name}<span> 🟢</span></ProfileName>
         <ProfileIntro>{intro}</ProfileIntro>
     </Profile>

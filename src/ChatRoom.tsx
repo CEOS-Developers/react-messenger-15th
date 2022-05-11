@@ -4,12 +4,17 @@ import styled  from "styled-components";
 import useMessageList from "./hook/useMessageList";
 import Inputform from "./Input/InputForm";
 import Message from "./Message/Message";
+import {useParams} from 'react-router-dom';
 
 function ChatRoom(){
 
-    const{messageList,setMessageList} = useMessageList();
+    const roomId = useParams();
+    const roomIds = Number(roomId.friendId);
+
+    const{messageList,setMessageList} = useMessageList(roomIds);
     const [changeUser,setChangeUser] = useState<number>(0);
 
+    
     return(
     <div id ="Wrapper">
         <UserProfile changeUser={changeUser} setChangeUser = {setChangeUser}/>
