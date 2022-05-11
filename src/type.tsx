@@ -11,3 +11,10 @@ export interface MessageItem{
     text: string;
    
   }
+
+export interface FriendItem{
+
+    id : number;
+    name : string;
+    intro : string;
+}
