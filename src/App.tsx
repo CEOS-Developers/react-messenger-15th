@@ -3,6 +3,7 @@ import styled  from "styled-components";
 import ChatRoom from "./ChatRoom";
 import Menu from "./Menu";
 import FriendList from './FriendList';
+import ChatRoomList from './ChatRoomList';
 
 function App() {
  
@@ -45,7 +46,7 @@ box-shadow:3px 3px 3px 3px lightgrey;
            
            <Route path="/FriendList" element={<FriendList />} />
            <Route path ="/chatroom" element ={<ChatRoom/>}/>
-        
+           <Route path ="/ChatRoomList" element ={<ChatRoomList/>}/>
         
         </Routes>
         </Container> 

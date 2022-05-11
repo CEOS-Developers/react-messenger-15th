@@ -15,9 +15,17 @@
      {
       "id": 2,
       "name": "hi",
-      "intro": "킹받쥬",
+      "intro": "ㄷr시 만나서 반ㄱr워!",
       "profile":"./img/profile2.png"
 
-     }
+     },
+     {
+          "id": 3,
+          "name": "iamonaboat",
+          "intro": "우ㄹi함께했던날,,",
+          "profile":"./img/profile3.png"
+    
+         }
+
 ]
   

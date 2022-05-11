@@ -39,6 +39,10 @@ function Menu () {
         navigate('/ChatRoom');
     }
 
+    const ChatRoomListLink = (event : React.MouseEvent<HTMLDivElement>) =>{
+        navigate('/ChatRoomList');
+    }
+
 
 return (
 
@@ -47,7 +51,7 @@ return (
         <Menu>
             <Menu1>🏠</Menu1>
             <Menu1 onClick={FriendListLink}>👩‍👦</Menu1>
-            <Menu1 onClick ={ChatRoomtLink}>💬</Menu1>
+            <Menu1 onClick ={ChatRoomListLink}>💬</Menu1>
             <main>
              <Outlet/>   
             </main>
