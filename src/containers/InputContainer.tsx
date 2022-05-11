@@ -4,6 +4,8 @@ import { useAppSelector, useAppDispatch } from '../hooks';
 import { addMessage } from '../state/messageSlice';
 import styled from 'styled-components';
 
+import { MessageType } from '../state/types';
+
 const Container = styled.div`
   width: 90vw;
   height: 4rem;
@@ -56,6 +58,15 @@ const Input = styled.input`
   }
   font-size: 1rem;
 `
+
+const handleTimeFormat = (time: Date):string[] => {
+  const hourString: string = time.getHours().toString(); 
+  const minString: string = time.getMinutes().toString();
+  const timeString: string = (hourString.length === 2? hourString : "0" + hourString) + ": " + (minString.length === 2? minString : "0" + minString)
+
+  return [timeString, minString]
+};
+
 function InputContainer() {
   const [message, setMessage] = useState("");
   
@@ -67,11 +78,14 @@ function InputContainer() {
     if(e) e.preventDefault();
     if(message !== "" && currentClient){
 
+      const [timeString, minString] = handleTimeFormat(new Date());
+
       dispatch(addMessage({
         msgId: uuidv4(),
         client: currentClient,
         content: message,
-        time: new Date().toString(),
+        timeString: timeString,
+        messageType: MessageType.BASE,
       }));
 
       setMessage("");

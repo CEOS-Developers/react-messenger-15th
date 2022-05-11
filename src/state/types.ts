@@ -2,7 +2,8 @@ export type Message = {
   msgId: string,
   client: Client,
   content: string,
-  time: string,
+  timeString: string,
+  messageType: MessageType,
 }
 
 export type Client = {
@@ -18,4 +19,8 @@ export type MessageState = {
 export type ClientState = {
   currentClient?: Client,
   clients: Client[]
+}
+
+export enum MessageType {
+  HEAD, BODY, TAIL, BASE
 }
