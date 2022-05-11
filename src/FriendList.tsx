@@ -48,45 +48,82 @@ function FriendList(){
       `  
       text-align:left;
       padding:20px;
-      font-size:13px;
+      font-size:14px;
         
       `;
 
     
       const FriendIntro = styled.div
       `
-      padding:20px;
-      margin-left : 0px;
-      font-size:12px;
-      color:skyblue;
+
+      
+      {
+      position: relative;
+      width: 60px;
+      height: 10px;
+      padding: 5px;
+      margin-top:15px;
+      background: #FFFFFF;
+      -webkit-border-radius: 15px;
+      -moz-border-radius: 15px;
+      border-radius: 15px;
+      border: #7E7F7F solid 2px;
+      font-size : 13px;
+      
+      }
+      
+      :after
+      {
+      content: '';
+      position: absolute;
+      border-style: solid;
+      border-width: 5px 7px 0;
+      border-color: #FFFFFF transparent;
+      display: block;
+      width: 0;
+      z-index: 1;
+      bottom: -5px;
+      left: 17px;
+      }
+      
+      :before
+      {
+      content: '';
+      position: absolute;
+      border-style: solid;
+      border-width: 6px 8px 0;
+      border-color: #7E7F7F transparent;
+      display: block;
+      width: 0;
+      z-index: 0;
+      bottom: -8px;
+      left: 16px;
+      }
+     
       `;
     return(
        <div id ="Wrapper">
            <Input
-                onChange={onChange}
-                value={search}
-                type="text"
-                placeholder="친구 검색"
-                autoFocus = {true}
-                spellCheck="false"
+           onChange={onChange}
+           value={search}
+           type="text"
+           placeholder="친구 검색"
+           autoFocus = {true}
+           spellCheck="false"
                 
               />
+              {
+              searchFriend.map((friend)=> (
+              <>
+              <FriendContainer>
+              <FriendProfile src = {friend.profile}/>
+              <FriendName>{friend.name}</FriendName>
+              <FriendIntro>{friend.intro}</FriendIntro>
+              </FriendContainer>
+              </>
+              ))
+              }
 
-                    {
-                    searchFriend.map((friend)=> (
-                   <>
-                   <FriendContainer>
-                   <FriendProfile src = {friend.profile}/>
-                   <FriendName>{friend.name}</FriendName>
-                   <FriendIntro>{friend.intro}</FriendIntro>
-                   </FriendContainer>
-                   </>
-                
-                  
-                   ))
-                }
-
-            
        </div> 
     );
 
