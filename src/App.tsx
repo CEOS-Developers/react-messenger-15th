@@ -4,20 +4,22 @@ import FriendsListScreen from './pages/FriendsListScreen';
 import ChatRoomScreen from './pages/ChatRoomScreen';
 import ChatListScreen from './pages/ChatListScreen';
 import SettingScreen from './pages/SettingScreen';
+import { useParams } from 'react-router';
 
 import { useState } from 'react';
 import data from './assets/data.json';
 import { IChat } from './components/Interfaces';
 
 function App() {
-  const [currentUserId, setCurrentUserId] = useState<string>('user0');
+  const { userId } = useParams();
+  const [currentUserId, setCurrentUserId] = useState<string>(userId);
   const [chatList, setChatList] = useState<IChat[]>(data[0].chats);
 
   return (
     <Routes>
       <Route path="/" element={<FriendsListScreen />} />
       <Route
-        path="/ChatRoomScreen"
+        path={`/ChatRoomScreen/${userId}`}
         element={
           <ChatRoomScreen
             chatList={chatList}
@@ -27,7 +29,10 @@ function App() {
           />
         }
       />
-      <Route path="/ChatListScreen" element={<ChatListScreen />} />
+      <Route
+        path="/ChatListScreen"
+        element={<ChatListScreen userId={userId} />}
+      />
       <Route path="/SettingScreen" element={<SettingScreen />} />
     </Routes>
   );

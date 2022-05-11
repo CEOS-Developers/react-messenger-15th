@@ -11,7 +11,7 @@ import NavBar from '../components/sharings/NavBar';
 import friends from '../assets/friends.json';
 import chats from '../assets/data.json';
 
-const ChatListScreen = () => {
+const ChatListScreen = ({ userId }) => {
   return (
     <Wrapper>
       <Header>
@@ -19,7 +19,7 @@ const ChatListScreen = () => {
       </Header>
 
       <Content>
-        <Link to="/ChatRoomScreen/:userId">
+        <Link to={`/ChatRoomScreen/${userId}`}>
           {friends.map(({ userId, userName }, i) => (
             <UserList
               key={userId}

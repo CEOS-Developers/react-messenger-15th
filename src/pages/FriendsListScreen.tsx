@@ -43,7 +43,7 @@ const FriendsListScreen = () => {
               />
             ))
           : friends.map(({ userId, userName, statusMsg }) => (
-              <Link to="/ChatRoomScreen">
+              <Link to={`/ChatRoomScreen/${userId}`}>
                 <UserList
                   key={userId}
                   userId={userId}
