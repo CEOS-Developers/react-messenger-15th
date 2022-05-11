@@ -1,14 +1,34 @@
 import styled from 'styled-components';
-
+import { useLocation } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 function Header() {
+  const location = useLocation();
+  const [path, setPath] = useState('');
+  useEffect(() => {
+    console.log(location);
+    setPath(location.pathname.slice(1));
+  }, [location]);
   return (
     <Container>
       <LeftContents>
-        <div>친구</div>
+        {path === '' && <div>친구</div>}
+        {path === 'rooms' && <div>채팅</div>}
+        {path === 'general' && <div>더보기</div>}
       </LeftContents>
       <RigthContents>
-        <div>돋보기</div>
-        <div>사람+</div>
+        {path === '' && (
+          <>
+            <div>돋보기</div>
+            <div>사람+</div>
+          </>
+        )}
+        {path === 'rooms' && (
+          <>
+            <div>돋보기</div>
+            <div>말풍선+</div>
+          </>
+        )}
+        {path === 'general' && null}
       </RigthContents>
     </Container>
   );

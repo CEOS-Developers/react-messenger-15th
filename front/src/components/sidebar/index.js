@@ -1,6 +1,9 @@
 import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom';
 
 const Sidebar = () => {
+  let navigate = useNavigate();
+
   return (
     <Container>
       <Btns>
@@ -9,9 +12,9 @@ const Sidebar = () => {
         <Btn>3</Btn>
       </Btns>
       <MenuContainer>
-        <div>홈</div>
-        <div>대화방</div>
-        <div>더보기</div>
+        <button onClick={() => navigate('/')}>홈</button>
+        <button onClick={() => navigate('/rooms')}>대화방</button>
+        <button onClick={() => navigate('/general')}>더보기</button>
       </MenuContainer>
       <div>
         <div>알림</div>
