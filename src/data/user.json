@@ -11,13 +11,13 @@
   },
   {
     "id": 3,
-    "name": "jerry",
-    "statusMessage": "jerry berry"
+    "name": "damons year",
+    "statusMessage": "yours"
   },
   {
     "id": 4,
-    "name": "ghost",
-    "statusMessage": "유령의 집"
+    "name": "colde",
+    "statusMessage": "offonoff"
   },
   {
     "id": 5,
@@ -31,12 +31,27 @@
   },
   {
     "id": 7,
-    "name": "smiley",
+    "name": "nell",
     "statusMessage": ""
   },
   {
     "id": 8,
     "name": "taeng_ss",
     "statusMessage": "정말 너를 사랑했을까"
+  },
+  {
+    "id": 9,
+    "name": "DAY6",
+    "statusMessage": "한 페이지가 될 수 있게"
+  },
+  {
+    "id": 10,
+    "name": "ghost",
+    "statusMessage": "유령의 집"
+  },
+  {
+    "id": 11,
+    "name": "kitty",
+    "statusMessage": "Meow Meow"
   }
 ]

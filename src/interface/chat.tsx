@@ -2,7 +2,8 @@ import { IUserType } from "./user";
 import { IMessageType } from "./message";
 
 export interface IChatListItem {
-  user: IUserType;
+  id: number;
+  user: IUserType[];
   messages: IMessageType[];
 }
 

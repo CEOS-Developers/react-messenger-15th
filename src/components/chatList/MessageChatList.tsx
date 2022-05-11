@@ -3,6 +3,7 @@ import message from "data/message.json";
 import styled from "styled-components";
 import { useState } from "react";
 import Search from "components/common/Search";
+import { IUserType } from "interface";
 
 const MessageChatList = () => {
   const totalMessage = message;
@@ -12,25 +13,35 @@ const MessageChatList = () => {
     if (!text.trim()) {
       setShowMessage(totalMessage);
     } else {
-      const filtered = totalMessage.filter((msg) =>
-        msg.user.name.includes(text),
+      const filtered = totalMessage.filter(
+        (msg) =>
+          msg.user.filter((user) =>
+            user.name.toLowerCase().includes(text.toLowerCase()),
+          ).length !== 0,
       );
       setShowMessage(filtered);
     }
+  };
+  const _handleFriendsName = (friends: IUserType[]): string => {
+    if (friends.length === 1) return friends[0].name;
+    return friends.map((user) => user.name).join(", ");
   };
 
   return (
     <Container>
       <Search filter={filterMessage} />
-      {showMessage.map((msg) => (
-        <List
-          key={msg.user.id}
-          link={msg.user.id}
-          img={msg.user.name}
-          title={msg.user.name}
-          subTitle={msg.messages[msg.messages.length - 1].text}
-        />
-      ))}
+      {showMessage.map(
+        (msg) =>
+          msg.messages.length !== 0 && (
+            <List
+              key={msg.id}
+              link={msg.id}
+              img={msg.user[0].name}
+              title={_handleFriendsName(msg.user)}
+              subTitle={msg.messages[msg.messages.length - 1].text}
+            />
+          ),
+      )}
     </Container>
   );
 };

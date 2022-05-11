@@ -24,15 +24,34 @@ const useChatRoom = () => {
   // user 토글 함수
   const toggleUser = (id: number): void => {
     let toggleIdx = 0;
-    if (chatState.currentUser.id === userStore.mainUser.id) {
+    if (id <= 1000 && chatState.currentUser.id === userStore.mainUser.id) {
       toggleIdx = userStore.users.findIndex((user) => user.id === id);
+    } else if (id > 1000) {
+      let users =
+        messageList[messageList.findIndex((msg) => msg.id === id)].user;
+      console.log(users);
+      toggleIdx = users.findIndex(
+        (user) => user.id === chatState.currentUser.id,
+      );
+      if (toggleIdx === -1) {
+        toggleIdx = userStore.users.findIndex(
+          (user) => user.id === users[0].id,
+        );
+      } else if (toggleIdx === users.length - 1) {
+        toggleIdx = 0;
+      } else {
+        console.log("3", toggleIdx);
+        toggleIdx = userStore.users.findIndex(
+          (user) => user.id === users[toggleIdx + 1].id,
+        );
+      }
     }
     setChatState({ ...chatState, currentUser: userStore.users[toggleIdx] });
   };
 
   // 메시지 세팅
   const handleChatRoom = (id: number): void => {
-    const toggleIndex = messageList.findIndex((msg) => msg.user.id === id);
+    const toggleIndex = messageList.findIndex((msg) => msg.id === id);
     setChatState({
       currentUser: userStore.mainUser,
       message: messageList[toggleIndex].messages,

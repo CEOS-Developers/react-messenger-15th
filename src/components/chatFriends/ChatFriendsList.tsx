@@ -12,7 +12,9 @@ const ChatList = () => {
     if (!text.trim()) {
       setShowUser(totalUser);
     } else {
-      const filtered = totalUser.filter((user) => user.name.includes(text));
+      const filtered = totalUser.filter((user) =>
+        user.name.toLowerCase().includes(text.toLowerCase()),
+      );
       setShowUser(filtered);
     }
   };
