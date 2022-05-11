@@ -7,12 +7,11 @@ import {
 } from '../components/sharings/Elements';
 import UserList from '../components/sharings/UserList';
 import NavBar from '../components/sharings/NavBar';
-import { IUserId } from '../components/Interfaces';
 
 import friends from '../assets/friends.json';
 import chats from '../assets/data.json';
 
-const ChatListScreen = ({ userId }: IUserId) => {
+const ChatListScreen = () => {
   return (
     <Wrapper>
       <Header>
@@ -20,16 +19,16 @@ const ChatListScreen = ({ userId }: IUserId) => {
       </Header>
 
       <Content>
-        <Link to={`/ChatRoomScreen/${userId}`}>
-          {friends.map(({ userId, userName }, i) => (
+        {friends.map(({ userId, userName }, i) => (
+          <Link to={`/ChatRoomScreen/${userId}`}>
             <UserList
               key={userId}
               userId={userId}
               userName={userName}
               message={chats[i].chats[chats[i].chats.length - 1].message}
             />
-          ))}
-        </Link>
+          </Link>
+        ))}
       </Content>
       <NavBar />
     </Wrapper>
