@@ -8,8 +8,9 @@ import {
 import styled from 'styled-components';
 import UserList from '../components/sharings/UserList';
 import { MdPersonSearch } from 'react-icons/md';
+import { Link } from 'react-router-dom';
 
-import friends from '../db/friends.json';
+import friends from '../assets/friends.json';
 import useInput from '../hooks/useInput';
 
 const FriendsListScreen = () => {
@@ -41,12 +42,14 @@ const FriendsListScreen = () => {
               />
             ))
           : friends.map(({ userId, userName, statusMsg }) => (
-              <UserList
-                key={userId}
-                userId={userId}
-                userName={userName}
-                message={statusMsg}
-              />
+              <Link to="/ChatRoomScreen">
+                <UserList
+                  key={userId}
+                  userId={userId}
+                  userName={userName}
+                  message={statusMsg}
+                />
+              </Link>
             ))}
       </Content>
     </Wrapper>

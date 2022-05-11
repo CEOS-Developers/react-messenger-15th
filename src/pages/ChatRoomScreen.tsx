@@ -3,6 +3,7 @@ import InputForm from '../components/chatroom/InputForm';
 import ChatRoomBody from '../components/chatroom/ChatRoomBody';
 import ChatRoomHeader from '../components/chatroom/ChatRoomHeader';
 import { IChatRoomScreenProps } from '../components/Interfaces';
+import { useParams } from 'react-router';
 
 const ChatRoomScreen = ({
   chatList,

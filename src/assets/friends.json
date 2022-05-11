@@ -1,21 +1,21 @@
 [
   {
-    "userId": "0",
+    "userId": "user0",
     "userName": "Anna",
     "statusMsg": "status1"
   },
   {
-    "userId": "1",
+    "userId": "user1",
     "userName": "Olaf",
     "statusMsg": "status2"
   },
   {
-    "userId": "2",
+    "userId": "user2",
     "userName": "Elsa",
     "statusMsg": "status3"
   },
   {
-    "userId": "3",
+    "userId": "user3",
     "userName": "Hans",
     "statusMsg": "status4"
   }

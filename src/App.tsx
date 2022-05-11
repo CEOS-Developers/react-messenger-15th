@@ -1,7 +1,8 @@
+import { Route, Routes } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
-import ChatRoomScreen from './pages/ChatRoomScreen';
+import FriendsListScreen from './pages/FriendsListScreen';
 import { useState } from 'react';
-import data from './db/data.json';
+import data from './assets/data.json';
 import { IChat } from './components/Interfaces';
 
 function App() {
@@ -9,15 +10,9 @@ function App() {
   const [chatList, setChatList] = useState<IChat[]>(data[0].chats);
 
   return (
-    <>
-      <GlobalStyle />
-      <ChatRoomScreen
-        chatList={chatList}
-        setChatList={setChatList}
-        currentUserId={currentUserId}
-        setCurrentUserId={setCurrentUserId}
-      />
-    </>
+    <Routes>
+      <Route path="/" element={<FriendsListScreen />} />
+    </Routes>
   );
 }
 

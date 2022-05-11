@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import Chat from './Chat';
-import data from '../../db/data.json';
+import data from '../../assets/data.json';
 import { useRef, useEffect } from 'react';
 import { IChatRoomBodyProps } from '../Interfaces';
 

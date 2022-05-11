@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
   Content,
   Header,
@@ -6,8 +7,8 @@ import {
 } from '../components/sharings/Elements';
 import UserList from '../components/sharings/UserList';
 
-import friends from '../db/friends.json';
-import chats from '../db/data.json';
+import friends from '../assets/friends.json';
+import chats from '../assets/data.json';
 
 const ChatListScreen = () => {
   return (
@@ -15,15 +16,18 @@ const ChatListScreen = () => {
       <Header>
         <HeaderTitle>Messages</HeaderTitle>
       </Header>
+
       <Content>
-        {friends.map(({ userId, userName }, i) => (
-          <UserList
-            key={userId}
-            userId={userId}
-            userName={userName}
-            message={chats[i].chats[chats[i].chats.length - 1].message}
-          />
-        ))}
+        <Link to="/ChatRoomScreen/:userId">
+          {friends.map(({ userId, userName }, i) => (
+            <UserList
+              key={userId}
+              userId={userId}
+              userName={userName}
+              message={chats[i].chats[chats[i].chats.length - 1].message}
+            />
+          ))}
+        </Link>
       </Content>
     </Wrapper>
   );
