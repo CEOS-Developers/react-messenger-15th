@@ -2,18 +2,14 @@ import styled from 'styled-components';
 import InputForm from '../components/chatroom/InputForm';
 import ChatRoomBody from '../components/chatroom/ChatRoomBody';
 import ChatRoomHeader from '../components/chatroom/ChatRoomHeader';
-import { useParams } from 'react-router';
-import { useState } from 'react';
-import { IChat } from '../components/Interfaces';
-import data from '../assets/data.json';
+import { IChatRoomScreenProps } from '../components/Interfaces';
 
-const ChatRoomScreen = () => {
-  const { userId } = useParams();
-  console.log(userId);
-
-  const [currentUserId, setCurrentUserId] = useState<string>('user0');
-  const [chatList, setChatList] = useState<IChat[]>(data[0].chats);
-
+const ChatRoomScreen = ({
+  chatList,
+  currentUserId,
+  setCurrentUserId,
+  setChatList,
+}: IChatRoomScreenProps) => {
   return (
     <Wrapper>
       <ChatRoomHeader

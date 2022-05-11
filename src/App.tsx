@@ -5,7 +5,6 @@ import ChatRoomScreen from './pages/ChatRoomScreen';
 import ChatListScreen from './pages/ChatListScreen';
 import SettingScreen from './pages/SettingScreen';
 import data from './assets/data.json';
-import { useParams } from 'react-router';
 import { useState } from 'react';
 import { IChat } from './components/Interfaces';
 

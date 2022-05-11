@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { FiChevronLeft } from 'react-icons/fi';
 import { IChatRoomHeaderProps } from '../Interfaces';
+import { useNavigate } from 'react-router-dom';
 
 const ChatRoomHeader = ({
   currentUserId,
@@ -12,10 +13,15 @@ const ChatRoomHeader = ({
       : setCurrentUserId('user1');
   };
 
+  const navigate = useNavigate();
+  function goBack() {
+    navigate(-1);
+  }
+
   return (
     <Header>
       <Button>
-        <FiChevronLeft />
+        <FiChevronLeft onClick={goBack} />
       </Button>
 
       <ProfileWrapper onClick={handleCurrentUserToggle}>
