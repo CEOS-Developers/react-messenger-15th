@@ -2,7 +2,7 @@ import styled  from "styled-components";
 import {useState , useCallback} from "react";
 import { FriendItem } from "./type";
 import user from "./data/user.json";
-import {Input,FriendContainer,FriendProfile,FriendName,FriendIntro} from "./FriendListDesign";
+import {Header,Input,FriendContainer,FriendProfile,FriendName,FriendIntro} from "./FriendListDesign";
 
 function FriendList(){
 
@@ -18,15 +18,15 @@ function FriendList(){
    
     return(
        <div id ="Wrapper">
-           <Input
+         <Header>친구 목록</Header>
+             <Input
            onChange={onChange}
            value={search}
            type="text"
-           placeholder="친구 검색"
+           placeholder="🔎친구 검색"
            autoFocus = {true}
            spellCheck="false"
-                
-              />
+           />
               {
               searchFriend.map((friend)=> (
               <>

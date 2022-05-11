@@ -4,7 +4,7 @@
  import {JSXElementConstructor, ReactElement, ReactFragment, ReactPortal, useState} from "react";
  import {FriendItem,ChatItem} from "./type";
  import {useNavigate} from 'react-router-dom';
- import {FriendContainer,FriendProfile,FriendName} from "./FriendListDesign";
+ import {Header,FriendContainer,FriendProfile,FriendName} from "./FriendListDesign";
  const ChatRoomList = () =>{
    
 
@@ -14,16 +14,17 @@
     const navigate = useNavigate();
 
     const ChatRoomLink = (event : React.MouseEvent<HTMLDivElement> , roomId : number) =>{
-        navigate(`/ChatRoom/${roomId}`);
+        navigate(`/ChatRoom/${roomId}`, { replace: true });
     }
 
     
     return(
         <div id ="Wrapper">
+           <Header>채팅</Header>
             {
               friendList.map((friend)=> (
               <>
-
+              
               <FriendContainer key ={friend.id} onClick = {(event) => {ChatRoomLink (event, friend.id)}}>
               <FriendProfile src = {friend.profile}/>
               <FriendName>{friend.name}</FriendName>

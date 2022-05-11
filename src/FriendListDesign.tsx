@@ -9,8 +9,8 @@ interface IFriendIntro {
 export const Input = styled.input
 `
 font-family: 'SuncheonB';
-width: 200px;
-height: 50px;
+width: 300px;
+height: 30px;
 border-radius: 9px;
 margin:10px;
 
@@ -44,6 +44,12 @@ font-size:15px;
   
 `;
 
+export const Header = styled.div
+`
+  font-size: 30px;
+  text-align:left;
+  padding:20px;
+`;
 
 export const FriendIntro = styled.div<IFriendIntro>
 `
