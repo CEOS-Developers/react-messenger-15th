@@ -31,7 +31,7 @@ const ProfileDiv = styled.div`
 
 const ProfileName = styled.p<{selected: boolean}>`
   border-radius: 0.4rem;
-  background-color: rgba(255, 255, 255, ${(props)=>(props.selected? "1":"0")});
+  background-color: rgba(255, 255, 255, ${({selected})=>(selected? "1":"0")});
   color: rgba(150, 150, 150, 1);
   margin-top: 0.6rem;
   padding: 0 1rem 0 1rem;
@@ -45,7 +45,7 @@ const ProfileButton = styled.button<{selected: boolean}>`
   position: relative;
   border: transparent;
   cursor: pointer;
-  background-color: rgba(255, 255, 255, ${(props)=>(props.selected? "0.5":"0")});
+  background-color: rgba(255, 255, 255, ${({selected})=>(selected? "0.5":"0")});
   z-index: 1;
 `
 const ProfileIamge = styled.img`

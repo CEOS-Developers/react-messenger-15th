@@ -1,5 +1,5 @@
-import React, {useEffect} from 'react'
-import { useAppSelector, useAppDispatch } from '../hooks'
+import React, { useEffect } from 'react'
+import { useAppSelector } from '../hooks'
 import { Message } from '../state/types'
 import styled from 'styled-components'
 
@@ -20,7 +20,7 @@ const Container = styled.div`
 const MessageDiv = styled.div<{selected: boolean}>`
   width: 100%;
   display: flex;
-  flex-direction: ${(props)=>(props.selected? "row-reverse":"row")};
+  flex-direction: ${({selected})=>(selected? "row-reverse":"row")};
   padding: 0.5rem 1rem 0.5rem 1rem;
 
 `
@@ -36,24 +36,24 @@ const MessageContentDiv = styled.div`
 `
 const Name = styled.p<{selected: boolean}>`
   font-size: 0.8rem;
-  text-align: ${(props)=>(props.selected? "right":"left")};
+  text-align: ${({selected})=>(selected? "right":"left")};
 `
 
 const MessageHolderDiv = styled.div<{selected: boolean}>`
   width: 100%;
   display: flex;
-  flex-direction: ${(props)=>(props.selected? "row-reverse":"row")};
+  flex-direction: ${({selected})=>(selected? "row-reverse":"row")};
   align-items: flex-end;
 `
 
 const MessageBubbleDiv = styled.div<{selected: boolean}>`
   max-width: calc(100% - 4rem);
   height: 100%;
-  background-color: ${(props)=>(props.selected? "#e07800":"#cbf542")};
+  background-color: ${({selected})=>(selected? "#e07800":"#cbf542")};
   border-radius: 1rem;
   padding: 0.8rem;
   margin-top: 0.2rem;
-  color: ${(props)=>(props.selected? "white":"black")};
+  color: ${({selected})=>(selected? "white":"black")};
   word-wrap: break-word;
 `
 
@@ -86,9 +86,7 @@ function MessageContainer() {
 
   useEffect(
     ()=>{
-      if(containerRef.current){
-        containerRef.current.scrollTop =  containerRef.current.scrollHeight
-      }
+      containerRef.current!.scrollTop =  containerRef.current!.scrollHeight
     }
   );
 
@@ -98,7 +96,7 @@ function MessageContainer() {
         const date: Date = new Date(message.time);
         const hourString: string = date.getHours().toString() 
         const minString: string = date.getMinutes().toString()
-        const timeString: string = (hourString.length == 2? hourString : "0" + hourString) + ": " + (minString.length == 2? minString : "0" + minString)
+        const timeString: string = (hourString.length === 2? hourString : "0" + hourString) + ": " + (minString.length == 2? minString : "0" + minString)
         const selected: boolean = message.client.clientId === currentClient?.clientId;
         
         return(

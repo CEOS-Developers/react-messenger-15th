@@ -3,7 +3,6 @@ import {v4 as uuidv4} from "uuid";
 import { useAppSelector, useAppDispatch } from '../hooks';
 import { addMessage } from '../state/messageSlice';
 import styled from 'styled-components';
-import { Client, Message } from '../state/types';
 
 const Container = styled.div`
   width: 90vw;
@@ -60,10 +59,10 @@ const Input = styled.input`
 function InputContainer() {
   const [message, setMessage] = useState("");
   
-  const {clients, currentClient} = useAppSelector((state)=>state.client);
+  const {currentClient} = useAppSelector((state)=>state.client);
   const dispatch = useAppDispatch();
 
-  const submitHandler = (message: string, e?:React.FormEvent<HTMLFormElement>) => {
+  const handleFormSubmit = (message: string, e?:React.FormEvent<HTMLFormElement>) => {
 
     if(e) e.preventDefault();
     if(message !== "" && currentClient){
@@ -85,9 +84,9 @@ function InputContainer() {
 
   return (
     <Container>
-        <Form onSubmit={(e) => submitHandler(message, e)}>
+        <Form onSubmit={(e) => handleFormSubmit(message, e)}>
         <Button type="button" onClick={()=>{
-          submitHandler("❤️");
+          handleFormSubmit("❤️");
         }}><p>❤️</p></Button>
         <Input type="text" id="messageInput" placeholder="메시지를 입력하세요" onChange={(e)=>setMessage(e.target.value)} value={message}/>
         <Button type="submit"><p>💬</p></Button>
