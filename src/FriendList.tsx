@@ -1,7 +1,11 @@
+import styled  from "styled-components";
+
 function FriendList(){
 
     return(
-        <p>친구목록페이지.</p>
+       <div id ="Wrapper">
+           <div>친구목록페이지.</div>
+       </div> 
     );
 
 }

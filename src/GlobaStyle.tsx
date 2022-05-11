@@ -15,5 +15,13 @@ body{
     
 
 }
+
+#Wrapper{
+    flex:1;
+    display : flex;
+    flex-direction:column;
+}
+
+
 `
 export default GlobalStyle;

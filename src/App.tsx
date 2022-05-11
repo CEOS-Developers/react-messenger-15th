@@ -48,11 +48,7 @@ box-shadow:3px 3px 3px 3px lightgrey;
         
         
         </Routes>
-        </Container>
-        
-    
-    
-     
+        </Container> 
     </div>
   );
 }
