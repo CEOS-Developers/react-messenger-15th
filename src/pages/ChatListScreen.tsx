@@ -6,6 +6,7 @@ import {
   Wrapper,
 } from '../components/sharings/Elements';
 import UserList from '../components/sharings/UserList';
+import NavBar from '../components/sharings/NavBar';
 
 import friends from '../assets/friends.json';
 import chats from '../assets/data.json';
@@ -29,6 +30,7 @@ const ChatListScreen = () => {
           ))}
         </Link>
       </Content>
+      <NavBar />
     </Wrapper>
   );
 };

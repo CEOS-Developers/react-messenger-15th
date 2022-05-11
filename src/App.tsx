@@ -2,6 +2,9 @@ import { Route, Routes } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
 import FriendsListScreen from './pages/FriendsListScreen';
 import ChatRoomScreen from './pages/ChatRoomScreen';
+import ChatListScreen from './pages/ChatListScreen';
+import SettingScreen from './pages/SettingScreen';
+
 import { useState } from 'react';
 import data from './assets/data.json';
 import { IChat } from './components/Interfaces';
@@ -24,6 +27,8 @@ function App() {
           />
         }
       />
+      <Route path="/ChatListScreen" element={<ChatListScreen />} />
+      <Route path="/SettingScreen" element={<SettingScreen />} />
     </Routes>
   );
 }

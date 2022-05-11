@@ -12,6 +12,7 @@ import {
   FcLock,
 } from 'react-icons/fc';
 import styled from 'styled-components';
+import NavBar from '../components/sharings/NavBar';
 
 const SettingScreen = () => {
   const settingMenu = [
@@ -35,6 +36,7 @@ const SettingScreen = () => {
           </MenuWrapper>
         ))}
       </Content>
+      <NavBar />
     </Wrapper>
   );
 };
