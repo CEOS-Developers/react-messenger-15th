@@ -4,12 +4,15 @@ import {Wrapper,ChatMessage,ChatProfile,Chatcontainer,MessageBox,ChatName} from 
 import ProfileImage from "../Image"; 
 import user from "../data/user.json";
 import React from "react";
+import me from "../data/me.json";
 
 type MessageList = {
     messageList : MessageItem[];
+    currentUser : number;
+    changeUser :number;
 };
   
-function Message({messageList} : MessageList){
+function Message({messageList, currentUser,changeUser} : MessageList){
 
     const messageRef = useRef<HTMLDivElement>(null);
 
@@ -28,9 +31,9 @@ function Message({messageList} : MessageList){
             {messageList.map((message) => (
                 <Chatcontainer key ={message.userId}>
                
-                    <ChatProfile src = {user[message.userId].profile}/> 
+                    <ChatProfile src = {user[message.roomId].profile}/> 
                      <MessageBox>
-                        <ChatName>{user[message.userId].name} 님의 말: </ChatName>
+                        <ChatName>{user[message.roomId].name} 님의 말: </ChatName>
                         <ChatMessage>{message.text}</ChatMessage>   
                  </MessageBox>
             </Chatcontainer>

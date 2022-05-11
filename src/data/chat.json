@@ -3,10 +3,12 @@
         "roomId": 1,
         "chat": [
             {
+                "roomId": 1,
                 "userId": 1,
                 "text" : "아너무 어려우어ㅓ어엉"
             },
             {
+                "roomId": 0,
                 "userId": 0,
                 "text" : "그래서나눈누난나"
             }
@@ -16,15 +18,18 @@
         "roomId": 2,
         "chat": [
             {
+                "roomId": 2,
                 "userId": 1,
                 "text" : "핵꿀밤맞기"
             },
 
             {
+                "roomId": 0,
                 "userId": 0,
                 "text" : "어질어질"
             },
             {
+                "roomId": 0,
                 "userId": 0,
                 "text" : "어렵다어려워"
             }
@@ -34,15 +39,18 @@
         "roomId": 3,
         "chat": [
             {
+                "roomId": 0,
                 "userId": 0,
                 "text" : "아졸려"
             },
 
             {
+                "roomId": 3,
                 "userId": 1,
                 "text" : "두통두통"
             },
             {
+                "roomId": 0,
                 "userId": 0,
                 "text" : "우웩"
             }

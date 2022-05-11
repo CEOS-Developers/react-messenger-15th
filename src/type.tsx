@@ -2,11 +2,13 @@ import { Dispatch, SetStateAction} from "react";
 
 export interface Profileprops{
     changeUser : number;
-    setChangeUser : Dispatch<SetStateAction<number>>
+    setChangeUser : Dispatch<SetStateAction<number>>;
+    currentUser : number;
 };
 
 export interface MessageItem{
 
+    roomId : number;
     userId : number;
     text: string;
    

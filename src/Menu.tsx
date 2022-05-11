@@ -32,7 +32,7 @@ function Menu () {
     ;
 
     const FriendListLink = (event : React.MouseEvent<HTMLDivElement>) =>{
-        navigate('/FriendList' ,  { replace: true });
+        navigate('/' ,  { replace: true });
     }
 
     const ChatRoomtLink = (event : React.MouseEvent<HTMLDivElement>) =>{

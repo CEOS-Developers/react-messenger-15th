@@ -44,7 +44,7 @@ box-shadow:3px 3px 3px 3px lightgrey;
            
            
            
-           <Route path="/FriendList" element={<FriendList />} />
+           <Route path="/" element={<FriendList />} />
            <Route path ="/Chatroom/:friendId" element ={<ChatRoom/>}/>
            <Route path ="/ChatRoomList" element ={<ChatRoomList/>}/>
         

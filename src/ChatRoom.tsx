@@ -11,15 +11,14 @@ function ChatRoom(){
     const roomId = useParams();
     const roomIds = Number(roomId.friendId);
 
-    const{messageList,setMessageList} = useMessageList(roomIds);
+    const {messageList,setMessageList} = useMessageList(roomIds-1);
     const [changeUser,setChangeUser] = useState<number>(0);
 
-    
     return(
     <div id ="Wrapper">
-        <UserProfile changeUser={changeUser} setChangeUser = {setChangeUser}/>
-        <Message messageList={messageList}/>
-        <Inputform changeUser={changeUser} messageList={messageList} setMessageList={setMessageList}></Inputform> 
+        <UserProfile changeUser={changeUser} setChangeUser = {setChangeUser} currentUser ={roomIds} />
+        <Message messageList={messageList} currentUser ={roomIds} changeUser ={changeUser}/>
+        <Inputform changeUser={changeUser} messageList={messageList} setMessageList={setMessageList} currentUser ={roomIds}></Inputform> 
     </div>
     );
 }

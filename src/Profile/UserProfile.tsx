@@ -5,15 +5,22 @@ import {Profileimg,Profile,ProfileName,ProfileIntro} from "./UserProfileDesign"
 import nowUser from "../data/user.json";
 import ProfileImage from "../Image";
 
-function UserProfile({changeUser,setChangeUser} : Profileprops){
+function UserProfile({changeUser,setChangeUser,currentUser} : Profileprops){
 
-     const toggleUser = useCallback (() => {
-         changeUser ? setChangeUser(0) : setChangeUser(1);
-        },[]);
+     const toggleUser = () => {
+         if(changeUser == 0)
+          {
+              setChangeUser(currentUser);
+        }
+        else
+        { 
+            setChangeUser(0);
+        }
+        };
     //확장성 고려해서 roomid로 바꾸기
 
     const {name, intro , profile} = nowUser[changeUser];
-    
+    console.log(profile);
     return( 
     <Profile>
         <Profileimg  src = {profile} onClick = {toggleUser}/>

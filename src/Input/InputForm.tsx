@@ -9,9 +9,10 @@ type InputProps = {
     changeUser  :number;
     messageList : MessageItem[];
     setMessageList : Dispatch<SetStateAction<MessageItem[]>>
+    currentUser : number;
   };
 
-function Inputform ({changeUser, messageList, setMessageList} : InputProps){
+function Inputform ({changeUser, messageList, setMessageList,currentUser} : InputProps){
 
     const{message, onChange ,setMessage} = useInput();
   
@@ -19,6 +20,7 @@ function Inputform ({changeUser, messageList, setMessageList} : InputProps){
       event.preventDefault();
         setMessageList(messageList => [...messageList,
         {
+          roomId : currentUser,
           text: "😛",
           userId: changeUser,
         }]);  
@@ -32,6 +34,7 @@ function Inputform ({changeUser, messageList, setMessageList} : InputProps){
          if (message) {
           setMessageList(messageList => [...messageList,
           {
+            roomId : currentUser,
             text: message,
             userId: changeUser,
           }]);
