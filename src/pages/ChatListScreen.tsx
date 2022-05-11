@@ -7,11 +7,12 @@ import {
 } from '../components/sharings/Elements';
 import UserList from '../components/sharings/UserList';
 import NavBar from '../components/sharings/NavBar';
+import { IUserId } from '../components/Interfaces';
 
 import friends from '../assets/friends.json';
 import chats from '../assets/data.json';
 
-const ChatListScreen = ({ userId }) => {
+const ChatListScreen = ({ userId }: IUserId) => {
   return (
     <Wrapper>
       <Header>
