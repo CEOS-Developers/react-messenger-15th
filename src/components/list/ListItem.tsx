@@ -74,4 +74,6 @@ const LastDate = styled.div`
     font-size: 12px;
     margin-left: auto;
     margin-bottom: auto;
+    min-width: 50px;
+    text-align: right;
 `;

@@ -7,7 +7,7 @@ import { Navigate } from 'react-router-dom';
 const RequireAuth = ({ children }: { children: JSX.Element }) => {
     const auth = useRecoilValue(authState);
 
-    if (auth.init) {
+    if (!auth.init) {
         return <Navigate to="/login" state={{}} replace />;
     }
 

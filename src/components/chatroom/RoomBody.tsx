@@ -24,10 +24,8 @@ const RoomBody = ({ chats, users, currentUser }: RoomBodyProps) => {
             const roomBodyScrollY = bodyRef.current.scrollHeight - bodyRef.current.scrollTop;
 
             if (roomBodyScrollY > 800 && !scrollButtonVisible) {
-                //console.log('visible');
                 setScrollButtonVisible(true);
             } else if (roomBodyScrollY <= 800 && scrollButtonVisible) {
-                //console.log('hide');
                 setScrollButtonVisible(false);
             }
         }

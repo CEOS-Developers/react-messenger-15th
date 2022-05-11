@@ -49,6 +49,7 @@ export default React.memo(ChatItem);
 
 const ChatItemContainer = styled.div<IsCurrentUserProps>`
     font-size: 13px;
+    width: 100%;
     ${({ isPrevSame }) =>
         isPrevSame
             ? css`
@@ -86,6 +87,9 @@ const ChatWrapper = styled.div<IsCurrentUserProps>`
             : css``}
 `;
 
+// asdfasdfsadfasdf 와 같이 영어를 공백없이 길게 넣었을때 줄바꿈이 되지않고
+// 화면을 넘어가는 경우가 있음.
+// 왜이럴까요
 const ChatBubble = styled.div<IsCurrentUserProps>`
     padding: 10px;
     white-space: pre-wrap;

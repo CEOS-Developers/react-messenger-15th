@@ -8,11 +8,6 @@ export const chatState = atom<RoomType[]>({
     default: chatData.rooms,
 });
 
-export const userState = atom<UserType[]>({
-    key: 'users',
-    default: userData.users,
-});
-
 const getLocalStorage = (): AuthType => {
     const name = localStorage.getItem('name');
     const image = localStorage.getItem('image');
@@ -24,12 +19,29 @@ const getLocalStorage = (): AuthType => {
         };
     } else {
         return {
-            userName: '',
-            profileImage: '',
+            userName: '게스트',
+            profileImage: 'https://i.ibb.co/kBV7WsL/2022-05-05-10-58-23.png',
             init: false,
         };
     }
 };
+
+const getInitUser = () => {
+    const { userName, profileImage } = getLocalStorage();
+
+    return {
+        userId: 0,
+        userName: userName,
+        profileImage: profileImage,
+        statusMessage: '',
+        myAccount: true,
+    };
+};
+
+export const userState = atom<UserType[]>({
+    key: 'users',
+    default: userData.users.map((user) => (user.userId === 0 ? getInitUser() : user)),
+});
 
 export const authState = atom<AuthType>({
     key: 'auth',

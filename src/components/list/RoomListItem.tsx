@@ -13,13 +13,9 @@ const RoomListItem = ({ room }: { room: RoomType }) => {
     const lastChat = room.chat[room.chat.length - 1];
     return (
         <Link to={`/room/${room.roomId}`}>
-            <Room>
-                <ListItem user={user} lastChat={lastChat} />
-            </Room>
+            <ListItem user={user} lastChat={lastChat} />
         </Link>
     );
 };
 
 export default RoomListItem;
-
-const Room = styled.div``;
