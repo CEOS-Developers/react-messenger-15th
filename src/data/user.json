@@ -1,19 +1,23 @@
 [
-   [
-    {
-      "id":0,
+     {
+      "id" : 0,
       "name":"나야나",
-      "intro":"안뇽"
-    },
-    {
+      "intro":"안뇽",
+      "profile":"./img/profile0.png"
+     },
+     {
       "id": 1,
       "name": "불주먹",
-      "intro": "kg받네"
-    },
-    {
+      "intro": "kg받네",
+      "profile":"./img/profile1.png"
+
+      },
+     {
       "id": 2,
       "name": "하이루",
-      "intro": "킹받쥬"
-    }
-   ]
-  ]
+      "intro": "킹받쥬",
+      "profile":"./img/profile2.png"
+      
+     }
+]
+  

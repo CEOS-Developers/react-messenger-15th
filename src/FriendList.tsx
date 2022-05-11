@@ -5,10 +5,15 @@ import user from "./data/user.json";
 
 function FriendList(){
 
-    const [friend, setFriend] = useState<string>("");
+    const [search, setSearch] = useState<string>("");
     const [friendList, setFriendList] = useState<FriendItem[]>(user);
   
-    const onChange = useCallback((event : React.ChangeEvent<HTMLInputElement>) => {setFriend(event.target.value)},[]);
+    const onChange = useCallback((event : React.ChangeEvent<HTMLInputElement>) => {setSearch(event.target.value)},[]);
+   
+    const searchFriend = friendList.filter((friend) => {
+        return friend.name.includes(search);
+      });
+
     const Input = styled.input
       `
       font-family: 'SuncheonB';
@@ -23,7 +28,18 @@ function FriendList(){
       `  flex:0.1;
          background-color:red;
 
-      `
+      `;
+
+      const FriendProfile =styled.img
+    `
+    
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    margin:10px;
+    `;
+
+
       const FriendName = styled.div
       `  
       text-align:left;
@@ -41,7 +57,7 @@ function FriendList(){
        <div id ="Wrapper">
            <Input
                 onChange={onChange}
-                value={friend}
+                value={search}
                 type="text"
                 placeholder="친구 검색"
                 autoFocus = {true}
@@ -50,8 +66,18 @@ function FriendList(){
               />
 
              <FriendBox>
-                     <FriendName>{friendList.name}</FriendName>
-                      <FriendIntro>{friendList.intro}</FriendIntro>   
+                 
+                    {
+                        searchFriend.map((friend)=> (
+                   <>
+                   <FriendProfile src = {friend.profile}/>
+                  <FriendName>{friend.name}</FriendName>
+                   <FriendIntro>{friend.intro}</FriendIntro>
+                   </> 
+                   ))
+                }
+                  
+            
             </FriendBox>
        </div> 
     );

@@ -17,4 +17,5 @@ export interface FriendItem{
     id : number;
     name : string;
     intro : string;
+    profile: string;
 }
