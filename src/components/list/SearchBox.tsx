@@ -18,7 +18,7 @@ const SearchBox = ({ searchResult, setSearchResult }: SearchBoxProps) => {
         setSearchResult(initSearchResult.current.filter((friend) => friend.userName.includes(value)));
     }, [value]);
 
-    return <SearchBoxContainer placeholder="이름으로 검색" value={value} onChange={onChange} />;
+    return <SearchBoxContainer placeholder="이름으로 검색" value={value} onChange={onChange} autoFocus />;
 };
 
 export default SearchBox;
