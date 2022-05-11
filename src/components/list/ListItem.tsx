@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 import { ChatType, UserType } from '../../Interface';
 import { timeForToday } from '../../utils/timeForToday';
 import Squircle from '../user/Squircle';
-
+import React from 'react';
 const ListItem = ({ user, lastChat, handleClick }: { user: UserType; lastChat?: ChatType; handleClick: () => void }) => {
     const lastChatContent = lastChat?.content;
     const lastChatDate = lastChat?.date;
@@ -20,7 +20,7 @@ const ListItem = ({ user, lastChat, handleClick }: { user: UserType; lastChat?: 
     );
 };
 
-export default ListItem;
+export default React.memo(ListItem);
 
 const Item = styled.div<{ room: ChatType | undefined }>`
     display: flex;

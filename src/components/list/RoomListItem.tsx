@@ -5,6 +5,7 @@ import { userState } from '../../store/recoil';
 import { getUserInfoById } from '../../api';
 import { useCallback } from 'react';
 import ListItem from './ListItem';
+import React from 'react';
 
 const RoomListItem = ({ room }: { room: RoomType }) => {
     const navigate = useNavigate();
@@ -20,4 +21,4 @@ const RoomListItem = ({ room }: { room: RoomType }) => {
     return <ListItem user={user} lastChat={lastChat} handleClick={handleClick} />;
 };
 
-export default RoomListItem;
+export default React.memo(RoomListItem);

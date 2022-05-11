@@ -5,7 +5,7 @@ import { getRoomIdByUser } from '../../api';
 import ListItem from './ListItem';
 import { useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import React from 'react';
 const UserListItem = ({ user }: { user: UserType }) => {
     const chatData = useRecoilValue(chatState);
     const roomId = getRoomIdByUser(user.userId, chatData);
@@ -18,4 +18,4 @@ const UserListItem = ({ user }: { user: UserType }) => {
     return <ListItem user={user} handleClick={handleClick} />;
 };
 
-export default UserListItem;
+export default React.memo(UserListItem);
