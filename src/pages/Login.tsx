@@ -31,6 +31,9 @@ const LoginPage = styled.div`
     align-items: center;
     flex-direction: column;
     background-color: #fcec5c;
+    @media screen and (min-width: 600px) {
+        border-radius: 15px;
+    }
 `;
 
 const LoginWithGuest = styled.button`
