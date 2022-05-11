@@ -1,6 +1,6 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit"
-import { MessageState, Message } from "./types"
-import { MessageType } from "./types";
+import { MessageState } from "./state.types"
+import { MessageType, Message } from "../types";
 
 const messageState: MessageState = {
   messages: []

@@ -1,5 +1,6 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit"
-import { ClientState, Client } from "./types"
+import { ClientState } from "./state.types"
+import {Client} from "../types"
 
 const clientState: ClientState = {
   clients: [

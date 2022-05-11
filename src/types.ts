@@ -12,15 +12,6 @@ export type Client = {
   name: string,
 }
 
-export type MessageState = {
-  messages: Message[]
-};
-
-export type ClientState = {
-  currentClient?: Client,
-  clients: Client[]
-}
-
 export enum MessageType {
   HEAD, BODY, TAIL, BASE
 }

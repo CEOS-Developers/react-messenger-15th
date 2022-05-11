@@ -1,4 +1,4 @@
-import { Message, MessageType } from '../state/types'
+import { Message, MessageType } from '../types'
 import styled from 'styled-components'
 
 const componentPadding = {

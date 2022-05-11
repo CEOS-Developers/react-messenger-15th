@@ -1,10 +1,10 @@
 import React, {useState} from 'react'
 import {v4 as uuidv4} from "uuid";
-import { useAppSelector, useAppDispatch } from '../hooks';
-import { addMessage } from '../state/messageSlice';
 import styled from 'styled-components';
 
-import { MessageType } from '../state/types';
+import { useAppSelector, useAppDispatch } from '../hooks';
+import { addMessage } from '../state/messageSlice';
+import { MessageType } from '../types';
 
 const Container = styled.div`
   width: 90vw;
