@@ -3,13 +3,14 @@ import { CgProfile } from 'react-icons/cg';
 import { AiOutlineLock } from 'react-icons/ai';
 import { FiSettings } from 'react-icons/fi';
 import { MdPayment } from 'react-icons/md';
-import UnderNavBar from '../components/UnderNavBar';
+import UnderNavBar from '../components/layout/UnderNavBar';
+import { HeaderContains } from '../components/layout/CommonStyle';
 
 const Setting = () => {
   return (
     <>
       <SettingContainer>
-        <Header>Setting</Header>
+        <HeaderContains>Setting</HeaderContains>
         <Content>
           <SettingButton>
             <CgProfile />
@@ -40,7 +41,7 @@ const SettingContainer = styled.div`
   display: flex;
   flex-direction: column;
 `;
-const Header = styled.div``;
+
 const Content = styled.div`
   display: flex;
   justify-content: space-evenly;

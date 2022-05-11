@@ -7,13 +7,13 @@ const UnderNavBar = () => {
   return (
     <NavBarContainer>
       <StyledLink to="/">
-        <AiOutlineUser />
+        <AiOutlineUser size={20} />
       </StyledLink>
       <StyledLink to="/chatlist">
-        <BsChatDots />
+        <BsChatDots size={20} />
       </StyledLink>
       <StyledLink to="/setting">
-        <AiOutlineSetting />
+        <AiOutlineSetting size={20} />
       </StyledLink>
     </NavBarContainer>
   );
@@ -24,11 +24,12 @@ export default UnderNavBar;
 const NavBarContainer = styled.div`
   display: flex;
   justify-content: space-evenly;
-  border-top: 0.08rem solid #c2bbbb; ;
+  border-top: 0.08rem solid #c2bbbb;
+  top: 2.5rem;
+  line-height: 2.5;
 `;
 const StyledLink = styled(Link)`
   text-decoration: none;
   color: black;
-  width: 2rem;
-  height: 2rem;
+  padding: 1rem 3rem 0 3rem;
 `;

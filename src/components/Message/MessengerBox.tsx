@@ -1,7 +1,7 @@
-import UserNav from './UserNav';
+import UserNav from '../layout/UserNav';
 import { useState } from 'react';
-import user from '../data/user.json';
-import message from '../data/message.json';
+import user from '../../data/user.json';
+import message from '../../data/message.json';
 import MessengerInput from './MessengerInput';
 import MessageList from './MessageList';
 

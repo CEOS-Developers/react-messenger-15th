@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
-import useInput from '../hooks/useInput';
-import { IMessengerInputProps } from '../interface/interface';
+import useInput from '../../hooks/useInput';
+import { IMessengerInputProps } from '../../interface/interface';
 
 const MessengerInput = ({
   currentUser,

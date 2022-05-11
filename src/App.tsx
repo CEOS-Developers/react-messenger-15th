@@ -4,8 +4,7 @@ import styled from 'styled-components';
 import FriendList from './routes/FriendList';
 import ChatList from './routes/ChatList';
 import Setting from './routes/Setting';
-
-import MessengerBox from './components/MessengerBox';
+import MessengerBox from './components/Message/MessengerBox';
 
 const App = () => {
   return (

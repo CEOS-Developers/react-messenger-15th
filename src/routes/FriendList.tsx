@@ -1,13 +1,13 @@
 import styled from 'styled-components';
-import UserNav from '../components/UserNav';
 import user from '../data/user.json';
 import Friends from '../components/Friends';
-import UnderNavBar from '../components/UnderNavBar';
+import UnderNavBar from '../components/layout/UnderNavBar';
+import { HeaderContains } from '../components/layout/CommonStyle';
 
 const FriendList = () => {
   return (
     <FriendListContainer>
-      <Header>Friends</Header>
+      <HeaderContains>Friends</HeaderContains>
       <Content>
         {user.map(({ userId, userProfile, userName, userStatus }) => (
           <Friends
@@ -25,6 +25,7 @@ const FriendList = () => {
 
 export default FriendList;
 
-const FriendListContainer = styled.div``;
-const Header = styled.div``;
+const FriendListContainer = styled.div`
+  position: absolute;
+`;
 const Content = styled.div``;

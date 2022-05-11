@@ -1,13 +1,24 @@
 import styled from 'styled-components';
-import UnderNavBar from '../components/UnderNavBar';
+import { HeaderContains } from '../components/layout/CommonStyle';
+import UnderNavBar from '../components/layout/UnderNavBar';
+import Messages from '../components/Chattings';
 import message from '../data/message.json';
 
 const ChatList = () => {
   return (
     <>
       <ChatListContainer>
-        <Header>Message</Header>
-        <Content></Content>
+        <HeaderContains>Message</HeaderContains>
+        <Content>
+          {message.map(({ userId, userName, messages }) => (
+            <Messages
+              key={userId}
+              userId={userId}
+              userName={userName}
+              message={messages[length - 1]}
+            />
+          ))}
+        </Content>
         <UnderNavBar />
       </ChatListContainer>
     </>
@@ -17,5 +28,5 @@ const ChatList = () => {
 export default ChatList;
 
 const ChatListContainer = styled.div``;
-const Header = styled.div``;
+
 const Content = styled.div``;
