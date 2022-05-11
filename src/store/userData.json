@@ -20,6 +20,20 @@
             "profileImage": "https://i.ibb.co/Jdmk2VM/2022-05-10-10-04-21.png",
             "statusMessage": "",
             "myAccount": false
+        },
+        {
+            "userId": 12,
+            "userName": "길성준",
+            "profileImage": "https://i.ibb.co/Wnt3NFK/2022-05-11-8-04-28-1.png",
+            "statusMessage": "나 이런게 무서워하네",
+            "myAccount": false
+        },
+        {
+            "userId": 13,
+            "userName": "정준하",
+            "profileImage": "https://i.ibb.co/0CT39hS/2022-05-11-8-19-41.png",
+            "statusMessage": "웃지마",
+            "myAccount": false
         }
     ]
 }

@@ -39,4 +39,7 @@ const LoginWithGuest = styled.button`
     margin-top: 20px;
     font-size: 13px;
     cursor: pointer;
+    &:hover {
+        text-decoration: underline;
+    }
 `;

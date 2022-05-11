@@ -29,7 +29,7 @@ const ChatItem = ({ chat, user, currentUser, prevChat }: ChatItemProps) => {
                 </ChatWrapper>
             ) : (
                 <>
-                    <ProfileImage>{!isPrevSame && <Squircle imageUrl={user.profileImage} selected={false} />}</ProfileImage>
+                    <ProfileImage>{!isPrevSame && <Squircle imageUrl={user.profileImage} selected={false} size={40} />}</ProfileImage>
                     <div>
                         {!isPrevSame && <div style={{ color: '#333' }}>{user.userName}</div>}
                         <ChatWrapper isCurrentUser={isCurrentUser}>

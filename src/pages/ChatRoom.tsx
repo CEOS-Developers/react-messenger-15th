@@ -7,7 +7,8 @@ import SendMessage from '../components/chatroom/SendMessage';
 import RoomHeader from '../components/chatroom/RoomHeader';
 import styled from 'styled-components';
 import RoomBody from '../components/chatroom/RoomBody';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 const ChatRoom = () => {
     const chatData = useRecoilValue<RoomType[]>(chatState);
@@ -16,11 +17,19 @@ const ChatRoom = () => {
     const { getChats, getUserInfoListByRoomId } = api;
 
     const { roomId } = useParams();
-    //roomId 파람으로 받아오는데 생기는 type 오류 해결해놓기
     if (!roomId) throw new Error('파람 필요');
 
     const chats = getChats(parseInt(roomId), chatData);
     const users = getUserInfoListByRoomId(parseInt(roomId), chatData, userData);
+
+    // url에 직접 접근할때는 메인페이지로 리다이렉트
+    const navigate = useNavigate();
+    const location = useLocation();
+    useEffect(() => {
+        if (!location.state) {
+            navigate('/');
+        }
+    }, [location]);
 
     //user list 첫번째 인덱스로 초기화
     useEffect(() => {

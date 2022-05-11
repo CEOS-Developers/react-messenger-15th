@@ -1,18 +1,21 @@
 import { UserType } from '../../Interface';
-import { Link } from 'react-router-dom';
 import { useRecoilValue } from 'recoil';
 import { chatState } from '../../store/recoil';
 import { getRoomIdByUser } from '../../api';
 import ListItem from './ListItem';
+import { useCallback } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const UserListItem = ({ user }: { user: UserType }) => {
     const chatData = useRecoilValue(chatState);
     const roomId = getRoomIdByUser(user.userId, chatData);
-    return (
-        <Link to={`/room/${roomId}`}>
-            <ListItem user={user} />
-        </Link>
-    );
+    const navigate = useNavigate();
+
+    const handleClick = useCallback(() => {
+        navigate(`/room/${roomId}`, { state: { access: true } });
+    }, []);
+
+    return <ListItem user={user} handleClick={handleClick} />;
 };
 
 export default UserListItem;

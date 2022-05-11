@@ -15,7 +15,7 @@ const FriendsList = () => {
             <ListBody>
                 <MyProfile>
                     <MyProfileIcon>
-                        <Squircle imageUrl={me.profileImage} selected={false} />
+                        <Squircle imageUrl={me.profileImage} selected={false} size={55} />
                     </MyProfileIcon>
                     <div>{me.userName}</div>
                 </MyProfile>
@@ -39,8 +39,8 @@ const MyProfile = styled.div`
 `;
 
 const MyProfileIcon = styled.div`
-    width: 55px;
-    height: 55px;
+    // width: 55px;
+    // height: 55px;
     margin-right: 12px;
 `;
 

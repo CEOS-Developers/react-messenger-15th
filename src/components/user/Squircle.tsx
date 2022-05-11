@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
-const Squircle = ({ imageUrl, selected }: { imageUrl: string; selected: boolean }) => {
+const Squircle = ({ imageUrl, selected, size }: { imageUrl: string; selected: boolean; size: number }) => {
     return (
-        <div className="user-img">
+        <UserImage size={size}>
             <svg className="svg-profile" viewBox="0 0 88 88">
                 <defs>
                     <path
@@ -21,11 +21,16 @@ const Squircle = ({ imageUrl, selected }: { imageUrl: string; selected: boolean 
                     selected={selected}
                 />
             </svg>
-        </div>
+        </UserImage>
     );
 };
 
 export default Squircle;
+
+const UserImage = styled.div<{ size: number }>`
+    width: ${({ size }) => size}px;
+    height: ${({ size }) => size}px;
+`;
 
 const SquircleImage = styled.image<{ selected: boolean }>`
     ${({ selected }) =>

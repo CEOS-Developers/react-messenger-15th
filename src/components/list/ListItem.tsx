@@ -1,15 +1,15 @@
 import styled, { css } from 'styled-components';
-import { ChatType, RoomType, UserType } from '../../Interface';
+import { ChatType, UserType } from '../../Interface';
 import { timeForToday } from '../../utils/timeForToday';
 import Squircle from '../user/Squircle';
 
-const ListItem = ({ user, lastChat }: { user: UserType; lastChat?: ChatType }) => {
+const ListItem = ({ user, lastChat, handleClick }: { user: UserType; lastChat?: ChatType; handleClick: () => void }) => {
     const lastChatContent = lastChat?.content;
     const lastChatDate = lastChat?.date;
     return (
-        <Item room={lastChat}>
+        <Item room={lastChat} onClick={handleClick}>
             <ProfileIcon room={lastChat}>
-                <Squircle imageUrl={user.profileImage} selected={false} />
+                <Squircle imageUrl={user.profileImage} selected={false} size={lastChat ? 45 : 40} />
             </ProfileIcon>
             <Info>
                 <div>{user.userName}</div>
@@ -21,6 +21,7 @@ const ListItem = ({ user, lastChat }: { user: UserType; lastChat?: ChatType }) =
 };
 
 export default ListItem;
+
 const Item = styled.div<{ room: ChatType | undefined }>`
     display: flex;
     align-items: center;
@@ -40,7 +41,7 @@ const Item = styled.div<{ room: ChatType | undefined }>`
 
 const ProfileIcon = styled.div<{ room: ChatType | undefined }>`
     margin-right: 10px;
-    ${({ room }) =>
+    /* ${({ room }) =>
         room
             ? css`
                   width: 45px;
@@ -49,7 +50,7 @@ const ProfileIcon = styled.div<{ room: ChatType | undefined }>`
             : css`
                   width: 40px;
                   height: 40px;
-              `}
+              `} */
 `;
 
 const Info = styled.div`
@@ -62,11 +63,13 @@ const InfoSub = styled.div`
     font-size: 12px;
     margin-top: 2px;
     width: 100%;
-    /* word-wrap: break-word; // 단어 단위로 줄바꿈
-    text-align: left; // 텍스트를 가운데나 오른쪽 정렬을 하게 되면 말줄임표가 이상한 곳으로 갈 수 있음
-    display: -webkit-box; // 유연하게 height를 증감시킬 수 있는 플렉스 박스형태로 변환
-    -webkit-line-clamp: 2; // 보여줄 줄 수
-    -webkit-box-orient: vertical; //플렉스 박스의 방향 설정(가로) */
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* 라인수 */
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
 `;
 
 const LastDate = styled.div`
