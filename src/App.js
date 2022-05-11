@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import styled, { createGlobalStyle, keyframes } from 'styled-components';
-import MainView from './components/MainView';
-// import './App.css';
+import MainContainer from './components/MainContainer';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -26,7 +25,7 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-const WrapperDiv = styled.div`
+const AppContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -39,12 +38,7 @@ const WrapperDiv = styled.div`
   background: #eff2f5;
 `;
 
-const HeaderEmoji = styled.div`
-  font-size: 48px;
-  margin-right: 10px;
-`;
-
-const HeaderDiv = styled.header`
+const AppHeader = styled.header`
   position: absolute;
   top: 40px;
   left: 40px;
@@ -61,11 +55,16 @@ const HeaderDiv = styled.header`
   color: #444444;
 `;
 
-const ContentDiv = styled.div`
+const AppHeaderEmoji = styled.div`
+  font-size: 48px;
+  margin-right: 10px;
+`;
+
+const AppContent = styled.div`
   display: flex;
 `;
 
-const FooterDiv = styled.footer`
+const AppFooter = styled.footer`
   position: absolute;
   bottom: 40px;
   right: 40px;
@@ -92,19 +91,22 @@ const AnimatedCursor = styled.div`
 
 const App = () => {
   return (
-    <WrapperDiv className="App">
+    <AppContainer className="App">
       <GlobalStyle />
-      <HeaderDiv className="App-header">
-        <HeaderEmoji>💬</HeaderEmoji>
-        <div>Something to Say?</div>
+      <AppHeader className="App-header">
+        <AppHeaderEmoji>🍊</AppHeaderEmoji>
+        <div>
+          <strong>Title</strong>
+          title
+        </div>
         <AnimatedCursor>|</AnimatedCursor>
-      </HeaderDiv>
+      </AppHeader>
 
-      <ContentDiv className="App-Content">
-        <MainView />
-      </ContentDiv>
+      <AppContent className="App-Content">
+        <MainContainer />
+      </AppContent>
 
-      <FooterDiv className="App-Footer">
+      <AppFooter className="App-Footer">
         <section>
           <strong>💖 CEOS 15 FRONTEND</strong>
         </section>
@@ -114,8 +116,8 @@ const App = () => {
         >
           github.com/poodlepoodle/react-messenger-15th
         </a>
-      </FooterDiv>
-    </WrapperDiv>
+      </AppFooter>
+    </AppContainer>
   );
 };
 
