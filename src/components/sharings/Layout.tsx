@@ -1,12 +1,16 @@
 import { Outlet } from 'react-router-dom';
 import NavBar from './NavBar';
+import { Header, HeaderTitle, Wrapper } from './Elements';
 
 const Layout = () => {
   return (
-    <div>
+    <Wrapper>
+      <Header>
+        <HeaderTitle>Messages</HeaderTitle>
+      </Header>
       <Outlet />
       <NavBar />
-    </div>
+    </Wrapper>
   );
 };
 
