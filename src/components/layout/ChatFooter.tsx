@@ -1,32 +1,18 @@
 import styled from "styled-components";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { AiOutlineUser, AiOutlineSetting } from "react-icons/ai";
 import { BiMessage } from "react-icons/bi";
-import { useEffect, useState } from "react";
 
-const ChatFooter = () => {
-  const { pathname } = useLocation();
-  const [selected, setSelected] = useState("");
-
-  useEffect(() => {
-    if (pathname.includes("chatList")) {
-      setSelected("chatList");
-    } else if (pathname.includes("setting")) {
-      setSelected("setting");
-    } else {
-      setSelected("friends");
-    }
-  }, [pathname]);
-
+const ChatFooter = ({ path }: { path: string }) => {
   return (
     <Container>
-      <IconBox to="/" selected={selected === "friends"}>
+      <IconBox to="/" selected={path === "friends"}>
         <AiOutlineUser size={22} />
       </IconBox>
-      <IconBox to="/chatList" selected={selected === "chatList"}>
+      <IconBox to="/chatList" selected={path === "chatList"}>
         <BiMessage size={22} />
       </IconBox>
-      <IconBox to="/setting" selected={selected === "setting"}>
+      <IconBox to="/setting" selected={path === "setting"}>
         <AiOutlineSetting size={22} />
       </IconBox>
     </Container>

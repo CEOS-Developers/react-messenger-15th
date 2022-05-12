@@ -7,7 +7,7 @@ const ChatList = () => {
     <>
       <ChatHeader title="Messages" />
       <MessageChatList />
-      <ChatFooter />
+      <ChatFooter path="chatList" />
     </>
   );
 };

@@ -16,7 +16,7 @@ const MessageChatList = () => {
       const filtered = totalMessage.filter(
         (msg) =>
           msg.user.filter((user) =>
-            user.name.toLowerCase().includes(text.toLowerCase())
+            user.name.toLowerCase().includes(text.trim().toLowerCase())
           ).length !== 0
       );
       setShowMessage(filtered);

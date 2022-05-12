@@ -7,7 +7,7 @@ const ChatFriends = () => {
     <>
       <ChatHeader title="Friends" />
       <ChatFriendsList />
-      <ChatFooter />
+      <ChatFooter path="friends" />
     </>
   );
 };

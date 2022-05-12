@@ -7,7 +7,7 @@ const Setting = () => {
     <>
       <ChatHeader title="Setting" />
       <SettingList />
-      <ChatFooter />
+      <ChatFooter path="setting" />
     </>
   );
 };
