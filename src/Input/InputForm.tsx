@@ -26,7 +26,7 @@ function Inputform ({changeUser, messageList, setMessageList,currentUser} : Inpu
         }]);  
         //입력받은 걸 배열에 넣음
   
-      },[]);
+      },[changeUser]);
     
       const submitInput = useCallback((event : React.SyntheticEvent) => {
         event.preventDefault();
