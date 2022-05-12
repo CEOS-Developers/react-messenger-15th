@@ -1,10 +1,5 @@
 [
   {
-    "userId": "user0",
-    "userName": "Anna",
-    "statusMsg": "status1"
-  },
-  {
     "userId": "user1",
     "userName": "Olaf",
     "statusMsg": "status2"
