@@ -30,7 +30,7 @@ const FriendsListScreen = () => {
       <Content>
         <SearchWrapper>
           <MdPersonSearch />
-          <Input onChange={handleInputChange} placeholder="Search..." />
+          <Input onChange={handleInputChange} placeholder="Search here" />
         </SearchWrapper>
 
         {inputText

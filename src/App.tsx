@@ -7,12 +7,15 @@ import SettingScreen from './pages/SettingScreen';
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<FriendsListScreen />} />
-      <Route path="/ChatRoomScreen/:userId" element={<ChatRoomScreen />} />
-      <Route path="/ChatListScreen" element={<ChatListScreen />} />
-      <Route path="/SettingScreen" element={<SettingScreen />} />
-    </Routes>
+    <>
+      <GlobalStyle />
+      <Routes>
+        <Route path="/" element={<FriendsListScreen />} />
+        <Route path="/ChatRoomScreen/:userId" element={<ChatRoomScreen />} />
+        <Route path="/ChatListScreen" element={<ChatListScreen />} />
+        <Route path="/SettingScreen" element={<SettingScreen />} />
+      </Routes>
+    </>
   );
 }
 
