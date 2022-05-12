@@ -368,9 +368,9 @@ const ChatContentItemRightBubble = styled.div`
   text-align: right;
   font-size: 10px;
   font-weight: 300;
-  color: #333333;
+  color: white;
 
-  background: #f0f0f0;
+  background: #ffa440;
 `;
 
 const ChatFooter = styled.div`
