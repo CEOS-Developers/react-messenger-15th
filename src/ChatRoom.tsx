@@ -1,9 +1,11 @@
-import { useState} from "react";
+
 import UserProfile from "./Profile/UserProfile";
 import useMessageList from "./hook/useMessageList";
 import Inputform from "./Input/InputForm";
 import Message from "./Message/Message";
 import {useParams} from 'react-router-dom';
+import { userState } from "./recoil";
+import {useRecoilState} from "recoil";
 
 function ChatRoom(){
 
@@ -11,7 +13,7 @@ function ChatRoom(){
     const roomIds = Number(roomId.friendId);
 
     const {messageList,setMessageList} = useMessageList(roomIds-1);
-    const [changeUser,setChangeUser] = useState<number>(0);
+    const [changeUser,setChangeUser] = useRecoilState<number>(userState);
 
     return(
     <div id ="Wrapper">
