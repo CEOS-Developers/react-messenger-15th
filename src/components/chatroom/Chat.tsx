@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import styled, { css } from 'styled-components';
 
 import { GetTime } from '../../utils/GetTime';
@@ -26,7 +27,7 @@ const Chat = ({ userId, message, msgId }: IChat) => {
   );
 };
 
-export default Chat;
+export default memo(Chat);
 
 const Bubble = styled.section`
   display: flex;
