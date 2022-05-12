@@ -3,23 +3,27 @@ import {useState , useCallback} from "react";
 import { FriendItem } from "./type";
 import user from "./data/user.json";
 import {Header,Input,FriendWrapper,FriendContainer,FriendProfile,FriendName,FriendIntro} from "./BasicListDesign";
+import {useNavigate} from 'react-router-dom';
 
 function FriendList(){
 
     const [search, setSearch] = useState<string>("");
-    const [friendList, setFriendList] = useState<FriendItem[]>(user); 
+    const navigate = useNavigate();
   
     const onChange = useCallback((event : React.ChangeEvent<HTMLInputElement>) => {setSearch(event.target.value)},[]);
    
-    const searchFriend = friendList.filter((friend) => {
+    const searchFriend = user.filter((friend) => {
         return friend.name.includes(search);
       });
 
-   
+      const ChatRoomLink = (event : React.MouseEvent<HTMLDivElement> , roomId : number) =>{
+        navigate(`/ChatRoom/${roomId}`);
+    }
+
     return(
        <div id ="Wrapper">
          <Header>친구 목록</Header>
-             <Input
+         <Input
            onChange={onChange}
            value={search}
            type="text"
@@ -31,7 +35,7 @@ function FriendList(){
               {
               searchFriend.map((friend)=> (
               
-              <FriendContainer>
+              <FriendContainer onClick = {(event) => {ChatRoomLink (event, friend.id)}}>
               <FriendProfile src = {friend.profile}/>
               <FriendName>{friend.name}</FriendName>
               <FriendIntro introLength ={friend.intro.length}>{friend.intro}</FriendIntro>

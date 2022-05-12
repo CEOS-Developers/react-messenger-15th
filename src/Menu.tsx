@@ -1,10 +1,8 @@
 import styled  from "styled-components";
-import { Outlet , useNavigate} from 'react-router-dom';
 import React from "react";
+import useNavigator from "./hook/useNavigator";
 
 function Menu () {
-
-    const navigate = useNavigate();
 
      const Menu = styled.div
      `
@@ -31,18 +29,7 @@ function Menu () {
     `
     ;
 
-    const FriendListLink = (event : React.MouseEvent<HTMLDivElement>) =>{
-        navigate('/' ,  { replace: true });
-    }
-
-    const ChatRoomtLink = (event : React.MouseEvent<HTMLDivElement>) =>{
-        navigate('/ChatRoom',  { replace: true });
-    }
-
-    const ChatRoomListLink = (event : React.MouseEvent<HTMLDivElement>) =>{
-        navigate('/ChatRoomList',  { replace: true });
-    }
-
+    const {FriendListLink,ChatRoomListLink} = useNavigator();
 
 return (
 
@@ -52,9 +39,6 @@ return (
             <Menu1>🏠</Menu1>
             <Menu1 onClick={FriendListLink}>👩‍👦</Menu1>
             <Menu1 onClick ={ChatRoomListLink}>💬</Menu1>
-            <main>
-             <Outlet/>   
-            </main>
         </Menu>
 
    

@@ -5,19 +5,18 @@
  import {FriendItem,ChatItem,MessageItem} from "./type";
  import {useNavigate} from 'react-router-dom';
  import {Header,FriendContainer,FriendProfile,FriendName,LastChat} from "./BasicListDesign";
- 
+ import useNavigator from "./hook/useNavigator";
+
  const ChatRoomList = () =>{
    
 
     const [chatList, setChatList] = useState<ChatItem[]>(chatting); 
     const [friendList, setFriendList] = useState<FriendItem[]>(user);
-
     const navigate = useNavigate();
 
     const ChatRoomLink = (event : React.MouseEvent<HTMLDivElement> , roomId : number) =>{
-        navigate(`/ChatRoom/${roomId}`, { replace: true });
+        navigate(`/ChatRoom/${roomId}`);
     }
-
     
     return(
         <div id ="Wrapper">

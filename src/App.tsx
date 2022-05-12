@@ -41,13 +41,9 @@ box-shadow:3px 3px 3px 3px lightgrey;
        <Container>
          <Menu/>
          <Routes>
-           
-           
-           
-           <Route path="/" element={<FriendList />} />
+           <Route index element={<FriendList />} />
            <Route path ="/Chatroom/:friendId" element ={<ChatRoom/>}/>
            <Route path ="/ChatRoomList" element ={<ChatRoomList/>}/>
-        
         </Routes>
         </Container> 
     </div>
