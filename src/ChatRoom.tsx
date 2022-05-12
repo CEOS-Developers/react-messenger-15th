@@ -16,8 +16,8 @@ function ChatRoom(){
     return(
     <div id ="Wrapper">
         <UserProfile changeUser={changeUser} setChangeUser = {setChangeUser} currentUser ={roomIds} />
-        <Message messageList={messageList} currentUser ={roomIds} changeUser ={changeUser}/>
-        <Inputform changeUser={changeUser} messageList={messageList} setMessageList={setMessageList} currentUser ={roomIds}></Inputform> 
+        <Message messageList={messageList}/>
+        <Inputform changeUser={changeUser} messageList={messageList} setMessageList={setMessageList}></Inputform> 
     </div>
     );
 }

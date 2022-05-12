@@ -2,7 +2,8 @@
  import user from "./data/user.json";
  import chatting from "./data/chat.json";
  import {useNavigate} from 'react-router-dom';
- import {Header,FriendContainer,FriendProfile,FriendName,LastChat} from "./BasicListDesign";
+ import {Header,FriendContainer,FriendProfile,FriendName,LastChat, FriendWrapper} from "./BasicListDesign";
+import React from "react";
  
  const ChatRoomList = () =>{
    
@@ -15,7 +16,8 @@
     return(
         <div id ="Wrapper">
            <Header>채팅</Header>
-            {
+            <FriendWrapper>
+              {
               user.map((friend)=> {
 
                 //const chattingItem : MessageItem = chatting[friend.id].chat[0];
@@ -30,7 +32,8 @@
               </>
               );
             })
-              }
+            }
+            </FriendWrapper>
         </div>
     );
 };

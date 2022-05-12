@@ -1,16 +1,10 @@
-import { MessageItem } from "../type";
+import { MessageItem, MessageList} from "../type";
 import {useRef,useEffect} from "react";
 import {Wrapper,ChatMessage,ChatProfile,Chatcontainer,MessageBox,ChatName} from "./MessageDesign";
 import user from "../data/user.json";
 import React from "react";
 
-type MessageList = {
-    messageList : MessageItem[];
-    currentUser : number;
-    changeUser :number;
-};
-  
-function Message({messageList, currentUser,changeUser} : MessageList){
+function Message({messageList} : MessageList){
 
     const messageRef = useRef<HTMLDivElement>(null);
 
@@ -32,8 +26,8 @@ function Message({messageList, currentUser,changeUser} : MessageList){
                      <MessageBox>
                         <ChatName>{user[message.roomId].name} 님의 말: </ChatName>
                         <ChatMessage>{message.text}</ChatMessage>   
-                 </MessageBox>
-            </Chatcontainer>
+                     </MessageBox>
+                </Chatcontainer>
                 ))
             }
             

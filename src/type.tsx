@@ -28,3 +28,7 @@ export interface ChatItem{
     chat : MessageItem[];
 
 }
+
+export type MessageList = {
+    messageList : MessageItem[];
+};

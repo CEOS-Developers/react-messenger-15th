@@ -9,10 +9,9 @@ type InputProps = {
     changeUser  :number;
     messageList : MessageItem[];
     setMessageList : Dispatch<SetStateAction<MessageItem[]>>
-    currentUser : number;
   };
 
-function Inputform ({changeUser, messageList, setMessageList,currentUser} : InputProps){
+function Inputform ({changeUser, messageList, setMessageList} : InputProps){
 
     const{message, onChange ,setMessage} = useInput();
   
