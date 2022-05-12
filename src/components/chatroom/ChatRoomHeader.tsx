@@ -2,15 +2,18 @@ import styled from 'styled-components';
 import { FiChevronLeft } from 'react-icons/fi';
 import { IChatRoomHeaderProps } from '../Interfaces';
 import { useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 const ChatRoomHeader = ({
   currentUserId,
   setCurrentUserId,
 }: IChatRoomHeaderProps) => {
+  const { userId } = useParams();
+
   const handleCurrentUserToggle = () => {
-    currentUserId === 'user1'
+    currentUserId === userId
       ? setCurrentUserId('user0')
-      : setCurrentUserId('user1');
+      : setCurrentUserId(userId);
   };
 
   const navigate = useNavigate();
