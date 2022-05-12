@@ -10,8 +10,8 @@ import {
   searchToggleState,
 } from '../../store/recoil';
 import { useEffect } from 'react';
-import ChatModal from '../../components/ChatModal';
 import FriendModal from '../../components/FriendModal';
+import UserBox from '../../components/UserBox';
 const Home = () => {
   const [searchToggle, setSearchToggle] = useRecoilState(searchToggleState);
   const [friendModalToggle, setFriendModalToggle] = useRecoilState(
@@ -33,10 +33,7 @@ const Home = () => {
           <Header />
           {searchToggle && <Search placeholder="이름으로 검색" />}
           <Main>
-            <h1>친구</h1>
-            <h1>목록</h1>
-            <h1>보여</h1>
-            <h1>주는 곳</h1>
+            <UserBox />
           </Main>
         </div>
       </Container>

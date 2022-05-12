@@ -1,5 +1,10 @@
 import { atom } from 'recoil';
 
+export const pathInfo = atom({
+  key: 'path',
+  default: null,
+});
+
 export const searchToggleState = atom({
   key: 'searchToggleState',
   default: false,

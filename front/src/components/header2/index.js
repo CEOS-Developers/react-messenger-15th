@@ -6,43 +6,46 @@ import {
   chatModalToggleState,
   friendModalToggleState,
   searchToggleState,
+  pathInfo,
 } from '../../store/recoil';
 function Header() {
+  const [urlPath, setUrlPath] = useRecoilState(pathInfo);
   const [searchToggle, setSearchToggle] = useRecoilState(searchToggleState);
   const [friendModalToggle, setFriendModalToggle] = useRecoilState(
     friendModalToggleState
   );
   const [chatModalToggle, setChatModalToggle] =
     useRecoilState(chatModalToggleState);
+
   const onToggleSearch = () => setSearchToggle((prev) => !prev);
   const onToggleFriendModal = () => setFriendModalToggle((prev) => !prev);
   const onToggleChatModal = () => setChatModalToggle((prev) => !prev);
   const location = useLocation();
-  const [path, setPath] = useState('');
+
   useEffect(() => {
-    setPath(location.pathname.slice(1));
+    setUrlPath(location.pathname.slice(1));
   }, [location]);
   return (
     <Container>
       <LeftContents>
-        {path === '' && <div>친구</div>}
-        {path === 'rooms' && <div>채팅</div>}
-        {path === 'general' && <div>더보기</div>}
+        {urlPath === '' && <div>친구</div>}
+        {urlPath === 'rooms' && <div>채팅</div>}
+        {urlPath === 'general' && <div>더보기</div>}
       </LeftContents>
       <RigthContents>
-        {path === '' && (
+        {urlPath === '' && (
           <>
             <button onClick={onToggleSearch}>돋보기</button>
             <button onClick={onToggleFriendModal}>사람+</button>
           </>
         )}
-        {path === 'rooms' && (
+        {urlPath === 'rooms' && (
           <>
             <button onClick={onToggleSearch}>돋보기</button>
             <button onClick={onToggleChatModal}>말풍선+</button>
           </>
         )}
-        {path === 'general' && null}
+        {urlPath === 'general' && null}
       </RigthContents>
     </Container>
   );

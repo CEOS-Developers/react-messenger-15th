@@ -11,6 +11,7 @@ import {
 } from '../../store/recoil';
 import { useEffect } from 'react';
 import ChatModal from '../../components/ChatModal';
+import UserBox from '../../components/UserBox';
 const Rooms = () => {
   const [searchToggle, setSearchToggle] = useRecoilState(searchToggleState);
   const [friendModalToggle, setFriendModalToggle] = useRecoilState(
@@ -32,10 +33,7 @@ const Rooms = () => {
           <Header />
           {searchToggle && <Search placeholder="채팅방 이름, 참여자 검색" />}
           <Main>
-            <h1>대화방</h1>
-            <h1>많이</h1>
-            <h1>있는</h1>
-            <h1>곳</h1>
+            <UserBox />
           </Main>
         </div>
       </Container>

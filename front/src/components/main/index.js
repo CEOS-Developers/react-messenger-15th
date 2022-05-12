@@ -12,6 +12,7 @@ const Container = styled.div`
   overflow: scroll;
   border: 1px solid red;
   height: 505px;
+  padding: 0 15px;
 `;
 
 export default Main;
