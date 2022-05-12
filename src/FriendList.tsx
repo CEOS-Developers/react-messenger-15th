@@ -2,7 +2,7 @@ import styled  from "styled-components";
 import {useState , useCallback} from "react";
 import { FriendItem } from "./type";
 import user from "./data/user.json";
-import {Header,Input,FriendWrapper,FriendContainer,FriendProfile,FriendName,FriendIntro} from "./FriendListDesign";
+import {Header,Input,FriendWrapper,FriendContainer,FriendProfile,FriendName,FriendIntro} from "./BasicListDesign";
 
 function FriendList(){
 

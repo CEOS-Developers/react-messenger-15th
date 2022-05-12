@@ -5,6 +5,7 @@ import useMessageList from "./hook/useMessageList";
 import Inputform from "./Input/InputForm";
 import Message from "./Message/Message";
 import {useParams} from 'react-router-dom';
+import  chatting from "./data/chat.json";
 
 function ChatRoom(){
 

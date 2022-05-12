@@ -1,5 +1,5 @@
 import styled  from "styled-components";
-import {IFriendIntro} from  "../FriendListDesign";
+import {IFriendIntro} from  "../BasicListDesign";
 
 export const Profile = styled.div
 `
