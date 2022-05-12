@@ -19,14 +19,14 @@ export const ChatName = styled.div
     `
     text-align:left;
      font-size:13px;
-     margin:5px;
+     margin: 0.5rem;
     `;
 
 export const Chatcontainer =  styled.div
     ` border-radius: 9px 
-    border: 1px solid grey;
+      border: 1px solid grey;
       display:flex;
-      margin: 5px;
+      margin: 0.5rem;
     `;
 
 export const ChatProfile =styled.img
@@ -35,13 +35,13 @@ export const ChatProfile =styled.img
     width: 30px;
     height: 30px;
     border-radius: 30px;
-    margin:10px;
+    margin:0.7rem;
     `;
 
 export const ChatMessage = styled.div
     `
       text-align:left;
-      margin-left:10px;
+      margin-left: 1.3rem;
       font-size:13px;
     `;
 

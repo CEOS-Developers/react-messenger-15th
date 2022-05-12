@@ -6,6 +6,7 @@ import Message from "./Message/Message";
 import {useParams} from 'react-router-dom';
 import { userState } from "./recoil";
 import {useRecoilState} from "recoil";
+import { useState } from "react";
 
 function ChatRoom(){
 

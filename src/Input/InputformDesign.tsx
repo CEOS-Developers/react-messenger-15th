@@ -6,15 +6,15 @@ export const Input = styled.input
       width: 200px;
       height: 50px;
       border-radius: 9px;
-      margin:10px;
+      margin:1rem;
 
       `
       
 export const MessageButton = styled.span
       `
       cursor: pointer;
-      margin-left :5px;
-      font-size:15px;
+      margin-left : 0.1rem;
+      font-size: 15px;
       `
       
 export const Form = styled.form

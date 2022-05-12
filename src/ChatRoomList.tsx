@@ -25,7 +25,7 @@ import React from "react";
                return  (
               <>
               <FriendContainer key ={friend.id} onClick = {(event) => {ChatRoomLink (event, friend.id)}}>
-              <FriendProfile src = {friend.profile}/>
+              <FriendProfile src = {friend.profile} loading="lazy"/>
               <FriendName>{friend.name}</FriendName>
               </FriendContainer>
               </>

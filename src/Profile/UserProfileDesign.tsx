@@ -18,7 +18,7 @@ width: 50px;
 height: 50px;
 border-radius: 30px;
 border:1px solid lightgrey;
-margin:10px;
+margin:1rem;
 cursor:pointer;
 
 `;
@@ -26,16 +26,16 @@ cursor:pointer;
 export const ProfileName = styled.div
 
 `
-margin:25px;
+margin:1.7rem;
 font-size:15px;
-margin-right:1px;
+margin-right:0.5rem;
 
 `;
 export const ProfileIntro = styled.div<IFriendIntro>
 
 `
-margin-bottom:25px;
-margin-top:25px;
+margin-bottom:2rem;
+margin-top:2rem;
 font-size:13px;
 color:grey;
 

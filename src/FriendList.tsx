@@ -3,6 +3,7 @@ import {useState , useCallback} from "react";
 import user from "./data/user.json";
 import {Header,Input,FriendWrapper,FriendContainer,FriendProfile,FriendName,FriendIntro} from "./BasicListDesign";
 import {useNavigate} from 'react-router-dom';
+import React from "react";
 
 function FriendList(){
 
@@ -34,7 +35,7 @@ function FriendList(){
              {
              searchFriend.map((friend)=> (
              <FriendContainer onClick = {(event) => {ChatRoomLink (event, friend.id)}}>
-             <FriendProfile src = {friend.profile}/>
+             <FriendProfile src = {friend.profile} loading="lazy"/>
              <FriendName>{friend.name}</FriendName>
              <FriendIntro introLength ={friend.intro.length}>{friend.intro}</FriendIntro>
              </FriendContainer>
@@ -45,4 +46,4 @@ function FriendList(){
     );
 }
 
-export default FriendList;
+export default React.memo(FriendList);
