@@ -17,12 +17,29 @@ margin:10px;
 
 `;
 
+export const FriendWrapper = styled.div
+
+`
+overflow: auto;
+
+::-webkit-scrollbar{
+  width:8px;
+  heigth:8px;
+  background-color: white;
+  /* 스크롤바 둥글게 설정    */
+  border-radius: 10px;   
+}
+  ::-webkit-scrollbar-track{
+      background-color: white;
+
+`;
 export const FriendContainer = styled.div
 `
 display:flex;
 display: inline-block
 flex-direction:column;
 cursor:pointer;
+
 `;
 
 export const FriendProfile =styled.img

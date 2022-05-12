@@ -27,24 +27,32 @@
           "intro": "우ㄹi함께했던날,,",
           "profile":"../img/profile3.png"
     
-         },
+     },
 
-         {
+     {
           "id": 4,
           "name": "짱구",
           "intro": "가보자고~!",
           "profile":"../img/profile4.png"
     
-         },
+     },
 
-         {
+      {
           "id": 5,
           "name": "맹구",
           "intro": "아좌좌~!~!",
           "profile":"../img/profile5.png"
     
-         }
-
+     },
+     {
+           "id": 6,
+          "name": "짱아",
+          "intro": "아좌좌~!~!",
+          "profile":"../img/profile6.png"
+    
+     }
+     
+     
 
 
 

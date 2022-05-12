@@ -99,5 +99,27 @@
                 "text" : "돌맹이 줍는 맹구"
             }
         ]
+    },
+
+    {
+        "roomId": 6,
+        "chat": [
+            {
+                "roomId": 6,
+                "userId": 1,
+                "text" : "하이루"
+            },
+
+            {
+                "roomId": 5,
+                "userId": 1,
+                "text" : "넌 누구니"
+            },
+            {
+                "roomId": 0,
+                "userId": 0,
+                "text" : "돌맹이 줍는 맹구"
+            }
+        ]
     }
 ]

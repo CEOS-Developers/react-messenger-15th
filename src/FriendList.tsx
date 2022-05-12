@@ -2,7 +2,7 @@ import styled  from "styled-components";
 import {useState , useCallback} from "react";
 import { FriendItem } from "./type";
 import user from "./data/user.json";
-import {Header,Input,FriendContainer,FriendProfile,FriendName,FriendIntro} from "./FriendListDesign";
+import {Header,Input,FriendWrapper,FriendContainer,FriendProfile,FriendName,FriendIntro} from "./FriendListDesign";
 
 function FriendList(){
 
@@ -27,17 +27,19 @@ function FriendList(){
            autoFocus = {true}
            spellCheck="false"
            />
+           <FriendWrapper>
               {
               searchFriend.map((friend)=> (
-              <>
+              
               <FriendContainer>
               <FriendProfile src = {friend.profile}/>
               <FriendName>{friend.name}</FriendName>
               <FriendIntro introLength ={friend.intro.length}>{friend.intro}</FriendIntro>
               </FriendContainer>
-              </>
+              
               ))
               }
+            </FriendWrapper>
 
        </div> 
     );
