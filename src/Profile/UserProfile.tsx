@@ -20,12 +20,12 @@ function UserProfile({changeUser,setChangeUser,currentUser} : Profileprops){
 
     const {name, intro , profile} = nowUser[changeUser];
     
-   
+   console.log(intro.length);
     return( 
     <Profile>
         <Profileimg  src = {profile} onClick = {toggleUser}/>
         <ProfileName>{name}<span> 🟢</span></ProfileName>
-        <ProfileIntro>{intro}</ProfileIntro>
+        <ProfileIntro introLength = {intro.length}>{intro}</ProfileIntro>
     </Profile>
     )
 

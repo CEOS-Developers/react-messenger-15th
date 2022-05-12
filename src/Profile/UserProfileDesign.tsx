@@ -1,4 +1,5 @@
 import styled  from "styled-components";
+import {IFriendIntro} from  "../FriendListDesign";
 
 export const Profile = styled.div
 `
@@ -29,10 +30,10 @@ margin:25px;
 font-size:15px;
 
 `;
-export const ProfileIntro = styled.div
+export const ProfileIntro = styled.div<IFriendIntro>
 
 `
-margin:25px;
+margin: ${(props) => props.introLength}px;
 font-size:15px;
 color:grey;
 

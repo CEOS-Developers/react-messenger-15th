@@ -1,8 +1,8 @@
 import styled  from "styled-components";
 
-interface IFriendIntro {
+export interface IFriendIntro {
 
-   introName :number;
+   introLength :number;
     
   }
 
@@ -55,7 +55,7 @@ export const FriendIntro = styled.div<IFriendIntro>
 `
 {
     position: relative;
-    width: ${(props) => props.introName * 5};
+    width: ${(props) => props.introLength * 5};
     height: 10px;
     padding: 5px;
     margin-top:15px;

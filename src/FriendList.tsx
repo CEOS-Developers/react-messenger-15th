@@ -33,7 +33,7 @@ function FriendList(){
               <FriendContainer>
               <FriendProfile src = {friend.profile}/>
               <FriendName>{friend.name}</FriendName>
-              <FriendIntro introName ={friend.intro.length}>{friend.intro}</FriendIntro>
+              <FriendIntro introLength ={friend.intro.length}>{friend.intro}</FriendIntro>
               </FriendContainer>
               </>
               ))

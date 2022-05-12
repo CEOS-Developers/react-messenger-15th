@@ -20,7 +20,7 @@ function Inputform ({changeUser, messageList, setMessageList,currentUser} : Inpu
       event.preventDefault();
         setMessageList(messageList => [...messageList,
         {
-          roomId : currentUser,
+          roomId : changeUser,
           text: "😛",
           userId: changeUser,
         }]);  
