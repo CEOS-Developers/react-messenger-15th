@@ -11,8 +11,15 @@ const useNavigator = () =>{
         navigate('/ChatRoomList',  { replace: true });
     }
     
+    const HomeLink = (event : React.MouseEvent<HTMLDivElement>) =>{
+        navigate('/Home',  { replace: true });
+    }
 
-    return {FriendListLink,ChatRoomListLink};
+    const SettingLink = (event : React.MouseEvent<HTMLDivElement>) =>{
+        navigate('/Setting',  { replace: true });
+    }
+
+    return {FriendListLink,ChatRoomListLink,HomeLink,SettingLink};
 };
 
 export default useNavigator;

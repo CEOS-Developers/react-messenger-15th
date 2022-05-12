@@ -4,6 +4,8 @@ import ChatRoom from "./ChatRoom";
 import Menu from "./Menu";
 import FriendList from './FriendList';
 import ChatRoomList from './ChatRoomList';
+import Home from './Home';
+import Setting from './Setting';
 
 function App() {
  
@@ -41,9 +43,11 @@ box-shadow:3px 3px 3px 3px lightgrey;
        <Container>
          <Menu/>
          <Routes>
+           <Route path ="/Home" element ={<Home/>}/>
            <Route index element={<FriendList />} />
            <Route path ="/Chatroom/:friendId" element ={<ChatRoom/>}/>
            <Route path ="/ChatRoomList" element ={<ChatRoomList/>}/>
+           <Route path ="/Setting" element ={<Setting/>}/>
         </Routes>
         </Container> 
     </div>

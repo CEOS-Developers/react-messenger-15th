@@ -29,16 +29,17 @@ function Menu () {
     `
     ;
 
-    const {FriendListLink,ChatRoomListLink} = useNavigator();
+    const {HomeLink,FriendListLink,ChatRoomListLink,SettingLink} = useNavigator();
 
 return (
 
     //추후에 링크가 들어가게 될 부분
     
         <Menu>
-            <Menu1>🏠</Menu1>
+            <Menu1 onClick={HomeLink}>🏠</Menu1>
             <Menu1 onClick={FriendListLink}>👩‍👦</Menu1>
             <Menu1 onClick ={ChatRoomListLink}>💬</Menu1>
+            <Menu1 onClick ={SettingLink}>⚙︎</Menu1>
         </Menu>
 
    
