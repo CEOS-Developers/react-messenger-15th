@@ -36,9 +36,7 @@ const ChatRoomHeader = ({
       </Button>
 
       <ProfileWrapper onClick={handleCurrentUserToggle}>
-        <ProfileImg
-          src={`${process.env.PUBLIC_URL}/imgs/${currentUserId}.jpg`}
-        />
+        <ProfileImg src={`${process.env.PUBLIC_URL}/imgs/${userId}.jpg`} />
         <TextWrapper>
           <UserName>{currentUserName}</UserName>
           <Typing>Typing...</Typing>
