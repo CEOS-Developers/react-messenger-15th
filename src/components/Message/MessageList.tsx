@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import SingleMessage from './SingleMessage';
 import { Scrollbars } from 'react-custom-scrollbars';

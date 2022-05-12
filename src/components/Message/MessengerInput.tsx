@@ -1,21 +1,19 @@
-import { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import useInput from '../../hooks/useInput';
 import { IMessengerInputProps } from '../../interface/interface';
 const MessengerInput = ({ currentUser, messageData, setChatList }: any) => {
-  const { messageInput, handleInputChange, handleInputInitialize } =
-    useInput('');
+  const { textinput, handleInputChange, handleInputInitialize } = useInput('');
 
   const handleInputSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     //공백이 아닐 때에만 send 가능
-    if (messageInput.replace(/\s+/g, '')) {
+    if (textinput.replace(/\s+/g, '')) {
       const date = new Date();
       const hours = String(date.getHours()).padStart(2, '0');
       const minutes = String(date.getMinutes()).padStart(2, '0');
       const messageObject = {
         userId: currentUser.userId,
         userName: currentUser.userName,
-        text: messageInput,
+        text: textinput,
         time: `${hours}:${minutes}`,
       };
 
@@ -36,7 +34,7 @@ const MessengerInput = ({ currentUser, messageData, setChatList }: any) => {
     <SubmitForm onSubmit={handleInputSubmit}>
       <InputBoxWrapper>
         <InputBox
-          value={messageInput}
+          value={textinput}
           onChange={handleInputChange}
           placeholder="Send Message . . ."
           type="text"

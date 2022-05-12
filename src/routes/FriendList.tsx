@@ -4,19 +4,33 @@ import Friends from '../components/Friends';
 import UnderNavBar from '../components/layout/UnderNavBar';
 import { HeaderContains } from '../components/layout/CommonStyle';
 import SearchUser from '../components/SearchUser';
+import { useState } from 'react';
 
 const FriendList = () => {
+  const [searchedUser, setsearchedUser] = useState(user);
+  const filteredUser = (searchText: string) => {
+    if (!searchText) {
+      setsearchedUser(user);
+    } else {
+      const filtered = user.filter((element) => {
+        return element.userName
+          .toUpperCase()
+          .includes(searchText.toUpperCase());
+      });
+      setsearchedUser(filtered);
+    }
+  };
   return (
     <FriendListContainer>
       <HeaderContains>Friends</HeaderContains>
       <Content>
-        <SearchUser />
-        {user.map(({ userId, userProfile, userName, userStatus }) => (
+        <SearchUser filteredUser={filteredUser} />
+        {searchedUser.map((user) => (
           <Friends
-            key={userId}
-            userProfile={userProfile}
-            userName={userName}
-            userStatus={userStatus}
+            key={user.userId}
+            userProfile={user.userProfile}
+            userName={user.userName}
+            userStatus={user.userStatus}
           />
         ))}
       </Content>
