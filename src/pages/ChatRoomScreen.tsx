@@ -11,7 +11,6 @@ import { useParams } from 'react-router-dom';
 const ChatRoomScreen = () => {
   const { userId } = useParams();
   const [chatObj] = data.filter((room) => room.partnerId === userId);
-
   const [currentUserId, setCurrentUserId] = useState<string>('user0');
   const [chatList, setChatList] = useState<IChat[]>(chatObj.chats);
 

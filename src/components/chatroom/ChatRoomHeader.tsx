@@ -3,17 +3,25 @@ import { FiChevronLeft } from 'react-icons/fi';
 import { IChatRoomHeaderProps } from '../Interfaces';
 import { useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
+import friends from '../../assets/friends.json';
+import { useState } from 'react';
 
 const ChatRoomHeader = ({
   currentUserId,
   setCurrentUserId,
 }: IChatRoomHeaderProps) => {
   const { userId } = useParams();
+  const [friendObj] = friends.filter((friend) => friend.userId === userId);
+  const [currentUserName, setCurrentUserName] = useState(friendObj.userName);
 
   const handleCurrentUserToggle = () => {
     currentUserId === userId
       ? setCurrentUserId('user0')
       : setCurrentUserId(userId);
+
+    currentUserId === userId
+      ? setCurrentUserName('Anna')
+      : setCurrentUserName(friendObj.userName);
   };
 
   const navigate = useNavigate();
@@ -32,7 +40,7 @@ const ChatRoomHeader = ({
           src={`${process.env.PUBLIC_URL}/imgs/${currentUserId}.jpg`}
         />
         <TextWrapper>
-          <UserName>{currentUserId}</UserName>
+          <UserName>{currentUserName}</UserName>
           <Typing>Typing...</Typing>
         </TextWrapper>
       </ProfileWrapper>
