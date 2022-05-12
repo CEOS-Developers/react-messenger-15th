@@ -2,10 +2,21 @@ import styled from 'styled-components';
 import { useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useRecoilState } from 'recoil';
-import { searchToggleState } from '../../state';
+import {
+  chatModalToggleState,
+  friendModalToggleState,
+  searchToggleState,
+} from '../../store/recoil';
 function Header() {
   const [searchToggle, setSearchToggle] = useRecoilState(searchToggleState);
-  const onToggle = () => setSearchToggle((prev) => !prev);
+  const [friendModalToggle, setFriendModalToggle] = useRecoilState(
+    friendModalToggleState
+  );
+  const [chatModalToggle, setChatModalToggle] =
+    useRecoilState(chatModalToggleState);
+  const onToggleSearch = () => setSearchToggle((prev) => !prev);
+  const onToggleFriendModal = () => setFriendModalToggle((prev) => !prev);
+  const onToggleChatModal = () => setChatModalToggle((prev) => !prev);
   const location = useLocation();
   const [path, setPath] = useState('');
   useEffect(() => {
@@ -21,14 +32,14 @@ function Header() {
       <RigthContents>
         {path === '' && (
           <>
-            <button onClick={onToggle}>돋보기</button>
-            <div>사람+</div>
+            <button onClick={onToggleSearch}>돋보기</button>
+            <button onClick={onToggleFriendModal}>사람+</button>
           </>
         )}
         {path === 'rooms' && (
           <>
-            <button onClick={onToggle}>돋보기</button>
-            <div>말풍선+</div>
+            <button onClick={onToggleSearch}>돋보기</button>
+            <button onClick={onToggleChatModal}>말풍선+</button>
           </>
         )}
         {path === 'general' && null}

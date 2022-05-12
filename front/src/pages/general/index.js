@@ -1,7 +1,8 @@
 import { Container } from '../../styles/Container';
-import Sidebar from '../../components/sidebar';
-import Header from '../../components/header2';
-import Main from '../../components/main';
+import Sidebar from '../../components/Sidebar';
+import Header from '../../components/Header2';
+import Main from '../../components/Main';
+
 const General = () => {
   return (
     <Container>
