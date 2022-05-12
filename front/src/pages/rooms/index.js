@@ -6,12 +6,14 @@ import Search from '../../components/Search';
 import { useRecoilState } from 'recoil';
 import {
   chatModalToggleState,
+  chatRoomToggleState,
   friendModalToggleState,
   searchToggleState,
 } from '../../store/recoil';
 import { useEffect } from 'react';
 import ChatModal from '../../components/ChatModal';
 import UserBox from '../../components/UserBox';
+import ChatRoom from '../../components/ChatRoom';
 const Rooms = () => {
   const [searchToggle, setSearchToggle] = useRecoilState(searchToggleState);
   const [friendModalToggle, setFriendModalToggle] = useRecoilState(
@@ -19,6 +21,8 @@ const Rooms = () => {
   );
   const [chatModalToggle, setChatModalToggle] =
     useRecoilState(chatModalToggleState);
+  const [chatRoomToggle, setChatRoomToggle] =
+    useRecoilState(chatRoomToggleState);
   useEffect(() => {
     setSearchToggle(false);
     setFriendModalToggle(false);
@@ -27,6 +31,7 @@ const Rooms = () => {
   return (
     <>
       {chatModalToggle && <ChatModal />}
+      {chatRoomToggle && <ChatRoom />}
       <Container>
         <Sidebar />
         <div>

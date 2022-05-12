@@ -1,25 +1,53 @@
 import styled from 'styled-components';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { useRecoilState } from 'recoil';
+import { pathInfo } from '../../store/recoil';
+import { useEffect } from 'react';
 
 const Sidebar = () => {
   let navigate = useNavigate();
-
+  const [urlPath, setUrlPath] = useRecoilState(pathInfo);
+  let location = useLocation();
+  useEffect(() => {
+    setUrlPath(location.pathname.slice(1));
+  }, [location]);
   return (
     <Container>
-      <Btns>
-        <Btn>1</Btn>
-        <Btn>2</Btn>
-        <Btn>3</Btn>
-      </Btns>
+      <BtnWrapper>
+        <Cir1>X</Cir1>
+        <Cir2 />
+        <Cir3 />
+      </BtnWrapper>
       <MenuContainer>
-        <button onClick={() => navigate('/')}>홈</button>
-        <button onClick={() => navigate('/rooms')}>대화방</button>
-        <button onClick={() => navigate('/general')}>더보기</button>
+        {urlPath === '' && (
+          <>
+            <Img src="home_black.png" onClick={() => navigate('/')} />
+            <Img src="chat.png" onClick={() => navigate('/rooms')} />
+            <Img src="settings.png" onClick={() => navigate('/general')} />
+          </>
+        )}
+        {urlPath === 'rooms' && (
+          <>
+            <Img src="home.png" onClick={() => navigate('/')} />
+            <Img src="chat_black.png" onClick={() => navigate('/rooms')} />
+            <Img src="settings.png" onClick={() => navigate('/general')} />
+          </>
+        )}
+        {urlPath === 'general' && (
+          <>
+            <Img src="home.png" onClick={() => navigate('/')} />
+            <Img src="chat.png" onClick={() => navigate('/rooms')} />
+            <Img
+              src="settings_black.png"
+              onClick={() => navigate('/general')}
+            />
+          </>
+        )}
       </MenuContainer>
-      <div>
-        <div>알림</div>
-        <div>설정</div>
-      </div>
+      <UtilWrapper>
+        <Alert>알림</Alert>
+        <Setting>설정</Setting>
+      </UtilWrapper>
     </Container>
   );
 };
@@ -28,9 +56,40 @@ const Container = styled.div`
   display: grid;
   grid-template-rows: 1fr 20fr 2fr;
   background: #404040;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 `;
 
-const Btns = styled.div`
+const Img = styled.img`
+  margin-bottom: 15px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+`;
+
+const Alert = styled.div`
+  &:hover {
+    color: antiquewhite;
+    cursor: pointer;
+  }
+`;
+
+const Setting = styled.div`
+  &:hover {
+    color: antiquewhite;
+    cursor: pointer;
+  }
+`;
+
+const UtilWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+`;
+
+const BtnWrapper = styled.div`
+  padding: 5px 0 0 5px;
   display: flex;
   justify-content: space-between;
 `;
@@ -41,7 +100,46 @@ const Btn = styled.div`
 `;
 
 const MenuContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   padding-top: 40px;
+`;
+const CircleWrapper = styled.div`
+  display: flex;
+  padding: 5px;
+`;
+
+export const Cir1 = styled.div`
+  cursor: pointer;
+  width: 15px;
+  height: 15px;
+  background: indianred;
+  border: 1px solid indianred;
+  border-radius: 50%;
+  margin-right: 5px;
+  color: black;
+  font-size: 10px;
+  text-align: center;
+`;
+
+export const Cir2 = styled.div`
+  width: 15px;
+  height: 15px;
+  background: yellow;
+  border: 1px solid yellow;
+  border-radius: 50%;
+  margin-right: 5px;
+`;
+
+export const Cir3 = styled.div`
+  width: 15px;
+  height: 15px;
+  background: green;
+  border: 1px solid green;
+  border-radius: 50%;
+  margin-right: 5px;
 `;
 
 export default Sidebar;

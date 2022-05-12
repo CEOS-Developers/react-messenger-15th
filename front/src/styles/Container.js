@@ -5,6 +5,7 @@ export const Container = styled.main`
   width: 100vw;
   height: 100vh;
   @media screen and (min-width: 600px) {
+    border: 1px solid purple;
     width: 390px;
     height: 545px;
     min-height: 500px;

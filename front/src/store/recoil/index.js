@@ -17,3 +17,18 @@ export const friendModalToggleState = atom({
   key: 'friendModalToggleState',
   default: false,
 });
+
+export const chatRoomToggleState = atom({
+  key: 'chatRoomToggleState',
+  default: false,
+});
+
+export const userClicked = atom({
+  key: 'userClicked',
+  default: null,
+});
+
+export const searchValue = atom({
+  key: 'searchValue',
+  default: null,
+});

@@ -7,12 +7,12 @@ function Main({ children }) {
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   overflow: scroll;
-  border: 1px solid red;
+  border: 1px solid;
   height: 505px;
-  padding: 0 15px;
+  padding: 50px 15px;
+  background: #262626;
 `;
 
 export default Main;

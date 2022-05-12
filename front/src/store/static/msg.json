@@ -1,0 +1,99 @@
+{
+  "rooms": [
+    {
+      "roomId" : 0,
+      "user" : [{
+        "userName": "전시원","userName": "침착맨"
+      }],
+      "msgs": [
+        {
+          "userName": "전시원",
+          "contents": "안녕 나는 시원",
+          "date": "2022-05-12"
+        },
+        {
+          "userName": "침착맨",
+          "contents": "안녕 나는 침착맨",
+          "date": "2022-05-12"
+        }
+      ]
+    },
+    {
+      "roomId" : 1,
+      "user" : [{
+        "userName": "전시원" ,"userName": "주호민"
+      }],
+      "msgs": [
+        {
+          "userName": "전시원",
+          "contents": "담에 봐 나는 시원",
+          "date": "2022-05-12"
+
+        },
+        {
+          "userName": "주호민",
+          "contents": "나는 주호민 고기동",
+          "date": "2022-05-12"
+        }
+      ]
+    },
+    {
+      "roomId" : 2,
+      "user" : [{
+        "userName": "전시원","userName": "김풍"
+      }],
+      "msgs": [
+        {
+          "userName": "전시원",
+          "contents": "담에 봐 나는 시원",
+          "date": "2022-05-12"
+
+        },
+        {
+          "userName": "김풍",
+          "contents": "옾카페 화이팅",
+          "date": "2022-05-12"
+        }
+      ]
+    },
+    {
+      "roomId" : 3,
+      "user" : [{
+        "userName": "전시원","userName": "태완씨"
+      }],
+      "msgs": [
+        {
+          "userName": "전시원",
+          "contents": "담에 봐 나는 시원",
+          "date": "2022-05-12"
+
+        },
+        {
+          "userName": "태완씨",
+          "contents": "킹뚜껑 먹여야하는데..",
+          "date": "2022-05-12"
+        }
+      ]
+    },
+    {
+      "roomId" : 4,
+      "user" : [{
+        "userName": "전시원","userName": "슈말코"
+      }],
+      "msgs": [
+        {
+          "userName": "전시원",
+          "contents": "담에 봐 나는 시원",
+          "date": "2022-05-12"
+
+        },
+        {
+          "userName": "슈말코",
+          "contents": "한국 전국, 삼괴권을 실제로 하는 사람이 있다?!",
+          "date": "2022-05-12"
+        }
+      ]
+    }
+
+  ]
+}
