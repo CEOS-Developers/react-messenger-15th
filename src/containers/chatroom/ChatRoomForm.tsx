@@ -30,7 +30,7 @@ function ChatRoomForm({ partnerUserId }: TChatRoomFormProps) {
     if (!inputValue) alert('Please enter a message');
     else {
       let senderUserId;
-      if (receiverUserIdState.receiverUserId == me.userId)
+      if (receiverUserIdState.receiverUserId === me.userId)
         senderUserId = partnerUserId;
       else senderUserId = me.userId;
       const newChat: IChat = {
@@ -47,7 +47,7 @@ function ChatRoomForm({ partnerUserId }: TChatRoomFormProps) {
   return (
     <ChatRoomFormBlock>
       <input
-        placeholder="Text Message"
+        placeholder='Text Message'
         value={inputValue}
         onChange={handleInputChange}
         autoFocus

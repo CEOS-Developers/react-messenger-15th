@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import ChatListItem from '../components/chatlist/ChatListItem';
+import ChatListItem from '../components/ChatListItem';
 import { IFriend } from '../types/index';
 
 import chats from '../assets/json/chats.json';

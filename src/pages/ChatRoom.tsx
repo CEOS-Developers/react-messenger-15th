@@ -3,9 +3,9 @@ import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useChatListDispatch } from '../contexts/ChatListContext';
 import { useReceiverUserIdDispatch } from '../contexts/ReceiverUserIdContext';
-import ChatRoomHeader from '../components/chatroom/ChatRoomHeader';
-import ChatRoomList from '../components/chatroom/ChatRoomList';
-import ChatRoomForm from '../components/chatroom/ChatRoomForm';
+import ChatRoomHeader from '../containers/chatroom/ChatRoomHeader';
+import ChatRoomList from '../containers/chatroom/ChatRoomList';
+import ChatRoomForm from '../containers/chatroom/ChatRoomForm';
 
 function ChatRoom() {
   const params = useParams();
@@ -13,6 +13,7 @@ function ChatRoom() {
 
   const receiverUserIdDispatch = useReceiverUserIdDispatch();
   const initReceiverUserId = () => {
+    console.log('init');
     receiverUserIdDispatch({
       type: 'INITIALIZE',
       partnerUserId: partnerUserId,
@@ -20,14 +21,14 @@ function ChatRoom() {
   };
   useEffect(() => {
     initReceiverUserId();
-  }, [partnerUserId]);
+  });
 
   const chatListDispatch = useChatListDispatch();
   const initChatList = () =>
     chatListDispatch({ type: 'INITIALIZE', partnerUserId: partnerUserId });
   useEffect(() => {
     initChatList();
-  }, [partnerUserId]);
+  });
 
   return (
     <ChatRoomBlock>

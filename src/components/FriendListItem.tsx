@@ -11,7 +11,10 @@ const FriendListItem = ({ userId, userName }: FriendListItemProps) => {
   return (
     <FriendListItemBlock>
       <StyledLink to={`/chatlist/${userId}`}>
-        <img src={`${process.env.PUBLIC_URL}/imgs/${userId}.jpg`} />
+        <img
+          src={`${process.env.PUBLIC_URL}/imgs/${userId}.jpg`}
+          alt='profile'
+        />
         <span>{userName}</span>
       </StyledLink>
     </FriendListItemBlock>

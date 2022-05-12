@@ -22,6 +22,7 @@ https://react-messenger-15th-six.vercel.app/
 - [안티 패턴](https://ui.toast.com/fe-guide/ko_ANTI-PATTERN)에 유의하여 코드를 작성한다. 
 - 페이지간 공통적으로 보여줘야 하는 레이아웃의 경우, nested Route와 Outlet 컴포넌트를 사용하여 컴포넌트 중복 사용을 최소화 한다.
 - NavLink 컴포넌트를 사용하여 유저가 현재 위치한 페이지에 대해 시각적으로 인지할 수 있도록 한다.
+- NotFound 페이지를 구현한다.
 - 채팅방 리스트 페이지의 경우 메세지를 마지막 송수신 시각을 기준으로 내림차순(최신순) 정렬하여 보여준다.
 - [24siefil-context-api branch] Context API를 사용하여 상태를 전역적으로 관리한다. 
 - [24siefil-redux branch] Redux를 사용하여 상태를 전역적으로 관리한다. (작업중)
@@ -33,6 +34,8 @@ https://react-messenger-15th-six.vercel.app/
 - [웹 성능 최적화 방법 5분 완성](https://velog.io/@hsecode/%EC%B5%9C%EC%A0%81%ED%99%94-%EC%9B%B9-%EC%84%B1%EB%8A%A5-%EC%B5%9C%EC%A0%81%ED%99%94-%EB%B0%A9%EB%B2%95-5%EB%B6%84-%EC%99%84%EC%84%B1)
 - [json array sort](https://dreamjy.tistory.com/92)
 - [React TypeScript Hooks issue when returning array](https://www.puruvj.dev/blog/get-to-know-typescript--react-hooks-return-array-issue)
+
+<br>
 
 # Key Questions
 

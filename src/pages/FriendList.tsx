@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import FriendListItem from '../components/friendlist/FriendListItem';
+import FriendListItem from '../components/FriendListItem';
 import { useInput } from '../hooks/useInput';
 import React from 'react';
 

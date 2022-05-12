@@ -4,7 +4,7 @@ import { ChatListProvider } from './contexts/ChatListContext';
 import { useEffect } from 'react';
 import styled from 'styled-components';
 
-import CommonLayout from './components/layout/CommonLayout';
+import CommonLayout from './components/CommonLayout';
 import FriendList from './pages/FriendList';
 import ChatList from './pages/ChatList';
 import ChatRoom from './pages/ChatRoom';

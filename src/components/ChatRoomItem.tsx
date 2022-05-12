@@ -1,9 +1,9 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { getTimeStamp } from '../../utils/getTimeStamp';
+import { getTimeStamp } from '../utils/getTimeStamp';
 
-import me from '../../assets/json/me.json';
-import friends from '../../assets/json/friends.json';
+import me from '../assets/json/me.json';
+import friends from '../assets/json/friends.json';
 
 type TChatRoomItemProps = {
   partnerUserId: number;
@@ -24,7 +24,7 @@ function ChatRoomItem({
 
   return (
     <ChatItemBlock userId={userId}>
-      <img src={`${process.env.PUBLIC_URL}/imgs/${userId}.jpg`} />
+      <img src={`${process.env.PUBLIC_URL}/imgs/${userId}.jpg`} alt='profile' />
       <TextWrapper>
         <UserName userId={userId}>
           {userId === me.userId ? me.userName : partner.userName}

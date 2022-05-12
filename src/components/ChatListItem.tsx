@@ -11,10 +11,13 @@ function ChatListItem({ userId, userName, lastMsg }: ChatListItemProps) {
   return (
     <ChatListItemBlock>
       <StyledLink to={`/chatlist/${userId}`}>
-        <img src={`${process.env.PUBLIC_URL}/imgs/${userId}.jpg`} />
+        <img
+          src={`${process.env.PUBLIC_URL}/imgs/${userId}.jpg`}
+          alt='profile'
+        />
         <TextWrapper>
           <span>{userName}</span>
-          <div className="LastMessage">{lastMsg}</div>
+          <div className='LastMessage'>{lastMsg}</div>
         </TextWrapper>
       </StyledLink>
     </ChatListItemBlock>

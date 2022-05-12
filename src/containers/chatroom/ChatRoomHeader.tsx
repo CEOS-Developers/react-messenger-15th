@@ -41,6 +41,7 @@ function ChatRoomHeader({ partnerUserId }: TChatRoomHeaderProps) {
       <ProfileWrapper onClick={handleReceiverUserIdToggle}>
         <img
           src={`${process.env.PUBLIC_URL}/imgs/${receiverUserIdState.receiverUserId}.jpg`}
+          alt='profile'
         />
         <ReceiverUserNameWrapper>
           <span>{receiver.userName}</span>
