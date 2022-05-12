@@ -1,6 +1,5 @@
-import styled  from "styled-components";
+
 import {useState , useCallback} from "react";
-import { FriendItem } from "./type";
 import user from "./data/user.json";
 import {Header,Input,FriendWrapper,FriendContainer,FriendProfile,FriendName,FriendIntro} from "./BasicListDesign";
 import {useNavigate} from 'react-router-dom';
@@ -32,22 +31,18 @@ function FriendList(){
            spellCheck="false"
            />
            <FriendWrapper>
-              {
-              searchFriend.map((friend)=> (
-              
-              <FriendContainer onClick = {(event) => {ChatRoomLink (event, friend.id)}}>
-              <FriendProfile src = {friend.profile}/>
-              <FriendName>{friend.name}</FriendName>
-              <FriendIntro introLength ={friend.intro.length}>{friend.intro}</FriendIntro>
-              </FriendContainer>
-              
+             {
+             searchFriend.map((friend)=> (
+             <FriendContainer onClick = {(event) => {ChatRoomLink (event, friend.id)}}>
+             <FriendProfile src = {friend.profile}/>
+             <FriendName>{friend.name}</FriendName>
+             <FriendIntro introLength ={friend.intro.length}>{friend.intro}</FriendIntro>
+             </FriendContainer>
               ))
               }
             </FriendWrapper>
-
        </div> 
     );
-
 }
 
 export default FriendList;

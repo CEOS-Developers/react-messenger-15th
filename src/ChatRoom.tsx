@@ -1,11 +1,9 @@
-import { useState,useMemo } from "react";
+import { useState} from "react";
 import UserProfile from "./Profile/UserProfile";
-import styled  from "styled-components";
 import useMessageList from "./hook/useMessageList";
 import Inputform from "./Input/InputForm";
 import Message from "./Message/Message";
 import {useParams} from 'react-router-dom';
-import  chatting from "./data/chat.json";
 
 function ChatRoom(){
 

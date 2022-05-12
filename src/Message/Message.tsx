@@ -1,9 +1,8 @@
 import { MessageItem } from "../type";
-import {useRef,useEffect,useMemo} from "react";
+import {useRef,useEffect} from "react";
 import {Wrapper,ChatMessage,ChatProfile,Chatcontainer,MessageBox,ChatName} from "./MessageDesign";
 import user from "../data/user.json";
 import React from "react";
-import me from "../data/me.json";
 
 type MessageList = {
     messageList : MessageItem[];

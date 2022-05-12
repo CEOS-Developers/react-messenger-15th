@@ -1,17 +1,11 @@
- import styled  from "styled-components";
+
  import user from "./data/user.json";
  import chatting from "./data/chat.json";
- import {useState} from "react";
- import {FriendItem,ChatItem,MessageItem} from "./type";
  import {useNavigate} from 'react-router-dom';
  import {Header,FriendContainer,FriendProfile,FriendName,LastChat} from "./BasicListDesign";
- import useNavigator from "./hook/useNavigator";
-
+ 
  const ChatRoomList = () =>{
    
-
-    const [chatList, setChatList] = useState<ChatItem[]>(chatting); 
-    const [friendList, setFriendList] = useState<FriendItem[]>(user);
     const navigate = useNavigate();
 
     const ChatRoomLink = (event : React.MouseEvent<HTMLDivElement> , roomId : number) =>{
@@ -22,7 +16,7 @@
         <div id ="Wrapper">
            <Header>채팅</Header>
             {
-              friendList.map((friend)=> {
+              user.map((friend)=> {
 
                 //const chattingItem : MessageItem = chatting[friend.id].chat[0];
                 
@@ -33,7 +27,8 @@
               <FriendName>{friend.name}</FriendName>
               <LastChat>{chatting[1].chat[0].text}</LastChat>
               </FriendContainer>
-              </>);
+              </>
+              );
             })
               }
         </div>

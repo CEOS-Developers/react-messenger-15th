@@ -1,10 +1,5 @@
 import { useNavigate } from "react-router-dom";
 
-type INavigator = {
-    event : React.MouseEvent<HTMLDivElement>;
-    roomId : number
-}
-
 const useNavigator = () =>{
        const navigate = useNavigate();
 
