@@ -37,7 +37,6 @@ const SettingScreen = () => {
           </MenuWrapper>
         ))}
       </Content>
-      <NavBar />
     </Wrapper>
   );
 };

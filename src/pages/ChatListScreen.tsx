@@ -31,7 +31,6 @@ const ChatListScreen = () => {
           </Link>
         ))}
       </Content>
-      <NavBar />
     </Wrapper>
   );
 };

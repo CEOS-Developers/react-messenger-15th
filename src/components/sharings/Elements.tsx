@@ -62,7 +62,7 @@ export const Content = styled.section`
   }
 `;
 
-export const Bottom = styled.section`
+export const Bottom = styled.nav`
   width: 100%;
   height: 10%;
 
