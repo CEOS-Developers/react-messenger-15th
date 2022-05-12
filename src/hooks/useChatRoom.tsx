@@ -33,11 +33,7 @@ const useChatRoom = () => {
       toggleIdx = users.findIndex(
         (user) => user.id === chatState.currentUser.id
       );
-      if (toggleIdx === -1) {
-        toggleIdx = userStore.users.findIndex(
-          (user) => user.id === users[0].id
-        );
-      } else if (toggleIdx === users.length - 1) {
+      if (toggleIdx === users.length - 1) {
         toggleIdx = 0;
       } else {
         toggleIdx = userStore.users.findIndex(
@@ -48,7 +44,7 @@ const useChatRoom = () => {
     setChatState({ ...chatState, currentUser: userStore.users[toggleIdx] });
   };
 
-  // 메시지 세팅
+  // 현재 메시지 세팅
   const handleChatRoom = (id: number): void => {
     const toggleIndex = messageList.findIndex((msg) => msg.id === id);
     setChatState({

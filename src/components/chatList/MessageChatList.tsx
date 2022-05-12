@@ -6,14 +6,13 @@ import Search from "components/common/Search";
 import { IUserType } from "interface";
 
 const MessageChatList = () => {
-  const totalMessage = message;
-  const [showMessage, setShowMessage] = useState(totalMessage);
+  const [showMessage, setShowMessage] = useState(message);
 
   const filterMessage = (text: string): void => {
     if (!text.trim()) {
-      setShowMessage(totalMessage);
+      setShowMessage(message);
     } else {
-      const filtered = totalMessage.filter(
+      const filtered = message.filter(
         (msg) =>
           msg.user.filter((user) =>
             user.name.toLowerCase().includes(text.trim().toLowerCase())
