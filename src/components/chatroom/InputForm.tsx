@@ -1,6 +1,7 @@
-import useInput from '../../hooks/useInput';
 import styled from 'styled-components';
+
 import { IInputFormProps } from '../Interfaces';
+import useInput from '../../hooks/useInput';
 
 const InputForm = ({
   currentUserId,

@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { IUserList } from '../Interfaces';
 
-const UserList = ({ userId, userName, message }) => {
+const UserList = ({ userId, userName, message }: IUserList) => {
   return (
     <Wrapper>
       <InfoWrapper>

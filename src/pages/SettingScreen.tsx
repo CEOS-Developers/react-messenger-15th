@@ -1,9 +1,4 @@
-import {
-  Content,
-  Header,
-  HeaderTitle,
-  Wrapper,
-} from '../components/sharings/Elements';
+import styled from 'styled-components';
 import {
   FcEngineering,
   FcSpeaker,
@@ -11,7 +6,13 @@ import {
   FcApprove,
   FcLock,
 } from 'react-icons/fc';
-import styled from 'styled-components';
+
+import {
+  Content,
+  Header,
+  HeaderTitle,
+  Wrapper,
+} from '../components/sharings/Elements';
 import NavBar from '../components/sharings/NavBar';
 
 const SettingScreen = () => {

@@ -1,5 +1,6 @@
 import { Route, Routes, useParams } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
+
 import FriendsListScreen from './pages/FriendsListScreen';
 import ChatRoomScreen from './pages/ChatRoomScreen';
 import ChatListScreen from './pages/ChatListScreen';

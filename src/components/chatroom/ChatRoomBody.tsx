@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import Chat from './Chat';
-import data from '../../assets/data.json';
 import { useRef, useEffect } from 'react';
+
 import { IChatRoomBodyProps } from '../Interfaces';
+import Chat from './Chat';
 
 const ChatRoomBody = ({ chatList }: IChatRoomBodyProps) => {
   const scrollRef = useRef<HTMLElement>(null);

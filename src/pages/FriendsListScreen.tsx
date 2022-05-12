@@ -1,3 +1,4 @@
+import styled from 'styled-components';
 import {
   Content,
   Header,
@@ -5,12 +6,11 @@ import {
   Icon,
   Wrapper,
 } from '../components/sharings/Elements';
-import styled from 'styled-components';
-import UserList from '../components/sharings/UserList';
 import { MdPersonSearch } from 'react-icons/md';
 import { Link } from 'react-router-dom';
-import NavBar from '../components/sharings/NavBar';
 
+import NavBar from '../components/sharings/NavBar';
+import UserList from '../components/sharings/UserList';
 import friends from '../assets/friends.json';
 import useInput from '../hooks/useInput';
 

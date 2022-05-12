@@ -1,10 +1,10 @@
 import styled from 'styled-components';
-import { FiChevronLeft } from 'react-icons/fi';
-import { IChatRoomHeaderProps } from '../Interfaces';
-import { useNavigate } from 'react-router-dom';
-import { useParams } from 'react-router-dom';
-import friends from '../../assets/friends.json';
 import { useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import { FiChevronLeft } from 'react-icons/fi';
+
+import { IChatRoomHeaderProps } from '../Interfaces';
+import friends from '../../assets/friends.json';
 
 const ChatRoomHeader = ({
   currentUserId,

@@ -21,14 +21,14 @@ interface IChatRoomHeaderProps extends ICurrentUserId {
   setCurrentUserId: Dispatch<SetStateAction<string>>;
 }
 
-interface IChatRoomScreenProps
-  extends IChatRoomBodyProps,
-    IChatRoomHeaderProps {
+interface IInputFormProps extends ICurrentUserId, IChatRoomBodyProps {
   setChatList: Dispatch<SetStateAction<IChat[]>>;
 }
 
-interface IInputFormProps extends ICurrentUserId, IChatRoomBodyProps {
-  setChatList: Dispatch<SetStateAction<IChat[]>>;
+interface IUserList {
+  userId: string;
+  userName: string;
+  message: string;
 }
 
 export type {
@@ -37,6 +37,6 @@ export type {
   IChat,
   IChatRoomBodyProps,
   IChatRoomHeaderProps,
-  IChatRoomScreenProps,
   IInputFormProps,
+  IUserList,
 };

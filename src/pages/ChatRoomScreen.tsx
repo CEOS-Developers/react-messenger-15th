@@ -1,12 +1,13 @@
 import styled from 'styled-components';
+import { useState } from 'react';
+import { useParams } from 'react-router-dom';
+
 import InputForm from '../components/chatroom/InputForm';
 import ChatRoomBody from '../components/chatroom/ChatRoomBody';
 import ChatRoomHeader from '../components/chatroom/ChatRoomHeader';
-import { IChatRoomScreenProps } from '../components/Interfaces';
-import data from '../assets/data.json';
-import { useState } from 'react';
+
 import { IChat } from '../components/Interfaces';
-import { useParams } from 'react-router-dom';
+import data from '../assets/data.json';
 
 const ChatRoomScreen = () => {
   const { userId } = useParams();
