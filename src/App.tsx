@@ -1,51 +1,19 @@
 import React from "react";
-import styled from 'styled-components';
-import UserBox from './Component/UserBox';
-import MessageList from './Component/MessageList';
-import InputBox from './Component/InputBox';
-import { MessageProvider } from './Context/MessageContext';
+import { Route, Routes } from 'react-router-dom';
+import Chatlist from '../src/Pages/Chatlist';
+import Userlist from '../src/Pages/Userlist';
+import Room0 from '../src/Pages/Room0';
+import Setting from '../src/Pages/Setting';
 
 function App() {
     return (
-    <BodyField>
-        <AppField>
-          <AppBody>
-            <MessageProvider>
-              <UserBox/>
-              <MessageList/>
-              <InputBox/>
-            </MessageProvider>
-          </AppBody>
-      </AppField>
-    </BodyField>)
+    <Routes>
+      <Route path="/" element={<Chatlist/>} />
+      <Route path="/Userlist" element={<Userlist/>} />
+      <Route path="/Room0" element={<Room0/>} />
+      <Route path="/Setting" element={<Setting/>} />
+    </Routes>
+    )
 };
-
-const AppBody = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin : auto;
-
-    width: 50vw;
-    height: 100%;
-`;
-
-
-const AppField = styled.div`
-    display: flex;
-    align-items: center;
-    width: 90%;
-    height: 95%;
-    margin : auto;
-`;
-
-const BodyField = styled.div`
-    display : flex;
-    width : 100vw;
-    height : 100vh;
-    background: #ECEDF0;
-    
-`;
 
 export default App;
