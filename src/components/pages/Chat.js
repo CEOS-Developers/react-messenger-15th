@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import icon_search from '../../assets/icon_search.png';
 import icon_pinned from '../../assets/icon_pinned.png';
 import icon_chatbubble from '../../assets/icon_chatbubble.png';
+import icon_send from '../../assets/icon_send.png';
 
 import jh_pic from '../../assets/jh_pic.png';
 import cr_pic from '../../assets/cr_pic.png';
@@ -207,7 +208,7 @@ const ChatContentHeader = styled.div`
 
   height: 72px;
 
-  border-left: 1px solid #eeeeee40;
+  border-left: 1px solid #eeeeee20;
 `;
 
 const ChatContentHeaderProfileWrapper = styled.div`
@@ -289,7 +290,7 @@ const ChatContentItemLeftName = styled.div`
 
   font-size: 12px;
   font-weight: 600;
-  color: #333333;
+  color: #444444;
 `;
 
 const ChatContentItemLeftTime = styled.div`
@@ -302,11 +303,11 @@ const ChatContentItemLeftBubbleWrapper = styled.div``;
 
 const ChatContentItemLeftBubble = styled.div`
   padding: 10px;
-
   border-radius: 0px 11px 11px 11px;
 
   max-width: 100px;
 
+  text-align: left;
   font-size: 10px;
   font-weight: 300;
   color: #333333;
@@ -347,7 +348,7 @@ const ChatContentItemRightName = styled.div`
 
   font-size: 12px;
   font-weight: 600;
-  color: #333333;
+  color: #444444;
 `;
 
 const ChatContentItemRightTime = styled.div`
@@ -364,11 +365,64 @@ const ChatContentItemRightBubble = styled.div`
 
   border-radius: 11px 0px 11px 11px;
 
+  text-align: right;
   font-size: 10px;
   font-weight: 300;
   color: #333333;
 
   background: #f0f0f0;
+`;
+
+const ChatFooter = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+
+  width: 100%;
+  height: 60px;
+
+  border-left: 1px solid #eeeeee20;
+`;
+
+const ChatInputForm = styled.form`
+  z-index: 1000 !important;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+
+  width: 92%;
+  height: 36px;
+
+  border-radius: 7px;
+
+  background: #f5f5f5;
+`;
+
+const ChatInputFormIcon = styled.img`
+  width: 15px;
+  height: 15px;
+`;
+
+const ChatInput = styled.input`
+  width: 90%;
+  height: 14px;
+
+  margin-right: 14px;
+  padding-top: 2px;
+
+  outline: none;
+  border-color: transparent;
+  background: transparent;
+
+  border-right: 1px solid #dddddd;
+
+  text-align: left;
+  color: #666666;
+  font-size: 10px;
+  font-weight: 400;
 `;
 
 const Chat = () => {
@@ -384,9 +438,13 @@ const Chat = () => {
         </ChatListTitleContainer>
 
         <ChatListContentContainer>
-          <ChatListContentHeader>
+          {/* <ChatListContentHeader>
             <ChatListContentHeaderIcon src={icon_pinned} />
             <ChatListContentHeaderText>PINNED</ChatListContentHeaderText>
+          </ChatListContentHeader> */}
+          <ChatListContentHeader>
+            <ChatListContentHeaderIcon src={icon_chatbubble} />
+            <ChatListContentHeaderText>ALL MESSAGE</ChatListContentHeaderText>
           </ChatListContentHeader>
 
           <ChatListItem>
@@ -404,10 +462,10 @@ const Chat = () => {
             </ChatListItemContentWrapper>
           </ChatListItem>
 
-          <ChatListContentHeader>
+          {/* <ChatListContentHeader>
             <ChatListContentHeaderIcon src={icon_chatbubble} />
             <ChatListContentHeaderText>ALL MESSAGE</ChatListContentHeaderText>
-          </ChatListContentHeader>
+          </ChatListContentHeader> */}
 
           <ChatListItem>
             <ChatListItemProfileWrapper>
@@ -511,6 +569,13 @@ const Chat = () => {
             </ChatContentItemRightProfileWrapper>
           </ChatContentItemRight>
         </ChatContentContainer>
+
+        <ChatFooter>
+          <ChatInputForm>
+            <ChatInput type="text" placeholder="Your messages..." />
+            <ChatInputFormIcon src={icon_send} />
+          </ChatInputForm>
+        </ChatFooter>
       </ChatContent>
     </ChatWrapper>
   );
