@@ -2,25 +2,24 @@ import { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import useInput from '../../hooks/useInput';
 import { IMessengerInputProps } from '../../interface/interface';
-
-const MessengerInput = ({ currentUser, chatList, setChatList }: any) => {
+const MessengerInput = ({ currentUser, messageData, setChatList }: any) => {
   const { messageInput, handleInputChange, handleInputInitialize } =
     useInput('');
+
   const handleInputSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     //공백이 아닐 때에만 send 가능
     if (messageInput.replace(/\s+/g, '')) {
       const date = new Date();
       const hours = String(date.getHours()).padStart(2, '0');
       const minutes = String(date.getMinutes()).padStart(2, '0');
-      const message = {
-        id: Date.now(),
+      const messageObject = {
         userId: currentUser.userId,
         userName: currentUser.userName,
         text: messageInput,
         time: `${hours}:${minutes}`,
       };
 
-      setChatList([...chatList, message]);
+      setChatList([...messageData, messageObject]);
 
       //공백일 경우 alert
     } else {

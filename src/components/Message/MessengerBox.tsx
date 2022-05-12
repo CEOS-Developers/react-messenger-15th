@@ -4,27 +4,35 @@ import user from '../../data/user.json';
 import message from '../../data/message.json';
 import MessengerInput from './MessengerInput';
 import MessageList from './MessageList';
+import { useParams } from 'react-router-dom';
 
 const MessengerBox = () => {
   // 사용자 나부터 시작
+  const otherUser = useParams();
+  const userindex = message.findIndex(
+    (message) => message.userName === otherUser.userName
+  );
+
+  const userMessageData = message[userindex];
+  console.log(userMessageData);
+
   const [currentUser, setCurrentUser] = useState(user[0]);
-  const [chatList, setChatList] = useState(message);
+  const [messageData, setMessageData] = useState(userMessageData.messages);
 
-  //현재 메세지를 보내는 사람이 나일 경우 친구로 유저 변경
-  const switchUser = () => {
-    currentUser.userId === 'me'
-      ? setCurrentUser(user[1])
-      : setCurrentUser(user[0]);
-  };
-
+  console.log(useParams());
   return (
     <>
-      <UserNav currentUser={currentUser} switchUser={switchUser} />
-      <MessageList chatList={chatList} />
+      <UserNav
+        currentUser={currentUser}
+        setCurrentUser={setCurrentUser}
+        otherUser={otherUser}
+      />
+      <MessageList messageData={messageData} />
+
       <MessengerInput
         currentUser={currentUser}
-        chatList={chatList}
-        setChatList={setChatList}
+        messageData={messageData}
+        setChatList={setMessageData}
       />
     </>
   );

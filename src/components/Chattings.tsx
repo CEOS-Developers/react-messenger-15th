@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { LinkToChat, ProfileImg } from './layout/CommonStyle';
-
 const Chattings = ({ userId, userName, message }: any) => {
   console.log(message);
   return (

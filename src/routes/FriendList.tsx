@@ -3,12 +3,14 @@ import user from '../data/user.json';
 import Friends from '../components/Friends';
 import UnderNavBar from '../components/layout/UnderNavBar';
 import { HeaderContains } from '../components/layout/CommonStyle';
+import SearchUser from '../components/SearchUser';
 
 const FriendList = () => {
   return (
     <FriendListContainer>
       <HeaderContains>Friends</HeaderContains>
       <Content>
+        <SearchUser />
         {user.map(({ userId, userProfile, userName, userStatus }) => (
           <Friends
             key={userId}

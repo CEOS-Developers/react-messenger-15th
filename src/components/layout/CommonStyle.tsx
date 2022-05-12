@@ -11,14 +11,14 @@ export const HeaderContains = styled.div`
   width: 24rem;
 `;
 
-export const LinkToChat = styled(Link)`
-  display: flex;
-  text-decoration: none;
-  color: black;
-`;
-
 export const ProfileImg = styled.img`
   width: 3.5rem;
   height: 3.5rem;
   border-radius: 70%;
+`;
+
+export const LinkToChat = styled(Link)`
+  display: flex;
+  text-decoration: none;
+  color: black;
 `;

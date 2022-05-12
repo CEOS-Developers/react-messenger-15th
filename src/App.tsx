@@ -14,7 +14,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<FriendList />} />
           <Route path="/chatlist" element={<ChatList />} />
-          <Route path="/messengerbox/:uerName" element={<MessengerBox />} />
+          <Route path="/messengerbox/:userName" element={<MessengerBox />} />
           <Route path="/setting" element={<Setting />} />
         </Routes>
       </MessengerContainer>

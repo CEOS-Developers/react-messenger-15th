@@ -23,8 +23,8 @@ interface IUserNavProps {
   switchUser: () => void;
 }
 
-interface IUserIdProps {
-  userId: string;
+interface IUserNameProps {
+  userName: string;
 }
 
-export type { IChat, IMessengerInputProps, IUserNavProps, IUserIdProps };
+export type { IChat, IMessengerInputProps, IUserNavProps, IUserNameProps };

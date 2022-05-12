@@ -9,12 +9,12 @@ const ChatList = () => {
     <ChatListContainer>
       <HeaderContains>Message</HeaderContains>
       <Content>
-        {message.map((usermessage) => (
+        {message.map((userMessage) => (
           <Messages
-            key={usermessage.userId}
-            userId={usermessage.userId}
-            userName={usermessage.userName}
-            message={usermessage.messages[usermessage.messages.length - 1].text}
+            key={userMessage.userId}
+            userId={userMessage.userId}
+            userName={userMessage.userName}
+            message={userMessage.messages[userMessage.messages.length - 1].text}
           />
         ))}
       </Content>

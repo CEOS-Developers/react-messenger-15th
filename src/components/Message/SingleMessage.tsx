@@ -1,13 +1,13 @@
 import styled, { css } from 'styled-components';
-import { IChat, IUserIdProps } from '../../interface/interface';
-const SingleMessage = ({ chat }: { chat: any }) => {
+import { IChat, IUserNameProps } from '../../interface/interface';
+const SingleMessage = ({ chat }: any) => {
   const { id, userId, userName, text, time } = chat;
   return (
-    <SingleMessageContainer userId={userId}>
+    <SingleMessageContainer userName={userName}>
       <ProfileImg src={`/assets/${userId}.jpg`} />
       <ContextContainer>
-        <UserName userId={userId}>{userName}</UserName>
-        <MessageText userId={userId}>{text}</MessageText>
+        <UserName userName={userName}>{userName}</UserName>
+        <MessageText userName={userName}>{text}</MessageText>
       </ContextContainer>
       <ShowTime>{time}</ShowTime>
     </SingleMessageContainer>
@@ -16,11 +16,11 @@ const SingleMessage = ({ chat }: { chat: any }) => {
 
 export default SingleMessage;
 
-const SingleMessageContainer = styled.div<IUserIdProps>`
+const SingleMessageContainer = styled.div<IUserNameProps>`
   padding: 1rem;
   display: flex;
-  ${({ userId }) =>
-    userId === 'me'
+  ${({ userName }) =>
+    userName === 'chaaerim'
       ? css`
           flex-direction: row-reverse;
         `
@@ -29,11 +29,11 @@ const SingleMessageContainer = styled.div<IUserIdProps>`
         `}
 `;
 
-const UserName = styled.div<IUserIdProps>`
+const UserName = styled.div<IUserNameProps>`
   font-size: 14px;
   padding: 0.2rem;
-  ${({ userId }) =>
-    userId === 'me'
+  ${({ userName }) =>
+    userName === 'chaaerim'
       ? css`
           margin-left: auto;
         `
@@ -41,13 +41,13 @@ const UserName = styled.div<IUserIdProps>`
           justify-content: flex-start;
         `}
 `;
-const MessageText = styled.div<IUserIdProps>`
+const MessageText = styled.div<IUserNameProps>`
   align-items: center;
   font-size: 13px;
   padding: 0.5rem;
   line-height: 1.5rem;
-  ${({ userId }) =>
-    userId === 'me'
+  ${({ userName }) =>
+    userName === 'chaaerim'
       ? css`
           margin-left: 0.5rem;
           background-color: #195bd4;
