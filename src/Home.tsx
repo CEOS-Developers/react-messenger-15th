@@ -1,10 +1,10 @@
+import {Header} from "./BasicListDesign"
 function Home(){
 
     return(
-
-        <header>
-            휑~
-        </header>
+        <div id ="Wrapper">
+        <Header>홈</Header>
+        </div>
     );
 }
 export default Home;

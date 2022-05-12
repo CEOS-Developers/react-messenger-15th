@@ -18,7 +18,6 @@ margin:10px;
 `;
 
 export const FriendWrapper = styled.div
-
 `
 overflow: auto;
 

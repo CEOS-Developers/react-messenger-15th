@@ -14,7 +14,7 @@ import React from "react";
     }
     
     return(
-        <div id ="Wrapper">
+      <div id ="Wrapper">
            <Header>채팅</Header>
             <FriendWrapper>
               {
@@ -27,7 +27,6 @@ import React from "react";
               <FriendContainer key ={friend.id} onClick = {(event) => {ChatRoomLink (event, friend.id)}}>
               <FriendProfile src = {friend.profile}/>
               <FriendName>{friend.name}</FriendName>
-              <LastChat>{chatting[1].chat[0].text}</LastChat>
               </FriendContainer>
               </>
               );
