@@ -1,8 +1,6 @@
 import React from "react";
-import InputContainer from "./containers/InputContainer";
-import MessageContainer from "./containers/MessageContainer";
 import styled from "styled-components";
-import ProfileContainer from "./containers/ProfileContainer";
+import Chatroom from "./pages/Chatroom";
 
 
 const AppContainer = styled.div`
@@ -17,9 +15,7 @@ const AppContainer = styled.div`
 function App() {
   return (
   <AppContainer>
-    <ProfileContainer/>
-    <MessageContainer/>
-    <InputContainer/>
+    <Chatroom/>
   </AppContainer>);
 }
 

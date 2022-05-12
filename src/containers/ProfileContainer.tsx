@@ -47,6 +47,10 @@ const ProfileButton = styled.button<{selected: boolean}>`
   cursor: pointer;
   background-color: rgba(255, 255, 255, ${({selected})=>(selected? "0.5":"0")});
   z-index: 1;
+  font-size: 4rem;
+  &:hover{
+    text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  }
 `
 const ProfileIamge = styled.img`
   border-radius: inherit;
@@ -63,6 +67,10 @@ function ProfileContainer() {
 
   return (
     <Container>
+      <ProfileDiv>
+        <ProfileButton selected={false}>🫲🏻</ProfileButton>
+        <ProfileName selected={false}>{"뒤로가기"}</ProfileName>
+      </ProfileDiv>
       {clients.map(client=>{
         const selected = client.clientId === currentClient?.clientId? true : false
         return(
