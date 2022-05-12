@@ -98,3 +98,11 @@ export const FriendIntro = styled.div<IFriendIntro>
 }
 
 `;
+
+export const LastChat = styled.div
+`
+padding:20px;
+font-size:10px;
+
+`;
+

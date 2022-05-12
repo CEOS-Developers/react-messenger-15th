@@ -1,10 +1,11 @@
  import styled  from "styled-components";
  import user from "./data/user.json";
  import chatting from "./data/chat.json";
- import {JSXElementConstructor, ReactElement, ReactFragment, ReactPortal, useState} from "react";
+ import {useState} from "react";
  import {FriendItem,ChatItem} from "./type";
  import {useNavigate} from 'react-router-dom';
- import {Header,FriendContainer,FriendProfile,FriendName} from "./FriendListDesign";
+ import {Header,FriendContainer,FriendProfile,FriendName,LastChat} from "./FriendListDesign";
+ 
  const ChatRoomList = () =>{
    
 
@@ -22,15 +23,16 @@
         <div id ="Wrapper">
            <Header>채팅</Header>
             {
-              friendList.map((friend)=> (
+              friendList.map((friend)=> {
+               return  (
               <>
-              
               <FriendContainer key ={friend.id} onClick = {(event) => {ChatRoomLink (event, friend.id)}}>
               <FriendProfile src = {friend.profile}/>
               <FriendName>{friend.name}</FriendName>
+              <LastChat>{chatting[1].chat[0].text}</LastChat>
               </FriendContainer>
-              </>
-              ))
+              </>);
+            })
               }
         </div>
     );
