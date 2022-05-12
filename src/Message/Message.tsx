@@ -28,8 +28,7 @@ function Message({messageList, currentUser,changeUser} : MessageList){
   
         <Wrapper ref={messageRef}>
             {messageList.map((message) => (
-                <Chatcontainer key ={message.userId}>
-               
+                <Chatcontainer key ={message.roomId}>
                     <ChatProfile src = {user[message.roomId].profile}/> 
                      <MessageBox>
                         <ChatName>{user[message.roomId].name} 님의 말: </ChatName>

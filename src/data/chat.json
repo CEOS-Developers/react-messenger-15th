@@ -55,5 +55,49 @@
                 "text" : "우웩"
             }
         ]
+    },
+
+    {
+        "roomId": 4,
+        "chat": [
+            {
+                "roomId": 4,
+                "userId": 1,
+                "text" : "울라울라"
+            },
+
+            {
+                "roomId": 4,
+                "userId": 1,
+                "text" : "짱구예용"
+            },
+            {
+                "roomId": 0,
+                "userId": 0,
+                "text" : "반가워"
+            }
+        ]
+    },
+
+    {
+        "roomId": 5,
+        "chat": [
+            {
+                "roomId": 0,
+                "userId": 0,
+                "text" : "하이루"
+            },
+
+            {
+                "roomId": 0,
+                "userId": 0,
+                "text" : "넌 누구니"
+            },
+            {
+                "roomId": 5,
+                "userId": 1,
+                "text" : "돌맹이 줍는 맹구"
+            }
+        ]
     }
 ]

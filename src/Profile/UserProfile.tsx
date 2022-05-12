@@ -19,7 +19,8 @@ function UserProfile({changeUser,setChangeUser,currentUser} : Profileprops){
     //확장성 고려해서 roomid로 바꾸기
 
     const {name, intro , profile} = nowUser[changeUser];
-    console.log(profile);
+    
+   
     return( 
     <Profile>
         <Profileimg  src = {profile} onClick = {toggleUser}/>

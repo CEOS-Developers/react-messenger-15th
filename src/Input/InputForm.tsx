@@ -34,7 +34,7 @@ function Inputform ({changeUser, messageList, setMessageList,currentUser} : Inpu
          if (message) {
           setMessageList(messageList => [...messageList,
           {
-            roomId : currentUser,
+            roomId : changeUser,
             text: message,
             userId: changeUser,
           }]);
