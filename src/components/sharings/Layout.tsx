@@ -2,11 +2,11 @@ import { Outlet } from 'react-router-dom';
 import NavBar from './NavBar';
 import { Header, HeaderTitle, Wrapper } from './Elements';
 
-const Layout = () => {
+const Layout = ({ headerText }) => {
   return (
     <Wrapper>
       <Header>
-        <HeaderTitle>Messages</HeaderTitle>
+        <HeaderTitle>{headerText}</HeaderTitle>
       </Header>
       <Outlet />
       <NavBar />

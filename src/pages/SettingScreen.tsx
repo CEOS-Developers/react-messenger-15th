@@ -13,7 +13,6 @@ import {
   HeaderTitle,
   Wrapper,
 } from '../components/sharings/Elements';
-import NavBar from '../components/sharings/NavBar';
 
 const SettingScreen = () => {
   const settingMenu = [
@@ -25,19 +24,14 @@ const SettingScreen = () => {
   ];
 
   return (
-    <Wrapper>
-      <Header>
-        <HeaderTitle>Setting</HeaderTitle>
-      </Header>
-      <Content>
-        {settingMenu.map((menu) => (
-          <MenuWrapper key={menu.id}>
-            <Icon>{menu.icon}</Icon>
-            <MenuTitle> {menu.title}</MenuTitle>
-          </MenuWrapper>
-        ))}
-      </Content>
-    </Wrapper>
+    <Content>
+      {settingMenu.map((menu) => (
+        <MenuWrapper key={menu.id}>
+          <Icon>{menu.icon}</Icon>
+          <MenuTitle> {menu.title}</MenuTitle>
+        </MenuWrapper>
+      ))}
+    </Content>
   );
 };
 

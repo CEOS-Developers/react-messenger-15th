@@ -12,10 +12,16 @@ function App() {
     <>
       <GlobalStyle />
       <Routes>
-        <Route element={<Layout />}>
-          <Route path="/" element={<FriendsListScreen />} />
-          <Route path="/ChatRoomScreen/:userId" element={<ChatRoomScreen />} />
+        <Route element={<Layout headerText={'Friends'} />}>
+          <Route index element={<FriendsListScreen />} />
+        </Route>
+        <Route element={<Layout headerText={'Messages'} />}>
           <Route path="/ChatListScreen" element={<ChatListScreen />} />
+        </Route>
+        <Route element={<Layout headerText={'Chatting'} />}>
+          <Route path="/ChatRoomScreen/:userId" element={<ChatRoomScreen />} />
+        </Route>
+        <Route element={<Layout headerText={'Setting'} />}>
           <Route path="/SettingScreen" element={<SettingScreen />} />
         </Route>
       </Routes>

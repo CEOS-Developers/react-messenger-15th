@@ -9,7 +9,6 @@ import {
 import { MdPersonSearch } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 
-import NavBar from '../components/sharings/NavBar';
 import UserList from '../components/sharings/UserList';
 import friends from '../assets/friends.json';
 import useInput from '../hooks/useInput';
@@ -22,38 +21,32 @@ const FriendsListScreen = () => {
   );
 
   return (
-    <Wrapper>
-      <Header>
-        <HeaderTitle>Friends</HeaderTitle>
-        <Icon />
-      </Header>
-      <Content>
-        <SearchWrapper>
-          <MdPersonSearch />
-          <Input onChange={handleInputChange} placeholder="Search here" />
-        </SearchWrapper>
+    <Content>
+      <SearchWrapper>
+        <MdPersonSearch />
+        <Input onChange={handleInputChange} placeholder="Search here" />
+      </SearchWrapper>
 
-        {inputText
-          ? results.map(({ userId, userName, statusMsg }) => (
+      {inputText
+        ? results.map(({ userId, userName, statusMsg }) => (
+            <UserList
+              key={userId}
+              userId={userId}
+              userName={userName}
+              message={statusMsg}
+            />
+          ))
+        : friends.map(({ userId, userName, statusMsg }) => (
+            <Link to={`/ChatRoomScreen/${userId}`}>
               <UserList
                 key={userId}
                 userId={userId}
                 userName={userName}
                 message={statusMsg}
               />
-            ))
-          : friends.map(({ userId, userName, statusMsg }) => (
-              <Link to={`/ChatRoomScreen/${userId}`}>
-                <UserList
-                  key={userId}
-                  userId={userId}
-                  userName={userName}
-                  message={statusMsg}
-                />
-              </Link>
-            ))}
-      </Content>
-    </Wrapper>
+            </Link>
+          ))}
+    </Content>
   );
 };
 
