@@ -28,13 +28,15 @@ export const ProfileName = styled.div
 `
 margin:25px;
 font-size:15px;
+margin-right:1px;
 
 `;
 export const ProfileIntro = styled.div<IFriendIntro>
 
 `
-margin: ${(props) => props.introLength}px;
-font-size:15px;
+margin-bottom:25px;
+margin-top:25px;
+font-size:13px;
 color:grey;
 
 `;

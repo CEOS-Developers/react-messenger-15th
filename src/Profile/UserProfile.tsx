@@ -1,8 +1,6 @@
 import {Profileprops} from "../type";
-import React from "react";
-import { Dispatch, SetStateAction, useCallback} from "react";
 import {Profileimg,Profile,ProfileName,ProfileIntro} from "./UserProfileDesign"
-import nowUser from "../data/user.json";
+import user from "../data/user.json";
 
 function UserProfile({changeUser,setChangeUser,currentUser} : Profileprops){
 
@@ -18,7 +16,7 @@ function UserProfile({changeUser,setChangeUser,currentUser} : Profileprops){
         };
     //확장성 고려해서 roomid로 바꾸기
 
-    const {name, intro , profile} = nowUser[changeUser];
+    const {name, intro , profile} = user[changeUser];
     
     return( 
     <Profile>
