@@ -7,6 +7,10 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
   }
 
+  div {
+    margin: 0;
+  }
+
   a {
     text-decoration: none;
     color: #333333;

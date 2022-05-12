@@ -3,6 +3,8 @@ import styled from 'styled-components';
 
 import SideBar from './SideBar';
 
+import Chat from './pages/Chat';
+
 const MainWrapper = styled.div`
   display: flex;
 
@@ -12,10 +14,10 @@ const MainWrapper = styled.div`
   overflow: hidden;
 
   background: white;
-  box-shadow: 0 1rem 4rem hsl(0 0% 0% / 20%);
+  box-shadow: 0 1rem 4rem hsl(0 0% 0% / 15%);
 `;
 
-const MainView = styled.div`
+const PageContainer = styled.div`
   flex: 1;
   display: flex;
 
@@ -26,7 +28,9 @@ const MainContainer = () => {
   return (
     <MainWrapper>
       <SideBar />
-      <MainView />
+      <PageContainer>
+        <Chat />
+      </PageContainer>
     </MainWrapper>
   );
 };

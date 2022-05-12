@@ -19,7 +19,7 @@ const SideBarWrapper = styled.div`
   flex-direction: column;
   align-items: center;
 
-  width: 75px;
+  width: 70px;
   height: 100%;
 
   // background: #166e48;
@@ -88,7 +88,7 @@ const SideBarIconWrapperSelected = styled.div`
   width: 100%;
   margin: 12px 0px;
 
-  border-left: 5px solid #eeeeee;
+  border-left: 4px solid #ffffff;
 `;
 
 const SideBarIcon = styled.img`
