@@ -1,21 +1,21 @@
 import styled from 'styled-components';
-import FriendListItem from '../components/FriendListItem';
+import FriendListItem from '../components/FriendItem';
 import { useInput } from '../hooks/useInput';
 import React from 'react';
 
-import friends from '../assets/json/friends.json';
+import friendsData from '../assets/json/friendsData.json';
 
 function FriendList() {
   const [inputValue, handleInputChange] = useInput('');
 
-  const searchResult = friends.filter(
+  const searchResult = friendsData.filter(
     (friend) => inputValue && friend.userName.includes(inputValue)
   );
 
   return (
     <FriendListBlock>
       <SearchBar>
-        <input onChange={handleInputChange} placeholder="Search" />
+        <input onChange={handleInputChange} placeholder='Search' />
       </SearchBar>
       <SearchedFriendList>
         {inputValue
@@ -26,7 +26,7 @@ function FriendList() {
                 userName={userName}
               />
             ))
-          : friends.map(({ userId, userName }) => (
+          : friendsData.map(({ userId, userName }) => (
               <FriendListItem
                 key={userId}
                 userId={userId}

@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
 import { receiver } from './receiver';
-import { chatList } from './chatList';
+import { chats } from './chats';
 
-export const rootReducer = combineReducers({ receiver, chatList });
+export const rootReducer = combineReducers({ receiver, chats });

@@ -2,26 +2,26 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import React from 'react';
 
-type FriendListItemProps = {
+type FriendItemProps = {
   userId: number;
   userName: string;
 };
 
-const FriendListItem = ({ userId, userName }: FriendListItemProps) => {
+const FriendItem = ({ userId, userName }: FriendItemProps) => {
   return (
-    <FriendListItemBlock>
-      <StyledLink to={`/chatlist/${userId}`}>
+    <FriendItemBlock>
+      <StyledLink to={`/chatroom/${userId}`}>
         <img
           src={`${process.env.PUBLIC_URL}/imgs/${userId}.jpg`}
           alt='profile'
         />
         <span>{userName}</span>
       </StyledLink>
-    </FriendListItemBlock>
+    </FriendItemBlock>
   );
 };
 
-const FriendListItemBlock = styled.div`
+const FriendItemBlock = styled.div`
   width: 100%;
   height: 19.5%;
   padding-left: 8%;
@@ -59,4 +59,4 @@ const StyledLink = styled(Link)`
   }
 `;
 
-export default React.memo(FriendListItem);
+export default React.memo(FriendItem);

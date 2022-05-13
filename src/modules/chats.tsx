@@ -1,20 +1,21 @@
 import React, { useReducer, createContext, useContext, Dispatch } from 'react';
-import chats from '../assets/json/chats.json';
 import { IChats, IChat } from '../types/index';
 
-const INITIALIZE = 'chatList/INITIALIZE';
-const CONCAT = 'chatList/CONCAT';
+import chatsData from '../assets/json/chatsData.json';
 
-export function initializeChatList(partnerUserId: any) {
+const INITIALIZE = 'chats/INITIALIZE';
+const CONCAT = 'chats/CONCAT';
+
+export function initChats(partnerUserId: any) {
   return { type: INITIALIZE, partnerUserId };
 }
 
-export function concatChatList(newChat: any) {
+export function concatNewChat(newChat: any) {
   return { type: CONCAT, newChat };
 }
 
 const initialState = {
-  chatList: [
+  data: [
     {
       userId: 0,
       msg: 'Dummy',
@@ -23,26 +24,26 @@ const initialState = {
   ],
 };
 
-export function chatList(state = initialState, action: any): any {
-  console.log('state.chatList: ');
-  console.log(state.chatList);
+export function chats(state = initialState, action: any): any {
+  console.log('state.data: ');
+  console.log(state.data);
   // console.log('action type: ' + action.type);
   // console.log('action partnerUserId: ' + action.partnerUserId);
   switch (action.type) {
     case INITIALIZE:
-      console.log('init!');
-      const chatsWithPartner = chats.filter(
-        (user) => user.userId === action.partnerUserId
+      console.log('init chats');
+      const chatsWithPartner = chatsData.filter(
+        (friend) => friend.userId === action.partnerUserId
       )[0].data;
       return {
         ...state,
-        chatList: chatsWithPartner,
+        data: chatsWithPartner,
       };
     case CONCAT:
-      console.log('concat!');
+      console.log('concat new chat!');
       return {
         ...state,
-        chatList: state.chatList.concat(action.newChat),
+        data: state.data.concat(action.newChat),
       };
     default:
       return state;
@@ -50,7 +51,7 @@ export function chatList(state = initialState, action: any): any {
 }
 
 // type TState = {
-//   chatList: IChats;
+//   chats: IChats;
 // };
 
 // type TAction =
@@ -70,12 +71,12 @@ export function chatList(state = initialState, action: any): any {
 //       )[0].data;
 //       return {
 //         ...state,
-//         chatList: chatsWithPartner,
+//         chats: chatsWithPartner,
 //       };
 //     case 'CONCAT':
 //       return {
 //         ...state,
-//         chatList: state.chatList.concat(action.newChat),
+//         chats: state.chats.concat(action.newChat),
 //       };
 //     default:
 //       throw new Error('Unhandled action');
@@ -84,7 +85,7 @@ export function chatList(state = initialState, action: any): any {
 
 // export function ChatListProvider({ children }: { children: React.ReactNode }) {
 //   const [state, dispatch] = useReducer(reducer, {
-//     chatList: [
+//     chats: [
 //       {
 //         userId: 0,
 //         msg: 'Dummy',

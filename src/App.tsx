@@ -1,12 +1,10 @@
 import { Routes, Route } from 'react-router';
-// import { ReceiverUserIdProvider } from '../src/contexts/ReceiverUserIdContext';
-// import { ChatListProvider } from './contexts/ChatListContext';
 import { useEffect } from 'react';
 import styled from 'styled-components';
 
 import CommonLayout from './components/CommonLayout';
 import FriendList from './pages/FriendList';
-import ChatList from './pages/ChatList';
+import ChatRoomList from './pages/ChatRoomList';
 import ChatRoom from './pages/ChatRoom';
 import Settings from './pages/Settings';
 import NotFound from './pages/NotFound';
@@ -21,38 +19,16 @@ function App() {
   }, []);
 
   return (
-    // <ResponsiveBlock>
-    //   <ReceiverUserIdProvider>
-    //     <ChatListProvider>
-    //       <Routes>
-    //         <Route element={<CommonLayout headerText={'Friends'} />}>
-    //           <Route index element={<FriendList />} />
-    //         </Route>
-    //         <Route element={<CommonLayout headerText={'Messages'} />}>
-    //           <Route path="/chatlist" element={<ChatList />} />
-    //         </Route>
-    //         <Route element={<CommonLayout headerText={'Chatting'} />}>
-    //           <Route path="/chatlist/:userId" element={<ChatRoom />} />
-    //         </Route>
-    //         <Route element={<CommonLayout headerText={'Settings'} />}>
-    //           <Route path="/settings" element={<Settings />} />
-    //         </Route>
-    //         <Route path="*" element={<NotFound />} />
-    //       </Routes>
-    //     </ChatListProvider>
-    //   </ReceiverUserIdProvider>
-    // </ResponsiveBlock>
-
     <ResponsiveBlock>
       <Routes>
         <Route element={<CommonLayout headerText={'Friends'} />}>
           <Route index element={<FriendList />} />
         </Route>
         <Route element={<CommonLayout headerText={'Messages'} />}>
-          <Route path='/chatlist' element={<ChatList />} />
+          <Route path='/chatroom' element={<ChatRoomList />} />
         </Route>
         <Route element={<CommonLayout headerText={'Chatting'} />}>
-          <Route path='/chatlist/:userId' element={<ChatRoom />} />
+          <Route path='/chatroom/:userId' element={<ChatRoom />} />
         </Route>
         <Route element={<CommonLayout headerText={'Settings'} />}>
           <Route path='/settings' element={<Settings />} />

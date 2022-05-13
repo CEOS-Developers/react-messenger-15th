@@ -1,31 +1,33 @@
 import styled from 'styled-components';
-import ChatListItem from '../components/ChatListItem';
+import ChatRoomItem from '../components/ChatRoomItem';
 import { IFriend } from '../types/index';
 
-import chats from '../assets/json/chats.json';
-import friends from '../assets/json/friends.json';
+import chatsData from '../assets/json/chatsData.json';
+import friendsData from '../assets/json/friendsData.json';
 
 function ChatList() {
-  // order by Last message sent time desc
-  const tempFriends = friends.filter(() => true);
+  // Sort in desc order by last send/receive time
+  const tempFriends = friendsData.filter(() => true); // duplicate
   tempFriends.sort((a: IFriend, b: IFriend) => {
     let tempA =
-      chats[a.userId - 1].data[chats[a.userId - 1].data.length - 1].unixTime;
+      chatsData[a.userId - 1].data[chatsData[a.userId - 1].data.length - 1]
+        .unixTime;
     let tempB =
-      chats[b.userId - 1].data[chats[b.userId - 1].data.length - 1].unixTime;
+      chatsData[b.userId - 1].data[chatsData[b.userId - 1].data.length - 1]
+        .unixTime;
     if (tempA < tempB) return 1;
     if (tempA > tempB) return -1;
     return 0;
   });
 
   function getLastMsg(i: number) {
-    return chats[i].data[chats[i].data.length - 1].msg;
+    return chatsData[i].data[chatsData[i].data.length - 1].msg;
   }
 
   return (
     <ChatListBlock>
       {tempFriends.map(({ userId, userName }, i) => (
-        <ChatListItem
+        <ChatRoomItem
           key={userId}
           userId={userId}
           userName={userName}

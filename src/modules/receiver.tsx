@@ -1,11 +1,12 @@
 import React, { useReducer, createContext, useContext, Dispatch } from 'react';
-import me from '../assets/json/me.json';
 import { bindActionCreators } from 'redux';
+
+import meData from '../assets/json/meData.json';
 
 const INITIALIZE = 'receiver/INITIALIZE';
 const TOGGLE = 'receiver/TOGGLE';
 
-export function initializeReceiver(partnerUserId: number) {
+export function initReceiver(partnerUserId: number) {
   return { type: INITIALIZE, partnerUserId };
 }
 
@@ -23,19 +24,22 @@ export function receiver(state = initialState, action: any) {
   // console.log('action partnerUserId: ' + action.partnerUserId);
   switch (action.type) {
     case INITIALIZE:
-      console.log('init!');
+      console.log('init receiver!');
       return {
+        ...state,
         userId: action.partnerUserId,
       };
     case TOGGLE:
-      console.log('toggle!');
-      if (state.userId === me.userId) {
+      console.log('toggle receiver!');
+      if (state.userId === meData.userId) {
         return {
+          ...state,
           userId: action.partnerUserId,
         };
       } else {
         return {
-          userId: me.userId,
+          ...state,
+          userId: meData.userId,
         };
       }
     default:
@@ -64,7 +68,7 @@ export function receiver(state = initialState, action: any) {
 //         receiverUserId: action.partnerUserId,
 //       };
 //     case 'TOGGLE':
-//       if (state.receiverUserId === me.userId) {
+//       if (state.receiverUserId === meData.userId) {
 //         return {
 //           ...state,
 //           receiverUserId: action.partnerUserId,
@@ -72,7 +76,7 @@ export function receiver(state = initialState, action: any) {
 //       } else {
 //         return {
 //           ...state,
-//           receiverUserId: me.userId,
+//           receiverUserId: meData.userId,
 //         };
 //       }
 //     default:

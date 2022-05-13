@@ -1,85 +1,52 @@
 import { useCallback } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { connect } from 'react-redux';
-import { initializeReceiver, receiver } from '../modules/receiver';
-import { initializeChatList, concatChatList } from '../modules/chatList';
+import { useDispatch } from 'react-redux';
+import { initReceiver } from '../modules/receiver';
+import { initChats } from '../modules/chats';
 import styled from 'styled-components';
 import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';
-import { useChatListDispatch } from '../contexts/ChatListContext';
-import { useReceiverUserIdDispatch } from '../contexts/ReceiverUserIdContext';
 import ChatRoomHeaderContainer from '../containers/chatroom/ChatRoomHeaderContainer';
-import ChatRoomListContainer from '../containers/chatroom/ChatRoomListContainer';
+import ChatRoomMainContainer from '../containers/chatroom/ChatRoomMainContainer';
 import ChatRoomFormContainer from '../containers/chatroom/ChatRoomFormContainer';
-import { convertCompilerOptionsFromJson } from 'typescript';
 
 function ChatRoom() {
   const params = useParams();
   const partnerUserId = parseInt(params.userId!);
 
-  // const receiverUserIdDispatch = useReceiverUserIdDispatch();
-  // const initReceiverUserId = () => {
-  //   console.log('init');
-  //   receiverUserIdDispatch({
-  //     type: 'INITIALIZE',
-  //     partnerUserId: partnerUserId,
-  //   });
-  // };
-  // useEffect(() => {
-  //   initReceiverUserId();
-  // });
-
-  // useEffect(() => {
-  //   console.log(receiverUserId);
-  //   initializeReceiver(partnerUserId);
-  // }, [partnerUserId]);
-
   const dispatch = useDispatch();
-  const initializeReceiverTrigger = useCallback(
-    (partnerUserId: any) => dispatch(initializeReceiver(partnerUserId)),
+  const initReceiverTrigger = useCallback(
+    (partnerUserId: any): any => dispatch(initReceiver(partnerUserId)),
     [dispatch]
   );
   useEffect(() => {
-    initializeReceiverTrigger(partnerUserId);
+    initReceiverTrigger(partnerUserId);
   }, [partnerUserId]);
 
-  // const chatListDispatch = useChatListDispatch();
-  // const initChatList = () =>
-  //   chatListDispatch({ type: 'INITIALIZE', partnerUserId: partnerUserId });
-  // });
-  // useEffect(() => {
-  //   initChatList();
-
-  const initializeChatListTrigger = useCallback(
-    (partnerUserId: any) => dispatch(initializeChatList(partnerUserId)),
+  const initializeChatsTrigger = useCallback(
+    (partnerUserId: any): any => dispatch(initChats(partnerUserId)),
     [dispatch]
   );
   useEffect(() => {
-    initializeChatListTrigger(partnerUserId);
+    // console.log('partnerUserId!!!');
+    // console.log(partnerUserId);
+    initializeChatsTrigger(partnerUserId);
   }, [partnerUserId]);
 
   return (
-    <ChatRoomBlock>
+    <ChatRoomListBlock>
       <ChatRoomHeaderContainer partnerUserId={partnerUserId} />
-      <ChatRoomListContainer partnerUserId={partnerUserId} />
+      <ChatRoomMainContainer partnerUserId={partnerUserId} />
       <ChatRoomFormContainer partnerUserId={partnerUserId} />
-    </ChatRoomBlock>
+    </ChatRoomListBlock>
   );
 }
 
-// export default connect(
-//   ({ receiver }) => ({ receiverUserId: receiver.userId }),
-//   {
-//     initializeReceiver,
-//   }
-// )(ChatRoom);
-
-export default ChatRoom;
-
-const ChatRoomBlock = styled.div`
+const ChatRoomListBlock = styled.div`
   height: 100%;
   width: 100%;
 
   display: flex;
   flex-direction: column;
 `;
+
+export default ChatRoom;

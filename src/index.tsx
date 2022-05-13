@@ -7,7 +7,9 @@ import App from './App';
 import { GlobalStyle } from './styles/GlobalStyle';
 import { BrowserRouter } from 'react-router-dom';
 
-const store = createStore(rootReducer, composeWithDevTools()); // deprecated
+// TODO
+// createStore: deprecated
+const store = createStore(rootReducer, composeWithDevTools());
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

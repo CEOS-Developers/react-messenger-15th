@@ -20,7 +20,7 @@ function Settings() {
     <SettingsBlock>
       {settingList.map((item) => (
         <SettingItem key={item.title}>
-          <div className="Icon">{item.icon}</div>
+          <div className='Icon'>{item.icon}</div>
           <span> {item.title}</span>
         </SettingItem>
       ))}

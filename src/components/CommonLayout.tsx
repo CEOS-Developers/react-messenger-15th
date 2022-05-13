@@ -12,7 +12,7 @@ const menuList = [
     icon: <MdOutlinePersonOutline />,
   },
   {
-    destination: 'chatlist',
+    destination: 'chatroom',
     icon: <MdOutlineChatBubbleOutline />,
   },
   {
@@ -21,13 +21,13 @@ const menuList = [
   },
 ];
 
-type TLayoutHeaderProps = {
+type TCommonLayoutProps = {
   headerText: string;
 };
 
-function CommonLayout({ headerText }: TLayoutHeaderProps) {
+function CommonLayout({ headerText }: TCommonLayoutProps) {
   return (
-    <LayoutBlock>
+    <CommonLayoutBlock>
       <header>{`${headerText}`}</header>
       <main>
         <Outlet />
@@ -43,11 +43,11 @@ function CommonLayout({ headerText }: TLayoutHeaderProps) {
           </Menu>
         ))}
       </footer>
-    </LayoutBlock>
+    </CommonLayoutBlock>
   );
 }
 
-const LayoutBlock = styled.div`
+const CommonLayoutBlock = styled.div`
   width: 100%;
   height: 100%;
 

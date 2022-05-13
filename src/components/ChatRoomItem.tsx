@@ -1,54 +1,55 @@
-import React from 'react';
-import styled, { css } from 'styled-components';
-import { getTimeStamp } from '../utils/getTimeStamp';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
-import me from '../assets/json/me.json';
-import friends from '../assets/json/friends.json';
-
-type TChatRoomItemProps = {
-  partnerUserId: number;
+type ChatRoomItemProps = {
   userId: number;
-  msg: string;
-  unixTime: number;
+  userName: string;
+  lastMsg: string;
 };
 
-function ChatRoomItem({
-  partnerUserId,
-  userId,
-  msg,
-  unixTime,
-}: TChatRoomItemProps) {
-  const partner = friends.filter(
-    (friend) => friend.userId === partnerUserId
-  )[0];
-
+function ChatRoomItem({ userId, userName, lastMsg }: ChatRoomItemProps) {
   return (
-    <ChatItemBlock userId={userId}>
-      <img src={`${process.env.PUBLIC_URL}/imgs/${userId}.jpg`} alt='profile' />
-      <TextWrapper>
-        <UserName userId={userId}>
-          {userId === me.userId ? me.userName : partner.userName}
-        </UserName>
-        <MsgWrapper userId={userId}>
-          <Bubble userId={userId}>{msg}</Bubble>
-          <Timestamp>{getTimeStamp(unixTime)}</Timestamp>
-        </MsgWrapper>
-      </TextWrapper>
-    </ChatItemBlock>
+    <ChatRoomItemBlock>
+      <StyledLink to={`/chatroom/${userId}`}>
+        <img
+          src={`${process.env.PUBLIC_URL}/imgs/${userId}.jpg`}
+          alt='profile'
+        />
+        <TextWrapper>
+          <span>{userName}</span>
+          <div className='LastMessage'>{lastMsg}</div>
+        </TextWrapper>
+      </StyledLink>
+    </ChatRoomItemBlock>
   );
 }
 
-const ChatItemBlock = styled.div<{ userId: number }>`
-  margin: 3%;
+const ChatRoomItemBlock = styled.div`
+  width: 100%;
+  height: 17%;
+  padding-left: 8%;
 
   display: flex;
-  flex-direction: ${({ userId }) =>
-    userId === me.userId ? 'row-reverse' : 'row'};
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  &:hover {
+    background-color: #c4c4c41d;
+  }
+`;
+
+const StyledLink = styled(Link)`
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+
+  display: flex;
+  align-items: center;
 
   img {
-    width: 40px;
-    height: 40px;
-    margin: 1%;
+    width: 50px;
+    height: 50px;
 
     border-radius: 50%;
     object-fit: cover;
@@ -56,66 +57,32 @@ const ChatItemBlock = styled.div<{ userId: number }>`
 `;
 
 const TextWrapper = styled.div`
-  width: 85%;
-  max-width: 78.5%;
-  margin-left: 1%;
-  margin-right: 1%;
-
-  display: flex;
-  flex-direction: column;
-`;
-
-const UserName = styled.span<{ userId: number }>`
-  font-size: 0.7rem;
-  color: #3f464db2;
-
-  display: flex;
-  flex-direction: ${({ userId }) =>
-    userId === me.userId ? 'row-reverse' : 'row'};
-`;
-
-const MsgWrapper = styled.div<{ userId: number }>`
   width: 100%;
-
-  display: flex;
-  flex-direction: ${({ userId }) =>
-    userId === me.userId ? 'row-reverse' : 'row'};
-`;
-
-const Bubble = styled.div<{ userId: number }>`
-  padding: 3.5%;
-  margin-top: 2%;
-
-  font-size: 0.7rem;
-  line-height: 1.1rem;
-
-  display: flex;
-  ${({ userId }) =>
-    userId === me.userId
-      ? css`
-          flex-direction: row-reverse;
-          color: #ffffffe9;
-          background: #1986fc;
-          border-radius: 12px 1px 12px 12px;
-        `
-      : css`
-          flex-direction: 'row';
-          color: #000000e5;
-          background: #f1f1f3;
-          border-radius: 1px 12px 12px 12px;
-        `}
-`;
-
-const Timestamp = styled.span`
-  color: #c8c8c8;
-  font-size: 0.5rem;
-
-  margin-left: 1%;
-  margin-right: 1%;
+  height: 80%;
 
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
+
+  margin-left: 5%;
+
+  span {
+    width: 100%;
+    margin-bottom: 3%;
+    color: #343a40;
+  }
+
+  .LastMessage {
+    width: 85%;
+    font-size: 0.8rem;
+
+    text-decoration: none;
+    color: gray;
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
 `;
 
-export default React.memo(ChatRoomItem);
+export default ChatRoomItem;

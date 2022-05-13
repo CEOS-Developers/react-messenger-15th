@@ -1,83 +1,51 @@
-import { concatChatList } from '../../modules/chatList';
+import { concatNewChat } from '../../modules/chats';
 import { useSelector, useDispatch } from 'react-redux';
 import { useCallback } from 'react';
-import { connect } from 'react-redux';
-import { useChatListDispatch } from '../../contexts/ChatListContext';
-import { useReceiverUserIdState } from '../../contexts/ReceiverUserIdContext';
 import styled, { css } from 'styled-components';
 import { HiOutlineChevronDown } from 'react-icons/hi';
 import { useInput } from '../../hooks/useInput';
 import { IChat } from '../../types/index';
 import React from 'react';
 
-import me from '../../assets/json/me.json';
+import meData from '../../assets/json/meData.json';
 
-type TChatRoomFormProps = {
+type TChatRoomFormContainerProps = {
   partnerUserId: number;
 };
 
-function ChatRoomFormContainer({ partnerUserId }: any) {
+function ChatRoomFormContainer({ partnerUserId }: TChatRoomFormContainerProps) {
   const [inputValue, handleInputChange, resetInput, isValid, setIsValid] =
     useInput('');
-
-  // const receiverUserIdState = useReceiverUserIdState();
-  // const chatListDispatch = useChatListDispatch();
-  // const concatNewChat = (newChat: IChat) => {
-  //   chatListDispatch({
-  //     type: 'CONCAT',
-  //     newChat: newChat,
-  //   });
-  // };
 
   const receiver = useSelector(({ receiver }: any) => ({
     userId: receiver.userId,
   }));
   const dispatch = useDispatch();
-  const concatChatList = useCallback(
-    (newChat: any): any => dispatch(concatChatList(newChat)),
+  const concatNewChatTrigger = useCallback(
+    (newChat: any): any => dispatch(concatNewChat(newChat)),
     [dispatch]
   );
-
-  // function handleSubmitBtnClick(e: React.MouseEvent<HTMLButtonElement>) {
-  //   e.preventDefault();
-  //   if (!inputValue) alert('Please enter a message');
-  //   else {
-  //     let senderUserId;
-  //     if (receiverUserIdState.receiverUserId === me.userId)
-  //       senderUserId = partnerUserId;
-  //     else senderUserId = me.userId;
-  //     const newChat: IChat = {
-  //       userId: senderUserId,
-  //       msg: inputValue,
-  //       unixTime: Date.now(),
-  //     };
-  //     concatNewChat(newChat);
-  //     resetInput();
-  //     setIsValid(false);
-  //   }
-  // }
 
   function handleSubmitBtnClick(e: React.MouseEvent<HTMLButtonElement>) {
     e.preventDefault();
     if (!inputValue) alert('Please enter a message');
     else {
       let senderUserId;
-      if (receiver.userId === me.userId) senderUserId = partnerUserId;
-      else senderUserId = me.userId;
+      if (receiver.userId === meData.userId) senderUserId = partnerUserId;
+      else senderUserId = meData.userId;
       const newChat: IChat = {
         userId: senderUserId,
         msg: inputValue,
         unixTime: Date.now(),
       };
-      // concatNewChat(newChat);
-      concatChatList(newChat);
+      concatNewChatTrigger(newChat);
       resetInput();
       setIsValid(false);
     }
   }
 
   return (
-    <ChatRoomFormBlock>
+    <ChatRoomFormContainerBlock>
       <input
         placeholder='Text Message'
         value={inputValue}
@@ -87,18 +55,11 @@ function ChatRoomFormContainer({ partnerUserId }: any) {
       <SubmitBtn onClick={handleSubmitBtnClick} isValid={isValid}>
         <HiOutlineChevronDown />
       </SubmitBtn>
-    </ChatRoomFormBlock>
+    </ChatRoomFormContainerBlock>
   );
 }
 
-export default ChatRoomFormContainer;
-
-// export default connect(
-//   ({ receiver }) => ({ receiverUserId: receiver.userId }),
-//   {}
-// )(ChatRoomFormContainer);
-
-const ChatRoomFormBlock = styled.form`
+const ChatRoomFormContainerBlock = styled.form`
   width: 100%;
   height: 10%;
 
@@ -163,3 +124,5 @@ const SubmitBtn = styled.button<{ isValid: boolean }>`
       `}
   }
 `;
+
+export default ChatRoomFormContainer;
