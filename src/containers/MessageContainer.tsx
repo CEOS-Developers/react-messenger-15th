@@ -10,7 +10,7 @@ const Container = styled.div`
   margin-top: 20vh;
   height: 65vh;
   z-index: 0;
-  max-width: 45rem;
+  max-width: 35rem;
   position: absolute;
   overflow: scroll;
   &::-webkit-scrollbar {

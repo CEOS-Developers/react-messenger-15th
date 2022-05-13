@@ -11,7 +11,28 @@ const clientState: ClientState = {
       clientId: "2",
       imageUrl: require("../images/cat-face.png"),
       name: "고양이"
-    }
+    },
+    {
+      clientId: "3",
+      imageUrl: require("../images/fox-face.png"),
+      name: "여우"
+    },
+    {
+      clientId: "4",
+      imageUrl: require("../images/monkey-face.png"),
+      name: "원숭이"
+    },
+    {
+      clientId: "5",
+      imageUrl: require("../images/pig-face.png"),
+      name: "돼지"
+    },
+    {
+      clientId: "6",
+      imageUrl: require("../images/robot-face.png"),
+      name: "로봇"
+    },
+
   ]
 }
 

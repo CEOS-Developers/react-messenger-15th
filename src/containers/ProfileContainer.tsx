@@ -6,7 +6,7 @@ import { setClient } from '../state/clientSlice'
 const Container = styled.div`
   width: 50vw;
   height: 8rem;
-  max-width: 30rem;
+  max-width: 35rem;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -52,7 +52,7 @@ const ProfileButton = styled.button<{selected: boolean}>`
     text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   }
 `
-const ProfileIamge = styled.img`
+const ProfileImage = styled.img`
   border-radius: inherit;
   width: 80%;
   height: 80%;
@@ -77,7 +77,7 @@ function ProfileContainer() {
           <ProfileDiv>
           <ProfileButton selected={selected} onClick={()=>{
             dispatch(setClient(client))
-          }}><ProfileIamge src={client.imageUrl} /></ProfileButton>
+          }}><ProfileImage src={client.imageUrl} /></ProfileButton>
           <ProfileName selected={selected}>{client.name}</ProfileName>
         </ProfileDiv>
         )

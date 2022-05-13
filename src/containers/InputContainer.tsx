@@ -8,6 +8,7 @@ import { MessageType } from '../types';
 
 const Container = styled.div`
   width: 90vw;
+  max-width: 35rem;
   height: 4rem;
   display: flex;
   align-items: center;
@@ -18,7 +19,7 @@ const Container = styled.div`
 
 const Form = styled.form`
   width: 90vw;
-  max-width: 45rem;
+  max-width: 35rem;
   display: flex;
   flex-direction: row;
   justify-content: space-around;

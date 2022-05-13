@@ -38,8 +38,8 @@ const MessageProfileDiv = styled.div`
   height: 3rem;
 `
 const MessageContentDiv = styled.div`
-  width: 70vw;
-  max-width: 36rem;
+  width: 30vw;
+  max-width: 20rem;
   margin-left: 1rem;
   margin-right: 1rem
 `
