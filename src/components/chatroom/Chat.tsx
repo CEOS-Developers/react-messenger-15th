@@ -17,11 +17,13 @@ const Chat = ({ userId, message, msgId }: IChat) => {
     <Wrapper>
       <ChatWrapper userId={userId} msgId={msgId}>
         <ProfileImg src={`${process.env.PUBLIC_URL}/imgs/${userId}.jpg`} />
-        <ChatInfo>
+        <TextWrapper>
           <UserName userId={userId}>{userId}</UserName>
-          <Bubble userId={userId}>{message}</Bubble>
-        </ChatInfo>
-        <Time>{GetTime(msgId)}</Time>
+          <ChatInfo>
+            <Bubble userId={userId}>{message}</Bubble>
+            <Time>{GetTime(msgId)}</Time>
+          </ChatInfo>
+        </TextWrapper>
       </ChatWrapper>
     </Wrapper>
   );
@@ -55,7 +57,6 @@ const Time = styled.section`
 `;
 
 const UserName = styled.section`
-  max-width: 100%;
   display: flex;
 
   flex-direction: ${({ userId }) =>
@@ -63,8 +64,12 @@ const UserName = styled.section`
 `;
 
 const ChatInfo = styled.section`
-  display: flex;
-  flex-direction: column;
+  justify-content: ${({ userId }) =>
+    userId === 'user0' ? 'flex-end' : 'flex-start'};
+`;
+
+const TextWrapper = styled.section`
+  max-width: 100%;
 `;
 
 const ProfileImg = styled.img`
