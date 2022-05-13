@@ -23,30 +23,29 @@ const initialState = {
   ],
 };
 
-export function chatList(state = initialState, action: any) {
-console.log('state: ' + state.chatList);
-console.log('action type: ' + action.type);
-console.log('action partnerUserId: ' + action.partnerUserId);
-switch (action.type) {
-  case INITIALIZE:
-    console.log('init!');
-    return {
-      userId: action.partnerUserId,
-    };
-  case CONCAT:
-    console.log('toggle!');
-    if (state.userId === me.userId) {
+export function chatList(state = initialState, action: any): any {
+  console.log('state: ' + state.chatList);
+  console.log('action type: ' + action.type);
+  console.log('action partnerUserId: ' + action.partnerUserId);
+  switch (action.type) {
+    case INITIALIZE:
+      console.log('init!');
+      const chatsWithPartner = chats.filter(
+        (user) => user.userId === action.partnerUserId
+      )[0].data;
       return {
-        userId: action.partnerUserId,
+        ...state,
+        chatList: chatsWithPartner,
       };
-    } else {
+    case CONCAT:
+      console.log('concat!');
       return {
-        userId: me.userId,
+        ...state,
+        chatList: state.chatList.concat(action.newChat),
       };
-    }
-  default:
-    return state;
-}
+    default:
+      return state;
+  }
 }
 
 // type TState = {
