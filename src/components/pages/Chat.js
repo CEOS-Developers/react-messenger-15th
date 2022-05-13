@@ -21,6 +21,8 @@ const ChatList = styled.div`
   flex-direction: column;
 
   width: 260px;
+
+  box-shadow: 0 1rem 4rem hsl(0 0% 0% / 5%);
 `;
 
 const ChatListTitleContainer = styled.div`
@@ -202,7 +204,7 @@ const ChatListItemContentBottomWrapper = styled.div`
 
 const ChatListItemRecent = styled.div`
   font-size: 11px;
-  font-weight: 300;
+  font-weight: 200;
   color: #666666;
 `;
 
@@ -239,6 +241,13 @@ const ChatContentHeaderProfile = styled.img`
   height: 40px;
 
   border-radius: 50%;
+
+  opacity: 0.5;
+  transition: all 0.5s;
+
+  &:hover {
+    opacity: 1;
+  }
 `;
 
 const ChatContentHeaderProfileSelected = styled.img`
@@ -447,13 +456,9 @@ const Chat = () => {
         </ChatListTitleContainer>
 
         <ChatListContentContainer>
-          {/* <ChatListContentHeader>
+          <ChatListContentHeader>
             <ChatListContentHeaderIcon src={icon_pinned} />
             <ChatListContentHeaderText>PINNED</ChatListContentHeaderText>
-          </ChatListContentHeader> */}
-          <ChatListContentHeader>
-            <ChatListContentHeaderIcon src={icon_chatbubble} />
-            <ChatListContentHeaderText>ALL MESSAGE</ChatListContentHeaderText>
           </ChatListContentHeader>
 
           <ChatListItem>
@@ -471,10 +476,10 @@ const Chat = () => {
             </ChatListItemContentWrapper>
           </ChatListItem>
 
-          {/* <ChatListContentHeader>
+          <ChatListContentHeader>
             <ChatListContentHeaderIcon src={icon_chatbubble} />
             <ChatListContentHeaderText>ALL MESSAGE</ChatListContentHeaderText>
-          </ChatListContentHeader> */}
+          </ChatListContentHeader>
 
           <ChatListItem>
             <ChatListItemProfileWrapper>

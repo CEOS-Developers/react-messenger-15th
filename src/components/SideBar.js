@@ -16,6 +16,8 @@ import icon_setting_filled from '../assets/icon_setting_filled.png';
 import profile_squared from '../assets/profile_squared.jpg';
 
 const SideBarWrapper = styled.div`
+  z-index: 1000 !important;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -123,6 +125,13 @@ const SideBarProfile = styled.img`
   height: 32px;
 
   border-radius: 8px;
+
+  opacity: 1;
+  transition: all 0.3s;
+
+  &:hover {
+    opacity: 0.6;
+  }
 `;
 
 const SideBar = () => {

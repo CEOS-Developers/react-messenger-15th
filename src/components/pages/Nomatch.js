@@ -16,6 +16,8 @@ const NomatchImg = styled.img`
   width: 320px;
   height: auto;
 
+  margin-top: 32px;
+
   border-radius: 18px;
 `;
 
