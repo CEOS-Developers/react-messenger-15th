@@ -1,0 +1,60 @@
+[
+    
+     {
+          "id" : 0,
+          "name":"나야나",
+          "intro":"안뇽",
+          "profile":"../img/profile0.png"
+     },
+     
+     {
+      "id": 1,
+      "name": "불주먹",
+      "intro": "kg받네",
+      "profile":"../img/profile1.png"
+
+      },
+     {
+      "id": 2,
+      "name": "야호야호",
+      "intro": "ㄷr시 만나서 반ㄱr워!",
+      "profile":"../img/profile2.png"
+
+     },
+     {
+          "id": 3,
+          "name": "킹주먹",
+          "intro": "우ㄹi함께했던날,,",
+          "profile":"../img/profile3.png"
+    
+     },
+
+     {
+          "id": 4,
+          "name": "짱구",
+          "intro": "가보자고~!",
+          "profile":"../img/profile4.png"
+    
+     },
+
+      {
+          "id": 5,
+          "name": "맹구",
+          "intro": "아좌좌~!~!",
+          "profile":"../img/profile5.png"
+    
+     },
+     {
+           "id": 6,
+          "name": "짱아",
+          "intro": "룰루랄랄랄",
+          "profile":"../img/profile6.png"
+    
+     }
+     
+     
+
+
+
+]
+  

@@ -1,0 +1,125 @@
+[
+    {
+        "roomId": 1,
+        "chat": [
+            {
+                "roomId": 1,
+                "userId": 1,
+                "text" : "아너무 어려우어ㅓ어엉"
+            },
+            {
+                "roomId": 0,
+                "userId": 0,
+                "text" : "그래서나눈누난나"
+            }
+        ]
+    },
+    {
+        "roomId": 2,
+        "chat": [
+            {
+                "roomId": 2,
+                "userId": 1,
+                "text" : "핵꿀밤맞기"
+            },
+
+            {
+                "roomId": 0,
+                "userId": 0,
+                "text" : "어질어질"
+            },
+            {
+                "roomId": 0,
+                "userId": 0,
+                "text" : "어렵다어려워"
+            }
+        ]
+    },
+    {
+        "roomId": 3,
+        "chat": [
+            {
+                "roomId": 0,
+                "userId": 0,
+                "text" : "아졸려"
+            },
+
+            {
+                "roomId": 3,
+                "userId": 1,
+                "text" : "두통두통"
+            },
+            {
+                "roomId": 0,
+                "userId": 0,
+                "text" : "우웩"
+            }
+        ]
+    },
+
+    {
+        "roomId": 4,
+        "chat": [
+            {
+                "roomId": 4,
+                "userId": 1,
+                "text" : "울라울라"
+            },
+
+            {
+                "roomId": 4,
+                "userId": 1,
+                "text" : "짱구예용"
+            },
+            {
+                "roomId": 0,
+                "userId": 0,
+                "text" : "반가워"
+            }
+        ]
+    },
+
+    {
+        "roomId": 5,
+        "chat": [
+            {
+                "roomId": 0,
+                "userId": 0,
+                "text" : "하이루"
+            },
+
+            {
+                "roomId": 0,
+                "userId": 0,
+                "text" : "넌 누구니"
+            },
+            {
+                "roomId": 5,
+                "userId": 1,
+                "text" : "돌맹이 줍는 맹구"
+            }
+        ]
+    },
+
+    {
+        "roomId": 6,
+        "chat": [
+            {
+                "roomId": 6,
+                "userId": 1,
+                "text" : "하이루"
+            },
+
+            {
+                "roomId": 5,
+                "userId": 2,
+                "text" : "넌 누구니"
+            },
+            {
+                "roomId": 0,
+                "userId": 0,
+                "text" : "돌맹이 줍는 맹구"
+            }
+        ]
+    }
+]
