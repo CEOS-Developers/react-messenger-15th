@@ -24,10 +24,10 @@ function App() {
         <Route element={<CommonLayout headerText={'Friends'} />}>
           <Route index element={<FriendList />} />
         </Route>
-        <Route element={<CommonLayout headerText={'Messages'} />}>
+        <Route element={<CommonLayout headerText={'ChatRooms'} />}>
           <Route path='/chatroom' element={<ChatRoomList />} />
         </Route>
-        <Route element={<CommonLayout headerText={'Chatting'} />}>
+        <Route element={<CommonLayout headerText={'ChatRoom'} />}>
           <Route path='/chatroom/:userId' element={<ChatRoom />} />
         </Route>
         <Route element={<CommonLayout headerText={'Settings'} />}>

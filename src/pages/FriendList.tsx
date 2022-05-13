@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import FriendListItem from '../components/FriendItem';
+import FriendItem from '../components/FriendItem';
 import { useInput } from '../hooks/useInput';
 import React from 'react';
 
@@ -20,18 +20,10 @@ function FriendList() {
       <SearchedFriendList>
         {inputValue
           ? searchResult.map(({ userId, userName }) => (
-              <FriendListItem
-                key={userId}
-                userId={userId}
-                userName={userName}
-              />
+              <FriendItem key={userId} userId={userId} userName={userName} />
             ))
           : friendsData.map(({ userId, userName }) => (
-              <FriendListItem
-                key={userId}
-                userId={userId}
-                userName={userName}
-              />
+              <FriendItem key={userId} userId={userId} userName={userName} />
             ))}
       </SearchedFriendList>
     </FriendListBlock>

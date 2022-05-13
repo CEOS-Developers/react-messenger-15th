@@ -17,9 +17,10 @@ function ChatRoomFormContainer({ partnerUserId }: TChatRoomFormContainerProps) {
   const [inputValue, handleInputChange, resetInput, isValid, setIsValid] =
     useInput('');
 
-  const receiver = useSelector(({ receiver }: any) => ({
+  const receiverState = useSelector(({ receiver }: any) => ({
     userId: receiver.userId,
   }));
+
   const dispatch = useDispatch();
   const concatNewChatTrigger = useCallback(
     (newChat: any): any => dispatch(concatNewChat(newChat)),
@@ -31,7 +32,7 @@ function ChatRoomFormContainer({ partnerUserId }: TChatRoomFormContainerProps) {
     if (!inputValue) alert('Please enter a message');
     else {
       let senderUserId;
-      if (receiver.userId === meData.userId) senderUserId = partnerUserId;
+      if (receiverState.userId === meData.userId) senderUserId = partnerUserId;
       else senderUserId = meData.userId;
       const newChat: IChat = {
         userId: senderUserId,

@@ -18,6 +18,7 @@ function ChatRoomHeaderContainer({
   const receiverState = useSelector(({ receiver }: any) => ({
     userId: receiver.userId,
   }));
+
   const dispatch = useDispatch();
   const handleReceiverToggle = useCallback(
     (partnerUserId: any) => dispatch(toggleReceiver(partnerUserId)),

@@ -24,9 +24,9 @@ function ChatRoomMainContainer({ partnerUserId }: TChatRoomMainProps) {
 
   return (
     <ChatRoomMainContainerBlock ref={scrollRef}>
-      {chatsState.data.map(({ userId, msg, unixTime }: IChat, idx: number) => (
+      {chatsState.data.map(({ userId, msg, unixTime }: IChat, i: number) => (
         <ChatItem
-          key={idx}
+          key={i}
           partnerUserId={partnerUserId}
           userId={userId}
           msg={msg}

@@ -27,21 +27,19 @@ function ChatRoom() {
     [dispatch]
   );
   useEffect(() => {
-    // console.log('partnerUserId!!!');
-    // console.log(partnerUserId);
     initializeChatsTrigger(partnerUserId);
   }, [partnerUserId]);
 
   return (
-    <ChatRoomListBlock>
+    <ChatRoomBlock>
       <ChatRoomHeaderContainer partnerUserId={partnerUserId} />
       <ChatRoomMainContainer partnerUserId={partnerUserId} />
       <ChatRoomFormContainer partnerUserId={partnerUserId} />
-    </ChatRoomListBlock>
+    </ChatRoomBlock>
   );
 }
 
-const ChatRoomListBlock = styled.div`
+const ChatRoomBlock = styled.div`
   height: 100%;
   width: 100%;
 

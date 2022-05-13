@@ -16,8 +16,6 @@ function ChatItem({ partnerUserId, userId, msg, unixTime }: TChatItemProps) {
   const partner = friendsData.filter(
     (friend) => friend.userId === partnerUserId
   )[0];
-  console.log('partner: ');
-  console.log(partner);
 
   return (
     <ChatItemBlock userId={userId}>

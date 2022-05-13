@@ -6,7 +6,7 @@ import {
   MdOutlineChatBubbleOutline,
 } from 'react-icons/md';
 
-const menuList = [
+const menus = [
   {
     destination: '',
     icon: <MdOutlinePersonOutline />,
@@ -33,11 +33,11 @@ function CommonLayout({ headerText }: TCommonLayoutProps) {
         <Outlet />
       </main>
       <footer>
-        {menuList.map((menu) => (
+        {menus.map((menu) => (
           <Menu
             key={menu.destination}
-            className={({ isActive }) => (isActive ? 'active' : undefined)}
             to={`/${menu.destination}`}
+            className={({ isActive }) => (isActive ? 'active' : undefined)}
           >
             {menu.icon}
           </Menu>
