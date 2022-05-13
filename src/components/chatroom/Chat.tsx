@@ -64,6 +64,8 @@ const UserName = styled.section`
 `;
 
 const ChatInfo = styled.section`
+  width: 100%;
+  display: flex;
   justify-content: ${({ userId }) =>
     userId === 'user0' ? 'flex-end' : 'flex-start'};
 `;
