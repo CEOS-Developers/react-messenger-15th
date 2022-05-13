@@ -8,6 +8,8 @@ const Container = styled.div`
   width: 5rem;
   margin-right: 1rem;
   flex: 1;
+  align-items: center;
+  justify-content: center;
 `
 
 const ButtonDiv = styled.div`
@@ -38,7 +40,7 @@ const ButtonIcon = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: rgba(200, 200, 200, 1);
 `
 

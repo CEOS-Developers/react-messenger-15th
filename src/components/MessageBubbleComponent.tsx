@@ -1,5 +1,6 @@
-import { Message, MessageType } from '../types'
 import styled from 'styled-components'
+
+import { Message, MessageType } from '../types'
 
 const componentPadding = {
   [MessageType.BASE]: "0.5rem 1rem 0.5rem 1rem",
@@ -58,7 +59,7 @@ const MessageHolderDiv = styled.div<{selected: boolean}>`
 const MessageBubbleDiv = styled.div<{selected: boolean, manner: MessageType}>`
   max-width: calc(100% - 4rem);
   height: 100%;
-  background-color: ${({selected})=>(selected? "#e07800":"#cbf542")};
+  background-color: ${({selected})=>(selected? "#ff9a9e":"#ffecd2")};
   border-radius: ${({selected, manner})=>(selected? bubbleRadiusSelected[manner]:bubbleRadiusDeselected[manner])};
   padding: 0.8rem;
   margin-top: 0.2rem;

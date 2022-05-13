@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import styled from 'styled-components'
+
 import FriendsContainer from '../containers/FriendsContainer'
 
 const Wrapper = styled.div`

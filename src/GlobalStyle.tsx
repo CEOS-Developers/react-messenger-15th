@@ -22,5 +22,6 @@ export default createGlobalStyle`
     align-items: center;
     justify-content: center;
     background-color: #f0f0f0;
+    background-image: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
   }
 `;

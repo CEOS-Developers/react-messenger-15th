@@ -1,5 +1,5 @@
 import React from 'react'
-import { Navigate, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 import { useAppDispatch, useAppSelector } from '../hooks'
 import { setActiveClient } from '../state/chatSlice'
@@ -33,10 +33,12 @@ const ProfileDiv = styled.div`
 const ProfileName = styled.p<{selected: boolean}>`
   border-radius: 0.4rem;
   background-color: rgba(255, 255, 255, ${({selected})=>(selected? "1":"0")});
-  color: rgba(150, 150, 150, 1);
+  color: ${({selected})=>(selected? "rgba(150, 150, 150, 1)":"rgba(255, 255, 255, 1)")};
   margin-top: 0.6rem;
   padding: 0 1rem 0 1rem;
   text-align: center;
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, ${({selected})=>(selected? "1":"0")});
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, ${({selected})=>(selected? "0":"1")});
 `
 
 const ProfileButton = styled.button<{selected: boolean}>`
@@ -46,15 +48,15 @@ const ProfileButton = styled.button<{selected: boolean}>`
   position: relative;
   border: transparent;
   cursor: pointer;
-  background-color: rgba(255, 255, 255, ${({selected})=>(selected? "0.5":"0")});
+  background-color: rgba(255, 255, 255, ${({selected})=>(selected? "1":"0")});
   z-index: 1;
   font-size: 4rem;
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, ${({selected})=>(selected? "1":"0")});
   &:hover{
     text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   }
 `
 const ProfileImage = styled.img`
-  border-radius: inherit;
   width: 80%;
   height: 80%;
   display: block;

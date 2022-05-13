@@ -1,8 +1,8 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import styled from "styled-components";
+
 import SideButtonContainer from "./containers/SideButtonContainer";
-import Chatroom from "./pages/Chatroom";
 
 const AppContainer = styled.div`
   display: flex;
@@ -25,7 +25,6 @@ function App() {
 
   return (
   <AppContainer>
-    {/* <Chatroom/> */}
     <SideButtonContainer/>
     <Outlet/>
     <EmptyDiv/>
