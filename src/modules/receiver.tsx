@@ -5,30 +5,41 @@ const TOGGLE = 'receiver/TOGGLE' as const;
 
 export const initReceiver = (partnerUserId: number) => ({
   type: INITIALIZE,
-  partnerUserId,
+  payload: partnerUserId,
 });
 
 export const toggleReceiver = (partnerUserId: number) => ({
   type: TOGGLE,
-  partnerUserId,
+  payload: partnerUserId,
 });
 
-const initialState = {
+type TAction =
+  | ReturnType<typeof initReceiver>
+  | ReturnType<typeof toggleReceiver>;
+
+type TState = {
+  userId: number;
+};
+
+const initialState: TState = {
   userId: 0,
 };
 
-export function receiver(state = initialState, action: any) {
+export function receiver(
+  state: TState = initialState,
+  action: TAction
+): TState {
   switch (action.type) {
     case INITIALIZE:
       return {
         ...state,
-        userId: action.partnerUserId,
+        userId: action.payload,
       };
     case TOGGLE:
       if (state.userId === meData.userId) {
         return {
           ...state,
-          userId: action.partnerUserId,
+          userId: action.payload,
         };
       } else {
         return {

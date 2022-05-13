@@ -1,3 +1,4 @@
+import { RootState } from '../../modules';
 import { useSelector } from 'react-redux';
 import React from 'react';
 import { useRef, useEffect } from 'react';
@@ -10,7 +11,7 @@ type TChatRoomMainProps = {
 };
 
 function ChatRoomMainContainer({ partnerUserId }: TChatRoomMainProps) {
-  const chatsState = useSelector(({ chats }: any) => ({
+  const chatsState = useSelector(({ chats }: RootState) => ({
     data: chats.data,
   }));
 

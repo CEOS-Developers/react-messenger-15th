@@ -25,18 +25,12 @@ https://react-messenger-15th-six.vercel.app/
 - NotFound 페이지를 구현한다.
 - 채팅방 리스트 페이지의 경우 메세지를 마지막 송수신 시각을 기준으로 내림차순(최신순) 정렬하여 보여준다.
 - [24siefil-context-api branch] Context API를 사용하여 상태를 전역적으로 관리한다. 
-- [24siefil-redux branch] Redux를 사용하여 상태를 전역적으로 관리한다. (작업중)
+- [24siefil-redux branch] Redux를 사용하여 상태를 전역적으로 관리한다.
   - 디렉토리 구조는  [Ducks 패턴](https://github.com/erikras/ducks-modular-redux) 을 따른다.
   - 액션 생성 함수는  [FSA 규칙](https://github.com/redux-utilities/flux-standard-action) 을 따라 작성한다.
   - Container 컴포넌트 제작 시 connect 함수를 사용하는 대신 useSelector, useDispatch 를 사용한다.
-    - useSelector를 사용하여 리덕스 상태를 조회하는 경우 필요하다면 React.memo를 사용하여 최적화한다.
+    - 컨테이너 컴포넌트는 React.memo를 사용하여 최적화 한다.
     - 액션 디스패치 함수는 useCallback을 사용하여 최적화한다.
-  - 여러개의 액션을 사용해야 하는 경우 useActions를 사용한다.
-
-
-
-- 컴포넌트에서 다수의 액션을 디스패치할 때는 bindActionCreators 유틸함수를 사용한다. (connect 함수의 두번째 파라미터를 객체 형태로 작성한다.)
-- 액션 생성 함수, 리듀서를 작성할 때 redux-actions 라이브러리를 활용한다.
 
 
 ### Reference

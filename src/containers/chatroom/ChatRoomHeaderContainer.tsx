@@ -1,3 +1,4 @@
+import { RootState } from '../../modules';
 import { useCallback } from 'react';
 import { toggleReceiver } from '../../modules/receiver';
 import { useSelector, useDispatch } from 'react-redux';
@@ -15,13 +16,13 @@ type TChatRoomHeaderContainerProps = {
 function ChatRoomHeaderContainer({
   partnerUserId,
 }: TChatRoomHeaderContainerProps) {
-  const receiverState = useSelector(({ receiver }: any) => ({
+  const receiverState = useSelector(({ receiver }: RootState) => ({
     userId: receiver.userId,
   }));
 
   const dispatch = useDispatch();
   const handleReceiverToggle = useCallback(
-    (partnerUserId: any) => dispatch(toggleReceiver(partnerUserId)),
+    (partnerUserId: number) => dispatch(toggleReceiver(partnerUserId)),
     [dispatch]
   );
 

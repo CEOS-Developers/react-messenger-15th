@@ -1,10 +1,11 @@
+import { IChat } from '../../types/index';
+import { RootState } from '../../modules';
 import { concatNewChat } from '../../modules/chats';
 import { useSelector, useDispatch } from 'react-redux';
 import { useCallback } from 'react';
 import styled, { css } from 'styled-components';
 import { HiOutlineChevronDown } from 'react-icons/hi';
 import { useInput } from '../../hooks/useInput';
-import { IChat } from '../../types/index';
 import React from 'react';
 
 import meData from '../../assets/json/meData.json';
@@ -17,13 +18,13 @@ function ChatRoomFormContainer({ partnerUserId }: TChatRoomFormContainerProps) {
   const [inputValue, handleInputChange, resetInput, isValid, setIsValid] =
     useInput('');
 
-  const receiverState = useSelector(({ receiver }: any) => ({
+  const receiverState = useSelector(({ receiver }: RootState) => ({
     userId: receiver.userId,
   }));
 
   const dispatch = useDispatch();
   const concatNewChatTrigger = useCallback(
-    (newChat: any): any => dispatch(concatNewChat(newChat)),
+    (newChat: IChat) => dispatch(concatNewChat(newChat)),
     [dispatch]
   );
 

@@ -15,7 +15,7 @@ function ChatRoom() {
 
   const dispatch = useDispatch();
   const initReceiverTrigger = useCallback(
-    (partnerUserId: any): any => dispatch(initReceiver(partnerUserId)),
+    (partnerUserId: number) => dispatch(initReceiver(partnerUserId)),
     [dispatch]
   );
   useEffect(() => {
@@ -23,7 +23,7 @@ function ChatRoom() {
   });
 
   const initializeChatsTrigger = useCallback(
-    (partnerUserId: any): any => dispatch(initChats(partnerUserId)),
+    (partnerUserId: number) => dispatch(initChats(partnerUserId)),
     [dispatch]
   );
   useEffect(() => {
