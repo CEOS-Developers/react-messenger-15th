@@ -1,3 +1,6 @@
+import { useCallback } from 'react';
+import { toggleReceiver } from '../../modules/receiver';
+import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import {
   useReceiverUserIdState,
@@ -14,18 +17,36 @@ type TChatRoomHeaderProps = {
 };
 
 function ChatRoomHeaderContainer({ partnerUserId }: TChatRoomHeaderProps) {
-  const receiverUserIdState = useReceiverUserIdState();
-  const receiverUserIdDispatch = useReceiverUserIdDispatch();
-  const handleReceiverUserIdToggle = () =>
-    receiverUserIdDispatch({ type: 'TOGGLE', partnerUserId: partnerUserId });
+  // const receiverUserIdState = useReceiverUserIdState();
+  // const receiverUserIdDispatch = useReceiverUserIdDispatch();
+  // const handleReceiverUserIdToggle = () =>
+  //   receiverUserIdDispatch({ type: 'TOGGLE', partnerUserId: partnerUserId });
 
-  let receiver;
-  if (receiverUserIdState.receiverUserId === me.userId) {
-    receiver = me;
+  const receiver = useSelector(({ receiver }: any) => ({
+    userId: receiver.userId,
+  }));
+  const dispatch = useDispatch();
+  const handleReceiverUserIdToggle = useCallback(
+    (partnerUserId: any) => dispatch(toggleReceiver(partnerUserId)),
+    [dispatch]
+  );
+
+  // let receiver;
+  // if (receiverUserIdState.receiverUserId === me.userId) {
+  //   receiver = me;
+  // } else {
+  //   receiver = friends.filter(
+  //     (friend) => friend.userId === receiverUserIdState.receiverUserId
+  //   )[0];
+  // }
+
+  let receiverUserName;
+  if (receiver.userId === me.userId) {
+    receiverUserName = me.userName;
   } else {
-    receiver = friends.filter(
-      (friend) => friend.userId === receiverUserIdState.receiverUserId
-    )[0];
+    receiverUserName = friends.filter(
+      (friend) => friend.userId === receiver.userId
+    )[0].userName;
   }
 
   const navigate = useNavigate();
@@ -35,9 +56,9 @@ function ChatRoomHeaderContainer({ partnerUserId }: TChatRoomHeaderProps) {
 
   return (
     <ChatRoomHeaderBlock>
-      <Btn onClick={goBack}>
+      {/* <GoBackBtn onClick={goBack}>
         <HiOutlineChevronLeft />
-      </Btn>
+      </GoBackBtn>
       <ProfileWrapper onClick={handleReceiverUserIdToggle}>
         <img
           src={`${process.env.PUBLIC_URL}/imgs/${receiverUserIdState.receiverUserId}.jpg`}
@@ -48,7 +69,21 @@ function ChatRoomHeaderContainer({ partnerUserId }: TChatRoomHeaderProps) {
           <HiOutlineChevronRight />
         </ReceiverUserNameWrapper>
       </ProfileWrapper>
-      <Btn /> {/* Dummy */}
+      <GoBackBtn /> */}
+      <GoBackBtn onClick={goBack}>
+        <HiOutlineChevronLeft />
+      </GoBackBtn>
+      <ProfileWrapper onClick={handleReceiverUserIdToggle}>
+        <img
+          src={`${process.env.PUBLIC_URL}/imgs/${receiver.userId}.jpg`}
+          alt='profile'
+        />
+        <ReceiverUserNameWrapper>
+          <span>{receiverUserName}</span>
+          <HiOutlineChevronRight />
+        </ReceiverUserNameWrapper>
+      </ProfileWrapper>
+      <GoBackBtn /> {/* Dummy */}
     </ChatRoomHeaderBlock>
   );
 }
@@ -65,7 +100,7 @@ const ChatRoomHeaderBlock = styled.div`
   border-bottom: 1px solid #e2e2e2;
 `;
 
-const Btn = styled.div`
+const GoBackBtn = styled.div`
   width: 10%;
   height: 100%;
   margin-top: 1%;

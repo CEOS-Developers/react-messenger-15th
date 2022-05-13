@@ -81,7 +81,7 @@ function ChatRoomHeaderContainer({
 }
 
 export default connect(
-  ({ receiver }) => ({ receiverUserId: receiver.receiverUserId }),
+  ({ receiver }) => ({ receiverUserId: receiver.userId }),
   {
     toggleReceiver,
   }

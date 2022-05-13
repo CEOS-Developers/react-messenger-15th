@@ -48,7 +48,7 @@ function ChatRoom({ receiverUserId, initializeReceiver }: any) {
 }
 
 export default connect(
-  ({ receiver }) => ({ receiverUserId: receiver.receiverUserId }),
+  ({ receiver }) => ({ receiverUserId: receiver.userId }),
   {
     initializeReceiver,
   }
