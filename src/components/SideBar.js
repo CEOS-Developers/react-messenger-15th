@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Routes, Route, Outlet, Link } from 'react-router-dom';
+import { Routes, Route, Outlet, Link, useLocation } from 'react-router-dom';
 
 import emoji_orange from '../assets/emoji_orange.png';
 
@@ -137,6 +137,8 @@ const SideBarProfile = styled.img`
 `;
 
 const SideBar = () => {
+  const { pathname } = useLocation();
+
   return (
     <SideBarWrapper>
       <SideBarMenu>
@@ -145,17 +147,33 @@ const SideBar = () => {
         </SideBarMenuHeader>
 
         <SideBarMenuContent>
-          <SideBarIconWrapper>
-            <Link to="/friends">
-              <SideBarIcon src={icon_people_outline} />
-            </Link>
-          </SideBarIconWrapper>
+          {pathname === '/friends' ? (
+            <SideBarIconWrapperSelected>
+              <Link to="/friends">
+                <SideBarIcon src={icon_people_filled} />
+              </Link>
+            </SideBarIconWrapperSelected>
+          ) : (
+            <SideBarIconWrapper>
+              <Link to="/friends">
+                <SideBarIcon src={icon_people_outline} />
+              </Link>
+            </SideBarIconWrapper>
+          )}
 
-          <SideBarIconWrapperSelected>
-            <Link to="/chat">
-              <SideBarIcon src={icon_chat_filled} />
-            </Link>
-          </SideBarIconWrapperSelected>
+          {pathname === '/chat' ? (
+            <SideBarIconWrapperSelected>
+              <Link to="/chat">
+                <SideBarIcon src={icon_chat_filled} />
+              </Link>
+            </SideBarIconWrapperSelected>
+          ) : (
+            <SideBarIconWrapper>
+              <Link to="/chat">
+                <SideBarIcon src={icon_chat_outline} />
+              </Link>
+            </SideBarIconWrapper>
+          )}
         </SideBarMenuContent>
 
         <SideBarMenuFooter>
@@ -163,11 +181,19 @@ const SideBar = () => {
             <SideBarIcon src={icon_notification_outline} />
           </SideBarIconWrapper>
 
-          <SideBarIconWrapper>
-            <Link to="/settings">
-              <SideBarIcon src={icon_setting_outline} />
-            </Link>
-          </SideBarIconWrapper>
+          {pathname === '/settings' ? (
+            <SideBarIconWrapperSelected>
+              <Link to="/settings">
+                <SideBarIcon src={icon_setting_filled} />
+              </Link>
+            </SideBarIconWrapperSelected>
+          ) : (
+            <SideBarIconWrapper>
+              <Link to="/settings">
+                <SideBarIcon src={icon_setting_outline} />
+              </Link>
+            </SideBarIconWrapper>
+          )}
         </SideBarMenuFooter>
       </SideBarMenu>
 
