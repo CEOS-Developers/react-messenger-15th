@@ -4,13 +4,17 @@ import { AiOutlineLock } from 'react-icons/ai';
 import { FiSettings } from 'react-icons/fi';
 import { MdPayment } from 'react-icons/md';
 import UnderNavBar from '../components/layout/UnderNavBar';
-import { HeaderContains } from '../components/layout/CommonStyle';
+import { HeaderContains, HeaderText } from '../components/layout/CommonStyle';
+import { AiOutlineSetting } from 'react-icons/ai';
 
 const Setting = () => {
   return (
     <>
       <SettingContainer>
-        <HeaderContains>Setting</HeaderContains>
+        <HeaderContains>
+          <AiOutlineSetting size={20} />
+          <HeaderText>Setting</HeaderText>
+        </HeaderContains>
         <Content>
           <SettingButton>
             <CgProfile />

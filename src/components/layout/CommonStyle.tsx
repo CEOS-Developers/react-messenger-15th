@@ -12,6 +12,9 @@ export const HeaderContains = styled.div`
   justify-content: flex-start;
 `;
 
+export const HeaderText = styled.span`
+  padding-left: 0.5rem;
+`;
 export const ProfileImg = styled.img`
   width: 3.5rem;
   height: 3.5rem;

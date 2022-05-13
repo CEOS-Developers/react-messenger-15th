@@ -2,9 +2,10 @@ import styled from 'styled-components';
 import user from '../data/user.json';
 import Friends from '../components/Friends';
 import UnderNavBar from '../components/layout/UnderNavBar';
-import { HeaderContains } from '../components/layout/CommonStyle';
+import { HeaderContains, HeaderText } from '../components/layout/CommonStyle';
 import SearchUser from '../components/SearchUser';
 import { useState } from 'react';
+import { AiOutlineUser } from 'react-icons/ai';
 
 const FriendList = () => {
   const [searchedUser, setsearchedUser] = useState(user);
@@ -22,7 +23,10 @@ const FriendList = () => {
   };
   return (
     <FriendListContainer>
-      <HeaderContains>Friends</HeaderContains>
+      <HeaderContains>
+        <AiOutlineUser size={20} />
+        <HeaderText>Friends</HeaderText>
+      </HeaderContains>
       <Content>
         <SearchUser filteredUser={filteredUser} />
         {searchedUser.map((user) => (
