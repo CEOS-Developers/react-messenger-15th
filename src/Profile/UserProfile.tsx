@@ -20,7 +20,7 @@ function UserProfile({changeUser,setChangeUser,currentUser} : Profileprops){
     
     return( 
     <Profile>
-        <Profileimg  src = {profile} onClick = {toggleUser}/>
+        <Profileimg  src = {profile} onClick = {toggleUser} loading="lazy"/>
         <ProfileName>{name}<span> 🟢</span></ProfileName>
         <ProfileIntro introLength = {intro.length}>{intro}</ProfileIntro>
     </Profile>

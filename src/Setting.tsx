@@ -11,13 +11,14 @@ function Setting(){
     align-self:stretch;
     cursor : pointer;
     `;
+
+    const settingMenus = ["프로필💕", "뮤직💓", "게임💖","깃허브🥰"];
+    const settingMenuList = settingMenus.map((settingMenus) => (<SettingMenu>{settingMenus}</SettingMenu>));
+
     return(
         <div id ="Wrapper">
             <Header>설정</Header>
-            <SettingMenu>프로필💕</SettingMenu>
-            <SettingMenu>뮤직💓</SettingMenu>
-            <SettingMenu>게임💖</SettingMenu>
-            <SettingMenu>깃허브🥰</SettingMenu>
+            {settingMenuList}
         </div>
        
         

@@ -4,15 +4,16 @@ import user from "./data/user.json";
 import {Header,Input,FriendWrapper,FriendContainer,FriendProfile,FriendName,FriendIntro} from "./BasicListDesign";
 import {useNavigate} from 'react-router-dom';
 import React from "react";
+import useFilter from "./hook/useFilter";
 
 function FriendList(){
 
     const [search, setSearch] = useState<string>("");
     const navigate = useNavigate();
-  
+    const friendList = useFilter();
     const onChange = useCallback((event : React.ChangeEvent<HTMLInputElement>) => {setSearch(event.target.value)},[]);
    
-    const searchFriend = user.filter((friend) => {
+    const searchFriend = friendList.filter((friend) => {
         return friend.name.includes(search);
       });
 
