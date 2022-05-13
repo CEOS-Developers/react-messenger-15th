@@ -24,9 +24,10 @@ const initialState = {
 };
 
 export function chatList(state = initialState, action: any): any {
-  console.log('state: ' + state.chatList);
-  console.log('action type: ' + action.type);
-  console.log('action partnerUserId: ' + action.partnerUserId);
+  console.log('state.chatList: ');
+  console.log(state.chatList);
+  // console.log('action type: ' + action.type);
+  // console.log('action partnerUserId: ' + action.partnerUserId);
   switch (action.type) {
     case INITIALIZE:
       console.log('init!');

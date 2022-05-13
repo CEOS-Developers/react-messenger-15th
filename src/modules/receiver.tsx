@@ -18,9 +18,9 @@ const initialState = {
 };
 
 export function receiver(state = initialState, action: any) {
-  console.log('state: ' + state.userId);
-  console.log('action type: ' + action.type);
-  console.log('action partnerUserId: ' + action.partnerUserId);
+  // console.log('state: ' + state.userId);
+  // console.log('action type: ' + action.type);
+  // console.log('action partnerUserId: ' + action.partnerUserId);
   switch (action.type) {
     case INITIALIZE:
       console.log('init!');

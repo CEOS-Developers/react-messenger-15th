@@ -1,10 +1,11 @@
+import { useCallback } from 'react';
 import { toggleReceiver } from '../../modules/receiver';
-import { connect } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import {
-  useReceiverUserIdState,
-  useReceiverUserIdDispatch,
-} from '../../contexts/ReceiverUserIdContext';
+// import {
+//   useReceiverUserIdState,
+//   useReceiverUserIdDispatch,
+// } from '../../contexts/ReceiverUserIdContext';
 import styled from 'styled-components';
 import { HiOutlineChevronLeft, HiOutlineChevronRight } from 'react-icons/hi';
 
@@ -15,15 +16,20 @@ type TChatRoomHeaderProps = {
   partnerUserId: number;
 };
 
-function ChatRoomHeaderContainer({
-  partnerUserId,
-  receiverUserId,
-  toggleReceiver,
-}: any) {
+function ChatRoomHeaderContainer({ partnerUserId }: TChatRoomHeaderProps) {
   // const receiverUserIdState = useReceiverUserIdState();
   // const receiverUserIdDispatch = useReceiverUserIdDispatch();
   // const handleReceiverUserIdToggle = () =>
   //   receiverUserIdDispatch({ type: 'TOGGLE', partnerUserId: partnerUserId });
+
+  const receiver = useSelector(({ receiver }: any) => ({
+    userId: receiver.userId,
+  }));
+  const dispatch = useDispatch();
+  const handleReceiverToggle = useCallback(
+    (partnerUserId: any) => dispatch(toggleReceiver(partnerUserId)),
+    [dispatch]
+  );
 
   // let receiver;
   // if (receiverUserIdState.receiverUserId === me.userId) {
@@ -34,11 +40,16 @@ function ChatRoomHeaderContainer({
   //   )[0];
   // }
 
-  let receiver;
-  if (receiverUserId === me.userId) {
-    receiver = me;
+  // console.log('receiver.userId!!!!!!!!!!!!!!!!!!');
+  // console.log(receiver.userId);
+
+  let receiverUserName;
+  if (receiver.userId === me.userId) {
+    receiverUserName = me.userName;
   } else {
-    receiver = friends.filter((friend) => friend.userId === receiverUserId)[0];
+    receiverUserName = friends.filter(
+      (friend) => friend.userId === receiver.userId
+    )[0].userName;
   }
 
   const navigate = useNavigate();
@@ -51,7 +62,7 @@ function ChatRoomHeaderContainer({
       {/* <GoBackBtn onClick={goBack}>
         <HiOutlineChevronLeft />
       </GoBackBtn>
-      <ProfileWrapper onClick={handleReceiverUserIdToggle}>
+      <ProfileWrapper onClick={handleReceiverToggle}>
         <img
           src={`${process.env.PUBLIC_URL}/imgs/${receiverUserIdState.receiverUserId}.jpg`}
           alt='profile'
@@ -61,17 +72,17 @@ function ChatRoomHeaderContainer({
           <HiOutlineChevronRight />
         </ReceiverUserNameWrapper>
       </ProfileWrapper>
-      <GoBackBtn /> Dummy */}
+      <GoBackBtn /> */}
       <GoBackBtn onClick={goBack}>
         <HiOutlineChevronLeft />
       </GoBackBtn>
-      <ProfileWrapper onClick={() => toggleReceiver(partnerUserId)}>
+      <ProfileWrapper onClick={() => handleReceiverToggle(partnerUserId)}>
         <img
           src={`${process.env.PUBLIC_URL}/imgs/${receiver.userId}.jpg`}
           alt='profile'
         />
         <ReceiverUserNameWrapper>
-          <span>{receiver.userName}</span>
+          <span>{receiverUserName}</span>
           <HiOutlineChevronRight />
         </ReceiverUserNameWrapper>
       </ProfileWrapper>
@@ -79,13 +90,6 @@ function ChatRoomHeaderContainer({
     </ChatRoomHeaderBlock>
   );
 }
-
-export default connect(
-  ({ receiver }) => ({ receiverUserId: receiver.userId }),
-  {
-    toggleReceiver,
-  }
-)(ChatRoomHeaderContainer);
 
 const ChatRoomHeaderBlock = styled.div`
   width: 100%;
@@ -165,3 +169,5 @@ const ReceiverUserNameWrapper = styled.div`
     color: #9f9fa3bd;
   }
 `;
+
+export default ChatRoomHeaderContainer;
