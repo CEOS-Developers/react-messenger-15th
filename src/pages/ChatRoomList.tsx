@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import ChatRoomItem from '../components/ChatRoomItem';
-import { IFriend } from '../types/index';
+import { IFriend } from '../types';
 
 import chatsData from '../assets/json/chatsData.json';
 import friendsData from '../assets/json/friendsData.json';

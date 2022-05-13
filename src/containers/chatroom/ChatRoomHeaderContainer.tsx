@@ -1,3 +1,4 @@
+import React from 'react';
 import { RootState } from '../../modules';
 import { useCallback } from 'react';
 import { toggleReceiver } from '../../modules/receiver';
@@ -139,4 +140,4 @@ const ReceiverUserNameWrapper = styled.div`
   }
 `;
 
-export default ChatRoomHeaderContainer;
+export default React.memo(ChatRoomHeaderContainer);

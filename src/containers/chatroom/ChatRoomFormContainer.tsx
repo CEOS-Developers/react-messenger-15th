@@ -1,4 +1,4 @@
-import { IChat } from '../../types/index';
+import { IChat } from '../../types';
 import { RootState } from '../../modules';
 import { concatNewChat } from '../../modules/chats';
 import { useSelector, useDispatch } from 'react-redux';
@@ -127,4 +127,4 @@ const SubmitBtn = styled.button<{ isValid: boolean }>`
   }
 `;
 
-export default ChatRoomFormContainer;
+export default React.memo(ChatRoomFormContainer);

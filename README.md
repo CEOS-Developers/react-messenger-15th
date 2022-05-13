@@ -1,3 +1,5 @@
+> 매번 과제를 할 때마다 느끼는 것이지만, 생각을 하고 코드를 작성하는것이 중요하다는 것을 다시한번 상기할 수 있었습니다. 반응형에서 잘 작동할지, 불필요한 코드를 포함하는것은 아닌지를 생각하면서 코드를 작성한다면 CSS 코드 한 줄을 작성하는것도 쉽지 않은것 같습니다. 라우팅이 이번 과제의 주제인 만큼 중복된 컴포넌트 사용을 최소화 하고, 재사용성 높은 컴포넌트를 설계하는 방법에 대해 집중하여 고민해 봤습니다. 지난주 과제에서 확장성을 고려한 덕분에 채팅방 관련 코드는 한줄만 수정했습니다. Context API를 통해 1차로 구현을 하였는데, 연습을 위해 Redux로 대체하여 다시 2차로 구현하였습니다. 리덕스 라이브러리를 사용하고 프로젝트의 복잡도가 높아지니 타입스크립트의 유용함을 더욱 느낄 수 있었습니다.
+
 ### Deployment
 
 https://react-messenger-15th-six.vercel.app/
@@ -26,11 +28,10 @@ https://react-messenger-15th-six.vercel.app/
 - 채팅방 리스트 페이지의 경우 메세지를 마지막 송수신 시각을 기준으로 내림차순(최신순) 정렬하여 보여준다.
 - [24siefil-context-api branch] Context API를 사용하여 상태를 전역적으로 관리한다. 
 - [24siefil-redux branch] Redux를 사용하여 상태를 전역적으로 관리한다.
-  - 디렉토리 구조는  [Ducks 패턴](https://github.com/erikras/ducks-modular-redux) 을 따른다.
-  - 액션 생성 함수는  [FSA 규칙](https://github.com/redux-utilities/flux-standard-action) 을 따라 작성한다.
-  - Container 컴포넌트 제작 시 connect 함수를 사용하는 대신 useSelector, useDispatch 를 사용한다.
-    - 컨테이너 컴포넌트는 React.memo를 사용하여 최적화 한다.
-    - 액션 디스패치 함수는 useCallback을 사용하여 최적화한다.
+  - 디렉토리 구조는  [Ducks 패턴](https://github.com/erikras/ducks-modular-redux) 을 따른다.
+  - 액션 생성 함수는  [FSA 규칙](https://github.com/redux-utilities/flux-standard-action) 을 따라 작성한다.
+  - 컨테이너 컴포넌트는 React.memo를 사용하여 최적화 한다.
+  - 액션 디스패치 함수는 useCallback을 사용하여 최적화한다.
 
 
 ### Reference
@@ -67,6 +68,3 @@ SSR은 서버에서 사용자에게 보여줄 페이지를 모두 구성해 보�
 html은 한번만 받아와서 웹 애플리케이션을 실행시킨 후, 이후에는 필요한 데이터만 받아와서 화면에 업데이트하는 것이 싱글 페이지 애플리케이션이다.
 
 리액트 라우터 같은 라우팅 시스템은 사용자의 브라우저 주소창의 경로에 따라 알맞은 페이지를 보여준다. 이후 링크를 눌러서 다른 페이지로 이동할 때 서버에 다른 페이지의 html을 새로 요청하는 것이 아니라, 브라우저의 History API를 사용하여 브라우저의 주소창의 값만 변경하고 기존에 페이지에 띄웠던 웹 애플리케이션을 그대로 유지하면서 라우팅 설정에 따라 또 다른 페이지를 보여주게 된다.
-
-
-

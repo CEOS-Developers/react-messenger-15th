@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import React from 'react';
 import { useRef, useEffect } from 'react';
 import styled from 'styled-components';
-import { IChat } from '../../types/index';
+import { IChat } from '../../types';
 import ChatItem from '../../components/ChatItem';
 
 type TChatRoomMainProps = {
