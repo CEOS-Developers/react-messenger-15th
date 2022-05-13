@@ -1,15 +1,17 @@
 import meData from '../assets/json/meData.json';
 
-const INITIALIZE = 'receiver/INITIALIZE';
-const TOGGLE = 'receiver/TOGGLE';
+const INITIALIZE = 'receiver/INITIALIZE' as const;
+const TOGGLE = 'receiver/TOGGLE' as const;
 
-export function initReceiver(partnerUserId: number) {
-  return { type: INITIALIZE, partnerUserId };
-}
+export const initReceiver = (partnerUserId: number) => ({
+  type: INITIALIZE,
+  partnerUserId,
+});
 
-export function toggleReceiver(partnerUserId: number) {
-  return { type: TOGGLE, partnerUserId };
-}
+export const toggleReceiver = (partnerUserId: number) => ({
+  type: TOGGLE,
+  partnerUserId,
+});
 
 const initialState = {
   userId: 0,

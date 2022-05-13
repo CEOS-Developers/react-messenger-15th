@@ -15,18 +15,19 @@ https://react-messenger-15th-six.vercel.app/
 
 ### Features
 
-- [The trick to viewport units on mobile](https://css-tricks.com/the-trick-to-viewport-units-on-mobile/)를 참고하여 반응형으로 제작한다.
+- [The trick to viewport units on mobile](https://css-tricks.com/the-trick-to-viewport-units-on-mobile/) 를 참고하여 반응형으로 제작한다.
 - transform을 활용하여 유저에게 메세지 전송 가능 여부를 시각적으로 전달한다.
 - React.memo를 사용하여 리스트 컴포넌트의 성능을 최적화한다.
 - useCallback을 사용하여 input 처리 관련 함수를 최적화한다.
-- [안티 패턴](https://ui.toast.com/fe-guide/ko_ANTI-PATTERN)에 유의하여 코드를 작성한다. 
+- [안티 패턴](https://ui.toast.com/fe-guide/ko_ANTI-PATTERN) 에 유의하여 코드를 작성한다. 
 - 페이지간 공통적으로 보여줘야 하는 레이아웃의 경우, nested Route와 Outlet 컴포넌트를 사용하여 컴포넌트 중복 사용을 최소화 한다.
 - NavLink 컴포넌트를 사용하여 유저가 현재 위치한 페이지에 대해 시각적으로 인지할 수 있도록 한다.
 - NotFound 페이지를 구현한다.
 - 채팅방 리스트 페이지의 경우 메세지를 마지막 송수신 시각을 기준으로 내림차순(최신순) 정렬하여 보여준다.
 - [24siefil-context-api branch] Context API를 사용하여 상태를 전역적으로 관리한다. 
 - [24siefil-redux branch] Redux를 사용하여 상태를 전역적으로 관리한다. (작업중)
-  - 디렉토리 구조는 Ducks 패턴을 따른다.
+  - 디렉토리 구조는  [Ducks 패턴](https://github.com/erikras/ducks-modular-redux) 을 따른다.
+  - 액션 생성 함수는  [FSA 규칙](https://github.com/redux-utilities/flux-standard-action) 을 따라 작성한다.
   - Container 컴포넌트 제작 시 connect 함수를 사용하는 대신 useSelector, useDispatch 를 사용한다.
     - useSelector를 사용하여 리덕스 상태를 조회하는 경우 필요하다면 React.memo를 사용하여 최적화한다.
     - 액션 디스패치 함수는 useCallback을 사용하여 최적화한다.

@@ -1,15 +1,17 @@
 import chatsData from '../assets/json/chatsData.json';
 
-const INITIALIZE = 'chats/INITIALIZE';
-const CONCAT = 'chats/CONCAT';
+const INITIALIZE = 'chats/INITIALIZE' as const;
+const CONCAT = 'chats/CONCAT' as const;
 
-export function initChats(partnerUserId: any) {
-  return { type: INITIALIZE, partnerUserId };
-}
+export const initChats = (partnerUserId: number) => ({
+  type: INITIALIZE,
+  partnerUserId,
+});
 
-export function concatNewChat(newChat: any) {
-  return { type: CONCAT, newChat };
-}
+export const concatNewChat = (newChat: any) => ({
+  type: CONCAT,
+  newChat,
+});
 
 const initialState = {
   data: [
