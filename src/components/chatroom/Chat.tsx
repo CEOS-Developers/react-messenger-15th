@@ -33,7 +33,9 @@ export default memo(Chat);
 
 const Bubble = styled.section`
   display: flex;
-  padding: 2% 4% 2% 4%;
+  padding: 3%;
+  margin-top: 2.5%;
+  font-size: 14px;
 
   ${({ userId }) =>
     userId === 'user0'
@@ -58,7 +60,6 @@ const Time = styled.section`
 
 const UserName = styled.section`
   display: flex;
-
   flex-direction: ${({ userId }) =>
     userId === 'user0' ? 'row-reverse' : 'row'};
 `;
