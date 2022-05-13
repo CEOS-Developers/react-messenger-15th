@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router';
-import { ReceiverUserIdProvider } from '../src/contexts/ReceiverUserIdContext';
-import { ChatListProvider } from './contexts/ChatListContext';
+// import { ReceiverUserIdProvider } from '../src/contexts/ReceiverUserIdContext';
+// import { ChatListProvider } from './contexts/ChatListContext';
 import { useEffect } from 'react';
 import styled from 'styled-components';
 
@@ -21,26 +21,44 @@ function App() {
   }, []);
 
   return (
+    // <ResponsiveBlock>
+    //   <ReceiverUserIdProvider>
+    //     <ChatListProvider>
+    //       <Routes>
+    //         <Route element={<CommonLayout headerText={'Friends'} />}>
+    //           <Route index element={<FriendList />} />
+    //         </Route>
+    //         <Route element={<CommonLayout headerText={'Messages'} />}>
+    //           <Route path="/chatlist" element={<ChatList />} />
+    //         </Route>
+    //         <Route element={<CommonLayout headerText={'Chatting'} />}>
+    //           <Route path="/chatlist/:userId" element={<ChatRoom />} />
+    //         </Route>
+    //         <Route element={<CommonLayout headerText={'Settings'} />}>
+    //           <Route path="/settings" element={<Settings />} />
+    //         </Route>
+    //         <Route path="*" element={<NotFound />} />
+    //       </Routes>
+    //     </ChatListProvider>
+    //   </ReceiverUserIdProvider>
+    // </ResponsiveBlock>
+
     <ResponsiveBlock>
-      <ReceiverUserIdProvider>
-        <ChatListProvider>
-          <Routes>
-            <Route element={<CommonLayout headerText={'Friends'} />}>
-              <Route index element={<FriendList />} />
-            </Route>
-            <Route element={<CommonLayout headerText={'Messages'} />}>
-              <Route path="/chatlist" element={<ChatList />} />
-            </Route>
-            <Route element={<CommonLayout headerText={'Chatting'} />}>
-              <Route path="/chatlist/:userId" element={<ChatRoom />} />
-            </Route>
-            <Route element={<CommonLayout headerText={'Settings'} />}>
-              <Route path="/settings" element={<Settings />} />
-            </Route>
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </ChatListProvider>
-      </ReceiverUserIdProvider>
+      <Routes>
+        <Route element={<CommonLayout headerText={'Friends'} />}>
+          <Route index element={<FriendList />} />
+        </Route>
+        <Route element={<CommonLayout headerText={'Messages'} />}>
+          <Route path='/chatlist' element={<ChatList />} />
+        </Route>
+        <Route element={<CommonLayout headerText={'Chatting'} />}>
+          <Route path='/chatlist/:userId' element={<ChatRoom />} />
+        </Route>
+        <Route element={<CommonLayout headerText={'Settings'} />}>
+          <Route path='/settings' element={<Settings />} />
+        </Route>
+        <Route path='*' element={<NotFound />} />
+      </Routes>
     </ResponsiveBlock>
   );
 }
