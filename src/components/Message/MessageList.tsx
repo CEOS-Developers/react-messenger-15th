@@ -1,38 +1,27 @@
 import { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import SingleMessage from './SingleMessage';
-import { Scrollbars } from 'react-custom-scrollbars';
 import { IMessageData } from '../../interface/interface';
 
 const MessageList = ({ messageData }: { messageData: Array<IMessageData> }) => {
-  const scrollbarRef = useRef<Scrollbars>(null);
+  const scrollbarRef = useRef<HTMLDivElement>(null);
 
-  //채팅 submit시 스크롤바 아래로
-  useEffect(() => {
+  const scrollToBottom = () => {
     if (scrollbarRef.current) {
-      scrollbarRef.current?.scrollToBottom();
+      scrollbarRef.current.scrollTop = scrollbarRef.current.scrollHeight;
     }
+  };
+  useEffect(() => {
+    scrollToBottom();
   }, [messageData]);
 
   return (
-    <ListContainer>
-      <Scrollbars
-        renderTrackHorizontal={(props) => (
-          <div
-            {...props}
-            style={{ display: 'none' }}
-            className="track-horizontal"
-          />
-        )}
-        style={{ overflowX: 'hidden' }}
-        ref={scrollbarRef}
-      >
-        <ShowList>
-          {messageData.map((chat: IMessageData) => (
-            <SingleMessage chat={chat} key={chat.userId} />
-          ))}
-        </ShowList>
-      </Scrollbars>
+    <ListContainer ref={scrollbarRef}>
+      <ShowList>
+        {messageData.map((chat: IMessageData) => (
+          <SingleMessage chat={chat} key={chat.userId} />
+        ))}
+      </ShowList>
     </ListContainer>
   );
 };

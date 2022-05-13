@@ -11,8 +11,19 @@ button {
   background: none;
   font-size: 17px;
 }
-// 링크 글로벌 스타일로 할 수 있으면 빼기 
 
+::-webkit-scrollbar {
+    width: 0.9rem;
+    margin: 0;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    height: 17%;
+    background-color: #c2bbbb;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 0.3rem solid transparent;
+  }
 `;
 
 export default GlobalStyle;
