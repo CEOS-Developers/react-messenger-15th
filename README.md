@@ -32,6 +32,7 @@ https://react-messenger-15th-six.vercel.app/
   - 액션 생성 함수는  [FSA 규칙](https://github.com/redux-utilities/flux-standard-action) 을 따라 작성한다.
   - 컨테이너 컴포넌트는 React.memo를 사용하여 최적화 한다.
   - 액션 디스패치 함수는 useCallback을 사용하여 최적화한다.
+  - typesafe-actions 라이브러리를 사용하여 모듈을 개선한다.
 
 
 ### Reference

@@ -21,6 +21,7 @@ type TState = {
   userId: number;
 };
 
+// 0 is just a dummy value for initialization.
 const initialState: TState = {
   userId: 0,
 };

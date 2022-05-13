@@ -6,7 +6,7 @@ import chatsData from '../assets/json/chatsData.json';
 import friendsData from '../assets/json/friendsData.json';
 
 function ChatRoomList() {
-  // Sort in desc order by last send/receive time
+  // Sort 'friends' in desc order by last send/receive time.
   const friendsDataCopy = friendsData.filter(() => true);
   friendsDataCopy.sort((a: IFriend, b: IFriend) => {
     let lastTimeOfA =

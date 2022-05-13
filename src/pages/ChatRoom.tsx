@@ -1,4 +1,3 @@
-import React from 'react';
 import { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { initReceiver } from '../modules/receiver';
@@ -48,4 +47,4 @@ const ChatRoomBlock = styled.div`
   flex-direction: column;
 `;
 
-export default React.memo(ChatRoom);
+export default ChatRoom;

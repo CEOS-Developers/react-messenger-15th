@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import FriendItem from '../components/FriendItem';
 import { useInput } from '../hooks/useInput';
-import React from 'react';
 
 import friendsData from '../assets/json/friendsData.json';
 
@@ -66,4 +65,4 @@ const SearchedFriendList = styled.div`
   height: 88%;
 `;
 
-export default React.memo(FriendList);
+export default FriendList;

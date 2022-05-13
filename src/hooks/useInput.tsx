@@ -5,8 +5,6 @@ export function useInput(initialForm: string) {
   const [isValid, setIsValid] = useState(false);
 
   const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    // const { name, value } = e.target;
-    // setForm((form: any) => ({ ...form, [name]: value }));
     setForm(e.target.value);
     if (e.target.value) setIsValid(true);
     else setIsValid(false);
