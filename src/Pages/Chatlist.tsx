@@ -1,10 +1,13 @@
 import React from "react";
+import Userprofile from "../Component/Molecule/Userprofile";
 
 const Chatlist = () => {
     return (
     <div>
-        <h1>홈</h1>
-        <p>가장 먼저 보여지는 페이지입니다.</p>
+        <Userprofile id="user0"></Userprofile>
+        <Userprofile id="user1"></Userprofile>
+        <Userprofile id="user2"></Userprofile>
+        <Userprofile id="user3"></Userprofile>
     </div>
     );
 };

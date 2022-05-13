@@ -1,20 +1,15 @@
 import React from "react";
 import styled from 'styled-components';
 import UserBox from '../Component/UserBox';
-import MessageList from '../Component/MessageList';
 import InputBox from '../Component/InputBox';
-import { MessageProvider } from '../Context/MessageContext';
 
 const Room0 = () => {
     return (
     <BodyField>
         <AppField>
             <AppBody>
-                <MessageProvider>
-                <UserBox/>
-                <MessageList/>
+                <UserBox/> 
                 <InputBox/>
-                </MessageProvider>
             </AppBody>
         </AppField>
     </BodyField>
