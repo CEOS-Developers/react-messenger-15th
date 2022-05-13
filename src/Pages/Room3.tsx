@@ -3,10 +3,12 @@ import styled from 'styled-components';
 import UserBox from '../Component/UserBox';
 import InputBox from '../Component/InputBox';
 
+import Userprofile from "../Component/Molecule/Userprofile";
+
 const Room3 = () => {
     return (
     <PageWrapper>
-        <PageName>{'Chatting with Fix-It Felix Jr.'}</PageName>
+        <Userprofile id={'1'} maintext={'다 고쳐 필릭스'} subtext={'다 고쳐 필릭스님과의 채팅입니다'}></Userprofile>
         <MesssageListWrapper>
         </MesssageListWrapper>
     </PageWrapper>
@@ -23,7 +25,7 @@ const PageName = styled.div`
 const PageWrapper = styled.div`
     width : 100%;
     height: 100%;
-    margin: 20px 20px 20px 20px;
+    margin: 0px 20px 20px 20px;
     flex-direction : column;
     font-family: sans-serif;
     align-items: left;
