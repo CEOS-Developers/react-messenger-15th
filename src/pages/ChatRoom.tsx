@@ -61,8 +61,8 @@ function ChatRoom() {
   return (
     <ChatRoomBlock>
       <ChatRoomHeaderContainer partnerUserId={partnerUserId} />
-      {/* <ChatRoomListContainer partnerUserId={partnerUserId} />
-      <ChatRoomFormContainer partnerUserId={partnerUserId} /> */}
+      <ChatRoomListContainer partnerUserId={partnerUserId} />
+      <ChatRoomFormContainer partnerUserId={partnerUserId} />
     </ChatRoomBlock>
   );
 }

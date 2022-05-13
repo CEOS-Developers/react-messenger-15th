@@ -1,3 +1,6 @@
+import { concatChatList } from '../../modules/chatList';
+import { useSelector, useDispatch } from 'react-redux';
+import { useCallback } from 'react';
 import { connect } from 'react-redux';
 import { useChatListDispatch } from '../../contexts/ChatListContext';
 import { useReceiverUserIdState } from '../../contexts/ReceiverUserIdContext';
@@ -13,18 +16,27 @@ type TChatRoomFormProps = {
   partnerUserId: number;
 };
 
-function ChatRoomFormContainer({ partnerUserId, receiverUserId }: any) {
+function ChatRoomFormContainer({ partnerUserId }: any) {
   const [inputValue, handleInputChange, resetInput, isValid, setIsValid] =
     useInput('');
 
   // const receiverUserIdState = useReceiverUserIdState();
-  const chatListDispatch = useChatListDispatch();
-  const concatNewChat = (newChat: IChat) => {
-    chatListDispatch({
-      type: 'CONCAT',
-      newChat: newChat,
-    });
-  };
+  // const chatListDispatch = useChatListDispatch();
+  // const concatNewChat = (newChat: IChat) => {
+  //   chatListDispatch({
+  //     type: 'CONCAT',
+  //     newChat: newChat,
+  //   });
+  // };
+
+  const receiver = useSelector(({ receiver }: any) => ({
+    userId: receiver.userId,
+  }));
+  const dispatch = useDispatch();
+  const concatChatList = useCallback(
+    (newChat: any): any => dispatch(concatChatList(newChat)),
+    [dispatch]
+  );
 
   // function handleSubmitBtnClick(e: React.MouseEvent<HTMLButtonElement>) {
   //   e.preventDefault();
@@ -50,14 +62,15 @@ function ChatRoomFormContainer({ partnerUserId, receiverUserId }: any) {
     if (!inputValue) alert('Please enter a message');
     else {
       let senderUserId;
-      if (receiverUserId === me.userId) senderUserId = partnerUserId;
+      if (receiver.userId === me.userId) senderUserId = partnerUserId;
       else senderUserId = me.userId;
       const newChat: IChat = {
         userId: senderUserId,
         msg: inputValue,
         unixTime: Date.now(),
       };
-      concatNewChat(newChat);
+      // concatNewChat(newChat);
+      concatChatList(newChat);
       resetInput();
       setIsValid(false);
     }
@@ -78,10 +91,12 @@ function ChatRoomFormContainer({ partnerUserId, receiverUserId }: any) {
   );
 }
 
-export default connect(
-  ({ receiver }) => ({ receiverUserId: receiver.userId }),
-  {}
-)(ChatRoomFormContainer);
+export default ChatRoomFormContainer;
+
+// export default connect(
+//   ({ receiver }) => ({ receiverUserId: receiver.userId }),
+//   {}
+// )(ChatRoomFormContainer);
 
 const ChatRoomFormBlock = styled.form`
   width: 100%;

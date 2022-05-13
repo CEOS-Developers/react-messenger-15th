@@ -1,4 +1,7 @@
-import { useChatListState } from '../../contexts/ChatListContext';
+import { useCallback } from 'react';
+import { toggleReceiver } from '../../modules/receiver';
+import { useSelector, useDispatch } from 'react-redux';
+// import { useChatListState } from '../../contexts/ChatListContext';
 import React from 'react';
 import { useRef, useEffect } from 'react';
 import styled from 'styled-components';
@@ -10,7 +13,10 @@ type TChatRoomListProps = {
 };
 
 function ChatRoomListContainer({ partnerUserId }: TChatRoomListProps) {
-  const chatListState = useChatListState();
+  // const chatListState = useChatListState();
+  const chatList = useSelector(({ chatList }: any) => ({
+    chatList: chatList.chatList,
+  }));
 
   const scrollRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -18,11 +24,24 @@ function ChatRoomListContainer({ partnerUserId }: TChatRoomListProps) {
       top: scrollRef.current!.scrollHeight,
       behavior: 'smooth',
     });
-  }, [chatListState.chatList]);
+  }, [chatList.chatList]);
 
   return (
+    // <ChatRoomListBlock ref={scrollRef}>
+    //   {chatListState.chatList.map(
+    //     ({ userId, msg, unixTime }: IChat, idx: number) => (
+    //       <ChatItem
+    //         key={idx}
+    //         partnerUserId={partnerUserId}
+    //         userId={userId}
+    //         msg={msg}
+    //         unixTime={unixTime}
+    //       />
+    //     )
+    //   )}
+    // </ChatRoomListBlock>
     <ChatRoomListBlock ref={scrollRef}>
-      {chatListState.chatList.map(
+      {chatList.chatList.map(
         ({ userId, msg, unixTime }: IChat, idx: number) => (
           <ChatItem
             key={idx}
