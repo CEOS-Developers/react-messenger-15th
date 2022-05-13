@@ -48,6 +48,13 @@ const SideBarMenuHeader = styled.div`
 const SideBarHeaderEmoji = styled.img`
   width: 24px;
   height: 24px;
+
+  opacity: 1;
+  transition: all 0.3s;
+
+  &:hover {
+    opacity: 0.7;
+  }
 `;
 
 const SideBarMenuContent = styled.div`
@@ -77,7 +84,12 @@ const SideBarIconWrapper = styled.div`
   width: 100%;
   margin: 12px 0px;
 
-  opacity: 0.8;
+  opacity: 0.75;
+  transition: all 0.3s;
+
+  &:hover {
+    opacity: 1;
+  }
 `;
 
 const SideBarIconWrapperSelected = styled.div`

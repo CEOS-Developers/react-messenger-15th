@@ -52,6 +52,11 @@ const ChatListTitleSearchForm = styled.form`
   border-radius: 7px;
 
   background: #f5f5f5;
+  transition: all 0.3s;
+
+  &:hover {
+    background: #e5e5e5;
+  }
 `;
 
 const ChatListTitleSearchIcon = styled.img`
@@ -119,6 +124,13 @@ const ChatListItem = styled.div`
   height: 50px;
 
   padding: 6px 20px;
+
+  background: white;
+  transition: all 0.3s;
+
+  &:hover {
+    background: #fafafa;
+  }
 `;
 
 const ChatListItemSelected = styled.div`
@@ -391,6 +403,11 @@ const ChatInputForm = styled.form`
   border-radius: 7px;
 
   background: #f5f5f5;
+  transition: all 0.3s;
+
+  &:hover {
+    background: #e5e5e5;
+  }
 `;
 
 const ChatInputFormIcon = styled.img`

@@ -59,6 +59,13 @@ const AppHeader = styled.header`
   font-size: 24px;
   font-weight: 300;
   color: #444444;
+
+  opacity: 1;
+  transition: all 0.3s;
+
+  &:hover {
+    opacity: 0.6;
+  }
 `;
 
 const AppHeaderEmoji = styled.div`
