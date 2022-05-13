@@ -1,11 +1,5 @@
 import styled from 'styled-components';
-import {
-  Content,
-  Header,
-  HeaderTitle,
-  Icon,
-  Wrapper,
-} from '../components/sharings/Elements';
+import { Content } from '../components/sharings/Elements';
 import { MdPersonSearch } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 

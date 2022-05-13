@@ -7,12 +7,7 @@ import {
   FcLock,
 } from 'react-icons/fc';
 
-import {
-  Content,
-  Header,
-  HeaderTitle,
-  Wrapper,
-} from '../components/sharings/Elements';
+import { Content } from '../components/sharings/Elements';
 
 const SettingScreen = () => {
   const settingMenu = [

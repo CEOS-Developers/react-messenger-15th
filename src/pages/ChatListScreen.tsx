@@ -1,11 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import {
-  Content,
-  Header,
-  HeaderTitle,
-  Wrapper,
-} from '../components/sharings/Elements';
+import { Content } from '../components/sharings/Elements';
 import UserList from '../components/sharings/UserList';
 
 import friends from '../assets/friends.json';
