@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { Routes, Route, Outlet, Link } from 'react-router-dom';
 
 import emoji_orange from '../assets/emoji_orange.png';
 
@@ -47,8 +48,6 @@ const SideBarMenuHeader = styled.div`
 const SideBarHeaderEmoji = styled.img`
   width: 24px;
   height: 24px;
-
-  /* opacity: 0.3; */
 `;
 
 const SideBarMenuContent = styled.div`
@@ -88,7 +87,7 @@ const SideBarIconWrapperSelected = styled.div`
   width: 100%;
   margin: 12px 0px;
 
-  border-left: 4px solid #ffffff;
+  border-left: 5px solid #ffffff;
 `;
 
 const SideBarIcon = styled.img`
@@ -124,10 +123,15 @@ const SideBar = () => {
 
         <SideBarMenuContent>
           <SideBarIconWrapper>
-            <SideBarIcon src={icon_people_outline} />
+            <Link to="/friends">
+              <SideBarIcon src={icon_people_outline} />
+            </Link>
           </SideBarIconWrapper>
+
           <SideBarIconWrapperSelected>
-            <SideBarIcon src={icon_chat_filled} />
+            <Link to="/chat">
+              <SideBarIcon src={icon_chat_filled} />
+            </Link>
           </SideBarIconWrapperSelected>
         </SideBarMenuContent>
 
@@ -135,8 +139,11 @@ const SideBar = () => {
           <SideBarIconWrapper>
             <SideBarIcon src={icon_notification_outline} />
           </SideBarIconWrapper>
+
           <SideBarIconWrapper>
-            <SideBarIcon src={icon_setting_outline} />
+            <Link to="/settings">
+              <SideBarIcon src={icon_setting_outline} />
+            </Link>
           </SideBarIconWrapper>
         </SideBarMenuFooter>
       </SideBarMenu>

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import styled, { createGlobalStyle, keyframes } from 'styled-components';
+import { Routes, Route, Outlet, Link } from 'react-router-dom';
+
 import MainContainer from './components/MainContainer';
 
 const GlobalStyle = createGlobalStyle`
@@ -97,14 +99,16 @@ const App = () => {
   return (
     <AppContainer className="App">
       <GlobalStyle />
-      <AppHeader className="App-header">
-        <AppHeaderEmoji>🍊</AppHeaderEmoji>
-        <div>
-          <strong>Orange</strong>
-          Chat
-        </div>
-        <AnimatedCursor>|</AnimatedCursor>
-      </AppHeader>
+      <Link to="/">
+        <AppHeader className="App-header">
+          <AppHeaderEmoji>🍊</AppHeaderEmoji>
+          <div>
+            <strong>Orange</strong>
+            Chat
+          </div>
+          <AnimatedCursor>|</AnimatedCursor>
+        </AppHeader>
+      </Link>
 
       <AppContent className="App-Content">
         <MainContainer />

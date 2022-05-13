@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const FriendsWrapper = styled.div`
+const HomeWrapper = styled.div`
   flex: 1;
 
   display: flex;
@@ -10,12 +10,12 @@ const FriendsWrapper = styled.div`
   align-items: center;
 `;
 
-const Friends = () => {
+const Home = () => {
   return (
-    <FriendsWrapper>
-      <div>Page: Friends</div>
-    </FriendsWrapper>
+    <HomeWrapper>
+      <div>Page: Home</div>
+    </HomeWrapper>
   );
 };
 
-export default Friends;
+export default Home;
