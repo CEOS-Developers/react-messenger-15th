@@ -19,7 +19,7 @@ const Chat = ({ userId, message, msgId }: IChat) => {
         <ProfileImg src={`${process.env.PUBLIC_URL}/imgs/${userId}.jpg`} />
         <TextWrapper>
           <UserName userId={userId}>{userId}</UserName>
-          <ChatInfo>
+          <ChatInfo userId={userId}>
             <Bubble userId={userId}>{message}</Bubble>
             <Time>{GetTime(msgId)}</Time>
           </ChatInfo>
@@ -64,10 +64,9 @@ const UserName = styled.section`
 `;
 
 const ChatInfo = styled.section`
-  width: 100%;
   display: flex;
-  justify-content: ${({ userId }) =>
-    userId === 'user0' ? 'flex-end' : 'flex-start'};
+  flex-direction: ${({ userId }) =>
+    userId === 'user0' ? 'row-reverse' : 'row'};
 `;
 
 const TextWrapper = styled.section`
