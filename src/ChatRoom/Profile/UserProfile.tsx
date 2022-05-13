@@ -1,8 +1,8 @@
-import {Profileprops} from "../type";
+import {Profileprops} from "../../type";
 import {Profileimg,Profile,ProfileName,ProfileIntro} from "./UserProfileDesign"
-import user from "../data/user.json";
+import user from "../../data/user.json";
 import { useRecoilValue, useSetRecoilState } from "recoil";
-import { userState } from "../recoil";
+import { userState } from "../../recoil";
 
 function UserProfile({currentUser} : Profileprops){
 

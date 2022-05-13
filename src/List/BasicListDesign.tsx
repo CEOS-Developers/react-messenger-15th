@@ -1,10 +1,15 @@
 import styled  from "styled-components";
+import { FriendItem } from "../type";
 
 export interface IFriendIntro {
 
    introLength :number;
     
   }
+
+  export type IFriendItem={
+    friend : FriendItem;
+}
 
 export const Input = styled.input
 `

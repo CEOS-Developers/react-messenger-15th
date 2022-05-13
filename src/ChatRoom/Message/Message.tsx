@@ -1,11 +1,11 @@
-import { MessageItem, MessageList} from "../type";
+import { MessageItem, MessageList} from "../../type";
 import {useRef,useEffect} from "react";
 import {Wrapper,ChatMessage,ChatProfile,Chatcontainer,MessageBox,ChatName} from "./MessageDesign";
-import user from "../data/user.json";
+import user from "../../data/user.json";
 import React from "react";
 import { useRecoilValue, useSetRecoilState } from "recoil";
-import { messageListState } from "../recoil";
-import chatting from "../data/chat.json";
+import { messageListState } from "../../recoil";
+import chatting from "../../data/chat.json";
 
 type IMessage = {
     roomId : number;

@@ -1,4 +1,4 @@
-import {Header} from "./BasicListDesign"
+import {Header} from "../List/BasicListDesign"
 function Home(){
 
     return(

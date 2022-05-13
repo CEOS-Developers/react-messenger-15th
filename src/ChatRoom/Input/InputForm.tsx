@@ -1,11 +1,11 @@
-import {MessageItem} from "../type"
+import {MessageItem} from "../../type"
 import React from "react";
 import {useCallback} from "react";
 import { Dispatch, SetStateAction} from "react";
-import useInput from "../hook/useInput";
+import useInput from "../../hook/useInput";
 import {Input,MessageButton,Form,InputWrapper,Emojimerong} from "./InputformDesign";
 import { useRecoilValue, useSetRecoilState } from "recoil";
-import { messageListState, userState } from "../recoil";
+import { messageListState, userState } from "../../recoil";
 
 type InputProps = {
     messageList : MessageItem[];

@@ -18,3 +18,8 @@ export const messageState = atom({
     key:"message",
     default:"",
 });
+
+export const searchState = atom({
+    key:"search",
+    default:"",
+});

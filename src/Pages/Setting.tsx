@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {Header} from "./BasicListDesign";
+import {Header} from "../List/BasicListDesign";
 function Setting(){
 
     const SettingMenu = styled.div

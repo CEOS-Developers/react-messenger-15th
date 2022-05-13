@@ -1,11 +1,11 @@
 import { Route, Routes } from 'react-router-dom';
 import styled  from "styled-components";
-import ChatRoom from "./ChatRoom";
+import ChatRoom from "./Pages/ChatRoom";
 import Menu from "./Menu";
-import FriendList from './FriendList';
-import ChatRoomList from './ChatRoomList';
-import Home from './Home';
-import Setting from './Setting';
+import FriendList from './Pages/FriendList';
+import ChatRoomList from './Pages/ChatRoomList';
+import Home from './Pages/Home';
+import Setting from './Pages/Setting';
 
 function App() {
  
