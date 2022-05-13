@@ -4,35 +4,34 @@ import {Client} from "../types"
 
 const clientState: ClientState = {
   clients: [
-    {  clientId: "1",
+    {  id: "1",
       imageUrl: require("../images/dog-face.png"),
       name: "강아지",},
     {
-      clientId: "2",
+      id: "2",
       imageUrl: require("../images/cat-face.png"),
       name: "고양이"
     },
     {
-      clientId: "3",
+      id: "3",
       imageUrl: require("../images/fox-face.png"),
       name: "여우"
     },
     {
-      clientId: "4",
+      id: "4",
       imageUrl: require("../images/monkey-face.png"),
       name: "원숭이"
     },
     {
-      clientId: "5",
+      id: "5",
       imageUrl: require("../images/pig-face.png"),
       name: "돼지"
     },
     {
-      clientId: "6",
+      id: "6",
       imageUrl: require("../images/robot-face.png"),
       name: "로봇"
-    },
-
+    }
   ]
 }
 
@@ -40,21 +39,18 @@ const clientSlice = createSlice({
   name: "client",
   initialState: clientState,
   reducers: {
-    addClient(state, action: PayloadAction<Client>) {
-      state.clients.push(action.payload)
-      state.currentClient = action.payload;
-    },
-    removeClient(state, action: PayloadAction<Client>){
-      state.clients = state.clients.filter((client)=>{
-        if(state.currentClient && state.currentClient.clientId == action.payload.clientId)
-          delete state.currentClient;
-        return client.clientId !== action.payload.clientId})
-    },
-    setClient(state, action: PayloadAction<Client>){
-      state.currentClient = action.payload;
-    }
+    // addClient(state, action: PayloadAction<Client>) {
+    //   state.clients.push(action.payload)
+    //   state.currentClient = action.payload;
+    // },
+    // removeClient(state, action: PayloadAction<Client>){
+    //   state.clients = state.clients.filter((client)=>{
+    //     if(state.currentClient && state.currentClient.id == action.payload.id)
+    //       delete state.currentClient;
+    //     return client.id !== action.payload.id})
+    // },
   }
 })
 
 export const clientReducer = clientSlice.reducer
-export const {addClient, removeClient, setClient} = clientSlice.actions
+export const {} = clientSlice.actions

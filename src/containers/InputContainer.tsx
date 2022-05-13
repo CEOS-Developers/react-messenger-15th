@@ -3,8 +3,8 @@ import {v4 as uuidv4} from "uuid";
 import styled from 'styled-components';
 
 import { useAppSelector, useAppDispatch } from '../hooks';
-import { addMessage } from '../state/messageSlice';
-import { MessageType } from '../types';
+import { addMessage } from '../state/chatSlice';
+import { MessageType, Client } from '../types';
 
 const Container = styled.div`
   width: 90vw;
@@ -65,25 +65,25 @@ const handleTimeFormat = (time: Date):string[] => {
   const minString: string = time.getMinutes().toString();
   const timeString: string = (hourString.length === 2? hourString : "0" + hourString) + ": " + (minString.length === 2? minString : "0" + minString)
 
-  return [timeString, minString]
+  return [timeString]
 };
 
 function InputContainer() {
   const [message, setMessage] = useState("");
   
-  const {currentClient} = useAppSelector((state)=>state.client);
+  const activeClient:Client = useAppSelector((state)=>state.chat.chats[state.chat.acidx!].activeClient);
   const dispatch = useAppDispatch();
 
   const handleFormSubmit = (message: string, e?:React.FormEvent<HTMLFormElement>) => {
 
     if(e) e.preventDefault();
-    if(message !== "" && currentClient){
+    if(message !== "" && activeClient){
 
-      const [timeString, minString] = handleTimeFormat(new Date());
+      const [timeString] = handleTimeFormat(new Date());
 
       dispatch(addMessage({
         msgId: uuidv4(),
-        client: currentClient,
+        client: activeClient,
         content: message,
         timeString: timeString,
         messageType: MessageType.BASE,

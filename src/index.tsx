@@ -19,10 +19,18 @@ root.render(
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<App/>}>
-              <Route path="chatroom" element={<Chatroom/>}/>
               <Route path="chats" element={<ChatList/>}/>
+              <Route path="chats/:chatId" element={<Chatroom/>}/>
               <Route path="friends" element={<FriendList/>}/>
               <Route path="info" element={<AppInfo/>}/>
+              <Route
+                path="*"
+                element={
+                  <main style={{ padding: "1rem" }}>
+                    <p>NOT FOUND</p>
+                  </main>
+                }
+              />
             </Route>
           </Routes>
         </BrowserRouter>

@@ -7,9 +7,16 @@ export type Message = {
 }
 
 export type Client = {
-  clientId: string,
+  id: string,
   imageUrl: string,
   name: string,
+}
+
+export type Chat = {
+  chatId: string,
+  activeClient: Client,
+  clients: Client[], 
+  messages: Message[],
 }
 
 export enum MessageType {

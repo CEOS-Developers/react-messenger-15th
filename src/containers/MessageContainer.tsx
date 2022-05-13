@@ -20,8 +20,8 @@ const Container = styled.div`
 
 function MessageContainer() {
 
-  const messages = useAppSelector((state)=> state.message.messages);
-  const {currentClient} = useAppSelector((state)=>state.client);
+  const messages = useAppSelector((state)=> state.chat.chats[state.chat.acidx!].messages);
+  const activeClient = useAppSelector((state)=>state.chat.chats[state.chat.acidx!].activeClient);
   const containerRef = React.useRef<HTMLDivElement>(null);
 
   useEffect(
@@ -34,7 +34,7 @@ function MessageContainer() {
     <Container ref={containerRef}>
       {messages.map((message: Message)=>{
         const timeString: string = message.timeString;
-        const selected: boolean = message.client.clientId === currentClient?.clientId;
+        const selected: boolean = message.client.id === activeClient?.id;
         return <MessageBubbleComponent key={message.msgId} msg={message} timeString={timeString} selected={selected} manner={message.messageType}/>
       })}
     </Container>

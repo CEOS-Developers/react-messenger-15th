@@ -1,7 +1,8 @@
 import React from 'react'
+import { Navigate, useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 import { useAppDispatch, useAppSelector } from '../hooks'
-import { setClient } from '../state/clientSlice'
+import { setActiveClient } from '../state/chatSlice'
 
 const Container = styled.div`
   width: 50vw;
@@ -62,21 +63,24 @@ const ProfileImage = styled.img`
 `
 
 function ProfileContainer() {
-  const {clients, currentClient} = useAppSelector((state)=> state.client)
+  const {clients, activeClient} = useAppSelector((state)=> state.chat.chats[state.chat.acidx!])
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   return (
     <Container>
       <ProfileDiv>
-        <ProfileButton selected={false}>🫲🏻</ProfileButton>
+        <ProfileButton selected={false} onClick={()=>{
+          navigate(-1);
+        }}>🫲🏻</ProfileButton>
         <ProfileName selected={false}>{"뒤로가기"}</ProfileName>
       </ProfileDiv>
       {clients.map(client=>{
-        const selected = client.clientId === currentClient?.clientId? true : false
+        const selected = client.id === activeClient?.id? true : false
         return(
-          <ProfileDiv>
+          <ProfileDiv key={client.id}>
           <ProfileButton selected={selected} onClick={()=>{
-            dispatch(setClient(client))
+            dispatch(setActiveClient(client))
           }}><ProfileImage src={client.imageUrl} /></ProfileButton>
           <ProfileName selected={selected}>{client.name}</ProfileName>
         </ProfileDiv>
