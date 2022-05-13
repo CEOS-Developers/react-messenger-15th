@@ -12,14 +12,11 @@ const MessengerBox = () => {
   const userindex = message.findIndex(
     (message) => message.userName === otherUser.userName
   );
-
   const userMessageData = message[userindex];
-  console.log(userMessageData);
 
   const [currentUser, setCurrentUser] = useState(user[0]);
   const [messageData, setMessageData] = useState(userMessageData.messages);
 
-  console.log(useParams());
   return (
     <>
       <UserNav

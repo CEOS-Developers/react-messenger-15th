@@ -4,14 +4,10 @@ import { LinkToChat } from './CommonStyle';
 
 const UserNav = ({ currentUser, setCurrentUser, otherUser }: any) => {
   const userName = currentUser.userName;
-
-  //현재 메세지를 보내는 사람이 나일 경우 친구로 유저 변경
-  //chatList.userId->로 배열 찾는 방법..
-  console.log(otherUser);
   const userindex = user.findIndex(
     (user) => user.userName === otherUser.userName
   );
-  console.log(userindex);
+
   const switchUser = () => {
     currentUser.userId === 'user0'
       ? setCurrentUser(user[userindex])

@@ -6,7 +6,6 @@ import {
   UserName,
 } from './layout/CommonStyle';
 const Chattings = ({ userId, userName, message }: any) => {
-  console.log(message);
   return (
     <ChattingRooms>
       <LinkToChat to={`/messengerbox/${userName}`}>
