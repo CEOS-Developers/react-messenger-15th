@@ -32,3 +32,8 @@ export const searchValue = atom({
   key: 'searchValue',
   default: null,
 });
+
+export const closeWindow = atom({
+  key: 'closeWindow',
+  default: false,
+});

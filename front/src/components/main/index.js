@@ -9,10 +9,10 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   overflow: scroll;
-  border: 1px solid;
   height: 505px;
   padding: 50px 15px;
   background: #262626;
+  border-bottom-right-radius: 12px;
 `;
 
 export default Main;

@@ -3,7 +3,8 @@ import { useRecoilState } from 'recoil';
 import { searchToggleState, searchValue } from '../../store/recoil';
 import { userInfo } from '../../store/recoil/data';
 import styled from 'styled-components';
-//친구찾기
+import SearchUserBox from '../serachUserBox';
+
 function Search() {
   const [text, setText] = useState('');
   const [searchVal, setSearchVal] = useRecoilState(searchValue);
@@ -14,35 +15,66 @@ function Search() {
   const [searchToggle, setSearchToggle] = useRecoilState(searchToggleState);
   const onToggleSearch = () => setSearchToggle((prev) => !prev);
   const handleSearch = () => {
-    if (text !== '') {
-      const result = user.filter((u) => u.userName === text);
-
-      const [final] = result.map((name) => name.userName);
-      const name = user.filter((u) => u.userName === final);
-      console.log(name);
+    if (text === '' || text === null) {
+      setSearchVal(null);
+    } else {
+      const userNameArray = user.map((u) => u.userName).slice(1);
+      const result = userNameArray.filter((name) => name.includes(text));
+      console.log(result);
+      const searchedUser = user
+        .map((u, i) => {
+          if (result.includes(u.userName)) {
+            return u;
+          }
+        })
+        .filter((c) => typeof c !== 'undefined');
+      setSearchVal(searchedUser);
     }
   };
 
   useEffect(() => {
     handleSearch();
+    // if (searchToggle === false) {
+    //   setSearchVal(null);
+    // }
   }, [text]);
 
   return (
-    <div style={Style}>
-      <input type="text" value={text} onChange={onChange} />
-      <Btn onClick={onToggleSearch}>❌</Btn>
-    </div>
+    <Container>
+      <InputWrapper>
+        <Input type="text" value={text} onChange={onChange} />
+        <Btn onClick={onToggleSearch}>❌</Btn>
+      </InputWrapper>
+      <div>
+        <SearchUserBox />
+      </div>
+    </Container>
   );
 }
-const Style = {
-  position: 'absolute',
-  right: '10px',
-  top: '35px',
-};
+const InputWrapper = styled.div`
+  padding: 1px;
+`;
+
+const Input = styled.input`
+  width: 90%;
+`;
+
+const Container = styled.div`
+  position: absolute;
+  top: 40px;
+  right: 10px;
+  width: 300px;
+  height: 100px;
+  background: gray;
+  overflow: scroll;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+`;
 
 const Btn = styled.button`
   background: black;
   border: none;
+  margin-left: 1px;
 `;
 
 export default Search;

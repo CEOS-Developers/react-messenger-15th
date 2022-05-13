@@ -7,6 +7,7 @@ import { useRecoilState } from 'recoil';
 import {
   chatModalToggleState,
   chatRoomToggleState,
+  closeWindow,
   friendModalToggleState,
   searchToggleState,
 } from '../../store/recoil';
@@ -14,7 +15,10 @@ import { useEffect } from 'react';
 import ChatModal from '../../components/ChatModal';
 import UserBox from '../../components/UserBox';
 import ChatRoom from '../../components/ChatRoom';
+import Start from '../../components/start';
+import styled from 'styled-components';
 const Rooms = () => {
+  const [window, setWindow] = useRecoilState(closeWindow);
   const [searchToggle, setSearchToggle] = useRecoilState(searchToggleState);
   const [friendModalToggle, setFriendModalToggle] = useRecoilState(
     friendModalToggleState
@@ -30,20 +34,32 @@ const Rooms = () => {
   }, []);
   return (
     <>
-      {chatModalToggle && <ChatModal />}
-      {chatRoomToggle && <ChatRoom />}
-      <Container>
-        <Sidebar />
-        <div>
-          <Header />
-          {searchToggle && <Search placeholder="채팅방 이름, 참여자 검색" />}
-          <Main>
-            <UserBox />
-          </Main>
-        </div>
-      </Container>
+      {window ? (
+        <Container>
+          {chatRoomToggle && <ChatRoom />}
+          {chatModalToggle && <ChatModal />}
+          <Sidebar />
+          <div>
+            <Header />
+            {searchToggle && <Search placeholder="채팅방 이름, 참여자 검색" />}
+            <Main>
+              <UserBox />
+            </Main>
+          </div>
+        </Container>
+      ) : (
+        <StartWrapper>
+          <Start />
+        </StartWrapper>
+      )}
     </>
   );
 };
+
+const StartWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
 export default Rooms;

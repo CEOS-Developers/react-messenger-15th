@@ -3,26 +3,44 @@ import Sidebar from '../../components/Sidebar';
 import Header from '../../components/Header2';
 import Main from '../../components/Main';
 import styled from 'styled-components';
+import { useRecoilState } from 'recoil';
+import { closeWindow } from '../../store/recoil';
+import Start from '../../components/start';
 
 const General = () => {
+  const [window, setWindow] = useRecoilState(closeWindow);
   return (
-    <Container>
-      <Sidebar />
-      <div>
-        <Header />
-        <Main>
-          <Wrapper>
-            <Wallet src="wallet.png" />
-            <Fix src="fix.png" />
-            <Shopping src="shopping.png" />
-            <Calendar src="calendar.png" />
-            <Gift src="giftbox.png" />
-          </Wrapper>
-        </Main>
-      </div>
-    </Container>
+    <>
+      {window ? (
+        <Container>
+          <Sidebar />
+          <div>
+            <Header />
+            <Main>
+              <Wrapper>
+                <Wallet src="wallet.png" />
+                <Fix src="fix.png" />
+                <Shopping src="shopping.png" />
+                <Calendar src="calendar.png" />
+                <Gift src="giftbox.png" />
+              </Wrapper>
+            </Main>
+          </div>
+        </Container>
+      ) : (
+        <StartWrapper>
+          <Start />
+        </StartWrapper>
+      )}
+    </>
   );
 };
+
+const StartWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
 const Wrapper = styled.div`
   display: flex;

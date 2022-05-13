@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 import { useRecoilState } from 'recoil';
-import { chatRoomToggleState, pathInfo, userClicked } from '../../store/recoil';
+import {
+  chatRoomToggleState,
+  pathInfo,
+  searchValue,
+  userClicked,
+} from '../../store/recoil';
 import { userInfo } from '../../store/recoil/data';
 
 function UserBox() {
@@ -9,6 +14,7 @@ function UserBox() {
     useRecoilState(chatRoomToggleState);
   const [user, setUser] = useRecoilState(userInfo);
   const [currentUser, setCurrentUser] = useRecoilState(userClicked);
+  // const [searchVal,setSearchVal] = useRecoilState(searchValue)
 
   return (
     <>
@@ -35,7 +41,7 @@ function UserBox() {
                 {urlPath === 'rooms' && (
                   <NickDiv>
                     <Name>{d.userName}</Name>
-                    <Intro>마지막 메세지</Intro>
+                    <Intro>{d.last}</Intro>
                   </NickDiv>
                 )}
                 {urlPath === '' && <div>{d.profileMusic}</div>}

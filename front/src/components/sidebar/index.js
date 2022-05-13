@@ -1,20 +1,24 @@
 import styled from 'styled-components';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
-import { pathInfo } from '../../store/recoil';
+import { closeWindow, pathInfo } from '../../store/recoil';
 import { useEffect } from 'react';
 
 const Sidebar = () => {
   let navigate = useNavigate();
   const [urlPath, setUrlPath] = useRecoilState(pathInfo);
+  const [window, setWindow] = useRecoilState(closeWindow);
   let location = useLocation();
+  const onCloseWindow = () => {
+    setWindow((prev) => !prev);
+  };
   useEffect(() => {
     setUrlPath(location.pathname.slice(1));
   }, [location]);
   return (
     <Container>
       <BtnWrapper>
-        <Cir1>X</Cir1>
+        <Cir1 onClick={onCloseWindow}>X</Cir1>
         <Cir2 />
         <Cir3 />
       </BtnWrapper>

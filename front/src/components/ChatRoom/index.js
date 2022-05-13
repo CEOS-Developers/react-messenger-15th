@@ -42,15 +42,15 @@ function ChatRoom() {
 
   const pickUser = (name) => {
     switch (name) {
-      case '침착맨':
+      case '침착맨bde':
         return 0;
-      case '주호민':
+      case '주호민qwt':
         return 1;
-      case '김풍':
+      case '김풍zxcv':
         return 2;
-      case '태완씨':
+      case '태완씨liup':
         return 3;
-      case '슈말코':
+      case '슈말코qwejrl':
         return 4;
       default:
         return null;
@@ -113,7 +113,7 @@ function ChatRoom() {
         </UserImg>
       </ChatRoomHeader>
       <ChatContents ref={scrollRef}>
-        {chat[roomId].msgs.map((m, i) => {
+        {chat[roomId]?.msgs.map((m, i) => {
           return <MessageBox key={i} message={m} />;
         })}
       </ChatContents>
@@ -135,7 +135,8 @@ function ChatRoom() {
 
 const Container = styled.div`
   position: absolute;
-  bottom: 1px;
+  bottom: 50px;
+  left: 75px;
   width: 300px;
   height: 350px;
   background: gray;
