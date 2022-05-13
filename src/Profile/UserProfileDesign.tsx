@@ -21,6 +21,10 @@ border:1px solid lightgrey;
 margin:1rem;
 cursor:pointer;
 
+:hover{
+    opacity :0.5;
+  }
+
 `;
 
 export const ProfileName = styled.div

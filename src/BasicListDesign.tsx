@@ -39,6 +39,10 @@ display: inline-block
 flex-direction:column;
 cursor:pointer;
 
+:hover{
+  opacity :0.5;
+}
+
 `;
 
 export const FriendProfile =styled.img
@@ -55,8 +59,9 @@ margin:10px;
 export const FriendName = styled.div
 `  
 text-align:left;
-padding:20px;
+padding:1.2rem;
 font-size:15px;
+flex:0.7;
   
 `;
 
@@ -115,10 +120,21 @@ export const FriendIntro = styled.div<IFriendIntro>
 
 `;
 
+export const FriendChat = styled.div
+`
+display :flex;
+flex-direction:column;
+
+`;
 export const LastChat = styled.div
 `
-padding:20px;
-font-size:10px;
+text-align:left;
+padding :1.2rem;
+padding-top:0rem;
+font-size:11px;
+flex:0.3;
+color:grey;
+
 
 `;
 

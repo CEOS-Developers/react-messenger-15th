@@ -22,7 +22,7 @@ function Message({messageList} : MessageList){
         <Wrapper ref={messageRef}>
             {messageList.map((message) => (
                 <Chatcontainer key ={message.roomId}>
-                    <ChatProfile src = {user[message.roomId].profile}/> 
+                    <ChatProfile src = {user[message.roomId].profile} loading ="lazy"/> 
                      <MessageBox>
                         <ChatName>{user[message.roomId].name} 님의 말: </ChatName>
                         <ChatMessage>{message.text}</ChatMessage>   

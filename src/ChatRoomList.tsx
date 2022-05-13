@@ -2,7 +2,7 @@
  import chatting from "./data/chat.json";
  import {useNavigate} from 'react-router-dom';
  import useFilter from "./hook/useFilter";
- import {Header,FriendContainer,FriendProfile,FriendName,LastChat, FriendWrapper} from "./BasicListDesign";
+ import {Header,FriendContainer,FriendProfile,FriendName,LastChat, FriendWrapper,FriendChat} from "./BasicListDesign";
 import React from "react";
  
  const ChatRoomList = () =>{
@@ -26,8 +26,10 @@ import React from "react";
               <>
               <FriendContainer key ={friend.id} onClick = {(event) => {ChatRoomLink (event, friend.id)}}>
               <FriendProfile src = {friend.profile} loading="lazy"/>
-              <FriendName>{friend.name}</FriendName>
-              <LastChat>{chatting[friend.id-1].chat[chatLength-1].text}</LastChat>
+              <FriendChat>
+                <FriendName>{friend.name}</FriendName>
+                <LastChat>{chatting[friend.id-1].chat[chatLength-1].text}</LastChat>
+              </FriendChat>
               </FriendContainer>
               </>
               );
