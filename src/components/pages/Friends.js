@@ -81,9 +81,17 @@ const FriendsListTitleSearchInput = styled.input`
   background: transparent;
 
   text-align: left;
-  color: #999999;
+  color: #666666;
   font-size: 11px;
   font-weight: 400;
+
+  ::placeholder,
+  ::-webkit-input-placeholder {
+    color: #999999;
+  }
+  :-ms-input-placeholder {
+    color: #999999;
+  }
 `;
 
 const FriendsListContentContainer = styled.div`
@@ -216,7 +224,7 @@ const FriendsContentImg = styled.img`
   transition: all 0.3s;
 
   &:hover {
-    opacity: 0.6;
+    opacity: 0.7;
   }
 `;
 

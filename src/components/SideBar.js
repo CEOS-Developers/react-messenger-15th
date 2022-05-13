@@ -87,7 +87,7 @@ const SideBarIconWrapper = styled.div`
   width: 100%;
   margin: 12px 0px;
 
-  opacity: 0.75;
+  opacity: 0.7;
   transition: all 0.3s;
 
   &:hover {
@@ -103,7 +103,7 @@ const SideBarIconWrapperSelected = styled.div`
   width: 100%;
   margin: 12px 0px;
 
-  border-left: 5px solid #ffffff;
+  border-left: 4px solid #ffffff;
 `;
 
 const SideBarIcon = styled.img`

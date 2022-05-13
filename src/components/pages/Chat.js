@@ -80,9 +80,17 @@ const ChatListTitleSearchInput = styled.input`
   background: transparent;
 
   text-align: left;
-  color: #999999;
+  color: #666666;
   font-size: 11px;
   font-weight: 400;
+
+  ::placeholder,
+  ::-webkit-input-placeholder {
+    color: #999999;
+  }
+  :-ms-input-placeholder {
+    color: #999999;
+  }
 `;
 
 const ChatListContentContainer = styled.div`

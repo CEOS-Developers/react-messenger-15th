@@ -110,7 +110,7 @@ const SettingsContentImg = styled.img`
   transition: all 0.3s;
 
   &:hover {
-    opacity: 0.6;
+    opacity: 0.7;
   }
 `;
 
