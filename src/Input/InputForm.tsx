@@ -4,28 +4,33 @@ import {useCallback} from "react";
 import { Dispatch, SetStateAction} from "react";
 import useInput from "../hook/useInput";
 import {Input,MessageButton,Form,InputWrapper,Emojimerong} from "./InputformDesign";
+import { useRecoilValue, useSetRecoilState } from "recoil";
+import { messageListState, userState } from "../recoil";
 
 type InputProps = {
-    changeUser  :number;
     messageList : MessageItem[];
     setMessageList : Dispatch<SetStateAction<MessageItem[]>>
   };
 
-function Inputform ({changeUser, messageList, setMessageList} : InputProps){
+function Inputform ({messageList, setMessageList} : InputProps){
 
     const{message, onChange ,setMessage} = useInput();
+    const currentUser = useRecoilValue(userState); //currentUser 불러오기
+    
+    //const messageList =useRecoilValue(messageListState);
+    //const setMessageList = useSetRecoilState(messageListState);
   
     const submitEmoji = useCallback((event : React.SyntheticEvent) => {
       event.preventDefault();
         setMessageList(messageList => [...messageList,
         {
-          roomId : changeUser,
+          roomId : currentUser,
           text: "😛",
-          userId: changeUser,
+          userId: currentUser,
         }]);  
         //입력받은 걸 배열에 넣음
   
-      },[changeUser]);
+      },[currentUser]);
     
       const submitInput = useCallback((event : React.SyntheticEvent) => {
         event.preventDefault();
@@ -33,9 +38,9 @@ function Inputform ({changeUser, messageList, setMessageList} : InputProps){
          if (message) {
           setMessageList(messageList => [...messageList,
           {
-            roomId : changeUser,
+            roomId : currentUser,
             text: message,
-            userId: changeUser,
+            userId: currentUser,
           }]);
           //입력받은 걸 배열에 넣음
   

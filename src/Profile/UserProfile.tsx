@@ -1,12 +1,17 @@
 import {Profileprops} from "../type";
 import {Profileimg,Profile,ProfileName,ProfileIntro} from "./UserProfileDesign"
 import user from "../data/user.json";
+import { useRecoilValue, useSetRecoilState } from "recoil";
+import { userState } from "../recoil";
 
-function UserProfile({changeUser,setChangeUser,currentUser} : Profileprops){
+function UserProfile({currentUser} : Profileprops){
+
+    const changeUser = useRecoilValue(userState);
+    const setChangeUser = useSetRecoilState(userState);
 
      const toggleUser = () => {
          if(changeUser == 0)
-          {
+        {
               setChangeUser(currentUser);
         }
         else

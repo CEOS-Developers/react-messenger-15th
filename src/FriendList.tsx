@@ -1,26 +1,31 @@
 
 import {useState , useCallback} from "react";
-import user from "./data/user.json";
 import {Header,Input,FriendWrapper,FriendContainer,FriendProfile,FriendName,FriendIntro} from "./BasicListDesign";
 import {useNavigate} from 'react-router-dom';
 import React from "react";
 import useFilter from "./hook/useFilter";
+import { useResetRecoilState } from "recoil";
+import { userState } from "./recoil";
 
 function FriendList(){
 
     const [search, setSearch] = useState<string>("");
-    const navigate = useNavigate();
     const friendList = useFilter();
+    const navigate = useNavigate();
+    
     const onChange = useCallback((event : React.ChangeEvent<HTMLInputElement>) => {setSearch(event.target.value)},[]);
    
     const searchFriend = friendList.filter((friend) => {
         return friend.name.includes(search);
       });
 
-      const ChatRoomLink = (event : React.MouseEvent<HTMLDivElement> , roomId : number) =>{
+      const ChatRoomLink = useCallback((event : React.MouseEvent<HTMLDivElement> , roomId : number) =>{
         navigate(`/ChatRoom/${roomId}`);
-    }
+    },[]);
 
+    const resetUser = useResetRecoilState(userState);
+    resetUser();
+    
     return(
        <div id ="Wrapper">
          <Header>친구 목록</Header>

@@ -65,7 +65,7 @@ flex:0.7;
   
 `;
 
-export const Header = styled.div
+export const Header = styled.header
 `
   font-size: 30px;
   text-align:left;
