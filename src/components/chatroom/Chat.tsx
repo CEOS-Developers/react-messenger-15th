@@ -36,13 +36,11 @@ const Bubble = styled.section`
   ${({ userId }) =>
     userId === 'user0'
       ? css`
-          flex-direction: row;
           color: #ffffff;
           background: #1986fc;
           border-radius: 12px 1px 12px 12px;
         `
       : css`
-          flex-direction: 'row-reverse';
           color: #000000;
           background: #f1f1f3;
           border-radius: 1px 12px 12px 12px;
