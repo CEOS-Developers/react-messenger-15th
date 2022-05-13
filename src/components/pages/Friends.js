@@ -7,9 +7,9 @@ import icon_friends from '../../assets/icon_friends.png';
 
 import img_newchat from '../../assets/img_newchat.png';
 
-import jh_pic from '../../assets/jh_pic.png';
+import jh_pic from '../../assets/jh_pic.jpg';
 import cr_pic from '../../assets/cr_pic.png';
-import sw_pic from '../../assets/sw_pic.png';
+import sw_pic from '../../assets/sw_pic.jpg';
 import profile_pic from '../../assets/profile_squared.jpg';
 
 const FriendsWrapper = styled.div`
@@ -149,7 +149,7 @@ const FriendsListItemProfile = styled.img`
   width: 40px;
   height: 40px;
 
-  border-radius: 50%;
+  border-radius: 14px;
 `;
 
 const FriendsListItemContentWrapper = styled.div`
@@ -211,6 +211,13 @@ const FriendsContentImg = styled.img`
   height: auto;
 
   border-radius: 18px;
+
+  opacity: 1;
+  transition: all 0.3s;
+
+  &:hover {
+    opacity: 0.6;
+  }
 `;
 
 const FriendsContentText = styled.div`
@@ -250,7 +257,7 @@ const Friends = () => {
                 <FriendsListItemName>최어진</FriendsListItemName>
               </FriendsListItemContentTopWrapper>
               <FriendsListItemContentBottomWrapper>
-                <FriendsListItemStatus>최근 대화 내용</FriendsListItemStatus>
+                <FriendsListItemStatus>ㅠ</FriendsListItemStatus>
               </FriendsListItemContentBottomWrapper>
             </FriendsListItemContentWrapper>
           </FriendsListItem>
@@ -262,6 +269,20 @@ const Friends = () => {
 
           <FriendsListItem>
             <FriendsListItemProfileWrapper>
+              <FriendsListItemProfile src={jh_pic} />
+            </FriendsListItemProfileWrapper>
+            <FriendsListItemContentWrapper>
+              <FriendsListItemContentTopWrapper>
+                <FriendsListItemName>김주현</FriendsListItemName>
+              </FriendsListItemContentTopWrapper>
+              <FriendsListItemContentBottomWrapper>
+                <FriendsListItemStatus>상태 메시지</FriendsListItemStatus>
+              </FriendsListItemContentBottomWrapper>
+            </FriendsListItemContentWrapper>
+          </FriendsListItem>
+
+          <FriendsListItem>
+            <FriendsListItemProfileWrapper>
               <FriendsListItemProfile src={cr_pic} />
             </FriendsListItemProfileWrapper>
             <FriendsListItemContentWrapper>
@@ -269,7 +290,7 @@ const Friends = () => {
                 <FriendsListItemName>김채림</FriendsListItemName>
               </FriendsListItemContentTopWrapper>
               <FriendsListItemContentBottomWrapper>
-                <FriendsListItemStatus>최근 대화 내용</FriendsListItemStatus>
+                <FriendsListItemStatus>상태 메시지</FriendsListItemStatus>
               </FriendsListItemContentBottomWrapper>
             </FriendsListItemContentWrapper>
           </FriendsListItem>
@@ -283,7 +304,7 @@ const Friends = () => {
                 <FriendsListItemName>전시원형</FriendsListItemName>
               </FriendsListItemContentTopWrapper>
               <FriendsListItemContentBottomWrapper>
-                <FriendsListItemStatus>최근 대화 내용</FriendsListItemStatus>
+                <FriendsListItemStatus>상태 메시지</FriendsListItemStatus>
               </FriendsListItemContentBottomWrapper>
             </FriendsListItemContentWrapper>
           </FriendsListItem>

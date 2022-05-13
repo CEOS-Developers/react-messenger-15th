@@ -6,9 +6,9 @@ import icon_pinned from '../../assets/icon_pinned.png';
 import icon_chatbubble from '../../assets/icon_chatbubble.png';
 import icon_send from '../../assets/icon_send.png';
 
-import jh_pic from '../../assets/jh_pic.png';
+import jh_pic from '../../assets/jh_pic.jpg';
 import cr_pic from '../../assets/cr_pic.png';
-import sw_pic from '../../assets/sw_pic.png';
+import sw_pic from '../../assets/sw_pic.jpg';
 import profile_pic from '../../assets/profile_squared.jpg';
 
 const ChatWrapper = styled.div`
@@ -157,6 +157,8 @@ const ChatListItemProfileWrapper = styled.div`
 const ChatListItemProfile = styled.img`
   width: 40px;
   height: 40px;
+
+  border-radius: 14px;
 `;
 
 const ChatListItemContentWrapper = styled.div`
@@ -288,6 +290,8 @@ const ChatContentItemLeftProfileWrapper = styled.div`
 const ChatContentItemLeftProfile = styled.img`
   height: 32px;
   width: 32px;
+
+  border-radius: 50%;
 `;
 
 const ChatContentItemLeftInfoWrapper = styled.div`
@@ -461,6 +465,26 @@ const Chat = () => {
             <ChatListContentHeaderText>PINNED</ChatListContentHeaderText>
           </ChatListContentHeader>
 
+          <ChatListItemSelected>
+            <ChatListItemProfileWrapper>
+              <ChatListItemProfile src={sw_pic} />
+            </ChatListItemProfileWrapper>
+            <ChatListItemContentWrapper>
+              <ChatListItemContentTopWrapper>
+                <ChatListItemName>전시원형</ChatListItemName>
+                <ChatListItemTime>11:28 PM</ChatListItemTime>
+              </ChatListItemContentTopWrapper>
+              <ChatListItemContentBottomWrapper>
+                <ChatListItemRecent>ㅇㅋㅇㅋ</ChatListItemRecent>
+              </ChatListItemContentBottomWrapper>
+            </ChatListItemContentWrapper>
+          </ChatListItemSelected>
+
+          <ChatListContentHeader>
+            <ChatListContentHeaderIcon src={icon_chatbubble} />
+            <ChatListContentHeaderText>ALL MESSAGE</ChatListContentHeaderText>
+          </ChatListContentHeader>
+
           <ChatListItem>
             <ChatListItemProfileWrapper>
               <ChatListItemProfile src={jh_pic} />
@@ -471,15 +495,10 @@ const Chat = () => {
                 <ChatListItemTime>12:03 AM</ChatListItemTime>
               </ChatListItemContentTopWrapper>
               <ChatListItemContentBottomWrapper>
-                <ChatListItemRecent>최근 대화 내용</ChatListItemRecent>
+                <ChatListItemRecent>또 늦게 내나요??</ChatListItemRecent>
               </ChatListItemContentBottomWrapper>
             </ChatListItemContentWrapper>
           </ChatListItem>
-
-          <ChatListContentHeader>
-            <ChatListContentHeaderIcon src={icon_chatbubble} />
-            <ChatListContentHeaderText>ALL MESSAGE</ChatListContentHeaderText>
-          </ChatListContentHeader>
 
           <ChatListItem>
             <ChatListItemProfileWrapper>
@@ -491,25 +510,12 @@ const Chat = () => {
                 <ChatListItemTime>11:58 PM</ChatListItemTime>
               </ChatListItemContentTopWrapper>
               <ChatListItemContentBottomWrapper>
-                <ChatListItemRecent>최근 대화 내용</ChatListItemRecent>
+                <ChatListItemRecent>
+                  악악악악악악악악악악악악악악악악...
+                </ChatListItemRecent>
               </ChatListItemContentBottomWrapper>
             </ChatListItemContentWrapper>
           </ChatListItem>
-
-          <ChatListItemSelected>
-            <ChatListItemProfileWrapper>
-              <ChatListItemProfile src={sw_pic} />
-            </ChatListItemProfileWrapper>
-            <ChatListItemContentWrapper>
-              <ChatListItemContentTopWrapper>
-                <ChatListItemName>전시원형</ChatListItemName>
-                <ChatListItemTime>11:28 PM</ChatListItemTime>
-              </ChatListItemContentTopWrapper>
-              <ChatListItemContentBottomWrapper>
-                <ChatListItemRecent>최근 대화 내용</ChatListItemRecent>
-              </ChatListItemContentBottomWrapper>
-            </ChatListItemContentWrapper>
-          </ChatListItemSelected>
         </ChatListContentContainer>
       </ChatList>
 

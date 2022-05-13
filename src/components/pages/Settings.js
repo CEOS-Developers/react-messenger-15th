@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import emoji_person from '../../assets/emoji_person.png';
 import emoji_theme from '../../assets/emoji_theme.png';
 
-import profile_pic from '../../assets/profile_squared.jpg';
+import img_settings from '../../assets/img_settings.png';
 
 const SettingsWrapper = styled.div`
   flex: 1;
@@ -68,8 +68,8 @@ const SettingsListItemProfileWrapper = styled.div`
 `;
 
 const SettingsListItemProfile = styled.img`
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
 
   border-radius: 50%;
 `;
@@ -105,10 +105,17 @@ const SettingsContentImg = styled.img`
   height: auto;
 
   border-radius: 18px;
+
+  opacity: 1;
+  transition: all 0.3s;
+
+  &:hover {
+    opacity: 0.6;
+  }
 `;
 
 const SettingsContentText = styled.div`
-  /* margin-top: 42px; */
+  margin-top: 42px;
 
   font-size: 12px;
   font-weight: 400;
@@ -145,8 +152,8 @@ const Settings = () => {
       </SettingsList>
 
       <SettingsContent>
-        {/* <SettingsContentImg src={emoji_theme} /> */}
-        <SettingsContentText>설정 세부 항목</SettingsContentText>
+        <SettingsContentImg src={img_settings} />
+        <SettingsContentText>설정할 항목을 클릭하세요.</SettingsContentText>
       </SettingsContent>
     </SettingsWrapper>
   );

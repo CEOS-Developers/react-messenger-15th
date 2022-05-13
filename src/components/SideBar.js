@@ -82,6 +82,7 @@ const SideBarMenuFooter = styled.div`
 const SideBarIconWrapper = styled.div`
   display: flex;
   justify-content: center;
+  align-items: center;
 
   width: 100%;
   margin: 12px 0px;
@@ -97,6 +98,7 @@ const SideBarIconWrapper = styled.div`
 const SideBarIconWrapperSelected = styled.div`
   display: flex;
   justify-content: center;
+  align-items: center;
 
   width: 100%;
   margin: 12px 0px;
