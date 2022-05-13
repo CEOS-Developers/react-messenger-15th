@@ -205,6 +205,7 @@ const ChatContent = styled.div`
 
 const ChatContentHeader = styled.div`
   display: flex;
+  justify-content: right;
 
   height: 72px;
 
@@ -216,37 +217,28 @@ const ChatContentHeaderProfileWrapper = styled.div`
   justify-content: center;
   align-items: center;
 
-  margin-left: 24px;
+  margin-right: 24px;
 `;
 
 const ChatContentHeaderProfile = styled.img`
-  width: 46px;
-  height: 46px;
+  margin-left: -10px;
+
+  width: 40px;
+  height: 40px;
+
+  border-radius: 50%;
 `;
 
-const ChatContentHeaderContentWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+const ChatContentHeaderProfileSelected = styled.img`
+  z-index: 1000 !important;
 
-  padding-top: 4px;
-  margin-left: 16px;
-`;
+  margin-left: -10px;
 
-const ChatContentHeaderContentName = styled.div`
-  font-size: 14px;
-  font-weight: 600;
-  color: #333333;
+  width: 40px;
+  height: 40px;
 
-  margin-bottom: 6px;
-`;
-
-const ChatContentHeaderContentStatus = styled.div`
-  font-size: 11px;
-  font-weight: 300;
-  color: #999999;
-
-  margin-bottom: 6px;
+  border-radius: 50%;
+  border: 2px solid white;
 `;
 
 const ChatContentContainer = styled.div`
@@ -503,15 +495,8 @@ const Chat = () => {
         <ChatContentHeader>
           <ChatContentHeaderProfileWrapper>
             <ChatContentHeaderProfile src={sw_pic} />
+            <ChatContentHeaderProfileSelected src={profile_pic} />
           </ChatContentHeaderProfileWrapper>
-          <ChatContentHeaderContentWrapper>
-            <ChatContentHeaderContentName>
-              전시원형
-            </ChatContentHeaderContentName>
-            <ChatContentHeaderContentStatus>
-              상태 메시지
-            </ChatContentHeaderContentStatus>
-          </ChatContentHeaderContentWrapper>
         </ChatContentHeader>
 
         <ChatContentContainer>
