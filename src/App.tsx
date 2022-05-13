@@ -18,9 +18,7 @@ function App() {
         <Route element={<Layout headerText={'Messages'} />}>
           <Route path="/ChatListScreen" element={<ChatListScreen />} />
         </Route>
-        <Route element={<Layout headerText={'Chatting'} />}>
-          <Route path="/ChatRoomScreen/:userId" element={<ChatRoomScreen />} />
-        </Route>
+        <Route path="/ChatRoomScreen/:userId" element={<ChatRoomScreen />} />
         <Route element={<Layout headerText={'Setting'} />}>
           <Route path="/SettingScreen" element={<SettingScreen />} />
         </Route>
