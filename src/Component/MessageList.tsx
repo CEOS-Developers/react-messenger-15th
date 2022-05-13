@@ -7,39 +7,14 @@ import styled from 'styled-components';
 */
 
 const MessageList = ( ) => {
-    return <MessageListArea>
-        <MessageListField>
-            <ChatInfoWrapper>
+    return <ChatInfoWrapper>
                 <Bubble>
                 </Bubble>
             </ChatInfoWrapper>
-        </MessageListField>
-    </MessageListArea>
 }
 
-const MessageListArea = styled.div`
-    width: 100%;
-    height: 56%;
-    display : flex;
-    flex-direction : column;
-    font-family: sans-serif;
-    align-items: left;
-    background: #FFFFFF;
-    border-radius: 24px;
-`;
 
-const MessageListField = styled.div`
-    width: 100%;
-    height: 90%;
-    display : flex;
-    flex-direction : column;
-    margin : auto; 
-    font-family: sans-serif;
-    align-items: flex-start;
-    background: #FFFFFF;
-    border-radius: 24px;
-    overflow : auto;
-`;
+
 
 const ChatInfoWrapper = styled.div`
     margin : 4px 24px 2px 24px;

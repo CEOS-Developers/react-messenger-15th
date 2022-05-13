@@ -12,11 +12,13 @@ const SquareButton = ( {key, onclick} : Buttonprops ) => {
 }
 
 const Btn = styled.button<Buttonprops>`
-    width: 20px;
-    height: 20px;
-    border-radius: 8px;
+    width: 40px;
+    height: 40px;
+    border-radius: 16px;
     object-fit: cover;
     background-color : #999999;
+    border : none;
+    align-item : center;
 `;
 
 export default SquareButton;

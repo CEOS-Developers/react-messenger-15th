@@ -5,51 +5,57 @@ import SquareImage from '../Atom/SquareImage';
 
 type Userprofileprops = {
     id : string
+    maintext : string
+    subtext : string
 }
 
-const Userprofile = ( { id } : Userprofileprops ) => {
+const Userprofile = ( { id, maintext, subtext } : Userprofileprops ) => {
     return <UserprofileWrapper>
-        <SquareImage id={id}/>
+    <SquareImage id={id}/>
         <ProfileTextWrapper>
-            <UserName></UserName> //map으로 id 검색 후 name 
-            <UserComment></UserComment> //map으로 id 검색 후 text
+            <UserName>{maintext}</UserName>
+            <UserComment>{subtext}</UserComment> 
         </ProfileTextWrapper>
-    </UserprofileWrapper>
+        </UserprofileWrapper>
 }
 
-const UserprofileWrapper = styled.div`
+const UserprofileWrapper = styled.button`
     display: flex;
-    align-items: left;
-    order: 0;
-    align-self: stretch;
-    flex-grow: 0;
-    margin: auto 24px;
+    flex-direction : row;
+    align-items : space-evenly;
+    justify-content : left;
+    margin : 36px 0px 0px 0px;
+    border : none;
+    padding : 0px;
+    background-color : rgba(0,0,0,0);
+    text-decoration-line : none;
 `;
 
-const ProfileTextWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    text-align : left;
-    align-self: stretch;
-    flex-grow: 0;
-    padding : 10px;
+const ProfileTextWrapper = styled.span`
+    display: div;
+    text-decoration : none;
 `;
 
-const UserName = styled.span`
-font-family: sans-serif;
+const UserName = styled.div`
+    font-family: sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
     color: #000000;
+    padding : 2px;
+    text-align : left;
+    text-decoration : none;
 `;
 
-const UserComment = styled.span`
+const UserComment = styled.div`
     font-family: sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
     color: #999999;
+    padding : 2px;
+    text-align : left;
+    text-decoration : none;
 `;
 
 export default Userprofile;

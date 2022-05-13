@@ -14,10 +14,9 @@ const InputField = ( {value, placeholder, onchange} : InputFieldprops ) => {
 const Input = styled.input<InputFieldprops>`
     font-family: sans-serif;
     text-align: left;
-    justify-content : center;
-    width: calc(100% - 120px) ;
+    width: calc( 100% - 90px );
     height : 36px;
-    margin: 0px 24px;
+    margin: 0px 0px;
     padding : 0px 16px;
     font-size: 12px;
 

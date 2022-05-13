@@ -1,19 +1,19 @@
 import { atom } from "recoil";
 
-export interface IUserTypes {
+export interface IMessagesTypes {
     userId: number;
     roomID: number;
     messageText: string;
 }
 
-export const setUserState = atom<string>({
-    key: 'setUserState',
+export const setMessagesState = atom<string>({
+    key: 'message',
     default: '',
 });
 
   // 업데이트 시킬 Todos atom 배열
-export const usersState = atom<IUserTypes[]>({
-    key: 'users',
+export const messagesState = atom<IMessagesTypes[]>({
+    key: 'message',
     default: [
     {
         userId: 0,
@@ -26,7 +26,7 @@ export const usersState = atom<IUserTypes[]>({
         messageText: "Hey buddy What are you doing now",
     }, 
     {
-        userId: 0,
+        userId: 2,
         roomID: 2,
         messageText: "Hey buddy What are you doing now",
     },
@@ -36,7 +36,7 @@ export const usersState = atom<IUserTypes[]>({
         messageText: "Hey buddy What are you doing now",
     },
     {
-        userId: 0,
+        userId: 3,
         roomID: 3,
         messageText: "Hey buddy What are you doing now",
     }

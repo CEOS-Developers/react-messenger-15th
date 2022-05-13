@@ -6,14 +6,13 @@ type SquareImageprops = {
 }
 
 const SquareImage = ( {id} : SquareImageprops ) => {
-    return <Image src = {`../Asset/Image/${id}.jp2`}></Image>
+    return <Image src = {`../Asset/Image/${id}.png`}/>
 }
 
 const Image = styled.img`
     width : 40px;
     height : 40px;
-    margin : auto;
-    background: #567BFF;
+    margin : 0px 12px 0px 0px;
     border-radius: 16px;
 `;
 

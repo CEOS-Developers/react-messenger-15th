@@ -7,8 +7,8 @@ export interface IUserTypes {
     profileText: string;
 }
 
-export const setUserState = atom<string>({
-    key: 'setUserState',
+export const setUsersState = atom<string>({
+    key: 'users',
     default: '',
 });
 
@@ -16,29 +16,30 @@ export const setUserState = atom<string>({
 export const usersState = atom<IUserTypes[]>({
     key: 'users',
 
-default: [
-    {
-        id: 'user0',
-        profileName: 'Vanellope von Schweetz',
-        profileLink: 'Img0',
-        profileText: 'I can feel it in my code!',
-    },
-    {
-        id: 'user1',
-        profileName: 'Wreck-It Ralph',
-        profileLink: 'Img1',
-        profileText: 'IM GONNA WRECK IT!',
-    },
-    {
-        id: 'user2',
-        profileName: 'Sergeant Calhoun',
-        profileLink: 'Img2',
-        profileText: 'I am one dynamite woman.',
-    },
-    {
-        id: 'user3',
-        profileName: 'Fix-It Felix Jr.',
-        profileLink: 'Img3',
-        profileText: 'I can fix it!',
-    }]
+    default: [
+        {
+            id: '0',
+            profileName: '바넬로피 본 슈위츠',
+            profileLink: '0',
+            profileText: 'I feel it in my code!',
+        },
+        {
+            id: '1',
+            profileName: '다 부숴 랄프',
+            profileLink: '1',
+            profileText: '랄프는 부술거야!',
+        },
+        {
+            id: '2',
+            profileName: '칼훈 병장',
+            profileLink: '2',
+            profileText: '항상 줄을 맞춰 서도록.',
+        },
+        {
+            id: '3',
+            profileName: '다 고쳐 필릭스',
+            profileLink: '3',
+            profileText: '내가 다 고칠게!',
+        }
+    ]
 });
