@@ -1,3 +1,4 @@
+import { connect } from 'react-redux';
 import { useChatListDispatch } from '../../contexts/ChatListContext';
 import { useReceiverUserIdState } from '../../contexts/ReceiverUserIdContext';
 import styled, { css } from 'styled-components';
@@ -12,11 +13,11 @@ type TChatRoomFormProps = {
   partnerUserId: number;
 };
 
-function ChatRoomForm({ partnerUserId }: TChatRoomFormProps) {
+function ChatRoomFormContainer({ partnerUserId, receiverUserId }: any) {
   const [inputValue, handleInputChange, resetInput, isValid, setIsValid] =
     useInput('');
 
-  const receiverUserIdState = useReceiverUserIdState();
+  // const receiverUserIdState = useReceiverUserIdState();
   const chatListDispatch = useChatListDispatch();
   const concatNewChat = (newChat: IChat) => {
     chatListDispatch({
@@ -25,13 +26,31 @@ function ChatRoomForm({ partnerUserId }: TChatRoomFormProps) {
     });
   };
 
+  // function handleSubmitBtnClick(e: React.MouseEvent<HTMLButtonElement>) {
+  //   e.preventDefault();
+  //   if (!inputValue) alert('Please enter a message');
+  //   else {
+  //     let senderUserId;
+  //     if (receiverUserIdState.receiverUserId === me.userId)
+  //       senderUserId = partnerUserId;
+  //     else senderUserId = me.userId;
+  //     const newChat: IChat = {
+  //       userId: senderUserId,
+  //       msg: inputValue,
+  //       unixTime: Date.now(),
+  //     };
+  //     concatNewChat(newChat);
+  //     resetInput();
+  //     setIsValid(false);
+  //   }
+  // }
+
   function handleSubmitBtnClick(e: React.MouseEvent<HTMLButtonElement>) {
     e.preventDefault();
     if (!inputValue) alert('Please enter a message');
     else {
       let senderUserId;
-      if (receiverUserIdState.receiverUserId === me.userId)
-        senderUserId = partnerUserId;
+      if (receiverUserId === me.userId) senderUserId = partnerUserId;
       else senderUserId = me.userId;
       const newChat: IChat = {
         userId: senderUserId,
@@ -52,12 +71,17 @@ function ChatRoomForm({ partnerUserId }: TChatRoomFormProps) {
         onChange={handleInputChange}
         autoFocus
       ></input>
-      <Btn onClick={handleSubmitBtnClick} isValid={isValid}>
+      <SubmitBtn onClick={handleSubmitBtnClick} isValid={isValid}>
         <HiOutlineChevronDown />
-      </Btn>
+      </SubmitBtn>
     </ChatRoomFormBlock>
   );
 }
+
+export default connect(
+  ({ receiver }) => ({ receiverUserId: receiver.receiverUserId }),
+  {}
+)(ChatRoomFormContainer);
 
 const ChatRoomFormBlock = styled.form`
   width: 100%;
@@ -82,7 +106,7 @@ const ChatRoomFormBlock = styled.form`
   }
 `;
 
-const Btn = styled.button<{ isValid: boolean }>`
+const SubmitBtn = styled.button<{ isValid: boolean }>`
   position: absolute;
   right: 0;
   bottom: 0;
@@ -124,5 +148,3 @@ const Btn = styled.button<{ isValid: boolean }>`
       `}
   }
 `;
-
-export default ChatRoomForm;

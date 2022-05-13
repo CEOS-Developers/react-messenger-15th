@@ -9,7 +9,7 @@ type TChatRoomListProps = {
   partnerUserId: number;
 };
 
-function ChatRoomList({ partnerUserId }: TChatRoomListProps) {
+function ChatRoomListContainer({ partnerUserId }: TChatRoomListProps) {
   const chatListState = useChatListState();
 
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -60,4 +60,4 @@ const ChatRoomListBlock = styled.div`
   }
 `;
 
-export default React.memo(ChatRoomList);
+export default React.memo(ChatRoomListContainer);
