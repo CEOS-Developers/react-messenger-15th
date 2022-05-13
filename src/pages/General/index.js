@@ -5,7 +5,7 @@ import Main from '../../components/Main';
 import styled from 'styled-components';
 import { useRecoilState } from 'recoil';
 import { closeWindow } from '../../store/recoil';
-import Start from '../../components/start';
+import Start from '../../components/Start';
 
 const General = () => {
   const [window, setWindow] = useRecoilState(closeWindow);

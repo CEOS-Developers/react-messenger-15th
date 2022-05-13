@@ -15,7 +15,7 @@ import { useEffect } from 'react';
 import ChatModal from '../../components/ChatModal';
 import UserBox from '../../components/UserBox';
 import ChatRoom from '../../components/ChatRoom';
-import Start from '../../components/start';
+import Start from '../../components/Start';
 import styled from 'styled-components';
 const Rooms = () => {
   const [window, setWindow] = useRecoilState(closeWindow);

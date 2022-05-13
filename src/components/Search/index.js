@@ -3,7 +3,7 @@ import { useRecoilState } from 'recoil';
 import { searchToggleState, searchValue } from '../../store/recoil';
 import { userInfo } from '../../store/recoil/data';
 import styled from 'styled-components';
-import SearchUserBox from '../serachUserBox';
+import SearchUserBox from '../SerachUserBox';
 
 function Search() {
   const [text, setText] = useState('');

@@ -15,7 +15,7 @@ import { useCallback, useEffect } from 'react';
 
 import UserBox from '../../components/UserBox';
 import ChatRoom from '../../components/ChatRoom';
-import Start from '../../components/start';
+import Start from '../../components/Start';
 import styled from 'styled-components';
 const Home = () => {
   const [searchToggle, setSearchToggle] = useRecoilState(searchToggleState);

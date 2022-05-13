@@ -183,6 +183,7 @@ const ChatTextArea = styled.textarea`
   background: #262626;
   border: none;
   color: white;
+  resize: none;
   &:focus {
     outline: none;
   }
