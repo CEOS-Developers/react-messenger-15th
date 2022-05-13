@@ -12,7 +12,7 @@ const ChatRoomHeader = ({
 }: IChatRoomHeaderProps) => {
   const { userId } = useParams();
   const [friendObj] = friends.filter((friend) => friend.userId === userId);
-  const [currentUserName, setCurrentUserName] = useState(friendObj.userName);
+  const [currentUserName, setCurrentUserName] = useState('Anna');
 
   const handleCurrentUserToggle = () => {
     currentUserId === userId
