@@ -9,7 +9,7 @@ const SearchUser = ({ filteredUser }: any) => {
   useEffect(() => filteredUser(textinput), [filteredUser, textinput]);
   return (
     <SearchContainer>
-      <BsSearch />
+      <BsSearch size={18} className="searchLogo" />
       <SearchInput
         placeholder="Search . . . "
         value={textinput}
@@ -21,5 +21,22 @@ const SearchUser = ({ filteredUser }: any) => {
 };
 export default SearchUser;
 
-const SearchInput = styled.input``;
-const SearchContainer = styled.div``;
+const SearchInput = styled.input`
+  margin-left: 1rem;
+  width: 16rem;
+  height: 1.5rem;
+  border-radius: 0.5rem;
+  border: 0.08rem solid #c2bbbb;
+  padding-left: 1rem;
+`;
+const SearchContainer = styled.div`
+  padding: 1rem;
+  height: 2rem;
+  text-align: center;
+
+  .searchLogo {
+    line-height: 3rem;
+    position: relative;
+    top: 0.3rem;
+  }
+`;

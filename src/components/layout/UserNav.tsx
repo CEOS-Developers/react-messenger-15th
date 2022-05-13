@@ -21,7 +21,7 @@ const UserNav = ({ currentUser, setCurrentUser, otherUser }: any) => {
   return (
     <UserNavContainer>
       <LinkToChat to={'/chatlist'}>
-        <ChangeUserButton> 〈 </ChangeUserButton>
+        <BackToMessageList> 〈 </BackToMessageList>
       </LinkToChat>
       <SwitchButton onClick={switchUser}>
         <ProfileImg src={`/assets/${currentUser.userProfile}`} />
@@ -34,11 +34,14 @@ const UserNav = ({ currentUser, setCurrentUser, otherUser }: any) => {
 
 export default UserNav;
 
-const ChangeUserButton = styled.button`
+const BackToMessageList = styled.button`
   font-size: 1rem;
+  line-height: 8rem;
+  padding-left: 1rem;
 `;
 
 const UserNavContainer = styled.div`
+  display: flex;
   border-bottom-style: solid;
   border-color: #c2bbbb;
   border-width: 0.08rem;
@@ -50,6 +53,8 @@ const UserNavContainer = styled.div`
 
 const SwitchButton = styled.button`
   background-color: transparent;
+  margin: auto;
+  padding-right: 2rem;
 `;
 const ProfileImg = styled.img`
   width: 4.5rem;

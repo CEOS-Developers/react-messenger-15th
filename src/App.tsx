@@ -32,4 +32,5 @@ const MessengerContainer = styled.div`
   border-radius: 0.5rem;
   height: 43rem;
   width: 26rem;
+  justify-content: flex-start;
 `;

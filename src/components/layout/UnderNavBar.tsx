@@ -25,8 +25,13 @@ const NavBarContainer = styled.div`
   display: flex;
   justify-content: space-evenly;
   border-top: 0.08rem solid #c2bbbb;
-  top: 2.5rem;
+  border-width: 100%;
   line-height: 2.5;
+  position: fixed;
+  top: 44rem;
+  align-items: center;
+  text-align: center;
+  width: 26rem;
 `;
 const StyledLink = styled(Link)`
   text-decoration: none;

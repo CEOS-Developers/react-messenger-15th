@@ -1,15 +1,19 @@
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { LinkToChat, ProfileImg } from './layout/CommonStyle';
+import {
+  LinkToChat,
+  ListItem,
+  ProfileImg,
+  UserName,
+} from './layout/CommonStyle';
 const Friends = ({ userProfile, userName, userStatus }: any) => {
   return (
     <FriendList>
       <LinkToChat to={`/messengerbox/${userName}`}>
         <ProfileImg src={`/assets/${userProfile}`} />
-        <Profile>
+        <ListItem>
           <UserName>{userName}</UserName>
           <UserStatus>{userStatus}</UserStatus>
-        </Profile>
+        </ListItem>
       </LinkToChat>
     </FriendList>
   );
@@ -19,13 +23,11 @@ export default Friends;
 
 const FriendList = styled.div`
   display: flex;
-  height: rem;
+  padding-left: 1rem;
+  margin: 0.5rem;
 `;
 
-const Profile = styled.div`
-  display: flex;
-  flex-direction: column;
+const UserStatus = styled.div`
+  font-weight: lighter;
+  font-size: 14px;
 `;
-
-const UserName = styled.div``;
-const UserStatus = styled.div``;

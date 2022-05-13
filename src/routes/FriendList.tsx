@@ -41,7 +41,20 @@ const FriendList = () => {
 
 export default FriendList;
 
-const FriendListContainer = styled.div`
-  position: absolute;
+const FriendListContainer = styled.div``;
+const Content = styled.div`
+  height: 31.5rem;
+  overflow: auto;
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    padding: 0;
+    margin: 0;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    height: 17%;
+    background-color: #c2bbbb;
+    border-radius: 10px;
+  }
 `;
-const Content = styled.div``;
