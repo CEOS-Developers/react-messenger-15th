@@ -1,11 +1,12 @@
 import styled from 'styled-components';
+import { IChattingsProps } from '../../interface/interface';
 import {
   LinkToChat,
   ListItem,
   ProfileImg,
   UserName,
-} from './layout/CommonStyle';
-const Chattings = ({ userId, userName, message }: any) => {
+} from '../layout/CommonStyle';
+const Chattings = ({ userId, userName, message }: IChattingsProps) => {
   return (
     <ChattingRooms>
       <LinkToChat to={`/messengerbox/${userName}`}>

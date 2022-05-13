@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 import user from '../data/user.json';
-import Friends from '../components/Friends';
+import Friends from '../components/FriendList/Friends';
 import UnderNavBar from '../components/layout/UnderNavBar';
 import { HeaderContains, HeaderText } from '../components/layout/CommonStyle';
-import SearchUser from '../components/SearchUser';
+import SearchUser from '../components/FriendList/SearchUser';
 import { useState } from 'react';
 import { AiOutlineUser } from 'react-icons/ai';
 
@@ -47,7 +47,7 @@ export default FriendList;
 
 const FriendListContainer = styled.div``;
 const Content = styled.div`
-  height: 31.5rem;
+  height: 31.8rem;
   overflow: auto;
 
   ::-webkit-scrollbar {

@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 import { BsSearch } from 'react-icons/bs';
-import useInput from '../hooks/useInput';
+import useInput from '../../hooks/useInput';
 import { useEffect } from 'react';
+import { IFilteredUser } from '../../interface/interface';
 
-const SearchUser = ({ filteredUser }: any) => {
+const SearchUser = ({ filteredUser }: IFilteredUser) => {
   const { textinput, handleInputChange } = useInput('');
 
   useEffect(() => filteredUser(textinput), [filteredUser, textinput]);

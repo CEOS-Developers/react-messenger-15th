@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
-import { IChat, IUserNameProps } from '../../interface/interface';
-const SingleMessage = ({ chat }: any) => {
-  const { id, userId, userName, text, time } = chat;
+import { IMessageData, IUserNameProps } from '../../interface/interface';
+const SingleMessage = ({ chat }: { chat: IMessageData }) => {
+  const { userId, userName, text, time } = chat;
   return (
     <SingleMessageContainer userName={userName}>
       <ProfileImg src={`/assets/${userId}.jpg`} />

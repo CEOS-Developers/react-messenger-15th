@@ -16,7 +16,6 @@ const MessengerBox = () => {
 
   const [currentUser, setCurrentUser] = useState(user[0]);
   const [messageData, setMessageData] = useState(userMessageData.messages);
-
   return (
     <>
       <UserNav

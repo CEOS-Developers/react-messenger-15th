@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { HeaderContains, HeaderText } from '../components/layout/CommonStyle';
 import UnderNavBar from '../components/layout/UnderNavBar';
-import Messages from '../components/Chattings';
+import Messages from '../components/ChatList/Chattings';
 import message from '../data/message.json';
 import { BsChatDots } from 'react-icons/bs';
 

@@ -1,11 +1,12 @@
 import styled from 'styled-components';
+import { IFriendsProps } from '../../interface/interface';
 import {
   LinkToChat,
   ListItem,
   ProfileImg,
   UserName,
-} from './layout/CommonStyle';
-const Friends = ({ userProfile, userName, userStatus }: any) => {
+} from '../layout/CommonStyle';
+const Friends = ({ userProfile, userName, userStatus }: IFriendsProps) => {
   return (
     <FriendList>
       <LinkToChat to={`/messengerbox/${userName}`}>

@@ -2,8 +2,9 @@ import { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import SingleMessage from './SingleMessage';
 import { Scrollbars } from 'react-custom-scrollbars';
+import { IMessageData } from '../../interface/interface';
 
-const MessageList = ({ messageData }: any) => {
+const MessageList = ({ messageData }: { messageData: Array<IMessageData> }) => {
   const scrollbarRef = useRef<Scrollbars>(null);
 
   //채팅 submit시 스크롤바 아래로
@@ -27,7 +28,7 @@ const MessageList = ({ messageData }: any) => {
         ref={scrollbarRef}
       >
         <ShowList>
-          {messageData.map((chat: any) => (
+          {messageData.map((chat: IMessageData) => (
             <SingleMessage chat={chat} key={chat.userId} />
           ))}
         </ShowList>

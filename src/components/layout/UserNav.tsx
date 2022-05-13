@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 import user from '../../data/user.json';
+import { IUserNavProps } from '../../interface/interface';
 import { LinkToChat } from './CommonStyle';
 
-const UserNav = ({ currentUser, setCurrentUser, otherUser }: any) => {
+const UserNav = ({ currentUser, setCurrentUser, otherUser }: IUserNavProps) => {
   const userName = currentUser.userName;
   const userindex = user.findIndex(
     (user) => user.userName === otherUser.userName
