@@ -1,3 +1,4 @@
+import React from 'react';
 import styled, { css } from 'styled-components';
 import { IMessageData, IUserNameProps } from '../../interface/interface';
 const SingleMessage = ({ chat }: { chat: IMessageData }) => {
@@ -14,7 +15,7 @@ const SingleMessage = ({ chat }: { chat: IMessageData }) => {
   );
 };
 
-export default SingleMessage;
+export default React.memo(SingleMessage);
 
 const SingleMessageContainer = styled.div<IUserNameProps>`
   padding: 1rem;
