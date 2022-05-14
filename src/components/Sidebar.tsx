@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
-import { closeWindow, pathInfo } from '../../store/recoil';
+import { closeWindow, pathInfo } from '../store/recoil';
 import { useEffect } from 'react';
 
 const Sidebar = () => {

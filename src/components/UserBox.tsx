@@ -5,8 +5,8 @@ import {
   pathInfo,
   searchValue,
   userClicked,
-} from '../../store/recoil';
-import { userInfo } from '../../store/recoil/data';
+} from '../store/recoil';
+import { userInfo } from '../store/recoil/data';
 
 function UserBox() {
   const [urlPath, setUrlPath] = useRecoilState(pathInfo);

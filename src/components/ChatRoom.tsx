@@ -1,21 +1,21 @@
 import styled from 'styled-components';
 import { useCallback, useEffect, useRef, useState } from 'react';
-import MessageBox from '../MessageBox';
+import {IMsgs} from '../interfaces/data';
 import { useRecoilState } from 'recoil';
-import { chatRoomToggleState, userClicked } from '../../store/recoil';
-import { Message, userInfo } from '../../store/recoil/data';
+import { chatRoomToggleState, userClicked } from '../store/recoil';
+import { Message, userInfo } from '../store/recoil/data';
+import MessageBox from './MessageBox';
 
 function ChatRoom() {
   const [text, setText] = useState('');
-  const [prevUser, setPrevUser] = useState('');
-  const [roomId, setRoomId] = useState(0);
-  const scrollRef = useRef();
-  const onChangeTextArea = useCallback(
-    (e) => {
+  const [prevUser, setPrevUser] = useState<string| null>('');
+  const [roomId, setRoomId] = useState<number>(0);
+  const scrollRef = useRef<HTMLInputElement>(null);
+  const onChangeTextArea =
+    (e: React.ChangeEvent<HTMLTextAreaElement>):void => {
       setText(e.target.value);
-    },
-    [text]
-  );
+    }
+
   const [chatRoomToggle, setChatRoomToggle] =
     useRecoilState(chatRoomToggleState);
   const [currentUser, setCurrentUser] = useRecoilState(userClicked);
@@ -40,7 +40,7 @@ function ChatRoom() {
     toggleImg();
   }, [currentUser]);
 
-  const pickUser = (name) => {
+  const pickUser = (name:string| undefined): ( number | undefined) => {
     switch (name) {
       case '침착맨bde':
         return 0;
@@ -53,10 +53,11 @@ function ChatRoom() {
       case '슈말코qwejrl':
         return 4;
       default:
-        return null;
+        return 0;
     }
   };
   useEffect(() => {
+    // @ts-ignore
     setRoomId(pickUser(currentUser));
   }, []);
   const onClickImage = () => {
@@ -68,9 +69,9 @@ function ChatRoom() {
     }
   };
 
-  // when press 'enter', then form submit
+  // when press 'enter', then submit form
   // when press 'shift+enter', then change line
-  const onKeyUp = (e) => {
+  const onKeyUp = (e:React.KeyboardEvent) => {
     if (e.keyCode === 13) {
       if (!e.shiftKey) {
         e.preventDefault();
@@ -90,7 +91,8 @@ function ChatRoom() {
         const [room] = chat.filter((room) => room.roomId === roomId);
         const newRoom = { ...room, msgs: [...room.msgs, obj] };
 
-        setChat(chat.map((room) => (room.roomId === roomId ? newRoom : room)));
+        // @ts-ignore
+        setChat(chat.map(( room) => (room.roomId === roomId ? newRoom : room)));
 
         setText('');
       }
@@ -100,6 +102,10 @@ function ChatRoom() {
     scrollToBottom();
   }, [chat]);
 
+  // @ts-ignore
+  // @ts-ignore
+  // @ts-ignore
+  // @ts-ignore
   return (
     <Container>
       <ChatRoomHeader>
@@ -109,21 +115,21 @@ function ChatRoom() {
           <Cir3 />
         </CircleWrapper>
         <UserImg>
-          <Img src={url} alt={currentUser} onClick={onClickImage} />
+          <Img src={url} onClick={onClickImage} />
         </UserImg>
       </ChatRoomHeader>
       <ChatContents ref={scrollRef}>
-        {chat[roomId]?.msgs.map((m, i) => {
+        {chat[roomId]?.msgs.map(( m : IMsgs  , i:number) => {
           return <MessageBox key={i} message={m} />;
         })}
       </ChatContents>
       <FormWrapper>
         <ChatForm>
+
           <ChatTextArea
             onChange={onChangeTextArea}
             value={text}
             onKeyUp={onKeyUp}
-            type="text"
             required
           />
           <Btn disabled>전송</Btn>

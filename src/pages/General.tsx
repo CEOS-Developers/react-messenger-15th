@@ -1,11 +1,11 @@
-import { Container } from '../../styles/Container';
-import Sidebar from '../../components/Sidebar';
-import Header from '../../components/Header2';
-import Main from '../../components/Main';
+import { Container } from '../styles/Container';
+import Sidebar from '../components/Sidebar'
+import Header from '../components/Header2'
+import Main from '../components/Main'
+import Start from '../components/Start';
 import styled from 'styled-components';
 import { useRecoilState } from 'recoil';
-import { closeWindow } from '../../store/recoil';
-import Start from '../../components/Start';
+import { closeWindow } from '../store/recoil';
 
 const General = () => {
   const [window, setWindow] = useRecoilState(closeWindow);

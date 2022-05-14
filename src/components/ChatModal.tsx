@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { useRecoilState } from 'recoil';
-import { chatModalToggleState } from '../../store/recoil';
+import { chatModalToggleState } from '../store/recoil';
 
 function ChatModal() {
   const [chatModalToggle, setChatModalToggle] =

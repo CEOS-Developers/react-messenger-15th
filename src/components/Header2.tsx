@@ -4,10 +4,9 @@ import { useEffect, useState } from 'react';
 import { useRecoilState } from 'recoil';
 import {
   chatModalToggleState,
-  friendModalToggleState,
   searchToggleState,
   pathInfo,
-} from '../../store/recoil';
+} from '../store/recoil';
 function Header() {
   const [urlPath, setUrlPath] = useRecoilState(pathInfo);
   const [searchToggle, setSearchToggle] = useRecoilState(searchToggleState);

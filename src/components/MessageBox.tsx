@@ -1,27 +1,22 @@
 import styled, { css } from 'styled-components';
 
-import { Message, userInfo } from '../../store/recoil/data';
+import { Message, userInfo } from '../store/recoil/data';
 import { useRecoilState } from 'recoil';
-import { userClicked } from '../../store/recoil';
+import { userClicked } from '../store/recoil';
 import { useEffect, useState } from 'react';
+import { IMsgs } from '../interfaces/data';
 
+// @ts-ignore
 function MessageBox({ message }) {
   const [user, setUser] = useRecoilState(userInfo);
   const [currentUser, setCurrentUser] = useRecoilState(userClicked);
   const [source, setSource] = useState([]);
-  // const [url, setUrl] = useState('');
-  // const toggleImg = () => {
-  //   const [url] = user.filter((u) => u.userName === currentUser);
-  //   setUrl(url.profileImg);
-  // };
-  // useEffect(() => {
-  //   toggleImg();
-  // }, [currentUser]);
 
   const findUrl = () => {
     const [a] = user.filter((u) => u.userName === currentUser);
     const [b] = user.filter((u) => u.userName === '전시원');
     const source = [b.profileImg, a.profileImg];
+    // @ts-ignore
     setSource([...source]);
   };
   useEffect(() => {
@@ -65,7 +60,7 @@ const RightWrapper = styled.div`
   width: 100%;
 `;
 
-const NameWrapper = styled.div`
+const NameWrapper = styled.div<{ me?: boolean }>`
   color: #a0a0a0;
   margin-bottom: 5px;
 
@@ -77,7 +72,7 @@ const MsgWrapper = styled.div`
   padding: 8px;
   border-radius: 5px;
 `;
-const TimeWrapper = styled.div`
+const TimeWrapper = styled.div<{ me?: boolean }>`
   color: #a0a0a0;
   font-size: 8px;
 
@@ -94,7 +89,7 @@ const TimeWrapper = styled.div`
         `}
 `;
 
-const Img = styled.img`
+const Img = styled.img<{ me?: boolean }>`
   width: 30px;
   height: 30px;
   border-radius: 50%;

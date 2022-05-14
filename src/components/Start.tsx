@@ -1,5 +1,5 @@
 import { useRecoilState } from 'recoil';
-import { closeWindow } from '../../store/recoil';
+import { closeWindow } from '../store/recoil';
 import styled from 'styled-components';
 
 function Start() {

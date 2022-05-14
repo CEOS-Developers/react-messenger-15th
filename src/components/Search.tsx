@@ -1,33 +1,35 @@
-import { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useRecoilState } from 'recoil';
-import { searchToggleState, searchValue } from '../../store/recoil';
-import { userInfo } from '../../store/recoil/data';
+import { searchToggleState, searchValue } from '../store/recoil';
+import { userInfo } from '../store/recoil/data';
+
 import styled from 'styled-components';
-import SearchUserBox from '../SerachUserBox';
+import SearchUserBox from './SearchUserBox';
 
 function Search() {
   const [text, setText] = useState('');
   const [searchVal, setSearchVal] = useRecoilState(searchValue);
   const [user, setUser] = useRecoilState(userInfo);
-  const onChange = (e) => {
+  const onChange = (e : React.ChangeEvent<HTMLInputElement>) => {
     setText(e.target.value);
   };
   const [searchToggle, setSearchToggle] = useRecoilState(searchToggleState);
   const onToggleSearch = () => setSearchToggle((prev) => !prev);
   const handleSearch = () => {
     if (text === '' || text === null) {
-      setSearchVal(null);
+      setSearchVal(undefined);
     } else {
       const userNameArray = user.map((u) => u.userName).slice(1);
       const result = userNameArray.filter((name) => name.includes(text));
       console.log(result);
-      const searchedUser = user
+      const searchedUser  = user
         .map((u, i) => {
           if (result.includes(u.userName)) {
             return u;
           }
         })
         .filter((c) => typeof c !== 'undefined');
+      // @ts-ignore
       setSearchVal(searchedUser);
     }
   };

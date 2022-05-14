@@ -5,7 +5,7 @@ import {
   pathInfo,
   searchValue,
   userClicked,
-} from '../../store/recoil';
+} from '../store/recoil';
 
 function SearchUserBox() {
   const [urlPath, setUrlPath] = useRecoilState(pathInfo);

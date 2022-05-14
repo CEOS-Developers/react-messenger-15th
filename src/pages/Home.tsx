@@ -1,8 +1,11 @@
-import { Container } from '../../styles/Container';
-import Sidebar from '../../components/Sidebar';
-import Header from '../../components/Header2';
-import Main from '../../components/Main';
-import Search from '../../components/Search';
+import { Container } from '../styles/Container';
+import Sidebar from '../components/Sidebar';
+import Header from '../components/Header2';
+import Main from '../components/Main';
+import Search from '../components/Search';
+import UserBox from '../components/UserBox';
+import ChatRoom from '../components/ChatRoom';
+import Start from '../components/Start';
 import { useRecoilState } from 'recoil';
 import {
   chatModalToggleState,
@@ -10,38 +13,35 @@ import {
   closeWindow,
   friendModalToggleState,
   searchToggleState,
-} from '../../store/recoil';
-import { useEffect } from 'react';
-import ChatModal from '../../components/ChatModal';
-import UserBox from '../../components/UserBox';
-import ChatRoom from '../../components/ChatRoom';
-import Start from '../../components/Start';
+} from '../store/recoil';
+import { useCallback, useEffect } from 'react';
+
 import styled from 'styled-components';
-const Rooms = () => {
-  const [window, setWindow] = useRecoilState(closeWindow);
+const Home = () => {
   const [searchToggle, setSearchToggle] = useRecoilState(searchToggleState);
   const [friendModalToggle, setFriendModalToggle] = useRecoilState(
     friendModalToggleState
   );
-  const [chatModalToggle, setChatModalToggle] =
-    useRecoilState(chatModalToggleState);
   const [chatRoomToggle, setChatRoomToggle] =
     useRecoilState(chatRoomToggleState);
+  const [chatModalToggle, setChatModalToggle] =
+    useRecoilState(chatModalToggleState);
+  const [window, setWindow] = useRecoilState(closeWindow);
   useEffect(() => {
     setSearchToggle(false);
     setFriendModalToggle(false);
     setChatModalToggle(false);
+    setChatRoomToggle(false);
   }, []);
   return (
     <>
       {window ? (
         <Container>
           {chatRoomToggle && <ChatRoom />}
-          {chatModalToggle && <ChatModal />}
           <Sidebar />
           <div>
+            {searchToggle && <Search  />}
             <Header />
-            {searchToggle && <Search placeholder="채팅방 이름, 참여자 검색" />}
             <Main>
               <UserBox />
             </Main>
@@ -62,4 +62,4 @@ const StartWrapper = styled.div`
   align-items: center;
 `;
 
-export default Rooms;
+export default Home;
