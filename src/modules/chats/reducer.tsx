@@ -1,9 +1,9 @@
 import chatsData from '../../assets/json/chatsData.json';
 import { createReducer } from 'typesafe-actions';
 import { CONCAT, INITIALIZE } from './actions';
-import { TAction, TState } from './types';
+import { TChatsAction, TChatsState } from './types';
 
-const initialState: TState = {
+const initialState: TChatsState = {
   data: [
     {
       userId: 0,
@@ -13,7 +13,7 @@ const initialState: TState = {
   ],
 };
 
-export const chats = createReducer<TState, TAction>(initialState, {
+export const chats = createReducer<TChatsState, TChatsAction>(initialState, {
   [INITIALIZE]: (state, { payload: partnerUserId }) => {
     const chatsWithPartner = chatsData.filter(
       (friend) => friend.userId === partnerUserId
