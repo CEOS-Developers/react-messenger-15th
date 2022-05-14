@@ -1,8 +1,8 @@
 import { atom } from "recoil";
 
 export interface IMessagesTypes {
-    userId: number;
-    roomID: number;
+    senderId: string;
+    receiverId: string;
     messageText: string;
 }
 
@@ -16,28 +16,28 @@ export const messagesState = atom<IMessagesTypes[]>({
     key: 'message',
     default: [
     {
-        userId: 0,
-        roomID: 1,
+        senderId: '0',
+        receiverId: '1',
         messageText: "Hey buddy What are you doing now",
     },
     {
-        userId: 0,
-        roomID: 2,
+        senderId: '0',
+        receiverId: '2',
         messageText: "Hey buddy What are you doing now",
     }, 
     {
-        userId: 2,
-        roomID: 2,
+        senderId: '2',
+        receiverId: '0',
         messageText: "Hey buddy What are you doing now",
     },
     {
-        userId: 0,
-        roomID: 3,
+        senderId: '3',
+        receiverId: '0',
         messageText: "Hey buddy What are you doing now",
     },
     {
-        userId: 3,
-        roomID: 3,
+        senderId: '0',
+        receiverId: '3',
         messageText: "Hey buddy What are you doing now",
     }
     ]

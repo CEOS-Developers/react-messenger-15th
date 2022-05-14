@@ -1,16 +1,30 @@
 import React from "react";
 import styled from 'styled-components';
-import UserBox from '../Component/UserBox';
-import InputBox from '../Component/InputBox';
 
+import { useRecoilState } from 'recoil';
+import { messagesState } from '../State/Messages'
+
+import InputSet from '../Component/Molecule/InputSet';
 import Userprofile from "../Component/Molecule/Userprofile";
+import Bubble from "../Component/Molecule/Bubble";
 
 const Room3 = () => {
+    const [messages , setMessages] = useRecoilState(messagesState); 
+    const filteredMessageList = messages.filter(message => (message.receiverId == '3')||(message.senderId == '3'));
+    const messageList = filteredMessageList.map((message) => (<Bubble senderId={message.senderId} receiverId={message.receiverId} roomId={'3'} messageText={message.messageText}></Bubble>));
+
+    const onclick = ( e : React.FormEvent ): void => {
+    }
+
     return (
     <PageWrapper>
         <Userprofile id={'1'} maintext={'다 고쳐 필릭스'} subtext={'다 고쳐 필릭스님과의 채팅입니다'}></Userprofile>
         <MesssageListWrapper>
+            {messageList}
         </MesssageListWrapper>
+        <InputSetWrapper>
+            <InputSet placeholder={'메세지 보내기'} key={'send'} onclick={onclick}></InputSet>
+        </InputSetWrapper> 
     </PageWrapper>
     );
 };
@@ -34,12 +48,20 @@ const PageWrapper = styled.div`
 `;
 
 const MesssageListWrapper = styled.div` 
+    height : calc( 100% - 160px);
     display : flex;
     flex-direction : column;
     font-family: sans-serif;
     align-items: left;
-    justify-content : center;
+`;
+
+const InputSetWrapper = styled.div` 
+    display : flex;
+    flex-direction : column;
+    font-family: sans-serif;
+    align-items: left;
     background: #FFFFFF;
+    align-self: flex-start;
 `;
 
 export default Room3;

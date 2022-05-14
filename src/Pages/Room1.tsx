@@ -1,11 +1,22 @@
 import React from "react";
 import styled from 'styled-components';
-import InputBox from '../Component/InputBox';
 
-import InputSet from '../Component/Molecule/InputSet';
+import { useRecoilState } from 'recoil';
+import { messagesState } from '../State/Messages'
+
 import Userprofile from "../Component/Molecule/Userprofile";
+import InputSet from '../Component/Molecule/InputSet';
+import Bubble from "../Component/Molecule/Bubble";
+
+/*
+<Userprofile id={.profileLink} maintext={user.profileName} subtext={user.profileText}></Userprofile>)
+ */
 
 const Room1 = () => {
+    const [messages , setMessages] = useRecoilState(messagesState); 
+    const filteredMessageList = messages.filter(message => (message.receiverId == '1')||(message.senderId == '1'));
+    const messageList = filteredMessageList.map((message) => (<Bubble senderId={message.senderId} receiverId={message.receiverId} roomId={'1'} messageText={message.messageText}></Bubble>));
+
     const onclick = ( e : React.FormEvent ): void => {
         
     }
@@ -13,11 +24,12 @@ const Room1 = () => {
     return (
     <PageWrapper>
         <Userprofile id={'1'} maintext={'다 부숴 랄프'} subtext={'다 부숴 랄프님과의 채팅입니다'}></Userprofile>
-        <MesssageListWrapper>
-        </MesssageListWrapper>
-        <SendWrapper>
-        <InputSet placeholder={'검색할 이름을 입력해 주세요.'} key={'send'} onclick={onclick}></InputSet>
-        </SendWrapper>
+        <MessageListWrapper>
+            {messageList}
+        </MessageListWrapper>
+        <InputSetWrapper>
+            <InputSet placeholder={'메세지 보내기'} key={'send'} onclick={onclick}></InputSet>
+        </InputSetWrapper>   
     </PageWrapper>
     );
 };
@@ -35,28 +47,27 @@ const PageWrapper = styled.div`
     margin: 0px 20px 20px 20px;
     flex-direction : column;
     font-family: sans-serif;
+    justify-content : flex-end;
     align-items: left;
     background: #FFFFFF;
     border-radius: 24px;
 `;
 
-const MesssageListWrapper = styled.div` 
+const MessageListWrapper = styled.div` 
+    height : calc( 100% - 160px);
     display : flex;
     flex-direction : column;
     font-family: sans-serif;
     align-items: left;
-    justify-content : space-between;
-    background: #FFFFFF;
 `;
 
-const SendWrapper = styled.div` 
-    width : 100%;
+const InputSetWrapper = styled.div` 
     display : flex;
+    flex-direction : column;
     font-family: sans-serif;
-    align-items: flex-end;
-    justify-content : space-between;
+    align-items: left;
     background: #FFFFFF;
-    background-color: red;
+    align-self: flex-start;
 `;
 
 export default Room1;
