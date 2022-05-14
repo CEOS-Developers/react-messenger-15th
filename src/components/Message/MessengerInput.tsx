@@ -1,34 +1,38 @@
+import { useCallback } from 'react';
 import styled from 'styled-components';
 import useInput from '../../hooks/useInput';
 import { IMessengerInputProps } from '../../interface/interface';
 const MessengerInput = ({ currentUser, messageData, setChatList }: any) => {
   const { textinput, handleInputChange, handleInputInitialize } = useInput('');
 
-  const handleInputSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    //공백이 아닐 때에만 send 가능
-    if (textinput.replace(/\s+/g, '')) {
-      const date = new Date();
-      const hours = String(date.getHours()).padStart(2, '0');
-      const minutes = String(date.getMinutes()).padStart(2, '0');
-      const messageObject = {
-        userId: currentUser.userId,
-        userName: currentUser.userName,
-        text: textinput,
-        time: `${hours}:${minutes}`,
-      };
+  const handleInputSubmit = useCallback(
+    (e: React.FormEvent<HTMLFormElement>) => {
+      //공백이 아닐 때에만 send 가능
+      if (textinput.replace(/\s+/g, '')) {
+        const date = new Date();
+        const hours = String(date.getHours()).padStart(2, '0');
+        const minutes = String(date.getMinutes()).padStart(2, '0');
+        const messageObject = {
+          userId: currentUser.userId,
+          userName: currentUser.userName,
+          text: textinput,
+          time: `${hours}:${minutes}`,
+        };
 
-      setChatList([...messageData, messageObject]);
+        setChatList([...messageData, messageObject]);
 
-      //공백일 경우 alert
-    } else {
-      alert('메세지를 입력하세요 ! ');
-    }
+        //공백일 경우 alert
+      } else {
+        alert('메세지를 입력하세요 ! ');
+      }
 
-    handleInputInitialize();
+      handleInputInitialize();
 
-    //새로고침 방지
-    e.preventDefault();
-  };
+      //새로고침 방지
+      e.preventDefault();
+    },
+    [messageData]
+  );
 
   return (
     <SubmitForm onSubmit={handleInputSubmit}>
