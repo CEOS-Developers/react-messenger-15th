@@ -22,12 +22,12 @@ function ChatRoom() {
     initReceiverTrigger(partnerUserId);
   });
 
-  const initializeChatsTrigger = useCallback(
+  const initChatsTrigger = useCallback(
     (partnerUserId: number) => dispatch(initChats(partnerUserId)),
     [dispatch]
   );
   useEffect(() => {
-    initializeChatsTrigger(partnerUserId);
+    initChatsTrigger(partnerUserId);
   });
 
   return (
