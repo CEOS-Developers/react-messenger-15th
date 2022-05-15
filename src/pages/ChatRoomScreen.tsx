@@ -15,14 +15,10 @@ const ChatRoomScreen = () => {
   const [chatObj] = data.filter((room) => room.partnerId === userId);
   const [currentUserId, setCurrentUserId] = useState<string>('user0');
 
-  let copy: any = {};
-  copy = Object.assign({}, chatObj.chats);
-
   const chatListState = atom<IChat[]>({
     key: 'chatListState',
-    default: copy,
+    default: chatObj.chats,
   });
-
   const [chatList, setChatList] = useRecoilState<IChat[]>(chatListState);
 
   return (
@@ -48,13 +44,10 @@ export default ChatRoomScreen;
 const Wrapper = styled.section`
   width: 350px;
   height: 700px;
-
   border: 1px solid #e2e2e2;
-
   @media screen and (min-width: 768px) {
     margin-top: 10%;
   }
-
   @media screen and (max-width: 768px) {
     width: 100vw;
     height: calc(var(--vh, 1vh) * 100);

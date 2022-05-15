@@ -1,5 +1,4 @@
 import { Dispatch, SetStateAction } from 'react';
-import { atom, useRecoilState } from 'recoil';
 
 interface IUserId {
   userId: string;
