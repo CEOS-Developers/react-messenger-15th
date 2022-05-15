@@ -39,6 +39,8 @@ function ChatRoom() {
   );
 }
 
+export default ChatRoom;
+
 const ChatRoomBlock = styled.div`
   height: 100%;
   width: 100%;
@@ -46,5 +48,3 @@ const ChatRoomBlock = styled.div`
   display: flex;
   flex-direction: column;
 `;
-
-export default ChatRoom;

@@ -29,6 +29,8 @@ function FriendList() {
   );
 }
 
+export default FriendList;
+
 const FriendListBlock = styled.div`
   width: 100%;
   height: 100%;
@@ -64,5 +66,3 @@ const SearchBar = styled.div`
 const SearchedFriendList = styled.div`
   height: 88%;
 `;
-
-export default FriendList;

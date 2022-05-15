@@ -38,6 +38,8 @@ function ChatRoomMainContainer({ partnerUserId }: TProps) {
   );
 }
 
+export default React.memo(ChatRoomMainContainer);
+
 const ChatRoomMainContainerBlock = styled.div`
   width: 100%;
   height: 75%;
@@ -60,5 +62,3 @@ const ChatRoomMainContainerBlock = styled.div`
     border: 8px solid transparent;
   }
 `;
-
-export default React.memo(ChatRoomMainContainer);

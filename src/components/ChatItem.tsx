@@ -33,6 +33,8 @@ function ChatItem({ partnerUserId, userId, msg, unixTime }: TProps) {
   );
 }
 
+export default React.memo(ChatItem);
+
 const ChatItemBlock = styled.div<{ userId: number }>`
   margin: 3%;
 
@@ -112,5 +114,3 @@ const Timestamp = styled.span`
   flex-direction: column;
   justify-content: flex-end;
 `;
-
-export default React.memo(ChatItem);

@@ -47,6 +47,8 @@ function CommonLayout({ headerText }: TProps) {
   );
 }
 
+export default CommonLayout;
+
 const CommonLayoutBlock = styled.div`
   width: 100%;
   height: 100%;
@@ -111,5 +113,3 @@ const Menu = styled(NavLink)`
     margin-bottom: -10%;
   }
 `;
-
-export default CommonLayout;

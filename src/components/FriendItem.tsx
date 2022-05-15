@@ -21,6 +21,8 @@ const FriendItem = ({ userId, userName }: TProps) => {
   );
 };
 
+export default React.memo(FriendItem);
+
 const FriendItemBlock = styled.div`
   width: 100%;
   height: 19.5%;
@@ -58,5 +60,3 @@ const StyledLink = styled(Link)`
     color: #343a40;
   }
 `;
-
-export default React.memo(FriendItem);

@@ -8,7 +8,7 @@ import {
 import styled from 'styled-components';
 
 function Settings() {
-  const settingList = [
+  const menus = [
     { title: 'Profile', icon: <BiUser /> },
     { title: 'Notifications', icon: <BiNotification /> },
     { title: 'Privacy', icon: <BiFingerprint /> },
@@ -18,15 +18,17 @@ function Settings() {
 
   return (
     <SettingsBlock>
-      {settingList.map((item) => (
-        <SettingItem key={item.title}>
-          <div className='Icon'>{item.icon}</div>
-          <span> {item.title}</span>
-        </SettingItem>
+      {menus.map((menu) => (
+        <Menu key={menu.title}>
+          <div className='Icon'>{menu.icon}</div>
+          <span> {menu.title}</span>
+        </Menu>
       ))}
     </SettingsBlock>
   );
 }
+
+export default Settings;
 
 const SettingsBlock = styled.div`
   width: 100%;
@@ -40,7 +42,7 @@ const SettingsBlock = styled.div`
   border-top: 1px solid #e2e2e2;
 `;
 
-const SettingItem = styled.div`
+const Menu = styled.div`
   height: 15%;
 
   display: flex;
@@ -74,5 +76,3 @@ const SettingItem = styled.div`
     font-size: 1.2rem;
   }
 `;
-
-export default Settings;

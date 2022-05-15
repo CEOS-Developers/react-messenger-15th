@@ -24,6 +24,8 @@ function ChatRoomItem({ userId, userName, lastMsg }: TProps) {
   );
 }
 
+export default ChatRoomItem;
+
 const ChatRoomItemBlock = styled.div`
   width: 100%;
   height: 17%;
@@ -84,5 +86,3 @@ const TextWrapper = styled.div`
     overflow: hidden;
   }
 `;
-
-export default ChatRoomItem;

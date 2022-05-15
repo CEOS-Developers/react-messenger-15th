@@ -38,6 +38,8 @@ function ChatRoomList() {
   );
 }
 
+export default ChatRoomList;
+
 const ChatRoomListBlock = styled.section`
   width: 100%;
   height: 100%;
@@ -45,5 +47,3 @@ const ChatRoomListBlock = styled.section`
   margin-top: 4%;
   border-top: 1px solid #e2e2e2;
 `;
-
-export default ChatRoomList;

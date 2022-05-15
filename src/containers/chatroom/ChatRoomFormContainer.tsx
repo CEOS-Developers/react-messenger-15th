@@ -61,6 +61,8 @@ function ChatRoomFormContainer({ partnerUserId }: TProps) {
   );
 }
 
+export default React.memo(ChatRoomFormContainer);
+
 const ChatRoomFormContainerBlock = styled.form`
   width: 100%;
   height: 10%;
@@ -126,5 +128,3 @@ const SubmitBtn = styled.button<{ isValid: boolean }>`
       `}
   }
 `;
-
-export default React.memo(ChatRoomFormContainer);
