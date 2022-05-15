@@ -10,7 +10,7 @@ const InputForm = ({
 }: IInputFormProps) => {
   const { inputText, handleInputChange, reset } = useInput();
 
-  const handleNewMsg = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleNewMsg = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (inputText) {
@@ -22,8 +22,6 @@ const InputForm = ({
 
       setChatList([...chatList, msg]);
       reset();
-    } else {
-      alert('Type something');
     }
   };
 
@@ -40,14 +38,16 @@ const InputForm = ({
   };
 
   return (
-    <FormWrapper>
-      <Button onClick={handleHeartClick}>❤️</Button>
+    <FormWrapper onSubmit={handleNewMsg}>
+      <Button type="button" onClick={handleHeartClick}>
+        ❤️
+      </Button>
       <Input
         value={inputText}
         onChange={handleInputChange}
         placeholder="Type something here"
       />
-      <Button onClick={handleNewMsg}>+</Button>
+      <Button type="submit">+</Button>
     </FormWrapper>
   );
 };
