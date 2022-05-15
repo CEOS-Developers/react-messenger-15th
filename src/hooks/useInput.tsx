@@ -1,7 +1,9 @@
-import { useState, useCallback } from 'react';
+import { useCallback } from 'react';
+import { initialText } from '../components/recoilState';
+import { useRecoilState } from 'recoil';
 
-const useInput = (initialText: string) => {
-  const [inputText, setInputText] = useState(initialText);
+const useInput = () => {
+  const [inputText, setInputText] = useRecoilState<string>(initialText);
 
   const handleInputChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>): void => {
