@@ -21,11 +21,11 @@ const menus = [
   },
 ];
 
-type TCommonLayoutProps = {
+type TProps = {
   headerText: string;
 };
 
-function CommonLayout({ headerText }: TCommonLayoutProps) {
+function CommonLayout({ headerText }: TProps) {
   return (
     <CommonLayoutBlock>
       <header>{`${headerText}`}</header>

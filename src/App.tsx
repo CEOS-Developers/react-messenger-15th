@@ -10,12 +10,9 @@ import Settings from './pages/Settings';
 import NotFound from './pages/NotFound';
 
 function App() {
-  function setVh() {
+  useEffect(() => {
     const vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty('--vh', `${vh}px`);
-  }
-  useEffect(() => {
-    setVh();
   }, []);
 
   return (

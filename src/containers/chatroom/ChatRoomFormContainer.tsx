@@ -10,11 +10,11 @@ import React from 'react';
 
 import meData from '../../assets/json/meData.json';
 
-type TChatRoomFormContainerProps = {
+type TProps = {
   partnerUserId: number;
 };
 
-function ChatRoomFormContainer({ partnerUserId }: TChatRoomFormContainerProps) {
+function ChatRoomFormContainer({ partnerUserId }: TProps) {
   const [inputValue, handleInputChange, resetInput, isValid, setIsValid] =
     useInput('');
 

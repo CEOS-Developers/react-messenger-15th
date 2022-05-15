@@ -6,11 +6,11 @@ import styled from 'styled-components';
 import { IChat } from '../../types';
 import ChatItem from '../../components/ChatItem';
 
-type TChatRoomMainProps = {
+type TProps = {
   partnerUserId: number;
 };
 
-function ChatRoomMainContainer({ partnerUserId }: TChatRoomMainProps) {
+function ChatRoomMainContainer({ partnerUserId }: TProps) {
   const chatsState = useSelector(({ chats }: RootState) => ({
     data: chats.data,
   }));

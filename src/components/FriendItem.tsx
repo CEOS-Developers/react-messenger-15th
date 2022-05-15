@@ -2,12 +2,12 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import React from 'react';
 
-type FriendItemProps = {
+type TProps = {
   userId: number;
   userName: string;
 };
 
-const FriendItem = ({ userId, userName }: FriendItemProps) => {
+const FriendItem = ({ userId, userName }: TProps) => {
   return (
     <FriendItemBlock>
       <StyledLink to={`/chatroom/${userId}`}>

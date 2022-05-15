@@ -10,13 +10,11 @@ import { HiOutlineChevronLeft, HiOutlineChevronRight } from 'react-icons/hi';
 import friendsData from '../../assets/json/friendsData.json';
 import meData from '../../assets/json/meData.json';
 
-type TChatRoomHeaderContainerProps = {
+type TProps = {
   partnerUserId: number;
 };
 
-function ChatRoomHeaderContainer({
-  partnerUserId,
-}: TChatRoomHeaderContainerProps) {
+function ChatRoomHeaderContainer({ partnerUserId }: TProps) {
   const receiverState = useSelector(({ receiver }: RootState) => ({
     userId: receiver.userId,
   }));

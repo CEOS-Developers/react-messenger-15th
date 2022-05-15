@@ -5,14 +5,14 @@ import { getTimeStamp } from '../utils/getTimeStamp';
 import meData from '../assets/json/meData.json';
 import friendsData from '../assets/json/friendsData.json';
 
-type TChatItemProps = {
+type TProps = {
   partnerUserId: number;
   userId: number;
   msg: string;
   unixTime: number;
 };
 
-function ChatItem({ partnerUserId, userId, msg, unixTime }: TChatItemProps) {
+function ChatItem({ partnerUserId, userId, msg, unixTime }: TProps) {
   const partner = friendsData.filter(
     (friend) => friend.userId === partnerUserId
   )[0];

@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-type ChatRoomItemProps = {
+type TProps = {
   userId: number;
   userName: string;
   lastMsg: string;
 };
 
-function ChatRoomItem({ userId, userName, lastMsg }: ChatRoomItemProps) {
+function ChatRoomItem({ userId, userName, lastMsg }: TProps) {
   return (
     <ChatRoomItemBlock>
       <StyledLink to={`/chatroom/${userId}`}>
