@@ -1,5 +1,5 @@
 import { RecoilRoot } from 'recoil';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useParams } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
 
 import FriendsListScreen from './pages/FriendsListScreen';

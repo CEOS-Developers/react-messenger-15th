@@ -10,11 +10,6 @@ interface IChat extends IUserId {
   msgId: number;
 }
 
-export const chatListState = atom<IChat[]>({
-  key: 'chatListState',
-  default: [{ userId: '', message: '', msgId: 0 }],
-});
-
 interface IChatRoomBodyProps {
   chatList: IChat[];
 }
