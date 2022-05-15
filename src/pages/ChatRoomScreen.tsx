@@ -1,3 +1,4 @@
+import { useRecoilState } from 'recoil';
 import styled from 'styled-components';
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
@@ -6,14 +7,14 @@ import InputForm from '../components/chatroom/InputForm';
 import ChatRoomBody from '../components/chatroom/ChatRoomBody';
 import ChatRoomHeader from '../components/chatroom/ChatRoomHeader';
 
-import { IChat } from '../components/Interfaces';
+import { IChat, chatListState } from '../components/Interfaces';
 import data from '../assets/data.json';
 
 const ChatRoomScreen = () => {
   const { userId } = useParams();
   const [chatObj] = data.filter((room) => room.partnerId === userId);
   const [currentUserId, setCurrentUserId] = useState<string>('user0');
-  const [chatList, setChatList] = useState<IChat[]>(chatObj.chats);
+  const [chatList, setChatList] = useRecoilState<IChat[]>(chatListState);
 
   return (
     <Wrapper>

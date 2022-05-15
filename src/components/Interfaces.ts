@@ -1,4 +1,5 @@
 import { Dispatch, SetStateAction } from 'react';
+import { atom, useRecoilState } from 'recoil';
 
 interface IUserId {
   userId: string;
@@ -8,6 +9,11 @@ interface IChat extends IUserId {
   message: string;
   msgId: number;
 }
+
+export const chatListState = atom<IChat[]>({
+  key: 'chatListState',
+  default: [{ userId: '', message: '', msgId: 0 }],
+});
 
 interface IChatRoomBodyProps {
   chatList: IChat[];
