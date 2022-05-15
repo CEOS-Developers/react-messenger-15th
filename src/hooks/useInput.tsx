@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import { initialText } from '../components/recoilState';
+import { initialText } from '../components/Recoil';
 import { useRecoilState } from 'recoil';
 
 const useInput = () => {
