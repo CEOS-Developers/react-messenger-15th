@@ -15,7 +15,7 @@ const SettingScreen = () => {
     { id: 'menu2', title: 'Privacy', icon: <FcLock /> },
     { id: 'menu3', title: 'General', icon: <FcEngineering /> },
     { id: 'menu4', title: 'Payments', icon: <FcMoneyTransfer /> },
-    { id: 'menu5', title: 'Notifiactions', icon: <FcSpeaker /> },
+    { id: 'menu5', title: 'Notifications', icon: <FcSpeaker /> },
   ];
 
   return (

@@ -5,6 +5,7 @@ import { FiChevronLeft } from 'react-icons/fi';
 
 import { IChatRoomHeaderProps } from '../Interfaces';
 import friends from '../../assets/friends.json';
+import me from '../../assets/me.json';
 
 const ChatRoomHeader = ({
   currentUserId,
@@ -12,15 +13,15 @@ const ChatRoomHeader = ({
 }: IChatRoomHeaderProps) => {
   const { userId } = useParams();
   const [friendObj] = friends.filter((friend) => friend.userId === userId);
-  const [currentUserName, setCurrentUserName] = useState('Anna');
+  const [currentUserName, setCurrentUserName] = useState(me[0].userName);
 
   const handleCurrentUserToggle = () => {
     currentUserId === userId
-      ? setCurrentUserId('user0')
+      ? setCurrentUserId(me[0].userId)
       : setCurrentUserId(userId);
 
     currentUserId === userId
-      ? setCurrentUserName('Anna')
+      ? setCurrentUserName(me[0].userName)
       : setCurrentUserName(friendObj.userName);
   };
 
