@@ -1,0 +1,67 @@
+[
+  {
+    "partnerId": "user1",
+    "chats": [
+      {
+        "userId": "user0",
+        "message": "Olaf, you are melting!",
+        "msgId": 1644809969390
+      },
+      {
+        "userId": "user1",
+        "message": "Some people are worth melting for",
+        "msgId": 1644809969387
+      }
+    ]
+  },
+  {
+    "partnerId": "user2",
+    "chats": [
+      {
+        "userId": "user2",
+        "message": "11111",
+        "msgId": 1644809969392
+      },
+      {
+        "userId": "user2",
+        "message": "22222",
+        "msgId": 1644809969393
+      },
+      {
+        "userId": "user0",
+        "message": "33333",
+        "msgId": 1644809970000
+      }
+    ]
+  },
+  {
+    "partnerId": "user3",
+    "chats": [
+      {
+        "userId": "user3",
+        "message": "44444",
+        "msgId": 1644809969379
+      },
+      {
+        "userId": "user0",
+        "message": "중간 입력 중간 입력 중간 입력 중간 입력 중간 입력",
+        "msgId": 1644809969381
+      }
+    ]
+  },
+  {
+    "partnerId": "user4",
+    "chats": [
+      {
+        "userId": "user4",
+        "message": "!!!!!",
+        "msgId": 1644809969379
+      },
+      {
+        "userId": "user0",
+        "message": "띄쓰기없는입력띄쓰기없는입력띄쓰기없는입력",
+        "msgId": 1644809969381
+      }
+    ]
+  }
+]
