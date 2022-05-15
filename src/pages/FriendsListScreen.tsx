@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { Content } from '../components/sharings/Elements';
 import { MdPersonSearch } from 'react-icons/md';
 import { Link } from 'react-router-dom';
+import { memo } from 'react';
 
 import UserList from '../components/sharings/UserList';
 import friends from '../assets/friends.json';
@@ -65,4 +66,4 @@ const Input = styled.input`
   border-radius: 12px;
 `;
 
-export default FriendsListScreen;
+export default memo(FriendsListScreen);
