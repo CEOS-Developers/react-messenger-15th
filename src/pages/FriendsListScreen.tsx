@@ -8,7 +8,7 @@ import friends from '../assets/friends.json';
 import useInput from '../hooks/useInput';
 
 const FriendsListScreen = () => {
-  const { inputText, handleInputChange } = useInput('');
+  const { inputText, handleInputChange } = useInput();
 
   const results = friends.filter(
     (friend) => inputText && friend.userName.includes(inputText)

@@ -8,7 +8,7 @@ const InputForm = ({
   chatList,
   setChatList,
 }: IInputFormProps) => {
-  const { inputText, handleInputChange, reset } = useInput('');
+  const { inputText, handleInputChange, reset } = useInput();
 
   const handleNewMsg = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
