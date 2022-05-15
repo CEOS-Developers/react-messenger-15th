@@ -1,4 +1,5 @@
-import { Route, Routes, useParams } from 'react-router-dom';
+import { RecoilRoot } from 'recoil';
+import { Route, Routes } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
 
 import FriendsListScreen from './pages/FriendsListScreen';
@@ -11,18 +12,20 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <Routes>
-        <Route element={<Layout headerText={'Friends'} />}>
-          <Route index element={<FriendsListScreen />} />
-        </Route>
-        <Route element={<Layout headerText={'Messages'} />}>
-          <Route path="/ChatListScreen" element={<ChatListScreen />} />
-        </Route>
-        <Route path="/ChatRoomScreen/:userId" element={<ChatRoomScreen />} />
-        <Route element={<Layout headerText={'Setting'} />}>
-          <Route path="/SettingScreen" element={<SettingScreen />} />
-        </Route>
-      </Routes>
+      <RecoilRoot>
+        <Routes>
+          <Route element={<Layout headerText={'Friends'} />}>
+            <Route index element={<FriendsListScreen />} />
+          </Route>
+          <Route element={<Layout headerText={'Messages'} />}>
+            <Route path="/ChatListScreen" element={<ChatListScreen />} />
+          </Route>
+          <Route path="/ChatRoomScreen/:userId" element={<ChatRoomScreen />} />
+          <Route element={<Layout headerText={'Setting'} />}>
+            <Route path="/SettingScreen" element={<SettingScreen />} />
+          </Route>
+        </Routes>
+      </RecoilRoot>
     </>
   );
 }
