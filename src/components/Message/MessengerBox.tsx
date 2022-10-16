@@ -5,9 +5,10 @@ import message from '../../data/message.json';
 import MessengerInput from './MessengerInput';
 import MessageList from './MessageList';
 import { useParams } from 'react-router-dom';
+import { useRecoilState } from 'recoil';
+import { messageDataState } from '../../state/MessageDataState';
 
 const MessengerBox = () => {
-  // 사용자 나부터 시작
   const otherUser = useParams();
   const userindex = message.findIndex(
     (message) => message.userName === otherUser.userName
@@ -15,7 +16,10 @@ const MessengerBox = () => {
   const userMessageData = message[userindex];
 
   const [currentUser, setCurrentUser] = useState(user[0]);
-  const [messageData, setMessageData] = useState(userMessageData.messages);
+  const [messageData, setMessageData] = useRecoilState(messageDataState);
+  setMessageData(userMessageData.messages);
+  console.log(messageData);
+
   return (
     <>
       <UserNav
@@ -28,7 +32,7 @@ const MessengerBox = () => {
       <MessengerInput
         currentUser={currentUser}
         messageData={messageData}
-        setChatList={setMessageData}
+        setMessageData={setMessageData}
       />
     </>
   );

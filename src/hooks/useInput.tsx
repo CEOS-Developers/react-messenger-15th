@@ -11,6 +11,7 @@ const useInput = (initialInput: string) => {
           target: { value },
         } = e;
         setTextInput(value);
+        console.log(value);
       }
     },
     []

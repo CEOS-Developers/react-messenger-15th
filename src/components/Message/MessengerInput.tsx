@@ -1,10 +1,14 @@
 import { useCallback } from 'react';
+import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
 import styled from 'styled-components';
 import useInput from '../../hooks/useInput';
-import { IMessengerInputProps } from '../../interface/interface';
-const MessengerInput = ({ currentUser, messageData, setChatList }: any) => {
+import { IMessageData, IMessengerInputProps } from '../../interface/interface';
+import { messageDataState } from '../../state/MessageDataState';
+const MessengerInput = ({ currentUser, messageData }: any) => {
   const { textinput, handleInputChange, handleInputInitialize } = useInput('');
 
+  const setMessageData = useSetRecoilState<IMessageData[]>(messageDataState);
+  console.log(setMessageData);
   const handleInputSubmit = useCallback(
     (e: React.FormEvent<HTMLFormElement>) => {
       //공백이 아닐 때에만 send 가능
@@ -19,7 +23,7 @@ const MessengerInput = ({ currentUser, messageData, setChatList }: any) => {
           time: `${hours}:${minutes}`,
         };
 
-        setChatList([...messageData, messageObject]);
+        setMessageData([...messageData, messageObject]);
 
         //공백일 경우 alert
       } else {
@@ -31,8 +35,9 @@ const MessengerInput = ({ currentUser, messageData, setChatList }: any) => {
       //새로고침 방지
       e.preventDefault();
     },
-    [messageData]
+    [messageData, textinput]
   );
+  console.log(messageData);
 
   return (
     <SubmitForm onSubmit={handleInputSubmit}>

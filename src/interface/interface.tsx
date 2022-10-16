@@ -26,8 +26,8 @@ interface IUserNavProps {
 
 interface IMessengerInputProps {
   currentUser: ICurrentUser;
-  chatList: IMessageData[];
-  setChatList: (charList: Array<IMessageData>) => void;
+  messageData: IMessageData[];
+  setMessageData: (charList: Array<IMessageData>) => void;
 }
 
 interface IChattingsProps {
