@@ -1,0 +1,39 @@
+[
+  {
+    "userId": "user0",
+    "userName": "chaaerim",
+    "userProfile": "user0.jpg",
+    "userStatus": "ㅋㅅㅋ"
+  },
+
+  {
+    "userId": "user1",
+    "userName": "PeterParker",
+    "userProfile": "user1.jpg",
+    "userStatus": "i am not spiderman"
+  },
+  {
+    "userId": "user2",
+    "userName": "MJ",
+    "userProfile": "user2.jpg",
+    "userStatus": "We're going to kick some"
+  },
+  {
+    "userId": "user3",
+    "userName": "햄식이",
+    "userProfile": "user3.jpg",
+    "userStatus": "난 예뻐"
+  },
+  {
+    "userId": "user4",
+    "userName": "BlackPanther",
+    "userProfile": "user4.jpg",
+    "userStatus": "WAKANDA FOREVER"
+  },
+  {
+    "userId": "user5",
+    "userName": "IronMan",
+    "userProfile": "user5.jpg",
+    "userStatus": "I love you 3000"
+  }
+]
